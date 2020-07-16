@@ -1,0 +1,114 @@
+<div   style="padding:   0px; float: right; width: 100%; ">
+    <!--<h6 ng-bind="'dashboard.zr.user' | translate" style="margin:10px !important;" class="dashboard-background-"></h6>
+    <div class="dividerPanel"></div>-->
+    <div class="zonesHeader">
+        <span ng-bind="'dashboard.zr.user' | translate"></span>
+    </div>
+    <ul>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='userlockedDocuments'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('userlockedDocuments')">
+            <span class="icon-show fa fa-lock"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.user_locked_documents'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.user_locked_documents'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='usereditedDocuments'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('usereditedDocuments')">
+            <span class="icon-show fa fa-pencil-square-o"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.user_edited_documents'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.user_edited_documents'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='userlastDownloadedDocuments'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('userlastDownloadedDocuments')">
+            <span class="icon-show fa fa-download"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.user_last_downloaded_documents'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.user_last_downloaded_documents'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='usersubscribedDocuments'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('usersubscribedDocuments')">
+            <span class="icon-show fa fa-file-o"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.user_subscribed_documents'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.user_subscribed_documents'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='usersubscribedFolders'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('usersubscribedFolders')">
+            <span class="icon-show fa fa-folder-o"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.user_subscribed_folders'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.user_subscribed_folders'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='userlastModifiedDocuments'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('userlastModifiedDocuments')">
+            <span class="icon-show fa fa-arrow-down"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.user_last_modified_documents'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.user_last_modified_documents'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='userlastUploadedDocuments'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('userlastUploadedDocuments')">
+            <span class="icon-show fa fa-plus-square-o"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.user_last_uploaded_documents'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.user_last_uploaded_documents'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='bookmarks'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('bookmarks')">
+            <span class="icon-show fa fa-bookmark-o"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.bookmark'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.bookmark'|translate}}
+            </md-tooltip>
+        </i>
+    </ul>
+
+</div>

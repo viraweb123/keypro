@@ -1,0 +1,23 @@
+
+    <div class="N simple-background">
+                    <span
+                            class="opener-zone opener-zone-simple opener-zone-right fa fa-chevron-{{data.nav.right.isOpened == false ? 'left' : 'right'}}"
+                            ng-click="func.closeOrOpenRight();">
+                    </span>
+    </div>
+
+    <div class="D">
+        <div class="searchVisible hidden-item"              ui-view="searchVisible"></div>
+        <div class="foamTreeVisible hidden-item"            ui-view="foamTreeVisible"></div>
+        <div class="circlesVisible hidden-item"             ui-view="circlesVisible"></div>
+    </div>
+
+
+    <div class="N search-background">
+        <span
+                class="opener-zone fa fa-chevron-{{data.nav.right.isOpened == false ? 'left' : 'right'}}"
+                ng-click="data.nav.right.isOpened = !data.nav.right.isOpened;">
+        </span>
+    </div>
+
+

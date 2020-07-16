@@ -1,0 +1,27 @@
+<div class="sideRight" >
+
+    <div class="zonesHeader">
+        <span ng-bind="'desktop.zr.taxonomy' | translate"></span>
+        <div class=" pull-left  refresh" >
+            <a  ng-click="func.refreshTaxonomy()" class="getAgain">
+                <i  class="fa fa-refresh">
+                    <md-tooltip  md-direction="bottom">
+                        به روز رسانی
+                    </md-tooltip>
+                </i>
+            </a>
+        </div>
+    </div>
+
+   <!-- <div class="darkdivider desktop-background"></div>-->
+    <div class="parent"  style="height:calc(100vh - 90px) !important;">
+        <div
+                tree-model
+                tree-func="data.trees.taxonomy"
+                class="treeview child"
+                root-folder="data.trees.taxonomyVisible"
+                current-node="data.trees.taxonomyTree"
+                style="padding-left: 10px;">
+        </div>
+    </div>
+</div>

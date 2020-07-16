@@ -1,0 +1,199 @@
+
+@media screen and (min-width: 650px) {
+    .report{
+        width : calc(100vw - 20px) !important;
+        height:  100% !important;
+        overflow : hidden !important;
+        padding:5px !important;
+        margin:  10px !important;
+    }
+
+    .report .table-view{
+        border-left: 1px solid;
+        width: 250px;
+        height: calc(100vh - 80px);
+        overflow-y:hidden !important;
+        overflow-x:hidden !important;
+        padding: 0px 5px !important;
+        float: right;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+
+    .report .table-view-min{
+        width : 30px !important;
+    }
+
+    .report .table-view table{
+        max-height: calc(100vh - 150px);
+        overflow-x : hidden;
+        overflow-y : auto;
+        margin-right: auto;
+        width: auto ! important;
+        margin-left: auto !important;
+    }
+
+    .report .table-view  table  thead  {
+        /*background-color : #3E993B !important;
+        color: white !important;*/
+        background-color : #c3d9ff !important;
+    }
+
+    .report .table-view  table  thead  a{
+        color: black !important;
+    }
+
+    .report .table-view  table  thead  a  span{
+        font-size:12px !important;
+    }
+
+    .report .table-view  table  thead  span{
+        font-size:12px !important;
+    }
+
+    .report .table-view  table tbody tr:hover{
+       /* box-shadow: 0 0 6px rgba(251,187,61,1) !important;
+        cursor: pointer !important;*/
+        box-shadow: 0 0 6px rgba(35,173,255,1) !important;
+        cursor: pointer !important;
+        background-color: rgb(35, 173, 255) ! important;
+        color: white ! important;
+    }
+
+
+    .report .table-view  table  tr.activate{
+        background-color: rgb(35, 173, 255) ! important;
+        color: white ! important;
+    }
+
+    .report .table-view  table  tr:nth-child(even){
+        /*background-color:   rgba(240, 197, 71, 0.8);
+        color:white;*/
+        background-color: rgba(224, 236, 255, 0.8);
+    }
+
+    .report .table-view  table  tr:nth-child(even)  td label{
+        color:white !important;
+    }
+
+    .report .table-view  table.display{
+        display : inline-block;
+    }
+
+    .report .table-view  table tbody td.position-center img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+    }
+
+    .report .table-view  table tbody td.position-center  span{
+        overflow-wrap: break-word;
+        word-break: break-all;
+        text-align: justify;
+    }
+
+    .report .html-view{
+        width: calc(100vw - 530px);
+        height: calc(100vh - 550px);
+        /*overflow-y: auto;
+        overflow-x: hidden ! important;*/
+        float: right;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+        padding: 0px 5px !important;
+    }
+
+    .report .html-view-viewerLR{
+        width: calc(100vw - 90px) !important;
+    }
+    .report .html-view-viewerL{
+        width: calc(100vw - 310px) !important;
+    }
+    .report .html-view-viewerR{
+        width: calc(100vw - 310px) !important;
+    }
+
+    .report .metadata-view{
+        border-right: 1px solid;
+        width: 250px;
+        height: calc(100vh - 80px);
+        overflow:hidden !important;
+        float: left;
+        padding: 0px 5px !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+
+    .report .metadata-view-min{
+        width : 30px !important;
+    }
+
+    .report .metadata-view  .metadata-property{
+        padding: 2px 5px !important;
+        margin-top: 0px !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        min-height: calc(100vh - 108px) !important;
+        max-height: calc(100vh - 108px) !important;
+    }
+
+
+    .report .zonesHeaderReport{
+        background-color: #c3d9ff;
+        color: white;
+        height: 28px;
+        margin-top: 0;
+        padding : 3px;
+        border-bottom:2px solid white;
+    }
+
+
+    .report  .zonesHeaderReport  span{
+        margin-right: 10px !important;
+    }
+
+    .report .sample-show-hide.ng-hide-add, .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 1.6s;
+        -moz-transition:all linear 1.6s;
+        -o-transition:all linear 1.6s;
+        transition:all linear 1.6s;
+        display:block !important;
+    }
+    .report .sample-show-hide.ng-hide-add.ng-hide-add-active,
+    .report.sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 0.2s;
+        -moz-transition:all linear 0.2s;
+        -o-transition:all linear  0.2s;
+        transition:all linear  0.2s;
+        opacity:0;
+    }
+    .report .sample-show-hide.ng-hide-add,
+    .report  .sample-show-hide.ng-hide-remove.ng-hide-remove-active {
+        -webkit-transition:all linear 1.6s;
+        -moz-transition:all linear 1.6s;
+        -o-transition:all linear  1.6s;
+        transition:all linear  1.6s;
+        opacity:1;
+    }
+    .report .animate-if {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.6s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.6s;
+    }
+    .report .animate-if.ng-enter, .animate-if.ng-leave {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.6s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.6s;
+    }
+    .report .animate-if.ng-enter, .animate-if.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+    .report .animate-if.ng-leave, .animate-if.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+
+
+}

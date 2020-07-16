@@ -1,0 +1,33 @@
+<style>
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+    }
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+</style>
+<div  class="modal-header fontStyle" >
+    <div class="form-group">
+        <h6 class="modal-title col-sm-10 pull-right fontStyle"><span ng-bind="'search.zm.tree_frequency_content' | translate"></span></h6>
+    </div>
+</div>
+<div class="modal-body row" style="margin-left: 15px;margin-right: 15px;">
+    <div class="form-group row col-sm-12"  >
+        <div class="col-sm-12" ng-bind-html="data.content"> </div>
+    </div>
+</div>
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+        <div class="col-sm-4- pull-left">
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="okButon"     class="md-raised" ng-click="func.cancel()">
+                    <md-icon style="border-left:1px solid rgba(197,197,197,1);padding-left: 5px;" md-font-icon="fa fa-folder"></md-icon>
+                    <span ng-bind="'common.menu.file_exit'|translate"></span>
+                </md-button>
+            </section>
+
+        </div>
+    </div>
+</div>

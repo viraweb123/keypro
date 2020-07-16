@@ -1,0 +1,37 @@
+
+<div class="sideRight" >
+
+    <div class="zonesHeader">
+        <span>سطل زباله</span>
+        <div class=" pull-left  refresh" >
+            <a  ng-click="func.refreshTrash()" class="getAgain">
+                <i  class="fa fa-refresh">
+                    <md-tooltip  md-direction="bottom">
+                        به روز رسانی
+                    </md-tooltip>
+                </i>
+            </a>
+        </div>
+        <div class=" pull-left  refresh" ng-if="data.profile.prfMenu.prfFile.purgeVisible">
+            <a  ng-click="func.runSelectTreeFunction('emptyTrash')" class="getAgain">
+                <i  class="fa fa-trash">
+                    <md-tooltip  md-direction="bottom">
+                        پاکسازی سطل زباله
+                    </md-tooltip>
+                </i>
+            </a>
+        </div>
+    </div>
+
+    <!-- <div class="darkdivider desktop-background"></div>-->
+    <div class="parent"  style="height:calc(100vh - 90px) !important;">
+        <div
+                tree-model
+                tree-func="data.trees.trash"
+                class="treeview child"
+                root-folder="data.trees.trashVisible"
+                current-node="data.trees.trashTree"
+                style="padding-left: 10px;">
+        </div>
+    </div>
+</div>

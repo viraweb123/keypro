@@ -1,0 +1,540 @@
+<div class="simple">
+
+    <div   ui-view="sideR"  class="SR"></div>
+
+    <div   ui-view="zoneR"  class="ZR{{data.nav.right.isOpened == true ? 'O' : ''}}"></div>
+
+    <div   ui-view="sideZone"  class="CR"></div>
+
+    <div
+            ng-show="data.showRelations"
+            id="relationsViewer"
+            style="left:4%;"
+    >
+
+        <div class="sideLeft">
+
+            <div class="zonesHeader">
+                <span >روابط</span>
+
+                <div class=" pull-left  refresh">
+                    <a  ng-click="func.hiddenRelationsList()" class="getAgain"   >
+                        <i  class="fa fa-remove"  >
+                            <md-tooltip  md-direction="bottom"  style="z-index:1000 !important">
+                                بستن
+                            </md-tooltip>
+                        </i>
+                    </a>
+                </div>
+
+                <div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-thumb-tack  pinToState"
+                            ng-click="func.pinToLocationRelation();"
+                            ng-class="{'rotate-20' : !data.relationsPushed , 'rotate-0':data.relationsPushed}"
+                    >
+                        <md-tooltip  md-direction="top">
+                        الصاق به صفحه
+                    </md-tooltip>
+                    </span>
+                </div>
+
+                <div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-trash "
+                            ng-click="func.removeRelation();"
+                    >
+                        <md-tooltip  md-direction="top">
+                       حذف روابط
+                    </md-tooltip>
+                    </span>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 showRelations-side"  style="margin: 1px; padding: 3px;">
+
+            <div class="row form-group" style="height: calc(100vh - 150px); overflow: hidden;margin: 2px 5px ! important;">
+
+
+                <div class="row form-group col-sm-12" style="height:70px;border-bottom: 1px solid;padding:0px;">
+
+                    <div class="alert-relationViewer" ng-if="data.relationStorage.header != null">
+
+                        <span class="fa fa-trash" style="cursor: pointer;width: 15px; padding: 2px;" ng-click="func.removeHeaderRelationItem()" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                      حذف رابطه {{value.name}}
+                            </md-tooltip>
+                        </span>
+
+                        <img src="{{data.relationStorage.header.thumbnailSrc}}" style="height:50px;width:auto;max-width:50px;" />
+
+                        <span   class="name" ng-bind="data.relationStorage.header.name | minifyText : 20 : 10 : 9" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                     {{data.relationStorage.header.name}}
+                            </md-tooltip>
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+                <div class="row form-group col-sm-12"  style="height:calc(100% - 70px);overflow-y: auto;overflow-x:hidden;border-bottom: 1px solid;padding:0px;">
+
+                    <div style="margin: 4px 1px;" class="alert-relationViewer" ng-repeat="(key, value) in data.relationStorage.footers">
+
+
+                        <span class="fa fa-trash" style="cursor: pointer;width: 15px; padding: 2px;" ng-click="func.removeRelationItem(key)" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                      حذف رابطه {{value.name}}
+                            </md-tooltip>
+                        </span>
+
+                        <img src="{{value.thumbnailSrc}}" style="height:50px;width:auto;max-width:50px;" />
+
+                        <span style="width: calc(100% - 180px);"  class="name" ng-bind="value.name | minifyText : 15 : 10 : 5" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                     {{value.name}}
+                            </md-tooltip>
+                        </span>
+
+                        <md-select
+                                md-on-open="func.getRelationsList()"
+                                class="md-block  pull-left"
+                                placeholder="انتخاب رابطه"
+                                ng-model="value.relation"
+                                style="width: 120px; margin-top: 8px;">
+                            <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                            <md-option ng-value="relation" ng-repeat="relation in data.relations">{{relation.title}}</md-option>
+                        </md-select>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-12 row form-group desktop-metadata"  >
+                <style>
+                    .desktop-metadata{}
+
+                    .desktop-metadata #success-occure{
+                        border-radius: 0px ! important;
+                        transition-duration: 0.5s;
+                        transition-property: background-color,color;
+                        transition-timing-function: ease-in;
+                    }
+                    .desktop-metadata #success-occure:hover{
+                        box-shadow  :  0 0 10px rgba(35,173,255,1);
+                        background-color : rgba(35,173,255,1);
+                        color : white;
+                    }
+                    .desktop-metadata #success-occure md-icon{
+                        padding-left: 5px !important;
+                        border-left: 1px solid rgba(35,173,255,1);
+                    }
+                    .desktop-metadata #success-occure:hover md-icon{
+                        color : white;
+                        border-left: 1px solid white !important;
+                    }
+
+                    .desktop-metadata  #error-occure{
+                        border-radius: 0px ! important;
+                        transition-duration: 0.5s;
+                        transition-property: background-color,color;
+                        transition-timing-function: ease-in;
+                    }
+                    .desktop-metadata  #error-occure:hover{
+                        box-shadow  :  0 0 10px rgba(255,134,29,1);
+                        background-color : rgba(255,134,29,1);
+                        color : white;
+                    }
+                    .desktop-metadata  #error-occure md-icon{
+                        padding-left: 5px !important;
+                        border-left: 1px solid rgba(255,134,29,1);
+                    }
+                    .desktop-metadata  #error-occure:hover md-icon{
+                        color : white;
+                        border-left: 1px solid white !important;
+                    }
+                </style>
+                <section layout="row" layout-sm="column" layout-align="center center" >
+
+                    <md-button id="success-occure"     class="md-raised" ng-click="func.addRelationsToserver()" >
+                        <md-icon md-font-icon="fa faplus"></md-icon>
+                        <span > ایجاد رابطه</span>
+                    </md-button>
+                </section>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <div
+            ng-show="data.showSelectedResult"
+            id="selectedResultViewer"
+            style="left:4%;"
+    >
+        <div class="sideLeft">
+
+            <div class="zonesHeader">
+                <span >لیست انتخابی</span>
+
+                <div class=" pull-left  refresh">
+                    <a  ng-click="func.hiddenSelectedResultList()" class="getAgain"   >
+                        <i  class="fa fa-remove"  >
+                            <md-tooltip  md-direction="bottom"  style="z-index:1000 !important">
+                                بستن
+                            </md-tooltip>
+                        </i>
+                    </a>
+                </div>
+
+                <div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-thumb-tack  pinToState"
+                            ng-click="func.pinToSelectedResult();"
+                            ng-class="{'rotate-20' : !data.selectedResultPushed , 'rotate-0':data.selectedResultPushed}"
+                    >
+                        <md-tooltip  md-direction="top">
+                        الصاق به صفحه
+                    </md-tooltip>
+                    </span>
+                </div>
+
+                <div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-trash "
+                            ng-click="func.removeSelectedResult();"
+                    >
+                        <md-tooltip  md-direction="top">
+                       حذف عناصر انتخابی
+                    </md-tooltip>
+                    </span>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 showRelations-side"  style="margin: 1px; padding: 3px;">
+
+            <div class="row form-group" style="height: calc(100vh - 150px); overflow: hidden;margin: 2px 5px ! important;">
+
+                <div class="row form-group col-sm-12"  style="height:95%;overflow-y: auto;overflow-x:hidden;border-bottom: 1px solid;padding:0px;">
+
+                    <div style="margin: 4px 1px;" class="alert-relationViewer" ng-repeat="(key, value) in data.selectedResultStorage">
+
+
+                        <span class="fa fa-trash" style="cursor: pointer;width: 15px; padding: 2px;" ng-click="func.removeSelectedResultItem(key)" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                      حذف آیتم {{value.name}}
+                            </md-tooltip>
+                        </span>
+
+                        <img src="{{value.thumbnailSrc}}" style="height:50px;width:auto;max-width:50px;" />
+
+                        <span style="width: calc(100% - 100px);"  class="name" ng-bind="value.name | minifyText : 15 : 10 : 5" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                     {{value.name}}
+                            </md-tooltip>
+                        </span>
+
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-12 row form-group desktop-metadata"  >
+                <style>
+                    .desktop-metadata{}
+
+                    .desktop-metadata #success-occure{
+                        border-radius: 0px ! important;
+                        transition-duration: 0.5s;
+                        transition-property: background-color,color;
+                        transition-timing-function: ease-in;
+                    }
+                    .desktop-metadata #success-occure:hover{
+                        box-shadow  :  0 0 10px rgba(35,173,255,1);
+                        background-color : rgba(35,173,255,1);
+                        color : white;
+                    }
+                    .desktop-metadata #success-occure md-icon{
+                        padding-left: 5px !important;
+                        border-left: 1px solid rgba(35,173,255,1);
+                    }
+                    .desktop-metadata #success-occure:hover md-icon{
+                        color : white;
+                        border-left: 1px solid white !important;
+                    }
+
+                    .desktop-metadata  #error-occure{
+                        border-radius: 0px ! important;
+                        transition-duration: 0.5s;
+                        transition-property: background-color,color;
+                        transition-timing-function: ease-in;
+                    }
+                    .desktop-metadata  #error-occure:hover{
+                        box-shadow  :  0 0 10px rgba(255,134,29,1);
+                        background-color : rgba(255,134,29,1);
+                        color : white;
+                    }
+                    .desktop-metadata  #error-occure md-icon{
+                        padding-left: 5px !important;
+                        border-left: 1px solid rgba(255,134,29,1);
+                    }
+                    .desktop-metadata  #error-occure:hover md-icon{
+                        color : white;
+                        border-left: 1px solid white !important;
+                    }
+                </style>
+                <section layout="row" layout-sm="column" layout-align="center center" >
+
+                    <md-button id="success-occure"     class="md-raised" ng-click="func.addRelationsToserver()" >
+                        <md-icon md-font-icon="fa fa-plus"></md-icon>
+                        <span >اعمال</span>
+                    </md-button>
+                </section>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <div
+            ng-show="data.showClipBoardResults"
+            id="clipboardResultViewer"
+            style="left:4%;"
+    >
+        <div class="sideLeft">
+
+            <div class="zonesHeader">
+                <span >حافظه موقت</span>
+
+                <div class=" pull-left  refresh">
+                    <a  ng-click="func.hiddenClipboardResultList()" class="getAgain"   >
+                        <i  class="fa fa-remove"  >
+                            <md-tooltip  md-direction="bottom"  style="z-index:1000 !important">
+                                بستن
+                            </md-tooltip>
+                        </i>
+                    </a>
+                </div>
+
+                <div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-thumb-tack  pinToState"
+                            ng-click="func.pinToClipboardResult();"
+
+                            ng-class="{'rotate-20' : !data.clipBoardResultPushed , 'rotate-0':data.clipBoardResultPushed}"
+                    >
+                        <md-tooltip  md-direction="top">
+                        الصاق به صفحه
+                    </md-tooltip>
+                    </span>
+                </div>
+
+                <div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-trash "
+                            ng-click="func.removeAllClipboards();"
+                    >
+                        <md-tooltip  md-direction="top">
+                       حذف عناصر انتخابی
+                    </md-tooltip>
+                    </span>
+                </div>
+				
+				<div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-object-ungroup "
+                            ng-click="func.compareDocs();"
+                    >
+                        <md-tooltip  md-direction="top">
+                       مقایسه اسناد
+                    </md-tooltip>
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 showClipboard-side "  style="margin: 1px; padding: 3px;">
+
+            <div class="row form-group" style="height: calc(100vh - 100px); overflow: hidden;margin: 2px 5px ! important;">
+
+                <div class="row form-group col-sm-12"  style="height:95%;overflow-y: auto;overflow-x:hidden;">
+
+                    <!--<style>
+                        .showClipboard-side div.image-viewer{
+                            margin:2px !important;
+                            background-size: cover !important;
+                            float: left !important;
+                            position: relative !important;
+                            text-align: center !important;
+                            width: 120px !important;
+                            height:80px !important;
+                        }
+
+                        .showClipboard-side div.image-viewer  span.image-name{
+                            position: relative !important;
+                            direction: ltr !important;
+                            top: 60px !important;
+                            text-overflow: ellipsis !important;
+                            float: left !important;
+                            white-space: nowrap !important;
+                            overflow: hidden !important;
+                            width: 100% !important;
+                            padding: 0px 5px !important;
+                            margin: 0px !important;
+                            /*background-color: rgba(0, 0, 0, 0.3) !important;*/
+                            color: white !important;
+                        }
+
+                        .showClipboard-side div.image-viewer div.send-process{
+                            float: left !important;
+                            left: 0px !important;
+                            z-index: 100 !important;
+                            position: absolute !important;
+                            opacity: 0.8 !important;
+                            -webkit-filter: blur(6px) !important;
+                            -moz-filter: blur(6px) !important;
+                            -o-filter: blur(6px) !important;
+                            -ms-filter: blur(6px) !important;
+                            filter: blur(6px) !important;
+                            background-color: rgba(0, 0, 0, 0.3) !important;
+                            height: 80px !important;
+                        }
+
+                        .showClipboard-side div.image-viewer div.send-viewer{
+                            height: 80px !important;
+                            width: 100% !important;
+                            float: left !important;
+                            left: 0px !important;
+                            z-index: 101 !important;
+                            position: absolute !important;
+                            background-color: transparent !important;
+                            text-align: center !important;
+                            vertical-align: middle !important;
+                            padding-top: 3px !important;
+                        }
+                        .showClipboard-side div.image-viewer div.send-nav{
+                            height: 80px !important;
+                            float: left !important;
+                            left: 0px !important;
+                            z-index: 103 !important;
+                            position: absolute !important;
+                            text-align: center !important;
+                            background-color: rgba(0, 0, 0, 0.3) !important;
+                            width: 20px !important;
+                            background: linear-gradient(to right, rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.1)) !important;
+                        }
+
+                        .showClipboard-side div.image-viewer div.send-digitalsign{
+                            height: 80px !important;
+                            float: right !important;
+                            z-index: 103 !important;
+                            position: absolute !important;
+                            background-color: transparent !important;
+                            width: 25px !important;
+                            text-align: center !important;
+                        }
+                    </style>
+
+                    <div  ng-repeat="(key, value) in data.selectedClipBoardStorage"   class="image-viewer"  style="background-image: url({{value.thumbnailSrc}})">
+
+                        <span  ng-bind="name"  class="image-name">
+                            <md-tooltip  md-direction="top" style="z-index:100000;">{{name}}</md-tooltip>
+                        </span>
+                        <div  ng-if="file.status == 'Sending'"  class="send-process" style="width:{{file.Upload.percent}}%;"></div>
+                        <div  ng-if="file.status == 'Sending'"  class="send-viewer">
+                            <span  style="color: white;">{{file.Upload.percent|pNumber}}%</span>
+                            <i style="color:white;" class="fa fa-spinner fa-pulse fa-3x- fa-fw"  ></i>
+                        </div>
+                        <div  class="send-nav">
+                            <i class="fa fa-trash fa-fw"  style="color:white;cursor: pointer;"  ng-click="func.onDeleteItemClick(name);"  ng-if="file.status != 'Success' &&  file.status != 'Sending' ">
+                                <md-tooltip  md-direction="top" style="z-index:100000;">
+                                    حذف
+                                </md-tooltip>
+                            </i>
+                            <i class="fa fa-refresh fa-fw"  style="color:white;cursor: pointer;"  ng-click="func.uploadAgain(name);"  ng-if="file.status == 'Error' ">
+                                <md-tooltip  md-direction="top" style="z-index:100000;">
+                                    تلاش دوباره
+                                </md-tooltip>
+                            </i>
+                            <i class="fa fa-check  fa-fw"  style="color:white;cursor: pointer;"  ng-if="file.status == 'Success'">
+                                <md-tooltip  md-direction="top" style="z-index:100000;">
+                                    ارسال شده
+                                </md-tooltip>
+                            </i>
+                            <i class="fa fa-remove fa-fw"  style="color:white;cursor: pointer;" ng-click="func.onCancelFileUpload(name);"  ng-if="file.status == 'Sending' ">
+                                <md-tooltip  md-direction="top" style="z-index:100000;">
+                                    انصراف
+                                </md-tooltip>
+                            </i>
+                        </div>
+                        <div ng-if="data.prfDigitalSignPermit"  class="send-digitalsign">
+                        <span>
+                            <md-checkbox class="pull-right" ng-disabled="file.startUpload || file.status == 'Success'" ng-model="upload.isSelect" style=" margin-right: 3px;left: 0; opacity: 1; position: relative;">
+                            </md-checkbox>
+                            <md-tooltip  md-direction="top" style="z-index:100000;">
+                                    امضا دیجیتال
+                            </md-tooltip>
+                        </span>
+                        </div>
+                    </div>-->
+                    <div ng-if="key != 'TYPE'" style="margin: 4px 1px;" class="alert-relationViewer" ng-repeat="(key, value) in data.selectedClipBoardStorage">
+
+
+                        <span class="fa fa-trash  pull-right" style="margin-right: -15px;position:absolute;cursor: pointer;width: 15px; padding: 2px;" ng-click="func.removeClipboardResultItem(key)" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                      حذف آیتم {{value.name}}
+                            </md-tooltip>
+                        </span>
+
+                        <img src="{{value.thumbnailSrc}}" style="height:65px;width:auto;max-width:65px;" />
+
+                        <span style="width: calc(100% - 100px);"  class="row name" ng-bind="value.name |minifyText:15:10:5" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                     {{value.name}}
+                            </md-tooltip>
+                        </span>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+</div>

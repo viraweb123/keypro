@@ -1,0 +1,141 @@
+<div  class="tabel-body">
+
+
+    <div class="body-view" >
+
+        <table class="table table-bordered- table-responsive table-striped table-hover- table-condensed  show-hide-file" >
+            <caption>
+                <span  class="pull-right" ng-bind="'dashboard.zr.general_last_week_top_modified_documents'|translate"></span>
+            </caption>
+            <thead>
+            <th class="position-center" >
+                <span style="padding: 0px 15px ! important;" ng-bind="'administration.zr.row'|translate"></span>
+            </th>
+            <th class="position-center" >
+                <a  href="javascript:void(0)" ng-click=" data.sort.type = 'document.title'; data.sort.ascDesc = !data.sort.ascDesc">
+                    <span ng-show="data.sort.type == 'document.title' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                    <span ng-show="data.sort.type == 'document.title' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                    <span style="padding: 0px 15px ! important;" >نام</span>
+                </a>
+            </th>
+            <th class="position-center" >
+                <a  href="javascript:void(0)" ng-click=" data.sort.type = 'document.author'; data.sort.ascDesc = !data.sort.ascDesc">
+                    <span ng-show="data.sort.type == 'document.author' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                    <span ng-show="data.sort.type == 'document.author' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                    <span style="padding: 0px 15px ! important;" >مالک</span>
+                </a>
+            </th>
+            <th class="position-center" >
+                <a  href="javascript:void(0)" ng-click=" data.sort.type = 'document.description'; data.sort.ascDesc = !data.sort.ascDesc">
+                    <span ng-show="data.sort.type == 'document.description' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                    <span ng-show="data.sort.type == 'document.description' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                    <span style="padding: 0px 15px ! important;" ng-bind="'dashboard.zr.list.description'|translate"></span>
+                </a>
+            </th>
+            <th class="position-center" >
+                <a  href="javascript:void(0)" ng-click=" data.sort.type = 'document.created'; data.sort.ascDesc = !data.sort.ascDesc">
+                    <span ng-show="data.sort.type == 'document.created' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                    <span ng-show="data.sort.type == 'document.created' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                    <span style="padding: 0px 15px ! important;" ng-bind="'desktop.zl.property_create_date'|translate"></span>
+                </a>
+            </th>
+            <th class="position-center">
+                <a  href="javascript:void(0)" ng-click=" data.sort.type = 'document.lastModified'; data.sort.ascDesc = !data.sort.ascDesc">
+                    <span ng-show="data.sort.type == 'document.lastModified' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                    <span ng-show="data.sort.type == 'document.lastModified' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                    <span  style="padding: 0px 15px ! important;" ng-bind="'dashboard.zr.list.last_modified'|translate"></span>
+                </a>
+            </th>
+            <th class="position-center" >
+                <a  href="javascript:void(0)" ng-click=" data.sort.type = 'src'; data.sort.ascDesc = !data.sort.ascDesc">
+                    <span ng-show="data.sort.type == 'src' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                    <span ng-show="data.sort.type == 'src' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                    <span style="padding: 0px 15px ! important;" ng-bind="'dashboard.zr.list.file_preview'|translate"></span>
+                </a>
+            </th>
+            <th class="position-center" >
+                <a  href="javascript:void(0)" ng-click=" data.sort.type = 'document.actualVersion.size'; data.sort.ascDesc = !data.sort.ascDesc">
+                    <span ng-show="data.sort.type == 'document.actualVersion.size' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                    <span ng-show="data.sort.type == 'document.actualVersion.size' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                    <span style="padding: 0px 15px ! important;" ng-bind="'desktop.zl.files_size'|translate"></span>
+                </a>
+            </th>
+            <th class="position-center" >
+                <a  href="javascript:void(0)" ng-click=" data.sort.type = 'document.actualVersion.name'; data.sort.ascDesc = !data.sort.ascDesc">
+                    <span ng-show="data.sort.type == 'document.actualVersion.name' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                    <span ng-show="data.sort.type == 'document.actualVersion.name' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                    <span style="padding: 0px 15px ! important;" ng-bind="'desktop.zl.files_version'|translate"></span>
+                </a>
+            </th>
+            </thead>
+            <tbody>
+            <tr
+                    ng-repeat="item in data.list | orderBy:data.sort.type:data.sort.ascDesc"
+                    class="dashboard-select-table-tr"
+                    ng-class="{'rowOdd':$even}"
+                    ng-click = "func.go2Desktop(item)"
+
+            >
+
+                <td class="position-center">
+                    <span  ng-bind="$index+1|en2faNum"></span>
+                </td>
+                <td class="position-center">
+                    <span
+                            style="direction: ltr;float: left;word-break: break-all; word-wrap: break-word;"
+                            ng-bind="item.document.title| minifyText : 35 : 20 : 10 | en2faNum"></span>
+                    <md-tooltip  md-direction="top">
+                        {{ item.document.title }}
+                    </md-tooltip>
+                </td>
+                <td class="position-center">
+                    <span style="word-break: break-all; word-wrap: break-word;" ng-bind="item.document.author|en2faNum"></span>
+                </td>
+                <td class="position-center">
+                    <span style="word-break: break-all; word-wrap: break-word;" ng-bind="item.document.description|en2faNum"></span>
+                </td>
+                <td class="position-center">
+                    <span ng-bind="item.document.created|persianDate:'yyyy/MM/dd'|en2faNum"></span>
+                </td>
+                <td class="position-center">
+                    <span ng-bind="item.document.lastModified|persianDate:'yyyy/MM/dd'|en2faNum"></span>
+                </td>
+                <td  class="position-center">
+                    <img
+                            style="cursor: pointer; border:1px solid;"
+                            src="{{item.src}}"/>
+                </td>
+                <td class="position-center">
+                    <span style="direction: ltr; float: right; margin-right: 35%;"  ng-bind="item.document.actualVersion.size|fileSize|en2faNum"></span>
+                </td>
+                <td class="position-center">
+                    <span  ng-bind="item.document.actualVersion.name|en2faNum"></span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="not-result">
+
+            <div class="col-sm-12"  style="padding-bottom: 10px;">
+                <span   ng-click="func.todo()">
+                    <i class="dashboard-refresh fa fa-refresh">
+                        <md-tooltip  md-direction="top">
+                            امتحان دوباره
+                        </md-tooltip>
+                    </i>
+                </span>
+            </div>
+            <div class="col-sm-12">
+                <span   style="cursor: pointer">
+                    <i class="dashboard-ban fa fa-ban">
+                    </i>
+                </span>
+                <span style="color: #893247; direction: ltr; font-size: 20px;"  ng-bind="'desktop.zm.create_doc_rel_modal_no_result_found'|translate"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

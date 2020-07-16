@@ -1,0 +1,895 @@
+@media print
+{
+    body *
+    {
+        display: none !important;
+    }
+}
+
+/** {
+    box-sizing: border-box !important;
+}*/
+
+
+/*todo remove yellow background in chrome browser*/
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+
+input[type="text"],input[type="number"],input[type="email"],input[type="url"],input[type="search"]{
+    direction: rtl !important;
+    unicode-bidi: -moz-isolate !important;
+    unicode-bidi: embed;
+}
+
+a, u {
+    text-decoration: none !important;
+}
+
+a:active, a:focus {
+    outline: none !important;
+}
+
+li:active, li:focus {
+    outline: none !important;
+}
+
+
+
+div:active, div:focus {
+    outline: none !important;
+}
+
+span:active,span:focus {
+    outline: none !important;
+}
+
+i:active,i:focus {
+    outline: none !important;
+}
+
+div:active, div:focus {
+    outline: none !important;
+}
+
+img:active, img:focus {
+    outline: none !important;
+}
+
+.darkdivider {
+    background-color: #6e6e6e;
+    height: 1px;
+    margin: auto;
+    width: 90%;
+}
+
+/* show auto complate in modals with z-index grath than 1050 */
+.md-autocomplete-suggestions-container{
+    z-index:500000 !important; /* any number of choice > 1050*/
+}
+
+/*todo change location */
+md-autocomplete-wrap md-progress-linear.md-inline {
+    top:50px !important;
+}
+
+
+/*todo change options in auto complate background */
+ul.md-autocomplete-suggestions  li:hover{
+    background-color : #5d9ce9 !important;
+    color : white !important;
+}
+
+md-tooltip {
+    /*background-color: rgba(255,255,255,0.7) !important;*/
+    color: white !important;
+    border-radius: 0px !important;
+}
+
+
+/*todo change chrome scroll style */
+::-webkit-scrollbar-track-piece{
+    background-color:#fff;
+    -webkit-border-radius:0;
+}
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+::-webkit-scrollbar-thumb{
+    height:50px;
+    background-color:#999;
+    -webkit-border-radius:4px;
+    outline:2px solid #fff;
+    outline-offset:-2px;
+    border: 2px solid #fff;
+}
+::-webkit-scrollbar-thumb:hover{
+    height:50px;
+    background-color:#9f9f9f;
+    -webkit-border-radius:4px;
+}
+
+
+
+table td{
+    border-radius: 0px !important;
+}
+
+
+
+.brithness-filter {
+    filter: brightness(60%);
+    -moz-filter: brightness(60%);
+    -webkit-filter: brightness(60%);
+}
+
+[dir="ltr"], [dir="rtl"] {
+    unicode-bidi: -moz-isolate !important;
+    text-align: start !important;
+}
+
+ul.dropdown-menu{
+    /*font-size : 8px;*/
+    font-size : 5px;
+}
+
+ul.datepicker-popup li table td,th{
+    padding : 1px !important;
+}
+
+ul.datepicker-popup li table    .btn, .btn-large, .btn-flat{
+    height: 20px  !important;
+    line-height: 20px !important;
+    padding : 0px !important;
+}
+
+ul.datepicker-popup li span.btn-group button {
+    padding : 2px !important;
+    margin  : 2px !important;
+}
+
+
+md-input-container{
+    margin : 5px 1px !important;
+    margin-bottom: 1px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+md-input-container md-icon ~ .md-input{
+    padding-right: 30px !important;
+    width : 88% !important;
+}
+
+md-input-container md-select{
+   padding-top : 8px !important;
+   padding-bottom: 8px !important;
+}
+
+.modal{
+    /*width:90% !important;*/
+    width : 100% !important;
+    padding : 0px 4.5% !important;
+    overflow-y : auto !important;
+}
+
+/*.modal.fullWidth {
+    width:90% !important;
+}*/
+
+.modal .modal-content{
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 8px;
+    border-radius: 0px !important;
+}
+
+md-input-container label{
+    margin-bottom: -8px !important;
+}
+md-input-container md-select{
+    margin-bottom: -8px !important;
+}
+
+.row{
+    margin : 10px auto !important;
+}
+
+md-input-container  input{
+    margin-bottom:0px !important;
+}
+/* TODO -------------------------------------------------------- Fonts --------------------------------------------   */
+
+@font-face {
+    font-family: IRANSans-web-bold;
+    src: url(./../../fonts/iransans/IRANSans-Bold-web.eot);
+    src: url(./../../fonts/iransans/IRANSans-Bold-web.eot?#iefix) format("eot"),url(./../../fonts/iransans/IRANSans-Bold-web.woff) format("woff"),url(./../../fonts/iransans/IRANSans-Bold-web.ttf) format("ttf");
+    font-weight: 700
+}
+@font-face {
+    font-family: IRANSans-web-medium;
+    src: url(./../../fonts/iransans/IRANSans-Medium-web.eot);
+    src: url(./../../fonts/iransans/IRANSans-Medium-web.eot?#iefix) format("eot"),url(./../../fonts/iransans/IRANSans-Medium-web.woff) format("woff"),url(./../../fonts/iransans/IRANSans-Medium-web.ttf) format("ttf");
+    font-weight: 500
+}
+@font-face {
+    font-family: IRANSans-web-light;
+    src: url(./../../fonts/iransans/IRANSans-Light-web.eot);
+    src: url(./../../fonts/iransans/IRANSans-Light-web.eot?#iefix) format("eot"),url(./../../fonts/iransans/IRANSans-Light-web.woff) format("woff"),url(./../../fonts/iransans/IRANSans-Light-web.ttf) format("ttf");
+    font-weight: 300;
+    font-size : 20px;
+}
+@font-face {
+    font-family: IRANSans-web;
+    src: url(./../../fonts/iransans/IRANSans-web.eot);
+    src: url(./../../fonts/iransans/IRANSans-web.eot?#iefix) format("eot"),url(./../../fonts/iransans/IRANSans-web.woff) format("woff"),url(./../../fonts/iransans/IRANSans-web.ttf) format("ttf");
+    font-weight: 400
+}
+body {
+    font-family: IRANSans-web-light !important;
+}
+
+.position-center{
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.modal-lg{
+    width : 100% !important;
+}
+
+md-switch{
+    left : 0px !important;
+    position: relative !important;
+    opacity: 1 !important;
+}
+
+/* TODO --------------------------------------------------------  Menues -------------------------------------------   */
+ul i span{
+    font-size:13px !important;
+}
+
+.justifyText {
+    text-justify: inter-word !important;
+    overflow-wrap: break-word;
+    text-align: justify !important;
+    word-break: normal;
+}
+
+.highlightedText {
+    background: #7ab7fe;
+    border-radius: 1px;
+    direction: ltr;
+    text-align: right;
+    color : white;
+}
+.notvisibilityElement{
+    display : none;
+    opacity : 0;
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    transition-timing-function: ease-in;
+}
+.visibilityElement{
+    display : inline  !important;
+    opacity : 1 !important;
+}
+.md-select-menu-container.md-active{
+    z-index : 10000 !important;
+}
+md-input-container  label{
+    font-size:13px !important;
+}
+md-input-container  input{
+    font-size: 18px !important;
+    height: 45px !important;
+}
+
+@media screen and (min-width: 650px) {
+
+    .Main{
+        width : 100vw !important;
+        height:100vh !important;
+        overflow : hidden !important;
+        padding:0px !important;
+        margin : 0px !important;
+    }
+    .main-content{
+        width : 100vw !important;
+        height:100vh !important;
+        overflow : hidden !important;
+        padding:0px !important;
+        margin : 0px !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Header{
+        width : 100vw !important;
+        height:50px !important;
+        overflow : hidden !important;
+        padding:0px !important;
+        margin : 0px !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Header .Info{
+        width : 4% !important;
+        float : right !important;
+        height : 100% !important;
+        background-color : #435678;
+        text-align: center;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Header .User{
+        width : 20% !important;
+        float : right !important;
+        height : 100% !important;
+        background-color : #E75753;
+        text-align: center;
+        padding: 6px !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Header .wizard-icon{
+        width : 4% !important;
+        float : left !important;
+        height : 100% !important;
+        background-color : #5d9ce9;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+        text-align: center !important;
+    }
+    .Main  .main-content  .Header .Icon{
+        width : 4% !important;
+        float : left !important;
+        height : 100% !important;
+        background-color : #435678;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .Header .Navigation{
+        width : 68% !important;
+        float : right !important;
+        height : 100% !important;
+        background-color : #456789;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body{
+        width : 100vw !important;
+        height:  calc(100% - 50px); !important;
+        overflow : hidden !important;
+        padding:0px !important;
+        margin:  0px !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+        border-top: 1px solid;
+    }
+    .Main  .main-content  .Body div.SR{
+        width : 4% !important;
+        float : right !important;
+        height : 100% !important;
+        background-color : #F0F0F0;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body  div.ZR{
+        width : 0.5% !important;
+        float : right !important;
+        height : 100% !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body  div.ZR div.N{
+        width : 100% !important;
+        float : left !important;
+        height : 100% !important;
+    }
+    .Main  .main-content  .Body   div.ZR div.D{
+        width : 0% !important;
+        float : right !important;
+        height : 100% !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.ZRO{
+        width : 20% !important;
+        float : right !important;
+        height : 100% !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.ZRO div.N{
+        width : 2.5% !important;
+        float : left !important;
+        height : 100% !important;
+    }
+    .Main  .main-content  .Body   div.ZRO div.D{
+        width : 97.5% !important;
+        float : right !important;
+        height : 100% !important;
+        background-color : #F0F0F0;
+        border-right:1px solid;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.C{
+        height : 100% !important;
+        background-color : #435678;
+        float : right;
+    }
+    .Main  .main-content  .Body   div.ZR ~ div.ZL ~ div.C{
+        width : 91% !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.ZRO ~ div.ZL ~ div.C{
+        width : 71.5% !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+        border : 1px solid #000;
+    }
+    .Main  .main-content  .Body   div.ZR ~ div.ZLO ~ div.C{
+        width : 71.5% !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.ZRO ~ div.ZLO ~ div.C{
+        width : 52% !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.SL{
+        width : 4% !important;
+        float : left !important;
+        height : 100% !important;
+        background-color : #F0F0F0;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.ZL{
+        width : 0.5% !important;
+        float : left !important;
+        height : 100% !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.ZL div.N{
+        width : 100% !important;
+        float : right !important;
+        height : 100% !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.ZL div.D{
+        width : 0% !important;
+        float : left !important;
+        height : 100% !important;
+        border-right:1px solid;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.ZLO{
+        width : 20% !important;
+        float : left !important;
+        height : 100% !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.ZLO div.N{
+        width : 2.5% !important;
+        float : right !important;
+        height : 100% !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.ZLO div.D{
+        width : 97.5% !important;
+        float : left !important;
+        height : 100% !important;
+        background-color : #F0F0F0;
+        border-left:1px solid;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.CR{
+        height : 100% !important;
+        background-color : #435678;
+        float : right;
+    }
+    .Main  .main-content  .Body   div.ZR  ~ div.CR{
+        width : 95.5% !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.ZRO  ~ div.CR{
+        width : 76% !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.CRZ{
+        height : 100% !important;
+        background-color : #435678;
+        float : right;
+        width : 76% !important;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .Main  .main-content  .Body   div.ZRJ {
+        width : 24% !important;
+        float : right !important;
+        height : 100% !important;
+        background-color : #F0F0F0;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .vertical-buttons{
+        width: 100%;
+        text-align: center;
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+    .font-slide{
+        font-size:16px !important;
+        margin-top: 4px !important;
+    }
+    .opener-zone{
+        color: white;
+        cursor: pointer;
+        font-size: 10px;
+        margin-top: 48vh;
+        position: relative;
+        z-index: 100;
+
+        transition-duration: 0.5s;
+        transition-property: font-size;
+        transition-timing-function: ease-in;
+
+    }
+
+    .N:hover .opener-zone {
+        font-size: 20px;
+    }
+
+    .opener-zone-left{
+        /*left : 0px;*/
+        padding: 0px;
+
+        direction: ltr !important;
+        float: left;
+
+        background-color: transparent;
+        transition-duration: 0.5s;
+        transition-property:padding;
+        transition-timing-function: ease-in;
+    }
+    .N:hover .opener-zone-left{
+        /*left : 24px;*/
+        padding: 5px  5px 5px 5px;
+
+    }
+    .opener-zone-right{
+        /*right : 3px;*/
+        padding: 0px;
+        background-color: transparent;
+        transition-duration: 0.5s;
+        transition-property: padding;
+        transition-timing-function: ease-in;
+    }
+    .N:hover .opener-zone-right {
+        padding: 5px  10px 5px 5px;
+    }
+    .N:hover  .opener-zone-desktop{
+        background-color: #00ACC1;
+    }
+    .N:hover  .opener-zone-simple{
+        background-color:  #5d9ce9;
+    }
+    .N:hover  .opener-zone-advance{
+        background-color:  #5d9ce9;
+    }
+    .N:hover  .opener-zone-dashboard{
+        background-color:  #fbbb3d;
+    }
+    .N:hover  .opener-zone-administration{
+        background-color: #ed4356;
+    }
+
+    .opener-zone-center{
+        color: white;
+        cursor: pointer;
+        font-size: 11px;
+        margin-right: 50%;
+        position: relative;
+        z-index: 100;
+        top : -5px
+    }
+
+
+
+
+    .Main  .main-content  .Body  div.D  div.parent{
+        height: calc(100vh - 150px);
+        overflow: auto;
+        display: -moz-box;
+        display: -webkit-box;
+        width: 100%;
+        margin-top: 10px;
+       /* direction: ltr;*/
+
+    }
+    .Main  .main-content  .Body  div.D  div.parent div.child{
+        direction: rtl  !important;
+    }
+
+
+    .toast{
+       /* color : black   !important;*/
+    }
+    .toast-info{
+        /*background-color: #2f96b4  !important;*/
+        border:1px solid #2f96b4 !important;
+        background-color: white  !important;
+        border-right: 5px solid #2f96b4  !important;
+        border-radius: 0px !important;
+        font-size : 13px  !important;
+        color : #2f96b4   !important;
+    }
+    .toast-warning{
+        /*background-color: #f89406  !important;*/
+        border:1px solid #f89406 !important;
+        background-color: white  !important;
+        border-right: 5px solid #f89406  !important;
+        border-radius: 0px !important;
+        font-size : 13px  !important;
+        color : #f89406   !important;
+    }
+    .toast-error{
+        /*background-color: #bd362f  !important;*/
+        border:1px solid #bd362f !important;
+        background-color: white  !important;
+        border-right: 5px solid #bd362f  !important;
+        border-radius: 0px !important;
+        font-size : 13px  !important;
+        color : #bd362f   !important;
+    }
+    .toast-success{
+        /*background-color: #51a351  !important;*/
+        border:1px solid #51a351 !important;
+        background-color: white  !important;
+        border-right: 5px solid #51a351  !important;
+        border-radius: 0px !important;
+        font-size : 13px  !important;
+        color : #51a351   !important;
+    }
+    .toast-message{
+        word-wrap: break-word;
+        word-break: keep-all;
+        width: 100% !important;
+    }
+    .toast-title {
+        width: 0% !important;
+    }
+     #toast-container{
+        bottom: 10% !important;
+        top: auto !important;
+
+    }
+    #show-waiting-get-rest-from-server-id ~ #toast-container {
+        left: inherit !important;
+    }
+
+
+    #toast-container > .toast {
+        background-image: none !important;
+        position: relative;
+        opacity: 0.97 !important;
+        word-break: normal  !important;
+    }
+    #toast-container > div{
+        box-shadow: none !important;
+        padding: 15px !important;
+    }
+    #toast-container > div:hover{
+        box-shadow: none !important;
+    }
+    #toast-container > .toast:before {
+        font-family: FontAwesome;
+        font-size: 24px;
+        line-height: 18px;
+        padding-left: 10px;
+    }
+    }
+    #toast-container > .toast-info:before{
+        content: "\f129";
+        color: #2f96b4;
+    }
+    #toast-container > .toast-warning:before{
+        content: "\f071";
+        color : #f89406;
+    }
+    #toast-container > .toast-error:before{
+        content: "\f05e";
+        color : #bd362f;
+    }
+    #toast-container > .toast-success:before{
+        content: "\f00c";
+        color : #51a351;
+    }
+
+}
+
+/*todo prevent to change style tree in chrome format */
+@media screen and (-webkit-min-device-pixel-ratio: 0){
+
+    .Main  .main-content  .Body  div.D  div.parent{
+        position: relative !important;
+    }
+    .Main  .main-content  .Body  div.D  div.parent div.child{
+        position: absolute !important;
+    }
+}
+
+/*todo show or hide navigation texts in different page size*/
+@media only screen and (min-width: 900px){
+    .showItem{
+        display: inline !important;
+    }
+    span.spanMainNavIcon{
+        text-align: center;
+        vertical-align: middle;
+        border-radius : 0px !important;
+        min-width:65px !important;
+        max-width:65px !important;
+    }
+    .navbar-button{
+        float : right;
+        height: 50px;
+        padding : 0px  5px 0px 5px;
+        text-align: center;
+        vertical-align: middle;
+        border-radius : 0px !important;
+        min-width:30px !important;
+        margin-top:0px !important;
+        margin-bottom:0px !important;
+    }
+    .navbar-button span {
+        margin-top: 15px;
+    }
+}
+@media only screen and (min-width: 650px) and (max-width: 899px){
+    .showItem{
+        display: none !important;
+    }
+    span.spanMainNavIcon{
+        text-align: center;
+        vertical-align: middle;
+        border-radius : 0px !important;
+        min-width:45px !important;
+        max-width:45px !important;
+    }
+    .navbar-button{
+        float : right;
+        height: 50px;
+        padding : 0px;
+        text-align: center;
+        vertical-align: middle;
+        border-radius : 0px !important;
+        min-width:45px !important;
+        max-width:45px !important;
+        margin:2px !important;
+
+    }
+    .navbar-button span {
+        margin-top: 15px;
+    }
+}
+
+/* todo prevent overRight bootstrap main colors */
+.btn-default {
+    background-color: #fff !important;
+    border-bottom-color: #ccc !important;
+    border-left-color: #ccc !important;
+    border-right-color: #ccc !important;
+    border-top-color: #ccc !important;
+    color: #333 !important;
+}
+.btn-success{
+    background-color: #5cb85c !important;
+    border-bottom-color: #4cae4c !important;
+    border-left-color: #4cae4c !important;
+    border-right-color: #4cae4c !important;
+    border-top-color: #4cae4c !important;
+    color: #fff !important;
+}
+.btn-info {
+    background-color: #5bc0de !important;
+    border-bottom-color: #46b8da !important;
+    border-left-color: #46b8da !important;
+    border-right-color: #46b8da !important;
+    border-top-color: #46b8da !important;
+    color: #fff !important;
+}
+.btn-warning {
+    background-color: #f0ad4e !important;
+    border-bottom-color: #eea236 !important;
+    border-left-color: #eea236 !important;
+    border-right-color: #eea236 !important;
+    border-top-color: #eea236 !important;
+    color: #fff !important;
+}
+.btn-danger {
+    background-color: #d9534f !important;
+    border-bottom-color: #d43f3a !important;
+    border-left-color: #d43f3a !important;
+    border-right-color: #d43f3a !important;
+    border-top-color: #d43f3a !important;
+    color: #fff !important;
+}
+
+
+.modal-open {
+    overflow-x : hidden !important;
+    position: relative !important;
+}
+
+/* todo change selected text in webpage */
+* ::-moz-selection {
+    color: white !important;
+    background:  #5d9ce9 !important;
+}
+* ::selection {
+    color: white !important;
+    background:  #5d9ce9 !important;
+}
+
+
+
+
+/* todo change selected options in webpage */
+md-option{
+    transition-duration: 0.5s;
+    transition-property: background-color,color;
+    transition-timing-function: ease-in;
+}
+md-option:hover{
+    background-color: #5d9ce9  !important;
+    color: white !important;
+}
+md-option:focus{
+    background-color: #c3d9ff   !important;
+    color: white !important;
+}

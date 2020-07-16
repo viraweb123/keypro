@@ -1,0 +1,39 @@
+<style>
+
+    .modal-directive{
+        height: 100vh;
+        width: 100vw;
+        background-color: transparent;
+    }
+
+    .modal-directive .modal-directive-sub{
+        height: 100vh;
+        width: 100vw;
+        z-index: 1000;
+        background-color: rgba(0,0,0,0.05);
+        -webkit-filter: blur(2px);
+        -moz-filter: blur(2px);
+        -o-filter: blur(2px);
+        -ms-filter: blur(2px);
+        filter: blur(2px);
+        opacity:0.6;
+    }
+
+    .modal-directive .modal-directive-main {
+        z-index: 1001;
+    }
+
+    .modal-directive .TOP23 {
+        height: 660vh;
+        width: 100vw;
+    }
+
+</style>
+<div class="modal-directive">
+    <div class="modal-directive-sub">
+
+    </div>
+    <div class="modal-directive-main {{data.modalClassType}}">
+
+    </div>
+</div>

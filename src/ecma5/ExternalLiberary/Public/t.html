@@ -1,0 +1,146 @@
+<!--todo ------------------------------- upload files state ------------------------------- -->
+<div class="col-sm-12 row form-group" ng-show="data.state == 'uploadFiles'"  data-multiple="true" ng-file-drop="func.addFiles($files)">
+
+
+    <div class="row form-group">
+        <div class="col-sm-12">
+
+
+            <section    layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button style="min-width:25px !important;" id="addFile"  class="md-raised pull-left" data-multiple="true"  ng-file-select="func.addFiles($files)">
+                    <md-icon  md-font-icon="fa fa-plus"></md-icon>
+                    <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                        افزودن فایل
+                    </md-tooltip>
+                </md-button>
+                <md-button style="min-width:25px !important;" id="uploadFile"  class="md-raised  pull-right" ng-click="func.uploadFiles()" ng-disabled="data.startUpload">
+                    <md-icon  md-font-icon="fa  fa-upload"></md-icon>
+                    <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                        {{'modal.desktop.upload'|translate}}
+                    </md-tooltip>
+                </md-button>
+                <!--<md-button style="min-width:25px !important;" id="nextStep"  class="md-raised  pull-left" ng-click="func.fillMetadata()">
+                    <md-icon  md-font-icon="fa fa-arrow-left"></md-icon>
+                    <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                        مرحله بعدی
+                    </md-tooltip>
+                </md-button>-->
+            </section>
+            <hr />
+
+        </div>
+        <style>
+            .checkbox-view{
+                width : 160px !important;
+                padding : 2px !important;
+                margin : 0px !important;
+                float : right;
+            }
+
+            span.refresh-view{
+                width : 20px !important;
+                padding : 2px;
+                float : left;
+            }
+
+            span.remove-view{
+                width : 20px !important;
+                padding : 2px;
+                float : left;
+            }
+
+            span.name-viewer{
+                padding : 2px;
+                float : right;
+            }
+
+            span.name-viewer-isSignPermit{
+                width :calc(100% - 200px) !important;
+            }
+            span.name-viewer-notSignPermit{
+                width :calc(100% - 100px) !important;
+            }
+        </style>
+
+        <div class="col-sm-12" style="margin-top: 10px; overflow-y: auto; max-height: 240px;"     >
+            <div class="col-sm-12 form-uploaded" ng-repeat="(name,file) in data.filesList">
+
+                <div
+                        ng-class="{'alert-success' : file.status == 'Success'}"
+                        class="alert  pull-left col-sm-12"
+                        style="padding: 20px 2px 5px 2px; margin: 5px 2px; border-radius: 0px ! important; min-height: 40px; border: 1px solid rgb(197, 197, 197);" >
+
+                    <div style="margin: 10px 0px;" layout="row" class="checkbox-view"  ng-if="data.prfDigitalSignPermit">
+
+                        <!--<md-checkbox
+                                ng-disabled="file.startUpload || file.status == 'Success'"
+                                class="pull-right"
+                                ng-model="upload.isSelect"
+                                style=" margin-right: 3px;left: 0; opacity: 1; position: relative;">
+                        </md-checkbox>-->
+                        <md-switch
+                                class="md-primary pull-left"
+                                ng-disabled="file.startUpload || file.status == 'Success'"
+                                ng-model="upload.isSelect"
+                                aria-label="امضا دیجیتال"
+                                style="margin-left: 5px;margin-top: 10px;opacity: 1; position: relative;width:140px;">
+                            امضا دیجیتال
+                        </md-switch>
+                    </div>
+                        <span
+                                style="pull-left cursor: pointer; color: rgb(229, 89, 0); top: 4px; font-size: 13px;"
+                                class="fa fa-refresh   refresh-view"
+                                ng-click="func.uploadAgain(name);"
+                                ng-show="file.status == 'Error' " >
+                                                                <md-tooltip  md-direction="top" style="z-index:100000;">
+                                        تلاش دوباره
+                                                                </md-tooltip>
+                        </span>
+                        <span
+                                ng-show="file.status != 'Success' "
+                                class="fa fa-remove remove-view"
+                                style="cursor: pointer; color: rgb(229, 89, 0);"
+                                ng-click="func.onDeleteItemClick(name);">
+                                                                <md-tooltip  md-direction="top" style="z-index:100000;">
+                                        حذف
+                                                                </md-tooltip>
+                        </span>
+                        <span
+                                class="{'name-viewer-isSignPermit':data.prfDigitalSignPermit,'name-viewer-notSignPermit':!data.prfDigitalSignPermit}"
+                                style="margin-top: 16px;word-wrap: break-word; word-break:break-all; text-align: justify;padding:5px;"
+                                class="control-label  name-viewer">
+                                                         <md-tooltip  md-direction="top"  style="z-index:100000;">
+                              {{name}}
+                                                        </md-tooltip>
+                                                            {{name}}
+                        </span><!-- 30?name.substr(0,28)+"...":name-->
+
+
+
+                    <div
+                            class="progress- row col-sm-12"
+                            style="position:relative"
+                            ng-show="data.startUpload && file.status == 'Sending' " >
+
+                        <md-progress-linear md-mode="determinate" value="{{file.Upload.percent}}">
+                        </md-progress-linear>
+
+                        <div style="position:absolute;width : 100%" >
+                            <span  style="margin-right: 45%; color: white;">{{file.Upload.percent|pNumber}}%</span>
+                                                                   <span
+                                                                           style="color: white; height: 20px; margin-left: 33px; margin-top: -2px;"
+                                                                           class="fa fa-remove pull-left"
+                                                                           ng-click="func.onCancelFileUpload(name);"
+                                                                           ng-show="file.status == 'Sending' ">
+                                                                    <md-tooltip  md-direction="top" style="z-index:100000;">
+                                         لغو بارگزاری فایل
+                                                                    </md-tooltip>
+                                                                   </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

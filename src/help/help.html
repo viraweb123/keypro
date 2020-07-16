@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>آموزش سامانه</title>
+        <link rel="SHORTCUT ICON"       href="static/image/icons/version.png" />
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <!--https://showdownjs.github.io/demo/-->
+        <!--https://github.com/showdownjs/showdown-->
+         <link type="text/css"  href="./../static/css/version.css"               rel="stylesheet"    />
+         <style>
+
+
+            @font-face {
+                 font-family: IRANSans-web-bold;
+                 src: url(./../fonts/iransans/IRANSans-Bold-web.eot);
+                 src: url(./../fonts/iransans/IRANSans-Bold-web.eot?#iefix) format("eot"),url(./../fonts/iransans/IRANSans-Bold-web.woff2) format("woff2"),url(./../fonts/iransans/IRANSans-Bold-web.woff) format("woff"),url(./../fonts/iransans/IRANSans-Bold-web.ttf) format("ttf");
+                 font-weight: 700
+            }
+            @font-face {
+                 font-family: IRANSans-web-medium;
+                 src: url(./../fonts/iransans/IRANSans-Medium-web.eot);
+                 src: url(./../fonts/iransans/IRANSans-Medium-web.eot?#iefix) format("eot"),url(./../fonts/iransans/IRANSans-Medium-web.woff2) format("woff2"),url(./../fonts/iransans/IRANSans-Medium-web.woff) format("woff"),url(./../fonts/iransans/IRANSans-Medium-web.ttf) format("ttf");
+                 font-weight: 500
+            }
+            @font-face {
+                 font-family: IRANSans-web-ultraLight;
+                 src: url(./../fonts/iransans/IRANSans-UltraLight-web.eot);
+                 src: url(./../fonts/iransans/IRANSans-UltraLight-web.eot?#iefix) format("eot"),url(./../fonts/iransans/IRANSans-UltraLight-web.woff2) format("woff2"),url(./fonts/iransans/IRANSans-UltraLight-web.woff) format("woff"),url(./fonts/iransans/IRANSans-UltraLight-web.ttf) format("ttf");
+                 font-weight: 200
+            }
+            @font-face {
+                 font-family: IRANSans-web-light;
+                 src: url(./../fonts/iransans/IRANSans-Light-web.eot);
+                 src: url(./../fonts/iransans/IRANSans-Light-web.eot?#iefix) format("eot"),url(./../fonts/iransans/IRANSans-Light-web.woff2) format("woff2"),url(./../fonts/iransans/IRANSans-Light-web.woff) format("woff"),url(./../fonts/iransans/IRANSans-Light-web.ttf) format("ttf");
+                 font-weight: 300;
+                 font-size : 20px;
+            }
+            @font-face {
+                 font-family: IRANSans-web;
+                 src: url(./../fonts/iransans/IRANSans-web.eot);
+                 src: url(./../fonts/iransans/IRANSans-web.eot?#iefix) format("eot"),url(./../fonts/iransans/IRANSans-web.woff2) format("woff2"),url(./../fonts/iransans/IRANSans-web.woff) format("woff"),url(./../fonts/iransans/IRANSans-web.ttf) format("ttf");
+                 font-weight: 400
+            }
+
+
+            body{
+
+                 background-repeat: no-repeat;
+                 background-size: cover;
+                 margin:0px !important;
+                 padding: 0px !important;
+                 font-family: IRANSans-web-light !important;
+                 transition: background-image 1s ease-in-out;
+            }
+
+            .help-header{
+                width: 100vw !important;
+                height : 50px !important;
+                background-color: #d44413 !important;
+                color: white !important;
+                top:0px;
+                z-index: 2147483647 !important;
+                position: fixed !important;
+            }
+
+            .help-body{
+                background-color: transparent;
+                height: calc(100vh - 100px) !important;
+                overflow: hidden;
+                position: relative;
+                top: 50px;
+                width: 100vw !important;
+            }
+
+            .help-body .helps{
+                overflow-x: hidden;
+                overflow-y: auto;
+                height: calc(100% - 10px);
+                padding: 10px 5px;
+            }
+
+            .help-body .helps div.help{
+                width : 300px;
+                height : 240px;
+                overflow: hidden !important;
+                float: right;
+                margin: 10px;
+                background-color: white;
+                text-align: center;
+                position: relative;
+
+            }
+
+            .help-body .helps div.help  div.footer{
+                margin-left : 50%;
+                width : 0px;
+                border-bottom: 5px solid transparent;
+                position: absolute;
+                bottom: 0px;
+                transition-duration: 0.5s;
+                transition-property: border-bottom,margin-left,width;
+                transition-timing-function: ease-in;
+            }
+
+            .help-body .helps div.help:hover div.footer{
+                border-bottom: 5px solid #5d9ce9 !important;
+                width : 100% !important;
+                margin-left : 0px !important;
+            }
+
+
+            .help-body .helps div.help .div-img{
+                height: 180px;
+                width: calc(100% - 20px);
+                margin: 10px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .help-body .helps div.help .div-img a{
+                position: absolute;
+                top: calc(50% - 25px);
+                right: calc(50% - 25px);
+            }
+
+            .help-body .helps div.help .div-img a div{
+                width: 50px;
+                height: 50px;
+                background : url("./resource/icons/play.png");
+                background-size: 50px;
+
+                transition-duration: 0.5s;
+                transition-property: background-image;
+                transition-timing-function: ease-in;
+            }
+
+            .help-body .helps div.help .div-img a:hover div{
+                background-image : url("./resource/icons/hover-play.png") !important;
+            }
+
+
+
+            .help-body .helps div.help .div-img img.image{
+                cursor: pointer;
+                height: 180px;
+                max-width: 100%;
+                padding: 0px;
+                width: auto;
+                transition-duration: 0.5s;
+                transition-property: all;
+                transition-timing-function: ease-in;
+            }
+
+
+            .help-body .helps div.help .div-img:hover img.image{
+                -moz-transform: scale(2);
+                -webkit-transform: scale(2);
+                transform: scale(2);
+            }
+
+            .help-body .helps div.help div.div-header{
+                color: white;
+                margin: 0;
+                height: 40px;
+                padding: 10px;
+                text-align: right;
+                width: 100%;
+            }
+
+            .help-body .helps div.help div.div-state-admin{
+                background-color: #ed4356;
+            }
+            .help-body .helps div.help div.div-state-search{
+                background-color : #5d9ce9;
+            }
+            .help-body .helps div.help div.div-state-cloud{
+                background-color: #9560f4;
+            }
+            .help-body .helps div.help div.div-state-dashboard{
+                background-color: #fbbb3d;
+            }
+            .help-body .helps div.help div.div-state-desktop{
+                background-color: #00ACC1;
+            }
+            .help-body .helps div.help div.div-state-map{
+                background-color: #9560f4;
+            }
+            .help-body .helps div.help div.div-state-report{
+                background-color: #c3d9ff;
+            }
+
+
+            .help-body .helps div.help div.div-header span.detail{
+                direction: rtl;
+                display: inline-block;
+                font-size: 14px;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: calc(100% - 20px);
+                word-break: break-all;
+                word-wrap: break-word;
+            }
+
+            .help-fotter{
+                width: 100vw !important;
+                height : 50px !important;
+                background-color: rgba(197, 197, 197, 0.85);
+                color: white !important;
+                bottom:0px;
+                z-index: 2147483647 !important;
+                position: fixed !important;
+
+            }
+
+
+
+            ::-webkit-scrollbar-track-piece{
+                background-color:#fff;
+                -webkit-border-radius:0;
+            }
+            ::-webkit-scrollbar{
+                width:8px;
+                height:8px;
+            }
+            ::-webkit-scrollbar-thumb{
+                height:50px;
+                background-color:#999;
+                -webkit-border-radius:4px;
+                outline:2px solid #fff;
+                outline-offset:-2px;
+                border: 2px solid #fff;
+            }
+            ::-webkit-scrollbar-thumb:hover{
+                height:50px;
+                background-color:#9f9f9f;
+                -webkit-border-radius:4px;
+            }
+
+
+            /* todo change selected text in webpage */
+            * ::-moz-selection {
+                color: white !important;
+                background:  #5d9ce9 !important;
+            }
+            * ::selection {
+                color: white !important;
+                background:  #5d9ce9 !important;
+            }
+            * ::-webkit-selection {
+                color: white !important;
+                background:  #5d9ce9 !important;
+            }
+            * ::-ms-selection {
+                color: white !important;
+                background:  #5d9ce9 !important;
+            }
+            * ::-o-selection {
+                color: white !important;
+                background:  #5d9ce9 !important;
+            }
+
+        </style>
+
+        <script type="text/javascript" src="./../ecma5/ExternalLiberary/Public/localStorageManagement.js" ></script>
+        <script type="text/javascript" src="./../resource/javaScript/lodash.min.js" ></script>
+        <script type="text/javascript">
+
+            function makeFilesResult(list,profile){
+
+                var helps = document.querySelector(".help-body .helps")
+
+                for(var i = 0 ; i < list.length ; i++ ){
+
+
+                    if(! _.includes([undefined,false], _.get(profile,list[i].access))) {
+
+                        var helpDiv = document.createElement("div");
+                        helpDiv.classList.add("help");
+
+                        var helpFooterDiv = document.createElement("div");
+                        helpFooterDiv.classList.add("footer");
+                        helpDiv.appendChild(helpFooterDiv);
+
+                        var helpHeaderDiv = document.createElement("div");
+                        helpHeaderDiv.classList.add("div-header");
+                        helpHeaderDiv.classList.add("div-state-" + list[i].group);
+
+                        var helpHeaderSpan = document.createElement("span");
+                        helpHeaderSpan.title = list[i].title;
+                        helpHeaderSpan.textContent = list[i].title;
+                        helpHeaderSpan.classList.add("detail");
+                        helpHeaderDiv.appendChild(helpHeaderSpan);
+                        helpDiv.appendChild(helpHeaderDiv);
+
+                        var helpBodyDiv = document.createElement("div");
+                        helpBodyDiv.classList.add("div-img");
+                        var img = document.createElement("img");
+                        img.classList.add("image");
+                        img.src = list[i].thumbnail;
+                        helpBodyDiv.appendChild(img);
+                        var a = document.createElement("a");
+                        a.href = list[i].source.link;
+                        a.title = list[i].source.title;
+                        a.target = "_blank";
+                        var aInsideDiv = document.createElement("div");
+                        a.appendChild(aInsideDiv);
+                        helpBodyDiv.appendChild(a);
+                        helpDiv.appendChild(helpBodyDiv);
+
+                        helps.appendChild(helpDiv);
+                    }
+
+                }
+            }
+
+            function getShowFiles(){
+                try{
+
+                    getSelectedLocalStorage("savedProfileFromHelp").then(
+                            function(profile){
+                                try{
+
+                                    console.log(profile);
+
+                                    var request = new XMLHttpRequest();
+                                    request.open("GET", "./helpConfig.json");
+                                    request.onreadystatechange = function () {
+                                        if (request.readyState == 4) {
+                                            var res =  eval("("+request.responseText+")");//JSON.parse(request.responseText);
+                                            /*console.log(res);*/
+                                            makeFilesResult(res.list,profile);
+                                        }
+                                    }
+                                    request.send();
+                                }
+                                catch(e){}
+                            },
+                            function(err){
+                                console.error(err);
+                            }
+                    )
+
+
+                }
+                catch(e){
+                }
+            }
+        </script>
+
+    </head>
+    <body  style="height: 100vh;"  onload="getShowFiles()">
+
+
+        <div class="help-header">
+            <span style="margin-top: 10px ! important; position: absolute; margin-left: 40%;">آموزش سامانه مدیریت اسناد</span>
+        </div>
+
+        <div class="help-body">
+
+
+            <div  class="helps">
+
+                <!--<div class="help">
+                    <div class="div-header div-state-admin">
+                        <span
+                                title="آموزش مدیریت سامانه مدیریت اسناد دانش هم آرا"
+                                class="detail"
+                        >آموزش مدیریت سامانه مدیریت اسناد دانش هم آرا</span>
+                    </div>
+                    <div class="div-img">
+                        <img src="./resource/image/admin.jpg"  class="image" />
+                        <a
+                                title="نمایش فیلم آموزشی"
+                                href="./resource/video/admin.mp4"
+                                target="_blank">
+                            <div></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="help">
+                    <div class="div-header div-state-desktop">
+                        <span
+                                title="آموزش Desktop سامانه مدیریت اسناد دانش هم آرا"
+                                class="detail"
+                        >آموزش Desktop سامانه مدیریت اسناد دانش هم آرا</span>
+                    </div>
+                    <div class="div-img">
+                        <img  src="./resource/image/desktop.jpg"  class="image" />
+                        <a
+                                title="نمایش فیلم آموزشی"
+                                href="./resource/video/desktop.mp4"
+                                target="_blank">
+                            <div></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="help">
+                    <div class="div-header div-state-dashboard">
+                        <span
+                                title="آموزش صفحه داشبورد سامانه مدیریت اسناد دانش هم آرا"
+                                class="detail"
+                        >آموزش صفحه داشبورد سامانه مدیریت اسناد دانش هم آرا</span>
+                    </div>
+                    <div class="div-img">
+                        <img  src="./resource/image/kartabl.jpg"  class="image" />
+                        <a
+                                title="نمایش فیلم آموزشی"
+                                href="./resource/video/kartabl.mp4"
+                                target="_blank">
+                            <div></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="help">
+                    <div class="div-header div-state-search">
+                        <span
+                                title="آموزش صفحه جستجوی سامانه مدیریت اسناد دانش هم آرا"
+                                class="detail"
+                        >آموزش صفحه جستجوی سامانه مدیریت اسناد دانش هم آرا</span>
+                    </div>
+                    <div class="div-img">
+                        <img  src="./resource/image/search.jpg"  class="image" />
+                        <a
+                                title="نمایش فیلم آموزشی"
+                                href="./resource/video/search.mp4"
+                                target="_blank">
+                            <div></div>
+                        </a>
+                    </div>
+                </div>-->
+
+
+            </div>
+
+        </div>
+
+
+        <div class="help-fotter">
+            <span  style="font-size: 15px;color: white; position: fixed; margin-top: 12px ! important; right: 33%;" > کلیه حقوق این سامانه متعلق به شرکت  <a style="cursor: pointer"  href="http://www.dhamara.com" target="_blank">دانش هم آرا </a>  می باشد</span>
+        </div>
+
+
+
+    </body>
+</html>
+

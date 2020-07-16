@@ -1,0 +1,152 @@
+<style>
+    .modal-header{
+        background-color: rgb(38, 166, 154) !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+
+    .modal-footer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-footer #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .modal-footer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+
+    .modal-footer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+
+    .modal-footer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+
+    .modal-footer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+
+    .modal-footer  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+
+    .modal-footer  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+</style>
+<div class="modal-header fontStyle" ng-bind="'modal.desktop.addFolder'|translate"></div>
+<div class="modal-body row">
+
+    <form name="newFolderForm" novalidate role="form">
+
+        <div layout="row">
+
+            <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12">
+                <label>نام پوشه جدید</label>
+                <!--<md-icon md-font-icon="fa fa-user"></md-icon>-->
+                <input
+                        id="txtFolderName"
+                        required
+                        focus-me="true"
+                        type="text"
+                        name="txtFolderName"
+                        ng-model="data.txtFolderName"
+                        minlength="2"
+                        maxlength="100"
+                        ui-keypress="{13:'func.checkTrue()'}"
+                />
+                <div ng-messages="newFolderForm.txtFolderName.$error" role="alert">
+                    <div ng-message="required">
+                        لطفا یک نام برای پوشه جدید وارد کنید
+                    </div>
+                    <div ng-message="minlength">
+                        نام پوشه  حداقل باید ۲ کاراکتر داشته باشد
+                    </div>
+                    <div ng-message="minlength">
+                        نام پوشه نباید بیش از ۱۰۰ کاراکتر داشته باشد
+                    </div>
+                </div>
+            </md-input-container>
+        </div>
+
+
+
+
+    </form>
+
+</div>
+</div>
+<!--
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+
+              <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                    <md-button id="okButon"     class="md-raised" ng-click="func.checkTrue()">
+                        <md-icon md-font-icon="fa fa-folder"></md-icon>
+                        <span ng-bind="'modal.desktop.insert'|translate"></span>
+                    </md-button>
+                    <md-button id="cancelButon"     class="md-raised" ng-click="func.cancelNewFolder()">
+                        <md-icon md-font-icon="fa fa-remove"></md-icon>
+                        <span ng-bind="'desktop.zl.cancel'|translate"></span>
+                    </md-button>
+              </section>
+
+    </div>
+</div>
+-->
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+
+        <form name="deleteFolderForm" novalidate role="form">
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="okButon"     class="md-raised" ng-click="func.checkTrue()">
+                    <md-icon  md-font-icon="fa fa-folder  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" ng-bind="'modal.desktop.insert'|translate"></span>
+                </md-button>
+                <md-button id="cancelButon"     class="md-raised" ng-click="func.cancelNewFolder()">
+                    <md-icon  md-font-icon="fa fa-remove  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" ng-bind="'desktop.zl.cancel'|translate"></span>
+                </md-button>
+            </section>
+        </form>
+    </div>
+</div>

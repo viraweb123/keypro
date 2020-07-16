@@ -1,0 +1,38 @@
+<div   style="padding:   0px; float: right; width: 100%; ">
+    <!--<h6 ng-bind="'dashboard.zr.user' | translate" style="margin:10px !important;" class="dashboard-background-"></h6>
+    <div class="dividerPanel"></div>-->
+    <div class="zonesHeader">
+        <span ng-bind="'dashboard.zr.workflow' | translate"></span>
+    </div>
+    <ul>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='workflowPendingTasks'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('workflowPendingTasks')">
+            <span class="icon-show fa fa-gear"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.workflow_pending_tasks'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.workflow_pending_tasks'|translate}}
+            </md-tooltip>
+        </i>
+
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='workflowUnassignedPendingTasks'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('workflowUnassignedPendingTasks')">
+            <span class="icon-show fa fa-gear"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.workflow_unassigned_pending_tasks'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.workflow_unassigned_pending_tasks'|translate}}
+            </md-tooltip>
+        </i>
+
+    </ul>
+
+</div>

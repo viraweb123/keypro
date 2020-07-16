@@ -1,0 +1,40 @@
+
+<div   style="padding:  0px; float: right; width: 100%; ">
+    <!--<h6 ng-bind="'administration.zr.repository' | translate" style="margin:10px !important;"  ></h6>
+    <div class="dividerPanel"></div>-->
+    <div class="zonesHeader">
+        <span ng-bind="'administration.zr.repository' | translate"></span>
+    </div>
+
+    <ul>
+        <i
+                ng-if="data.showLogins['/repository_export.jsp']"
+                ng-class="{'selected-nav' : data.acriveNav =='repositoryExport'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('repositoryExport')">
+            <span class="icon-show fa fa-mail-forward"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.repository.repositoryExport'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.repository.repositoryExport'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-if="data.showLogins['/repository_import.jsp']"
+                ng-class="{'selected-nav' : data.acriveNav =='repositoryImport'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('repositoryImport')">
+            <span class="icon-show fa fa-mail-reply"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.repository.repositoryImport'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.repository.repositoryImport'|translate}}
+            </md-tooltip>
+        </i>
+    </ul>
+
+</div>

@@ -1,0 +1,384 @@
+<style>
+    .form-generator{
+        overflow-y : auto;
+        overflow-x : hidden;
+    }
+    .form-generator input[type="text"],input[type="number"],input[type="email"],input[type="url"]{
+        direction: ltr;
+        text-align: right;
+    }
+
+    .form-generator input[type="text"]:active,input[type="text"]:focus{
+        outline: none !important;
+    }
+
+    .form-generator input[type="text"],input[type="number"],input[type="email"],input[type="url"]:-moz-placeholder {
+        text-align: right;
+    }
+    .form-generator input[type="text"],input[type="number"],input[type="email"],input[type="url"]:-ms-input-placeholder {
+        text-align: right;
+    }
+    .form-generator input[type="text"],input[type="number"],input[type="email"],input[type="url"]::-webkit-input-placeholder {
+        text-align: right;
+    }
+
+    .form-generator  input.ltrDirection{
+        direction: ltr !important;
+        text-align: left !important;
+    }
+
+    .form-generator div.auto-complate{}
+
+    .form-generator div.auto-complate md-autocomplete-wrap{
+        box-shadow: none !important;
+    }
+
+
+    .form-generator #success{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .form-generator #success:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .form-generator #success md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .form-generator #success:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+
+    .form-generator #cancel{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .form-generator #cancel:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+
+    .form-generator #cancel md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+
+    .form-generator #cancel:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+
+    .form-generator section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+
+    .form-generator  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+
+
+    .form-generator .date-viewer{}
+    .form-generator div.date-viewer input.ng-invalid-required{
+        border-bottom: 1px solid red !important;
+    }
+
+    .form-generator .date-viewer  .error-occure-date{
+        border-bottom: 1px solid red !important;
+    }
+
+    .form-generator .increase-datepicker{
+        margin-bottom : 250px !important;
+    }
+
+
+</style>
+<!--  TODO -------------------------------------Main Form---------------------------------------->
+<form
+        role="form"
+        novalidate
+        name="FORM.formGeneratoName"
+        class="form-generator"
+        ng-if="data.properties != null"
+        style="overflow-y:hidden !important;max-height:100%;">
+
+    <div
+            class="{{data.classSpliter}} row form-group"
+            ng-repeat="(propertyName,property) in data.properties"
+            style="padding: 0px; margin: 0px 0px -18px  !important;">
+
+        <!--  TODO -------------------------------------Text -------------------------------------------->
+        <div style="padding-left:2px ;padding-right:2px;" layout="row" ng-if="property.objClass=='com.openkm.bean.form.Input' && property.type!='date' && !property.isThesaurus" class="row form-group col-sm-12 col-xs-12">
+            <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                <label>{{property.label}}</label>
+                <input
+                        style="font-size: 14px !important;"
+                        id="#{{property.name}}"
+                        ng-disabled="property.readonly || property.notActive"
+                        ng-required="{{property.require}}"
+                        type="text"
+                        name="{{propertyName}}"
+                        ng-pattern="property.patterns"
+                        ng-model="property.value"
+                        ui-keypress="{13:'addElement(property,FORM.formGeneratoName,\'changeText\')'}"
+                        ng-class="{'ltrDirection':property.isLTR}"
+                />
+                <div ng-messages="FORM.formGeneratoName[property.name].$error" role="alert"  ng-if="FORM.formGeneratoName[propertyName].$error">
+                    <div ng-message="pattern" >
+                       الگوی ورودی صحیح نمی باشد.
+                    </div>
+                    <div ng-message="required">
+                        لطفا برای محتوا عبارتی را وارد کنید
+                    </div>
+                    <!--<div ng-message="minlength">
+                        حداقل یک کاراکتر وارد کنید
+                    </div>-->
+                </div>
+            </md-input-container>
+        </div>
+        <!--  TODO -------------------------------------Thesaurus --------------------------------------->
+        <div
+                layout="row"
+                ng-if="property.objClass=='com.openkm.bean.form.Input' && property.type=='text' && property.isThesaurus"
+                class="row form-group col-sm-12 col-xs-12"
+                style="padding-left:2px ;padding-right:2px;"
+        >
+            <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                <label>{{property.label}}</label>
+                <input
+                        ng-required="{{property.require}}"
+                        ng-disabled="property.readonly || property.notActive"
+                        style="font-size: 14px !important;"
+                        id="#{{propertyName}}"
+                        type="text"
+                        disabled
+                        name="{{property.name}}"
+                        ng-model="property.value"
+                        ng-class="{'ltrDirection':property.isLTR}"
+                />
+                <div ng-messages="FORM.formGeneratoName[propertyName].$error" role="alert"  ng-if="FORM.formGeneratoName[propertyName].$error">
+                    <!--<div ng-message="pattern" >
+                       عبارت ورودی صحیح نمی باشد
+                    </div>-->
+                    <div ng-message="required">
+                        لطفا برای محتوا عبارتی را وارد کنید
+                    </div>
+                    <div ng-message="minlength">
+                        حداقل یک کاراکتر وارد کنید
+                    </div>
+                </div>
+            </md-input-container>
+            <span
+                    ng-click="selectTreeThezarus(property)"
+                    class="fa fa-plus"
+                    style="margin-top: 30px; margin-left: 0px; cursor: pointer;">
+                <md-tooltip  md-direction="bottom">
+                    انتخاب از درخت تزاروس
+                </md-tooltip>
+            </span>
+        </div>
+        <!--  TODO -------------------------------------Date -------------------------------------------->
+        <div
+                style="margin: 0 !important;padding:25px 0 !important;"
+                ng-if="property.objClass=='com.openkm.bean.form.Input' && property.type=='date'"
+                class="row form-group col-sm-12 col-xs-12 ">
+                <span>
+                    <div class="col-sm-12"  style="margin-left: 0px ! important; padding-left: 0px ! important; margin-right: 0px ! important; padding-right: 0px ! important;">
+                        <div class="input-group  date-viewer"  ng-class="{'increase-datepicker':data.isOpen[propertyName]}" style="direction: ltr;">
+                            <span
+                                            id="dateId-{{propertyName}}"
+                                            ng-class="{'error-occure-date':property.value == '' && property.require}"
+                                            class="input-group-addon"
+                                            style="background-color: transparent; cursor: pointer; border-radius: 0px; border-right: 0px;border-top:0px; border-bottom:1px solid rgba(197,197,197,1);"
+                                            ng-click="data.open($event,propertyName)">
+                                        <i class=" fa fa-calendar"></i>
+                            </span>
+                            <input name="from"
+                                   type="text"
+                                   ng-class="{'error-occure-date':FORM.formGeneratoName[propertyName].$error}"
+                                   disabled
+                                   ng-required="{{property.require}}"
+                                   style="
+                                        background-color: transparent;
+                                        padding-left: 0px;
+                                        padding-right: 10px;
+                                        font-size: 12px;
+                                        box-shadow: none !important;
+
+                                        border-top :   0px none transparent !important;
+                                        border-left:   0px none transparent !important;
+                                        border-right:  0px none transparent !important;
+                                        border-bottom : 1px solid rgba(197, 197, 197 , 1)
+                                    "
+
+                                   placeholder="{{property.label}}{{property.require?' *':''}}"
+                                   readonly="readonly"
+                                   class="form-control fontStyle"
+                                   id="#{{propertyName}}"
+                                   datepicker-popup-persian="yyyy/MM/dd"
+                                   ng-model="property.value"
+                                   is-open="data.isOpen[propertyName]"
+                                   aria-describedby="dateId-{{propertyName}}"
+                                   ng-change = "changeDate(property)"
+                                   current-text="امروز" clear-text="پاک کردن" close-text="لغو"
+                                   starting-day="6" />
+                            <div ng-messages="FORM.formGeneratoName[propertyName].$error" role="alert"  ng-if="FORM.formGeneratoName[propertyName].$error">
+                                <div ng-message="required">
+                                    لطفا برای محتوا عبارتی را وارد کنید
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+        </div>
+        <!--  TODO -------------------------------------Single Select ----------------------------------->
+        <div
+                style="padding-left:2px ;padding-right:2px;margin-top:12px !important; margin-bottom: 12px !important"
+                layout="row"
+                class="row form-group col-sm-12  auto-complate"
+                ng-if="property.objClass=='com.openkm.bean.form.Select' && property.type=='simple' ">
+            <md-autocomplete
+                    flex
+                    id="#{{property.name}}"
+                    ng-required="property.require"
+                    style="background-color: transparent !important;"
+                    ng-disabled="property.readonly || property.notActive"
+                    md-selected-item="property.selected"
+                    md-search-text-change="searchTextChange(property.name)"
+                    md-search-text="property.searchText"
+                    md-selected-item-change="changeAutoComplate(property)"
+                    md-items="item in querySearch(property.options,property.searchText)"
+                    md-item-text="item.label"
+
+                    md-min-length="0"
+                    placeholder="{{property.label}}"
+                    md-no-cache="true"
+                    md-input-name="property.name"
+                    md-floating-label="{{property.label}}"
+            >
+                <md-item-template>
+                    <span md-highlight-text="property.searchText" md-highlight-flags="^i">{{item.label}}</span>
+                </md-item-template>
+                <md-not-found>
+                    موردی جهت نمایش وجود ندارد.
+                </md-not-found>
+                <div ng-messages="FORM.formGeneratoName[property.name].$error" role="alert"  ng-if="FORM.formGeneratoName[propertyName].$error">
+                    <div ng-message="required">
+                        لطفا برای محتوا عبارتی را انتخاب کنید
+                    </div>
+                </div>
+
+            </md-autocomplete>
+
+
+        </div>
+        <!--
+        <div
+                style="padding-left:2px ;padding-right:2px;"
+                layout="row"
+                class="row form-group col-sm-12"
+                ng-if="property.objClass=='com.openkm.bean.form.Select' && property.type=='simple' ">
+            <md-input-container class="md-block  col-sm-12 "  style=" padding: 0;">
+                <label>{{property.label}}</label>
+                <md-select
+
+                        id="#{{property.name}}"
+                        ng-required="{{property.require}}"
+                        class="md-block  col-sm-12 pull-right"
+                        ng-disabled="property.readonly || property.notActive"
+                        placeholder="{{property.label}}"
+                        ng-model="property.selected"
+                        ng-change="selectSingle(property)"
+                        style="min-width: 200px;padding-left: 0;padding-right: 0;">
+                    <md-option ng-value="null"  ng-if="!property.require"><em>عدم انتخاب</em></md-option>
+                    <md-option ng-value="p" ng-repeat="p in property.options">{{p.label}}</md-option>
+                </md-select>
+            </md-input-container>
+            <div ng-messages="FORM.formGeneratoName[property.name].$error" role="alert"  ng-if="FORM.formGeneratoName[propertyName].$error">
+                <div ng-message="required">
+                    لطفا برای محتوا عبارتی را انتخاب کنید
+                </div>
+            </div>
+        </div>
+        -->
+        <!--  TODO -------------------------------------Multi Select ------------------------------------>
+        <div
+                style="padding-left:2px ;padding-right:2px;"
+                layout="row"
+                class="row form-group col-sm-12"
+                ng-if="property.objClass=='com.openkm.bean.form.Select' && property.type=='multiple' ">
+            <md-input-container class="md-block  col-sm-12 "  style=" padding: 0;">
+                <label>{{property.label}}</label>
+                <md-select
+                        ng-required="{{property.require}}"
+                        class="md-block  col-sm-12 pull-right"
+                        ng-disabled="property.readonly || property.notActive"
+                        placeholder="{{property.label}}"
+                        ng-model="property.selected"
+                        ng-change="selectMultiSelected(property)"
+                        multiple="true"
+                        style="min-width: 200px;padding-left: 0;padding-right: 0;">
+                    <md-option ng-value="p" ng-repeat="p in property.options">{{p.label}}</md-option>
+                </md-select>
+            </md-input-container>
+            <div ng-messages="FORM.formGeneratoName[property.name].$error" role="alert"  ng-if="FORM.formGeneratoName[propertyName].$error">
+                <div ng-message="required">
+                    لطفا برای محتوا عبارتی را انتخاب کنید
+                </div>
+            </div>
+        </div>
+        <!--  TODO -------------------------------------Text Area --------------------------------------->
+        <div
+                style="padding-left:2px ;padding-right:2px;"
+                ng-if="property.objClass == 'com.openkm.bean.form.TextArea'"
+                class="row form-group col-sm-12">
+            <span class="col-sm-12 pull-right" ng-bind="property.label"></span>
+                <textarea class="form-control col-sm-12" cols="7" rows="4" style="resize: vertical;width: 100%!important;font-size: 15px;padding: 5px;"
+                          ng-model="property.value"
+                          ng-required="{{property.require}}"
+                          name="{{propertyName}}"
+                          ng-disabled="property.readonly || property.notActive"
+                          ui-keypress="{13:'addElement(property,FORM.formGeneratoName,\'changeTextArea\')'}"
+                >
+                </textarea>
+        </div>
+        <!--  TODO -------------------------------------CheckBox ---------------------------------------->
+        <div
+                style="margin: 10px 0px;padding-left:2px ;padding-right:2px;"
+                layout="row"
+                class="row form-group col-sm-12"
+                ng-if="property.objClass == 'com.openkm.bean.form.CheckBox'">
+            <span class="pull-right" ng-bind="property.label"></span>
+            <md-checkbox ng-disabled="property.readonly || property.notActive" class="pull-right" ng-change = "changeCheckbox(property)" ng-model="property.value" style=" margin-right: 3px;left: 0; opacity: 1; position: relative;"></md-checkbox>
+        </div>
+
+    </div>
+
+    <!--  TODO -------------------------------------Internal Buttons ---------------------------------------->
+    <div class="col-sm-12 row form-group"  ng-if="data.footer.isShow">
+        <section layout="row"  class="row" layout-sm="column" layout-align="center center" >
+
+            <md-button id="{{externalButton.id}}"   ng-repeat="(key,externalButton) in data.footer.list"    class="md-raised" ng-click="externalButton.click(data.properties,FORM.formGeneratoName)"  style="float:left;">
+                <md-icon  md-font-icon="fa {{externalButton.icon}}"></md-icon>
+                <span ng-bind="externalButton.label"></span>
+            </md-button>
+        </section>
+    </div>
+
+</form>

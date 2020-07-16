@@ -1,0 +1,525 @@
+<style>
+    .modal-header{
+        background-color: rgb(38, 166, 154) !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+
+    .modal-footer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-footer #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .modal-footer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+    .modal-body #addFileButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-body #addFileButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+
+
+    .modal-body #addFileButon:hover md-icon{
+        color : white;
+    }
+
+
+
+    .modal-footer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+
+    .modal-footer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+
+    .modal-footer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+
+    .modal-footer  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+
+    .modal-footer  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+    @media screen and (-webkit-min-device-pixel-ratio: 0){
+        .modal-body .parent{
+            position: relative !important;
+        }
+        .modal-body .child{
+            position: absolute !important;
+        }
+    }
+    .child{
+        direction: rtl  !important;
+    }
+    .modal-body .thumbnail-viewer{
+        float : right;
+        text-align: center;
+    }
+    .modal-body .thumbnail-viewer div.selectDoc{
+        width:20px;
+        height:20px;
+        position: absolute;
+        border: 1px solid #00ACC1;
+        top: 5px;
+        z-index: 2;
+        left: 60px;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+    .modal-body  .thumbnail-viewer div.select{
+        display: inline-block !important;
+    }
+    .modal-body   .file span.check{
+        display: none;
+    }
+    .modal-body   .thumbnail-viewer div.select span.check{
+        display: inline-block !important;
+        color : #00ACC1;
+    }
+    .modal-body   .file div.unselect{
+        display: none;
+    }
+    .modal-body .thumbnail-viewer:hover div.unselect{
+        display: inline-block; !important;
+    }
+    .modal-body .thumbnail-viewer div.unselect:hover{
+        background-color : #00ACC1 !important;
+    }
+    .modal-body .file div.unselect:hover  .check{
+        display: inline-block; !important;
+        color : white !important;
+    }
+
+
+    .modal-body  .thumbnail-viewer  img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+        margin-top: 10px;
+        padding-top: 5px;
+    }
+    .modal-body  .thumbnail-viewer  .label{
+        color: black;
+        direction: rtl;
+        height: 40px !important;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 4px;
+        position: relative !important;
+        width: 100%;
+    }
+    .modal-body  .thumbnail-viewer  span.name{
+        display : inline-block;
+        height : 40px;
+        overflow : hidden;
+        padding : 5px;
+        text-align : center;
+        text-overflow : ellipsis;
+        white-space : nowrap;
+        width : 110px;
+        word-break : break-all;
+        word-wrap : break-word;
+        cursor: pointer;
+    }
+    .modal-body  .thumbnail-viewer:hover{
+        box-shadow         :  0 0 5px rgba(35,173,255,1);
+    }
+
+    .modal-body  .header-map{
+        padding: 0px !important;
+        margin: 2px 0px  !important;
+        text-align: center !important;
+    }
+
+    .modal-body  .header-map  .direction-icon{
+        cursor: pointer !important;
+        font-size: 20px !important;
+        font-weight: bold !important;
+    }
+
+
+    .sample-show-hide.ng-hide-add, .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 1.5s;
+        -moz-transition:all linear 1.5s;
+        -o-transition:all linear 1.5s;
+        transition:all linear 1.5s;
+        display:block !important;
+    }
+
+    .sample-show-hide.ng-hide-add.ng-hide-add-active,
+    .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 0.2s;
+        -moz-transition:all linear 0.2s;
+        -o-transition:all linear  0.2s;
+        transition:all linear  0.2s;
+        opacity:0;
+    }
+
+    .sample-show-hide.ng-hide-add,
+    .sample-show-hide.ng-hide-remove.ng-hide-remove-active {
+        -webkit-transition:all linear 3s;
+        -moz-transition:all linear 3s;
+        -o-transition:all linear  3s;
+        transition:all linear  3s;
+        opacity:1;
+    }
+
+    .animate-if {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+    .animate-if.ng-leave, .animate-if.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+    .modal-body .alert-mode-viewer-modal{
+        padding: 15px !important;
+        border: 1px solid rgb(197, 197, 197);
+        background-color: white;
+        margin : 10px !important;
+        transition-delay: 0s;
+        -moz-transition-delay: 0s;
+        -webkit-transition-delay: 0s;
+        transition-duration: 200ms;
+        -moz-transition-duration: 200ms;
+        -webkit-transition-duration: 200ms;
+        transition-property: all;
+        -moz-transition-property: all;
+        -webkit-transition-property: all;
+        transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        -webkit-transition-timing-function: ease-out;
+        width:calc(100% - 35px);
+    }
+
+
+
+    .modal-body .alert-mode-viewer-modal:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+    }
+    .modal-body  md-progress-linear .md-container{
+        height : 15px !important;
+    }
+    .modal-body  md-progress-linear .md-container .md-bar{
+        height : 15px !important;
+    }
+
+    .modal-body .checkbox-system{
+        padding : 10px !important;
+    }
+
+
+    .modal-body .not-result{
+        display : none;
+        height: 150px;
+        overflow: hidden;
+        margin-top : 20px;
+
+        margin-right: calc(50% - 125px);
+        width: auto ! important;
+        padding:50px 20px 20px 20px;
+        border: 1px solid rgba(197,197,197,1);
+    }
+
+    .modal-body .not-result.display{
+        display : inline-block;
+    }
+
+
+
+    .modal-body  .not-result  .dashboard-refresh{
+        font-size: 22px;
+        color: red;
+    }
+
+    .modal-body  .not-result  .dashboard-refresh:hover{
+        text-shadow: 2px 2px 4px rgba(255,0,0,1);
+    }
+
+    .modal-body  .not-result  .dashboard-ban{
+        font-size: 22px;
+        color: red;
+        margin-left:5px;
+    }
+
+    .modal-body .not-result  .dashboard-ban:hover{
+        text-shadow: 2px 2px 4px rgba(255,0,0,1);
+    }
+
+    .modal-header #nav-icons{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-header #nav-icons:hover{
+        box-shadow  :  0 0 10px rgba(38, 166, 154,1);
+        background-color : rgba(38, 166, 154,1);
+        color : white;
+    }
+    .modal-header #nav-icons:hover md-icon{
+        color : white;
+    }
+
+
+</style>
+<div class="modal-header">
+    <div class="form-group">
+
+        <div class="col-sm-1 pull-right">
+            <section
+                    style="height: 25px ! important; text-align: center;"
+                    ng-if = "data.state == 'metadata'"
+                    layout="row"
+                    layout-sm="column"
+                    layout-align="center center"
+                    layout-wrap>
+                <md-button
+                        id="nav-icons"
+                        style="min-width:25px !important;padding:2px !important;"
+                        class="md-raised pull-left"
+                        ng-click="func.showImage()">
+                    <md-icon  md-font-icon="fa fa-arrow-right"></md-icon>
+                    <md-tooltip style="z-index:100000 !important;" md-direction="top"  >
+                        بازگشت به انتخاب الگو
+                    </md-tooltip>
+                </md-button>
+            </section>
+        </div>
+
+        <div class="col-sm-10 pull-right"  style="text-align:center;">
+            <h6 >انتخاب الگو</h6>
+        </div>
+
+        <div class="col-sm-1 pull-left">
+            <section
+                    style="height: 25px ! important; text-align: center;"
+                    ng-if = "data.isNotReadyMetaData != true && data.state == 'image'"
+                    layout="row"
+                    layout-sm="column"
+                    layout-align="center center"
+                    layout-wrap>
+                <md-button
+                        id="nav-icons"
+                        style="min-width:25px !important;padding:2px !important;"
+                        class="md-raised pull-left"
+                        ng-click="func.showMetadata()">
+                    <md-icon  md-font-icon="fa fa-arrow-left"></md-icon>
+                    <md-tooltip style="z-index:100000 !important;" md-direction="top"  >
+                        نمایش فراداه
+                    </md-tooltip>
+                </md-button>
+            </section>
+        </div>
+
+
+
+    </div>
+</div>
+<div class="modal-body row form-group" style="margin-bottom: -15px ! important;">
+
+
+    <!-----------------------------------------  IMAGE --------------------------------------->
+    <div class="row form-group col-sm-12- sample-show-hide"  style="margin-top:-20px !important"  ng-show="data.state == 'image'">
+        <div class="col-sm-12 header-map">
+            <span class="col-sm-12 pull-rigth">لطفا الگوی مورد نظر را انتخاب کنید</span>
+        </div>
+        <hr  style="margin-top: 32px; margin-bottom: -2px;" />
+        <div class="row form-group  col-sm-12">
+            <div class="col-sm-6- pull-right"
+                 style="width: 50%;"
+            >
+                <div  class="parent" style="display: -webkit-box;display:-moz-box;width:100%;min-height: 180px; max-height: 180px;overflow: auto;position: relative;">
+                    <div
+                            tree-model
+                            tree-func="func.treeView"
+                            root-folder="data.root"
+                            current-node="data.tree"
+                            class="treeview child"
+                            style="padding-left: 10px;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6- pull-left " style="width:50%;min-height: 180px; max-height: 180px; border-right: 1px solid; padding: 5px;overflow-y:auto;overflow-x:hidden;">
+                <div  ng-repeat="doc in data.list"  class="thumbnail-viewer">
+
+                    <img  ng-class="{'brithness-filter' : data.selectedFileOrFolder.uuid == doc.uuid}"  ng-click="func.clickImage($event,doc)"  src="{{doc.thumbnailSrc}}" />
+                    <div class="label row" >
+                          <span ng-bind="doc.name"  class="name"  style="color:black"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <hr class="row form-group col-sm-12" style="margin: 5px 10px; width: 97%;" />
+        <div class="row form-group  col-sm-12"  style="padding: 0px !important; margin: 0px !important;">
+
+            <div class="col-sm-5 col-xs-5   pull-right"  style="padding: 0px; margin: 0px;">
+                <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                    <label>نام</label>
+                    <input
+                            id="name"
+                            type="text"
+                            required
+                            name="name"
+                            ng-model="data.file.name"
+                    />
+                </md-input-container>
+            </div>
+
+            <div layout="row"  class="col-sm-6 col-xs-6 pull-right"  style="padding: 0px; margin: 20px 5px 0px 0px;">
+                <div layout="row" class="pull-right checkbox-system">
+                    <md-checkbox
+                            ng-model="data.byCategories"
+                            style="left: 0; opacity: 1; position: relative;">
+                        <span class="fa fa-file"></span>
+                    </md-checkbox>
+                    <md-tooltip  style="z-index:100000 !important;" md-direction="top">
+                        دسته بندی
+                    </md-tooltip>
+                </div>
+                <div layout="row"   class="pull-right checkbox-system">
+                    <md-checkbox
+                            ng-model="data.byKeywords"
+                            style="left: 0; opacity: 1; position: relative;">
+                        <span class="fa fa-tags"></span>
+                    </md-checkbox>
+                    <md-tooltip style="z-index:100000 !important;"  md-direction="top">
+                        کلیدواژه
+                    </md-tooltip>
+                </div>
+                <div layout="row" class="pull-right  checkbox-system">
+                    <md-checkbox
+                            ng-model="data.byNotes"
+                            style="left: 0; opacity: 1; position: relative;">
+                        <span class="fa fa-sticky-note"></span>
+                    </md-checkbox>
+                    <md-tooltip style="z-index:100000 !important;"  md-direction="top">
+                        نکته
+                    </md-tooltip>
+                </div>
+                <div layout="row" class="pull-right  checkbox-system">
+                    <md-checkbox
+                            ng-model="data.byPropertyGroups"
+                            style="left: 0; opacity: 1; position: relative;">
+                        <span class="fa fa-list-alt"></span>
+                    </md-checkbox>
+                    <md-tooltip  style="z-index:100000 !important;" md-direction="top">
+                        فراداده
+                    </md-tooltip>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row form-group col-sm-12- sample-show-hide"  style="margin-top:-20px !important"  ng-show="data.state == 'metadata'">
+        <div class="col-sm-12 header-map">
+            <span class="col-sm-12 pull-left">نمایش لیست فراداده</span>
+        </div>
+        <hr  style="margin-top: 32px; margin-bottom: -2px;" />
+        <div
+                class="tab-pane- fade- in-  col-sm-8  row  form-group "
+                style="margin-right: 15% !important;padding: 0px ! important; max-height: 180px ! important; overflow-y: auto;"
+                ng-show="data.PropertyGroup != null">
+            <generator
+                    style="position: relative; padding: 0px 0px 0px 5px;"
+                    external-scope = "externalScope">
+            </generator>
+        </div>
+        <div
+                class="tab-pane- fade- in-  col-sm-12  row  form-group "
+                style="padding: 0px ! important; max-height: 180px ! important; overflow-y: auto;"
+                ng-show="data.PropertyGroup == null">
+            <div class="not-result display"  >
+                <div class="col-sm-12"  style="text-align: center;">
+                    <span   style="cursor: pointer">
+                        <i class="dashboard-ban fa fa-ban">
+                        </i>
+                    </span>
+                    <span style="color: #893247; direction: ltr; font-size: 20px;"  >سند فوق فاقد فراداده می باشد</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+        <form name="deleteFolderForm" novalidate role="form">
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="okButon"     class="md-raised" ng-click="externalScope.externalFuncs.editMetadataFrom()">
+                    <md-icon  md-font-icon="fa fa-check  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" >افزودن</span>
+                </md-button>
+                <md-button id="cancelButon"     class="md-raised" ng-click="func.cancel()">
+                    <md-icon  md-font-icon="fa fa-remove  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" >انصراف</span>
+                </md-button>
+            </section>
+        </form>
+    </div>
+</div>

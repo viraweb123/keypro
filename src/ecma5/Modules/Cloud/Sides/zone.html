@@ -1,0 +1,188 @@
+<div  class="body-cloud">
+
+    <div  class="row form-group filters-list"  ng-if="func.isNotEmptyFilter()">
+        <div ng-repeat="(key,occurs) in data.filters" class="alert alert-info  filter-alert" role="alert"   id="{{key}}">
+            <span class="fa fa-times pull-left" ng-click="func.removeFilter(key);"  style="margin-top:10px;"></span>
+            <md-tooltip  md-direction="top">
+                کلید {{key}} , تکرار {{occurs|en2faNum}}
+            </md-tooltip>
+            <span class="control-label  pull-right"  style="vertical-align: middle; text-overflow: ellipsis; white-space: nowrap; display: inline-block; overflow-x: hidden; max-width: 230px; line-height: 30px;" ng-bind="key|pNumber"></span>
+        </div>
+    </div>
+
+    <div  class="row form-group search-result" ng-if="data.clouds.length>0">
+        <div class="col-sm-12 row list-view">
+
+            <div
+                    ng-class="{'col-sm-12 search-complate' : data.showComplate , 'col-sm-6 search-half' : !data.showComplate }"
+                    class="alert-mode-viewer"
+                    ng-repeat="item in data.clouds">
+
+                <div class="form-group row col-sm-12"  style="margin-bottom: 1px !important;">
+                        <span   class="pull-right"  ng-bind="item.name" style="font-size: 20px; color: blue; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 50%;text-align: right;direction: ltr;">
+
+                            <md-tooltip  md-direction="top">
+                                {{item.name}}
+                            </md-tooltip>
+                        </span>
+                        <span   class="showViewerResultStart"  ng-repeat="start in item.starts  track by $index">
+                            <i   class="fa {{start}}"></i>
+                        </span>
+                </div>
+
+                <div class="form-group row col-sm-12"  style="margin-bottom: 1px ! important;">
+                    <div class="mdContent row search-navigation" style="margin:0px !important;height: 30px ! important; border: medium none;" >
+
+
+                            <span
+                                    ng-click="func.viewFile(item)"
+                                    class="pull-left spanNavIcon fa fa-eye">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'search.zl.view_file' | translate}}
+                                </md-tooltip>
+                           </span>
+
+                        <div class="pull-left view-descriptions"  style="width: 25px; max-height: 35px;">
+                                <span class=" spanNavIcon fa fa-ellipsis-v">
+                               </span>
+                            <div class="hidden-result">
+
+                                <span style="width: 0px; height: 0px; border-left: 8px solid transparent; border-right: 8px solid transparent; position: absolute; border-bottom: 8px solid rgba(0, 0, 0, 0.4); top: -8px; left: 43px;"></span>
+
+                                <div class="col-sm-12 row form-group"  style="margin-top: 5px ! important; margin-bottom: 5px ! important;">
+                                    <span class="pull-right" >مسیر : </span>
+                                    <span class="pull-left content-label" ng-bind="item.path" style="direction: ltr;word-wrap: break-word;word-break: break-all;direction: ltr;"> </span>
+                                </div>
+                                <div class="col-sm-12 row form-group" style="margin-top: 5px ! important; margin-bottom: 5px ! important;">
+                                    <span class="pull-right" >نسخه : </span>
+                                    <span class="pull-left content-label" ng-bind="item.actualVersion.name|pNumber" style="direction: ltr;word-wrap: break-word;word-break: break-all;direction: ltr;"></span>
+                                </div>
+                                <div class="col-sm-12 row form-group" style="margin-top: 5px ! important; margin-bottom: 5px ! important;">
+                                    <span class="pull-right" >مالک : </span>
+                                    <span class="pull-left content-label" ng-bind="item.author|pNumber" style="direction: ltr;word-wrap: break-word;word-break: break-all;direction: ltr;"></span>
+                                </div>
+                                <div class="col-sm-12 row form-group" style="margin-top: 5px ! important; margin-bottom: 5px ! important;">
+                                    <span class="pull-right" >ایجاد : </span>
+                                    <span class="pull-left content-label" ng-bind="item.jalaliCreateDate|pNumber" style="direction: ltr;word-wrap: break-word;word-break: break-all;direction: ltr;"></span>
+                                </div>
+                            </div>
+                        </div>
+                            <span
+                                    class="pull-left "
+                                    style="border-left: 1px solid rgb(197, 197, 197); width: 1px; height: 30px; margin-top: 2px;">
+                             </span>
+                            <span
+                                    class="pull-left  spanNavIcon fa fa-download"
+                                    ng-click="func.downloadSearch(item)"
+                                    ng-if="data.profile.prfMenu.prfFile.downloadVisible">
+                                <md-tooltip  md-direction="bottom" >
+                                   {{'desktop.zm.menu.download' | translate}}
+                                </md-tooltip>
+                            </span>
+
+                              <span
+                                      class="pull-left "
+                                      style="border-left: 1px solid rgb(197, 197, 197); width: 1px; height: 30px; margin-top: 2px;">
+                             </span>
+
+                            <span
+                                    class="pull-left  spanNavIcon fa fa-share-square-o"
+                                    ng-click="func.gotoDesktop(item)">
+                                <md-tooltip  md-direction="bottom" >
+                                     {{'search.zl.desktop' | translate}}
+                                </md-tooltip>
+                            </span>
+
+                    </div>
+                </div>
+
+                <div class="form-group row col-sm-12 {{item.showDoc}}"  style="padding-right:0px;">
+                    <div  class="search-image pull-right"  style="position: relative">
+                        <img  src="{{item.thumbnailSrc}}">
+                        <div class="image-nav">
+                            <div class="show-result-list">
+
+                            </div>
+                        </div>
+                        <div  class="pull-left" style="text-align: justify;width: calc(100% - 110px) ! important; height: 60px; overflow-y: auto;">
+                           <!--<span
+                                   ng-class="{'half-span-viewer' : !data.showComplate}"
+                                   class="search-content- pull-left-"
+                                   ng-bind-html=" item.excerpt | arrayHighLight : data.filters"
+                                   style="font: 15px IRNazanin;overflow-y: auto; max-height: 60px; overflow-x: hidden; text-align: justify; text-overflow: ellipsis; width: 100%; white-space: normal;"
+                           ></span>-->
+
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                        class="form-group row col-sm-12 view-half-cloud"
+                        style=" border: 1px solid rgb(197, 197, 197);"
+                        ng-if="item.keywords.length > 0">
+
+                    <div class="keyword-viewer"  style="cursor: pointer;"  ng-click="func.addKeyFromTags(key)" ng-repeat="key in item.keywords  track by $index">
+                        <span  class="pull-right"   ng-bind="key"></span>
+                        <i class="fa fa-tag pull-left" ></i>
+                        <md-tooltip  md-direction="top">
+                            {{key}}
+                        </md-tooltip>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="cloud-footer"></div>
+
+        </div>
+    </div>
+
+    <div class="paginated-view" style="max-height:50px;margin-top: 2px ! important;" ng-if="data.clouds.length>0">
+
+        <div class="centered-pager" style="height:50px;overflow-y:auto;margin-top: -10px !important;padding:0px 7px;margin-top:-10px !important;">
+            <span
+                    style="height: 33px; padding: 0px 4px 4px; vertical-align: middle; margin-bottom: -6px; border-radius: 0px !important; margin-top: -6px;"
+                    class="pull-right-  btn  result-count   total-view-"  >
+                {{'search.zm.result_count'|translate}}&nbsp;:&nbsp;{{data.itemsPagination.totalItems|pNumber}}
+            </span>
+            <ul uib-pagination
+                style="margin: 8px 5px 5px !important; position: relative; bottom: 6px; width: auto !important;"
+                ng-animate="'animate-show'"
+                template-url = "ecma5/ExternalLiberary/HTML/pagination.html"
+                total-items="data.itemsPagination.totalItems"
+                ng-model="data.itemsPagination.currentPage"
+                max-size="data.itemsPagination.maxSize"
+                items-per-page="data.itemsPagination.perPage"
+                ng-change="data.itemsPagination.pageChanged()"
+                class="pagination-sm pagination-management pull-left-" boundary-links="true"
+                first-text="|<"
+                last-text=">|"
+                next-text=">"
+                previous-text="<"
+            > </ul>
+        </div>
+
+    </div>
+
+    <div class="not-result"   ng-class="{'display': data.statusResullt == 'empty' } ">
+
+        <div class="col-sm-12"  style="padding-bottom: 10px; text-align: center;">
+                <span   ng-click="data.itemsPagination.pageChanged()">
+                    <i class="dashboard-refresh fa fa-refresh">
+                        <md-tooltip  md-direction="top">
+                            امتحان دوباره
+                        </md-tooltip>
+                    </i>
+                </span>
+        </div>
+        <div class="col-sm-12"  style="text-align: center;">
+                <span   style="cursor: pointer">
+                    <i class="dashboard-ban fa fa-ban">
+                    </i>
+                </span>
+            <span style="color: #893247; direction: ltr; font-size: 20px;"  ng-bind="'desktop.zm.create_doc_rel_modal_no_result_found'|translate"></span>
+        </div>
+
+    </div>
+
+</div>

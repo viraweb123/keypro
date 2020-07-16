@@ -1,0 +1,547 @@
+<div class="advance" >
+
+    <div   ui-view="sideR"  class="SR"></div>
+
+    <div   ui-view="zoneR"  class="ZR{{data.nav.right.isOpened == true ? 'O' : ''}}"></div>
+
+    <div   ui-view="sideL"  class="SL"></div>
+
+    <div   ui-view="zoneL"  class="ZL{{data.nav.left.isOpened == true ? 'O' : ''}}"></div>
+
+    <div   ui-view="sideZone"  class="C"></div>
+
+    <div
+            ng-show="data.showClipboardFolder"
+            id="clipBoardMetaDataSaved"
+            style="left:4%;"
+    >
+
+        <div class="sideLeft">
+
+            <div class="zonesHeader">
+                <span ng-bind="data.clipboardFolder.label"></span>
+
+                <div class=" pull-left  refresh">
+                    <a  ng-click="func.hiddenSaved2Clipboard()" class="getAgain"   >
+                        <i  class="fa fa-remove"  >
+                            <md-tooltip  md-direction="bottom"  style="z-index:1000 !important">
+                                بستن
+                            </md-tooltip>
+                        </i>
+                    </a>
+                </div>
+
+                <div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-thumb-tack  pinToState"
+                            ng-click="func.pinToLocation();"
+                            ng-class="{'rotate-20' : !data.clipboardFolderPushed , 'rotate-0':data.clipboardFolderPushed}"
+                    >
+                        <md-tooltip  md-direction="top">
+                        الصاق به صفحه
+                    </md-tooltip>
+                    </span>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 showPropertyGroup-side">
+
+            <div class="row form-group" style="height: calc(100% - 80px); overflow: hidden;">
+
+                <!--<form-generator
+                        style="position: relative; padding: 0px 0px 0px 5px;"
+                        initiallize="data.formMetadataParent"
+                        funcs = "func.formMetadataParent"
+                        buttons = "data.metadataButtonsParent"
+                ></form-generator>-->
+
+                <generator
+                        style="position: relative; padding: 0px 0px 0px 5px;"
+                        external-scope = "externalScopeParent">
+                </generator>
+
+            </div>
+
+            <div class="col-sm-12 row form-group desktop-metadata"  ng-if="data.PropertyGroupParent!=null">
+                <style>
+                    .desktop-metadata{}
+
+                    .desktop-metadata #success-occure{
+                        border-radius: 0px ! important;
+                        transition-duration: 0.5s;
+                        transition-property: background-color,color;
+                        transition-timing-function: ease-in;
+                    }
+                    .desktop-metadata #success-occure:hover{
+                        box-shadow  :  0 0 10px rgba(35,173,255,1);
+                        background-color : rgba(35,173,255,1);
+                        color : white;
+                    }
+                    .desktop-metadata #success-occure md-icon{
+                        padding-left: 5px !important;
+                        border-left: 1px solid rgba(35,173,255,1);
+                    }
+                    .desktop-metadata #success-occure:hover md-icon{
+                        color : white;
+                        border-left: 1px solid white !important;
+                    }
+
+                    .desktop-metadata  #error-occure{
+                        border-radius: 0px ! important;
+                        transition-duration: 0.5s;
+                        transition-property: background-color,color;
+                        transition-timing-function: ease-in;
+                    }
+                    .desktop-metadata  #error-occure:hover{
+                        box-shadow  :  0 0 10px rgba(255,134,29,1);
+                        background-color : rgba(255,134,29,1);
+                        color : white;
+                    }
+                    .desktop-metadata  #error-occure md-icon{
+                        padding-left: 5px !important;
+                        border-left: 1px solid rgba(255,134,29,1);
+                    }
+                    .desktop-metadata  #error-occure:hover md-icon{
+                        color : white;
+                        border-left: 1px solid white !important;
+                    }
+                </style>
+                <section layout="row" layout-sm="column" layout-align="center center" >
+
+                    <md-button id="success-occure"     class="md-raised" ng-click="externalScopeParent.externalFuncs.editMetadataFrom()" >
+                        <md-icon md-font-icon="fa fa-pencil-square-o"></md-icon>
+                        <span ng-bind="'modal.desktop.confirmation'|translate"> </span>
+                    </md-button>
+                    <!--<md-button id="error-occure"     class="md-raised" ng-click="func.metadataParent.remove()" >
+                        <md-icon md-font-icon="fa fa-trash"></md-icon>
+                        <span ng-bind="'modal.desktop.delete'|translate"></span>
+                    </md-button>-->
+                </section>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <div
+            ng-show="data.showRelations"
+            id="relationsViewer"
+            style="left:4%;"
+    >
+
+        <div class="sideLeft">
+
+            <div class="zonesHeader">
+                <span >روابط</span>
+
+                <div class=" pull-left  refresh">
+                    <a  ng-click="func.hiddenRelationsList()" class="getAgain"   >
+                        <i  class="fa fa-remove"  >
+                            <md-tooltip  md-direction="bottom"  style="z-index:1000 !important">
+                                بستن
+                            </md-tooltip>
+                        </i>
+                    </a>
+                </div>
+
+                <div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-thumb-tack  pinToState"
+                            ng-click="func.pinToLocationRelation();"
+                            ng-class="{'rotate-20' : !data.relationsPushed , 'rotate-0':data.relationsPushed}"
+                    >
+                        <md-tooltip  md-direction="top">
+                        الصاق به صفحه
+                    </md-tooltip>
+                    </span>
+                </div>
+
+                <div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-trash "
+                            ng-click="func.removeRelation();"
+                    >
+                        <md-tooltip  md-direction="top">
+                       حذف روابط
+                    </md-tooltip>
+                    </span>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 showRelations-side"  style="margin: 1px; padding: 3px;">
+
+            <div class="row form-group" style="height: calc(100vh - 150px); overflow: hidden;margin: 2px 5px ! important;">
+
+
+                <div class="row form-group col-sm-12" style="height:70px;border-bottom: 1px solid;padding:0px;">
+
+                    <div class="alert-relationViewer" ng-if="data.relationStorage.header != null">
+
+                        <span class="fa fa-trash" style="cursor: pointer;width: 15px; padding: 2px;" ng-click="func.removeHeaderRelationItem()" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                      حذف رابطه {{value.name}}
+                            </md-tooltip>
+                        </span>
+
+                        <img src="{{data.relationStorage.header.thumbnailSrc}}" style="height:50px;width:auto;max-width:50px;" />
+
+                        <span   class="name" ng-bind="data.relationStorage.header.name | minifyText : 20 : 10 : 9" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                     {{data.relationStorage.header.name}}
+                            </md-tooltip>
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+                <div class="row form-group col-sm-12"  style="height:calc(100% - 70px);overflow-y: auto;overflow-x:hidden;border-bottom: 1px solid;padding:0px;">
+
+                    <div style="margin: 4px 1px;" class="alert-relationViewer" ng-repeat="(key, value) in data.relationStorage.footers">
+
+
+                        <span class="fa fa-trash" style="cursor: pointer;width: 15px; padding: 2px;" ng-click="func.removeRelationItem(key)" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                      حذف رابطه {{value.name}}
+                            </md-tooltip>
+                        </span>
+
+                        <img src="{{value.thumbnailSrc}}" style="height:50px;width:auto;max-width:50px;" />
+
+                        <span style="width: calc(100% - 180px);"  class="name" ng-bind="value.name | minifyText : 15 : 10 : 5" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                     {{value.name}}
+                            </md-tooltip>
+                        </span>
+
+                        <md-select
+                                md-on-open="func.getRelationsList()"
+                                class="md-block  pull-left"
+                                placeholder="انتخاب رابطه"
+                                ng-model="value.relation"
+                                style="width: 120px; margin-top: 8px;">
+                            <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                            <md-option ng-value="relation.id" ng-repeat="relation in data.relations">{{relation.title}}</md-option>
+                        </md-select>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-12 row form-group desktop-metadata"  >
+                <style>
+                    .desktop-metadata{}
+
+                    .desktop-metadata #success-occure{
+                        border-radius: 0px ! important;
+                        transition-duration: 0.5s;
+                        transition-property: background-color,color;
+                        transition-timing-function: ease-in;
+                    }
+                    .desktop-metadata #success-occure:hover{
+                        box-shadow  :  0 0 10px rgba(35,173,255,1);
+                        background-color : rgba(35,173,255,1);
+                        color : white;
+                    }
+                    .desktop-metadata #success-occure md-icon{
+                        padding-left: 5px !important;
+                        border-left: 1px solid rgba(35,173,255,1);
+                    }
+                    .desktop-metadata #success-occure:hover md-icon{
+                        color : white;
+                        border-left: 1px solid white !important;
+                    }
+
+                    .desktop-metadata  #error-occure{
+                        border-radius: 0px ! important;
+                        transition-duration: 0.5s;
+                        transition-property: background-color,color;
+                        transition-timing-function: ease-in;
+                    }
+                    .desktop-metadata  #error-occure:hover{
+                        box-shadow  :  0 0 10px rgba(255,134,29,1);
+                        background-color : rgba(255,134,29,1);
+                        color : white;
+                    }
+                    .desktop-metadata  #error-occure md-icon{
+                        padding-left: 5px !important;
+                        border-left: 1px solid rgba(255,134,29,1);
+                    }
+                    .desktop-metadata  #error-occure:hover md-icon{
+                        color : white;
+                        border-left: 1px solid white !important;
+                    }
+                </style>
+                <section layout="row" layout-sm="column" layout-align="center center" >
+
+                    <md-button id="success-occure"     class="md-raised" ng-click="func.addRelationsToserver()" >
+                        <md-icon md-font-icon="fa fa-plus"></md-icon>
+                        <span > ایجاد رابطه</span>
+                    </md-button>
+                </section>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <div
+            ng-show="data.showSelectedResult"
+            id="selectedResultViewer"
+            style="left:4%;"
+    >
+        <div class="sideLeft">
+
+            <div class="zonesHeader">
+                <span >لیست انتخابی</span>
+
+                <div class=" pull-left  refresh">
+                    <a  ng-click="func.hiddenSelectedResultList()" class="getAgain"   >
+                        <i  class="fa fa-remove"  >
+                            <md-tooltip  md-direction="bottom"  style="z-index:1000 !important">
+                                بستن
+                            </md-tooltip>
+                        </i>
+                    </a>
+                </div>
+
+                <div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-thumb-tack  pinToState"
+                            ng-click="func.pinToSelectedResult();"
+                            ng-class="{'rotate-20' : !data.selectedResultPushed , 'rotate-0':data.selectedResultPushed}"
+                    >
+                        <md-tooltip  md-direction="top">
+                        الصاق به صفحه
+                    </md-tooltip>
+                    </span>
+                </div>
+
+                <div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-trash "
+                            ng-click="func.removeSelectedResult();"
+                    >
+                        <md-tooltip  md-direction="top">
+                       حذف عناصر انتخابی
+                    </md-tooltip>
+                    </span>
+                </div>
+				
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 showRelations-side"  style="margin: 1px; padding: 3px;">
+
+            <div class="row form-group" style="height: calc(100vh - 150px); overflow: hidden;margin: 2px 5px ! important;">
+
+                <div class="row form-group col-sm-12"  style="height:95%;overflow-y: auto;overflow-x:hidden;border-bottom: 1px solid;padding:0px;">
+
+                    <div style="margin: 4px 1px;" class="alert-relationViewer" ng-repeat="(key, value) in data.selectedResultStorage">
+
+
+                        <span class="fa fa-trash" style="cursor: pointer;width: 15px; padding: 2px;" ng-click="func.removeSelectedResultItem(key)" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                      حذف آیتم {{value.name}}
+                            </md-tooltip>
+                        </span>
+
+                        <img src="{{value.thumbnailSrc}}" style="height:50px;width:auto;max-width:50px;" />
+
+                        <span style="width: calc(100% - 100px);"  class="name" ng-bind="value.name | minifyText : 15 : 10 : 5" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                     {{value.name}}
+                            </md-tooltip>
+                        </span>
+
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-12 row form-group desktop-metadata"  >
+                <style>
+                    .desktop-metadata{}
+
+                    .desktop-metadata #success-occure{
+                        border-radius: 0px ! important;
+                        transition-duration: 0.5s;
+                        transition-property: background-color,color;
+                        transition-timing-function: ease-in;
+                    }
+                    .desktop-metadata #success-occure:hover{
+                        box-shadow  :  0 0 10px rgba(35,173,255,1);
+                        background-color : rgba(35,173,255,1);
+                        color : white;
+                    }
+                    .desktop-metadata #success-occure md-icon{
+                        padding-left: 5px !important;
+                        border-left: 1px solid rgba(35,173,255,1);
+                    }
+                    .desktop-metadata #success-occure:hover md-icon{
+                        color : white;
+                        border-left: 1px solid white !important;
+                    }
+
+                    .desktop-metadata  #error-occure{
+                        border-radius: 0px ! important;
+                        transition-duration: 0.5s;
+                        transition-property: background-color,color;
+                        transition-timing-function: ease-in;
+                    }
+                    .desktop-metadata  #error-occure:hover{
+                        box-shadow  :  0 0 10px rgba(255,134,29,1);
+                        background-color : rgba(255,134,29,1);
+                        color : white;
+                    }
+                    .desktop-metadata  #error-occure md-icon{
+                        padding-left: 5px !important;
+                        border-left: 1px solid rgba(255,134,29,1);
+                    }
+                    .desktop-metadata  #error-occure:hover md-icon{
+                        color : white;
+                        border-left: 1px solid white !important;
+                    }
+                </style>
+                <section layout="row" layout-sm="column" layout-align="center center" >
+
+                    <md-button id="success-occure"     class="md-raised" ng-click="func.addRelationsToserver()" >
+                        <md-icon md-font-icon="fa fa-plus"></md-icon>
+                        <span >اعمال</span>
+                    </md-button>
+                </section>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <div
+            ng-show="data.showClipBoardResults"
+            id="clipboardResultViewer"
+            style="left:4%;"
+    >
+        <div class="sideLeft">
+
+            <div class="zonesHeader">
+                <span >حافظه موقت</span>
+
+                <div class=" pull-left  refresh">
+                    <a  ng-click="func.hiddenClipboardResultList()" class="getAgain"   >
+                        <i  class="fa fa-remove"  >
+                            <md-tooltip  md-direction="bottom"  style="z-index:1000 !important">
+                                بستن
+                            </md-tooltip>
+                        </i>
+                    </a>
+                </div>
+
+                <div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-thumb-tack  pinToState"
+                            ng-click="func.pinToClipboardResult();"
+
+                            ng-class="{'rotate-20' : !data.clipBoardResultPushed , 'rotate-0':data.clipBoardResultPushed}"
+                    >
+                        <md-tooltip  md-direction="top">
+                        الصاق به صفحه
+                    </md-tooltip>
+                    </span>
+                </div>
+
+                <div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-trash "
+                            ng-click="func.removeAllClipboards();"
+                    >
+                        <md-tooltip  md-direction="top">
+                       حذف عناصر انتخابی
+                    </md-tooltip>
+                    </span>
+                </div>
+				
+								<div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-object-ungroup "
+                            ng-click="func.removeAllClipboards();"
+                    >
+                        <md-tooltip  md-direction="top">
+                       مقایسه اسناد
+                    </md-tooltip>
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 showClipboard-side "  style="margin: 1px; padding: 3px;">
+
+            <div class="row form-group" style="height: calc(100vh - 100px); overflow: hidden;margin: 2px 5px ! important;">
+
+                <div class="row form-group col-sm-12"  style="height:95%;overflow-y: auto;overflow-x:hidden;">
+
+                    <div ng-if="key != 'TYPE'" style="margin: 4px 1px;" class="alert-relationViewer" ng-repeat="(key, value) in data.selectedClipBoardStorage">
+
+
+                        <span class="fa fa-trash  pull-right" style="margin-right: -15px;position:absolute;cursor: pointer;width: 15px; padding: 2px;" ng-click="func.removeClipboardResultItem(key)" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                      حذف آیتم {{value.name}}
+                            </md-tooltip>
+                        </span>
+
+                        <img src="{{value.thumbnailSrc}}" style="height:65px;width:auto;max-width:65px;" />
+
+                        <span style="width: calc(100% - 100px);"  class="row name" ng-bind="value.name | minifyText : 15 : 10 : 5" >
+                            <md-tooltip  md-direction="bottom" style="z-index: 10000 !important;">
+                     {{value.name}}
+                            </md-tooltip>
+                        </span>
+
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+</div>

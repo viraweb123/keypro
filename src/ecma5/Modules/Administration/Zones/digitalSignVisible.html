@@ -1,0 +1,36 @@
+
+<div   style="padding:  0px; float: right; width: 100%; ">
+
+    <div class="zonesHeader">
+        <span ng-bind="'administration.zr.digitalSign' | translate"></span>
+    </div>
+    <ul>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='assignDigitalSign'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('assignDigitalSign')">
+            <span class="icon-show fa fa-check-square-o"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.assignDigitalSign'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.assignDigitalSign'|translate}}
+            </md-tooltip>
+        </i>
+        <!--<i
+                ng-class="{'selected-nav' : data.acriveNav =='defineDigitalSign'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('defineDigitalSign')">
+            <span class="icon-show fa fa-plus"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.defineDigitalSign'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.defineDigitalSign'|translate}}
+            </md-tooltip>
+        </i>-->
+    </ul>
+
+</div>

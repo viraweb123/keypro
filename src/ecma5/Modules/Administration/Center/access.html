@@ -1,0 +1,568 @@
+<div  class="tabel-body" style="background-color: white;">
+    <div class="body-view-nothidden" style="padding: 10px ! important; overflow : auto; height: 100%;">
+        <div class="col-sm-12 row form-group  view-buttons">
+            <section class="row col-sm-12 col-xs-12" layout="row" layout-align="center center" layout-wrap>
+                <!--layout-sm="column" layout-xs="column" -->
+                <md-button id="okButon"     class="md-raised" ng-click="func.todo()">
+                    <md-icon  md-font-icon="fa fa-eye  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" >نمایش</span>
+                </md-button>
+                <md-button id="cancelButon"     class="md-raised" ng-click="func.showFilter()">
+                    <md-icon  md-font-icon="fa fa-eye  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;"  >نمایش فیلتر</span>
+                </md-button>
+                <md-button id="cancelButon"  ng-if="data.isShowFilter"   class="md-raised" ng-click="func.runFilter()">
+                    <md-icon  md-font-icon="fa fa-filter  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;"  >اعمال فیلتر</span>
+                </md-button>
+            </section>
+
+        </div>
+        <div class="col-sm-12 col-xs-12  row form-group view-filter"  ng-if="data.isShowFilter"><!--ng-class="{'display-hidden-filters':data.isShowFilter}"-->
+
+            <div class="col-sm-12 col-xs-12 row form-group"  style="min-height:50px;border-bottom: 1px solid rgba(197,197,197,0.8);">
+
+                <div
+                        style="padding-left:2px ;padding-right:2px;"
+                        layout="row"
+                        class="col-sm-3 col-xs-6 ">
+                    <md-input-container class="md-block  col-sm-12 "  style=" padding: 0;">
+                        <label>کاربر</label>
+                        <md-select
+                                class="md-block  col-sm-12 pull-right"
+                                placeholder="انتخاب کاربر"
+                                ng-model="data.filter.selectedUsers"
+                                md-on-open="func.getUsersList()"
+                                ng-change="func.changeUsers()"
+                                multiple="true"
+                                style="min-width: 200px;padding-left: 0;padding-right: 0;">
+                            <md-select-header>
+                                <span style="padding: 2px;"> انتخاب کاربران </span>
+                            </md-select-header>
+                            <md-option ng-value="user" ng-repeat="user in data.usersList">{{user}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+                <div
+                        style="padding-left:2px ;padding-right:2px;"
+                        layout="row"
+                        class="col-sm-3 col-xs-6 ">
+                    <md-input-container class="md-block  col-sm-12 "  style=" padding: 0;">
+                        <label>نقش</label>
+                        <md-select
+                                class="md-block  col-sm-12 pull-right"
+                                placeholder="انتخاب نقش"
+                                ng-model="data.filter.selectedRoles"
+                                md-on-open="func.getRolesList()"
+                                ng-change="func.changeRoles()"
+                                multiple="true"
+                                style="min-width: 200px;padding-left: 0;padding-right: 0;">
+                            <md-select-header>
+                                <span style="padding: 2px;"> انتخاب نقش </span>
+                            </md-select-header>
+                            <md-option ng-value="role" ng-repeat="role in data.rolesList">{{role.id}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+                <div
+                        style="padding-left:2px ;padding-right:2px;"
+                        layout="row"
+                        class="col-sm-3 col-xs-6 ">
+                    <md-input-container class="md-block  col-sm-12 "  style=" padding: 0;">
+                        <label>فراداده</label>
+                        <md-select
+                                class="md-block  col-sm-12 pull-right"
+                                placeholder="انتخاب فراداده"
+                                ng-model="data.filter.selectedMetadata"
+
+                                ng-change="func.changeMetadata()"
+                                md-on-open="func.getMetadataLists()"
+                                style="min-width: 200px;padding-left: 0;padding-right: 0;">
+                            <md-select-header>
+                                <span  style="padding: 2px;"> انتخاب فراداده </span>
+                            </md-select-header>
+                            <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                            <md-option ng-value="metadata" ng-repeat="metadata in data.metadataList">{{metadata.label}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+                <div
+                        style="padding-left:2px ;padding-right:2px;"
+                        layout="row"
+                        class="col-sm-3 col-xs-6 ">
+                    <md-input-container class="md-block  col-sm-12 "  style=" padding: 0;">
+                        <label>انتخاب ویژگی</label>
+                        <md-select
+                                class="md-block  col-sm-12 pull-right"
+                                placeholder="انتخاب ویژگی"
+                                ng-model="data.filter.selectedProperty"
+                                ng-change="func.changeProperty()"
+                                style="min-width: 200px;padding-left: 0;padding-right: 0;">
+                            <md-select-header>
+                                <span  style="padding: 2px;"> انتخاب فراداده </span>
+                            </md-select-header>
+                            <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                            <md-option ng-value="property" ng-repeat="property in data.allpropertyList">{{property.label}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+            </div>
+
+            <div class="col-sm-12 col-xs-12 row form-group"  style="overflow-x: auto !important; overflow-y: hidden !important; max-height: 130px; margin-top: 8px ! important; margin-bottom: 0px ! important;">
+
+                <style>
+                    .body-view-nothidden table input.ltrDirection{
+                        direction: ltr !important;
+                        text-align: left !important;
+                    }
+                    .body-view-nothidden table  .increase-datepicker{
+                         margin-bottom : 250px !important;
+                    }
+                </style>
+                <table  style="overflow-x: hidden ! important; overflow-y: auto ! important; max-height: 160px ! important; display: inline-block; padding-right: calc(50% - 200px);" class="table table-bordered- table-responsive table-striped table-hover- table-condensed " >
+                    <caption>
+                        <span  class="pull-right">لیست ویژگی ها</span>
+                    </caption>
+                    <thead  style="background-color:#c3d9ff !important;">
+                        <th class="position-center" >
+                            <span style="padding: 0px 15px ! important;" ng-bind="'administration.zr.row'|translate"></span>
+                        </th>
+                        <th class="position-center" >
+                            <span style="padding: 0px 15px ! important;">نام</span>
+                        </th>
+                        <th class="position-center" >
+                            <span style="padding: 0px 15px ! important;">مقدار</span>
+                        </th>
+                        <th class="position-center" >
+                            <span style="padding: 0px 15px ! important;">حذف</span>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr
+                                ng-repeat="(Key,property) in data.editedPropertiesList"
+                                class="dashboard-select-table-tr"
+                                ng-class="{'rowOdd':$even}"
+                        >
+                            <td class="position-center">
+                                <span ng-bind="$index+1|en2faNum"></span>
+                            </td>
+                            <td class="position-center">
+                                <span ng-bind="property.label|en2faNum"></span>
+                            </td>
+                            <td class="position-center">
+
+                                <!--  TODO -------------------------------------Text -------------------------------------------->
+                                <div style="padding-left:2px ;padding-right:2px;"
+                                     layout="row"
+                                     ng-if="property.objClass=='com.openkm.bean.form.Input' && property.type!='date' && !property.isThesaurus"
+                                     class="row form-group col-sm-12 col-xs-12"
+                                >
+                                    <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                                        <label>{{property.label}}</label>
+                                        <input
+                                                style="font-size: 14px !important;"
+                                                id="#{{Key}}"
+                                                ng-disabled="property.readonly || property.notActive"
+                                                ng-required="{{property.require}}"
+                                                type="text"
+                                                name="{{propertyName}}"
+                                                ng-model="property.value"
+                                                ng-class="{'ltrDirection':property.isLTR}"
+                                        />
+                                    </md-input-container>
+                                </div>
+                                <!--  TODO -------------------------------------Thesaurus --------------------------------------->
+                                <div
+                                        layout="row"
+                                        ng-if="property.objClass=='com.openkm.bean.form.Input' && property.type=='text' && property.isThesaurus"
+                                        class="row form-group col-sm-12 col-xs-12"
+                                        style="padding-left:2px ;padding-right:2px;"
+                                >
+                                    <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                                        <label>{{property.label}}</label>
+                                        <input
+                                                ng-required="{{property.require}}"
+                                                ng-disabled="property.readonly"
+                                                style="font-size: 14px !important;"
+                                                id="#{{Key}}"
+                                                type="text"
+                                                disabled
+                                                name="{{Key}}"
+                                                ng-model="property.value"
+                                                ng-class="{'ltrDirection':property.isLTR}"
+                                        />
+                                    </md-input-container>
+                                    <span
+                                            ng-click="func.selectTreeThezarus(property)"
+                                            class="fa fa-plus"
+                                            style="margin-top: 30px; margin-left: 0px; cursor: pointer;">
+                                        <md-tooltip  md-direction="bottom">
+                                            انتخاب از درخت تزاروس
+                                        </md-tooltip>
+                                    </span>
+                                </div>
+                                <!--  TODO -------------------------------------Date -------------------------------------------->
+
+
+                                <div
+                                        style="margin: 0 !important;padding:25px 0 !important;"
+                                        ng-if="property.objClass=='com.openkm.bean.form.Input' && property.type=='date'"
+                                        class="row form-group col-sm-12 col-xs-12 ">
+                                    <span>
+                                        <div class="col-sm-12"  style="margin-left: 0px ! important; padding-left: 0px ! important; margin-right: 0px ! important; padding-right: 0px ! important;">
+                                            <div class="input-group" ng-class="{'increase-datepicker': data.isOpen[Key]}" style="direction: ltr;">
+                                                        <span
+                                                                id="dateId-{{Key}}"
+                                                                class="input-group-addon"
+                                                                style="background-color: transparent; cursor: pointer; border-radius: 0px; border-right: 0px;border-top:0px; border-bottom:1px solid rgba(197,197,197,1) !important;"
+                                                                ng-click="data.open($event,Key)">
+                                                            <i class=" fa fa-calendar"></i>
+                                                        </span>
+                                                <input name="from"
+                                                       type="text"
+                                                       disabled
+                                                       ng-required="{{property.require}}"
+                                                       style="
+                                                            background-color: transparent;
+                                                            padding-left: 0px;
+                                                            padding-right: 10px;
+                                                            font-size: 12px;
+                                                            box-shadow: none !important;
+                                                            border-width: 0px 0px 1px 0px !important;
+                                                            border-style: none none solid  none !important;
+                                                            border-color: transparent  transparent rgba(197, 197, 197 , 1) transparent !important;"
+                                                       placeholder="{{property.label}}"
+                                                       readonly="readonly"
+                                                       class="form-control fontStyle"
+                                                       datepicker-popup-persian="yyyy/MM/dd"
+                                                       ng-model="property.value"
+                                                       is-open="data.isOpen[Key]"
+                                                       aria-describedby="dateId-{{Key}}"
+                                                       ng-change = "func.changeDate(property)"
+                                                       current-text="امروز" clear-text="پاک کردن" close-text="لغو"
+                                                       starting-day="6" />
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <!--  TODO -------------------------------------Single Select ----------------------------------->
+                                <div
+                                        style="padding-left:2px ;padding-right:2px;"
+                                        layout="row"
+                                        class="row form-group col-sm-12"
+                                        ng-if="property.objClass=='com.openkm.bean.form.Select' && property.type=='simple' ">
+                                    <md-input-container class="md-block  col-sm-12 "  style=" padding: 0;">
+                                        <label>{{property.label}}</label>
+                                        <md-select
+                                                class="md-block  col-sm-12 pull-right"
+                                                ng-disabled="property.readonly || property.notActive"
+                                                placeholder="{{property.label}}"
+                                                ng-model="property.selected"
+                                                ng-change="func.selectSingle(property)"
+                                                style="min-width: 200px;padding-left: 0;padding-right: 0;">
+                                            <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                                            <md-option ng-value="p" ng-repeat="p in property.options">{{p.label}}</md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </div>
+                                <!--  TODO -------------------------------------Multi Select ------------------------------------>
+                                <div
+                                        style="padding-left:2px ;padding-right:2px;"
+                                        layout="row"
+                                        class="row form-group col-sm-12"
+                                        ng-if="property.objClass=='com.openkm.bean.form.Select' && property.type=='multiple' ">
+                                    <md-input-container class="md-block  col-sm-12 "  style=" padding: 0;">
+                                        <label>{{property.label}}</label>
+                                        <md-select
+                                                class="md-block  col-sm-12 pull-right"
+                                                ng-disabled="property.readonly || property.notActive"
+                                                placeholder="{{property.label}}"
+                                                ng-model="property.selected"
+                                                ng-change="func.selectMultiSelected(property)"
+                                                multiple="true"
+                                                style="min-width: 200px;padding-left: 0;padding-right: 0;">
+                                            <md-option ng-value="p" ng-repeat="p in property.options">{{p.label}}</md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </div>
+                                <!--  TODO -------------------------------------Texx Area --------------------------------------->
+                                <div
+                                        style="padding-left:2px ;padding-right:2px;"
+                                        ng-if="property.objClass == 'com.openkm.bean.form.TextArea'"
+                                        class="row form-group col-sm-12">
+                                    <span class="col-sm-12 pull-right" ng-bind="property.label"></span>
+                                        <textarea class="form-control col-sm-12" cols="7" rows="4" style="resize: vertical;width: 100%!important;font-size: 15px;padding: 5px;"
+                                                  ng-model="property.value"
+                                                  name="{{propertyName}}"
+                                                  ng-disabled="property.readonly || property.notActive"
+                                        >
+                                        </textarea>
+                                </div>
+                                <!--  TODO -------------------------------------CheckBox ---------------------------------------->
+                                <div
+                                        style="margin: 10px 0px;padding-left:2px ;padding-right:2px;"
+                                        layout="row"
+                                        class="row form-group col-sm-12"
+                                        ng-if="property.objClass == 'com.openkm.bean.form.CheckBox'">
+                                    <span class="pull-right" ng-bind="property.label"></span>
+                                    <md-checkbox ng-disabled="property.readonly || property.notActive" class="pull-right" ng-change = "func.changeCheckbox(property)" ng-model="property.value" style=" margin-right: 3px;left: 0; opacity: 1; position: relative;"></md-checkbox>
+                                </div>
+                            </td>
+                            <td class="position-center">
+                                <span style="cursor: pointer;" class="col-sm-12 fa fa-trash"  ng-click="func.removeProperty(Key)">
+                                     <md-tooltip  md-direction="top">
+                                                حذف
+                                     </md-tooltip>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!---moz-inline-box-->
+        <div class="col-sm-12"  style="overflow: auto !important; max-height: 280px;display: inline !important;margin-top:8px !important;">
+            <table  style="display: inline;/*display: block;*/ " class="table table-bordered- table-responsive table-striped table-hover- table-condensed " >
+                <caption>
+                    <span  class="pull-right">دسترسی فراداده</span>
+                 <span style="margin-right:10px;font-size: 25px;" class="fa fa-plus-circle pull-right" ng-click="func.addAccessMetadata()">
+                    <md-tooltip  md-direction="top">
+                        ایجاد
+                    </md-tooltip>
+                </span>
+                </caption>
+                <thead  style="background-color:#c3d9ff !important;/*background-color:#fbbb3d !important;color:white !important*/">
+                    <th class="position-center" >
+                        <span style="padding: 0px 15px ! important;" ng-bind="'administration.zr.row'|translate"></span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="padding: 0px 15px ! important;" ng-bind="'desktop.zl.metadata'|translate"></span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="padding: 0px 15px ! important;" ng-bind="'administration.zr.roles'|translate"></span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="padding: 0px 15px ! important;" ng-bind="'administration.zr.users'|translate"></span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۱</span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۲</span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۳</span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۴</span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۵</span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۶</span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۷</span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۸</span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۹</span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۱0</span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۱۱</span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۱۲</span>
+                    </th>
+                    <th class="position-center" >
+                        <span style="white-space: nowrap;padding: 0px 15px ! important;" >حذف</span>
+                    </th>
+                </thead>
+                <tbody>
+                <tr
+                        ng-repeat="(accessesKey,access) in data.accesses"
+                        class="dashboard-select-table-tr"
+                        ng-class="{'rowOdd':$even , 'activated':data.selectAccess==accessesKey}"
+                >
+                    <td class="position-center">
+                        <span ng-bind="$index+1|en2faNum"></span>
+                    </td>
+                    <td class="position-center">
+                        <span ng-bind="access.groupName|en2faNum"></span>
+                    </td>
+                    <td class="position-center">
+
+                        <span
+                                ng-repeat = "role in access.Roles"
+                                style="width: 160px;"
+                                class="col-sm-12 alert-mode-viewer">
+
+
+                            <span style="text-align: justify; word-wrap: break-word; word-break: break-all; margin-top: auto; width: calc(100% - 40px);  padding-left: 6px;"
+                                  class="pull-right" ng-bind="role[0]" ></span>
+
+                            <span class="pull-left" style="width: 40px; border-right: 1px solid rgb(197, 197, 197);">
+                                <span style="cursor: pointer" ng-if="role[1][3]" class="fa fa-eye">
+                                    <md-tooltip  md-direction="top">
+                                        خواندن
+                                    </md-tooltip>
+                                </span>
+                                <span style="cursor: pointer" ng-if="role[1][2]" class="fa fa-edit">
+                                    <md-tooltip  md-direction="top">
+                                        ویرایش
+                                    </md-tooltip>
+                                </span>
+                                <span style="cursor: pointer" ng-if="role[1][1]" class="fa fa-trash">
+                                    <md-tooltip  md-direction="top">
+                                        حذف
+                                    </md-tooltip>
+                                </span>
+                                <span style="cursor: pointer" ng-if="role[1][0]" class="fa fa-lock">
+                                    <md-tooltip  md-direction="top">
+                                        امنیت
+                                    </md-tooltip>
+                                </span>
+                            </span>
+
+
+                        </span>
+                    </td>
+                    <td class="position-center">
+                        <span
+                                style="width: 160px;"
+                                ng-repeat = "user in access.Users"
+                                class="col-sm-12 alert-mode-viewer">
+
+
+                            <span style="text-align: justify; word-wrap: break-word; word-break: break-all; margin-top: auto; width: calc(100% - 40px); padding-left: 6px;"
+                                  class="pull-right" ng-bind="user[0]" ></span>
+
+                            <span class="pull-left" style="width: 40px; border-right: 1px solid rgb(197, 197, 197);">
+                                <span style="cursor: pointer" ng-if="user[1][3]" class="fa fa-eye">
+                                    <md-tooltip  md-direction="top">
+                                        خواندن
+                                    </md-tooltip>
+                                </span>
+                                <span style="cursor: pointer" ng-if="user[1][2]" class="fa fa-edit">
+                                    <md-tooltip  md-direction="top">
+                                        ویرایش
+                                    </md-tooltip>
+                                </span>
+                                <span style="cursor: pointer" ng-if="user[1][1]" class="fa fa-trash">
+                                    <md-tooltip  md-direction="top">
+                                        حذف
+                                    </md-tooltip>
+                                </span>
+                                <span style="cursor: pointer" ng-if="user[1][0]" class="fa fa-lock">
+                                    <md-tooltip  md-direction="top">
+                                        امنیت
+                                    </md-tooltip>
+                                </span>
+                            </span>
+
+
+                        </span>
+                    </td>
+
+                    <td class="position-center">
+                        <span class="col-sm-12"  ng-bind="access.property1[1]" ></span>
+                        <span class="col-sm-12"  ng-bind="access.property1[2]" ></span>
+                    </td>
+
+                    <td class="position-center">
+
+                        <span class="col-sm-12"  ng-bind="access.property2[1]" ></span>
+                        <span class="col-sm-12"  ng-bind="access.property2[2]" ></span>
+                    </td>
+
+                    <td class="position-center">
+
+                        <span class="col-sm-12"  ng-bind="access.property3[1]" ></span>
+                        <span class="col-sm-12"  ng-bind="access.property3[2]" ></span>
+                    </td>
+
+                    <td class="position-center">
+
+                        <span class="col-sm-12"  ng-bind="access.property4[1]" ></span>
+                        <span class="col-sm-12"  ng-bind="access.property4[2]" ></span>
+                    </td>
+
+                    <td class="position-center">
+
+                        <span class="col-sm-12"  ng-bind="access.property5[1]" ></span>
+                        <span class="col-sm-12"  ng-bind="access.property5[2]" ></span>
+                    </td>
+
+                    <td class="position-center">
+
+                        <span class="col-sm-12"  ng-bind="access.property6[1]" ></span>
+                        <span class="col-sm-12"  ng-bind="access.property6[2]" ></span>
+                    </td>
+
+                    <td class="position-center">
+
+                        <span class="col-sm-12"  ng-bind="access.property7[1]" ></span>
+                        <span class="col-sm-12"  ng-bind="access.property7[2]" ></span>
+                    </td>
+
+                    <td class="position-center">
+
+                        <span class="col-sm-12"  ng-bind="access.property8[1]" ></span>
+                        <span class="col-sm-12"  ng-bind="access.property8[2]" ></span>
+                    </td>
+
+
+                    <td class="position-center">
+
+                        <span class="col-sm-12"  ng-bind="access.property9[1]" ></span>
+                        <span class="col-sm-12"  ng-bind="access.property9[2]" ></span>
+                    </td>
+
+                    <td class="position-center">
+
+                        <span class="col-sm-12"  ng-bind="access.property10[1]" ></span>
+                        <span class="col-sm-12"  ng-bind="access.property10[2]" ></span>
+                    </td>
+
+                    <td class="position-center">
+
+                        <span class="col-sm-12"  ng-bind="access.property11[1]" ></span>
+                        <span class="col-sm-12"  ng-bind="access.property11[2]" ></span>
+                    </td>
+
+                    <td class="position-center">
+
+                        <span class="col-sm-12"  ng-bind="access.property12[1]" ></span>
+                        <span class="col-sm-12"  ng-bind="access.property12[2]" ></span>
+                    </td>
+
+                    <td class="position-center">
+                        <span style="cursor: pointer;" class="col-sm-12 fa fa-trash"  ng-click="func.remove(accessesKey)">
+                             <md-tooltip  md-direction="top">
+                                        حذف
+                             </md-tooltip>
+                        </span>
+                    </td>
+
+                </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+
+</div>

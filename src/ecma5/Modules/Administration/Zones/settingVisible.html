@@ -1,0 +1,151 @@
+
+<div   style="padding:  0px; float: right; width: 100%; ">
+    <!--<h6 ng-bind="'administration.zr.Setting' | translate" style="margin:10px !important;"  ></h6>
+    <div class="dividerPanel"></div>-->
+    <div class="zonesHeader">
+        <span ng-bind="'administration.zr.Setting' | translate"></span>
+    </div>
+    <ul>
+        <i
+                ng-if="data.showLogins['/Config']"
+                ng-class="{'selected-nav' : data.acriveNav =='generalSetting'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('generalSetting')">
+            <span class="icon-show fa fa-wrench"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.generalSetting'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.generalSetting'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='metadata'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('metadata')">
+            <span class="icon-show fa fa-list-alt"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.metadata'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.metadata'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='addMetadata'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('addMetadata')">
+            <span class="icon-show fa fa-plus"></span>
+            <span
+                    class="label-show not-view"
+            >درخت فراداده
+            </span>
+            <md-tooltip  md-direction="left" >
+                درخت فراداده
+            </md-tooltip>
+        </i>
+
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='createSelectRelation'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('createSelectRelation')">
+            <span class="icon-show fa fa-link"></span>
+            <span
+                    class="label-show not-view"
+                   >ارتباط بین انتخاب ها
+            </span>
+            <md-tooltip  md-direction="left" >
+                ارتباط بین انتخاب ها
+            </md-tooltip>
+        </i>
+
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='relation'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('relation')">
+            <span class="icon-show fa fa-link"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.relation_definition'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.relation_definition'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-if="data.showLogins['/MimeType']"
+                ng-class="{'selected-nav' : data.acriveNav =='MimeType'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('MimeType')">
+            <span class="icon-show fa fa-file"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.MimeType'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.MimeType'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-if="data.showLogins['/LoggedUsers']"
+                ng-class="{'selected-nav' : data.acriveNav =='loggedUsers'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('loggedUsers')">
+            <span class="icon-show fa fa-sign-in"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.loggedUsers'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.loggedUsers'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='messageList'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('messageList')">
+            <span class="icon-show fa fa-envelope-square"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.messageList'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.messageList'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-if="data.showLogins['/generate_thesaurus.jsp']"
+                ng-class="{'selected-nav' : data.acriveNav =='dictionary'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('dictionary')">
+            <span class="icon-show fa fa-pencil-square"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.dictionary'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.dictionary'|translate}}
+            </md-tooltip>
+        </i>
+
+
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='categoriManagement'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('categoriManagement')">
+            <span class="icon-show fa fa-list"></span>
+            <span
+                    class="label-show not-view"
+            >دسته بندی
+            </span>
+            <md-tooltip  md-direction="left" >
+               دسته بندی
+            </md-tooltip>
+        </i>
+
+
+    </ul>
+
+</div>

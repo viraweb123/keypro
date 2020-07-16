@@ -1,0 +1,26 @@
+
+    <div class="N dashboard-background">
+                    <span
+                            class="opener-zone opener-zone-dashboard opener-zone-right fa fa-chevron-{{data.nav.right.isOpened == false ? 'left' : 'right'}}"
+                            ng-click="func.closeOrOpenRight();">
+                    </span>
+    </div>
+
+    <div class="D">
+        <div class="userVisible hidden-item"             ui-view="userVisible"></div>
+        <div class="emailVisible hidden-item"            ui-view="emailVisible"></div>
+        <div class="generalVisible hidden-item"          ui-view="generalVisible"></div>
+        <div class="newsVisible hidden-item"             ui-view="newsVisible"></div>
+        <div class="workflowVisible hidden-item"         ui-view="workflowVisible"></div>
+        <div class="bookmarkVisible hidden-item"         ui-view="bookmarkVisible"></div>
+    </div>
+
+
+    <div class="N desktop-background">
+        <span
+                class="opener-zone fa fa-chevron-{{data.nav.right.isOpened == false ? 'left' : 'right'}}"
+                ng-click="data.nav.right.isOpened = !data.nav.right.isOpened;">
+        </span>
+    </div>
+
+

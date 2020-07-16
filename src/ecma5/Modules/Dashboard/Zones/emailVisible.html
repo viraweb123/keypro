@@ -1,0 +1,36 @@
+<div   style="padding:  0px; float: right; width: 100%; ">
+    <!--<h6 ng-bind="'dashboard.zr.email' | translate" style="margin:10px !important;" class="dashboard-background-"></h6>
+    <div class="dividerPanel"></div>-->
+    <div class="zonesHeader">
+        <span ng-bind="'dashboard.zr.email' | translate"></span>
+    </div>
+    <ul>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='emailelEctronicMails'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('emailelEctronicMails')">
+            <span class="icon-show fa fa-edit"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.email_electronic_mails'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.email_electronic_mails'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='emailAttachments'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('emailAttachments')">
+            <span class="icon-show fa fa-file"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.email_attachments'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.email_attachments'|translate}}
+            </md-tooltip>
+        </i>
+    </ul>
+
+</div>

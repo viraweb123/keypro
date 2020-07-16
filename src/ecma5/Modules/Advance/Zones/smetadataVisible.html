@@ -1,0 +1,45 @@
+<div class="zonesHeaderR">
+    <span ng-bind="'desktop.zl.metadata' | translate"></span>
+    <div class=" pull-left  refresh" ng-show="data.clipboardFolder != null && data.profile.prfMenu.prfEdit.updatePropertyGroupVisible" >
+        <a  ng-click="func.removeSaved2Clipboard()" class="getAgain">
+            <i  class="fa fa-trash" style="color: white; cursor: pointer;padding:2px;">
+                <md-tooltip  md-direction="bottom">
+                    حذف حافظه
+                </md-tooltip>
+            </i>
+        </a>
+    </div>
+    <div class=" pull-left  refresh" ng-show="data.clipboardFolder != null && data.profile.prfMenu.prfEdit.updatePropertyGroupVisible" >
+        <a  ng-click="func.showSaved2Clipboard()" class="getAgain">
+            <i  class="fa fa-eye" style="color: white; cursor: pointer;padding:2px;">
+                <md-tooltip  md-direction="bottom">
+                    نمایش فراداده موقت
+                </md-tooltip>
+            </i>
+        </a>
+    </div>
+</div>
+<div class="CNK">
+    <div class="advanceRightBody">
+        <div layout="row"  class="row form-group col-sm-12"  style="padding:0px;">
+            <md-input-container class="md-block  col-sm-12 "  style=" width:100%; padding: 0;">
+                <label>انتخاب نوع فراداده</label>
+                <md-select
+                        class="md-block  col-sm-12 pull-right"
+                        placeholder="انتخاب فراداده"
+                        ng-model="data.selectMetadata"
+                        ng-change="func.changeMetaData()"
+                        md-on-open="func.getMetadataList()"
+                        style=" min-width: 100%; max-width: 100%;padding:0px;">
+                    <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                    <md-option ng-value="metadata" ng-repeat="metadata in data.metadatas">{{metadata.label}}</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <div  ng-show="data.selectMetadata!=null" class="tab-pane- fade- in-  col-sm-12  row  form-group " style="padding: 0px 0px 0px 5px !important; overflow-y: auto; max-height: calc(100vh - 165px);" >
+            <generator style="position: relative; padding: 0px 0px 0px 5px;"   external-scope = "externalScope"></generator>
+        </div>
+    </div>
+</div>
+
+

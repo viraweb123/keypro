@@ -1,0 +1,378 @@
+@media screen and (min-width: 650px){
+
+
+    .Main .main-content .easy-access-buttons{
+        position: absolute !important;
+        top:0px !important;
+        width: 100vw !important;
+        background-color: rgba(0,0,0,0.6) !important;
+        height:0px;
+        z-index: 2147483647 !important;
+
+        transition-duration: 0.5s;
+        transition-property: height;
+        transition-timing-function: ease-in;
+    }
+
+
+    .Main .main-content .easy-access-buttons .easy-access-buttons-close{
+        text-align:center !important;
+        overflow: hidden !important;
+        height: 50px !important;
+    }
+
+    .Main .main-content .easy-access-buttons-show{
+        height : 170px !important;
+    }
+
+
+    .Main .main-content .easy-access-buttons  .view-list-items{
+        float: right !important;
+        height: 100px !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        width: 80% !important;
+        white-space: nowrap !important;
+    }
+
+
+
+
+
+    .Main .main-content .easy-access-buttons  .view-list-items  .itemView{
+        height: 80px !important;
+        text-align:center !important;
+        width : 150px !important;
+        margin: 5px !important;
+        float: right !important;
+    }
+
+
+
+
+    .Main .main-content .easy-access-buttons  .view-list-items  .view-list-item{
+        height: 120px !important;
+        text-align:center !important;
+        width : 130px !important;
+        margin: 10px 5px !important;
+        padding: 2px !important;
+        display: inline-block !important;
+        background-color: white;
+
+        box-shadow  :  none;
+        position: relative;
+
+        transition-duration: 0.5s;
+        transition-property: background-color,box-shadow;
+        transition-timing-function: ease-in;
+
+    }
+
+    .Main .main-content .easy-access-buttons  .view-list-items  .view-list-item:hover{
+        background-color : rgba(255, 45, 120, 1) !important;
+        box-shadow  :  0 0 15px rgba(255, 45, 120, 1) !important;
+
+        /*background-color : rgba(35,173,255,1) !important;
+        box-shadow: 0 0 15px rgba(35,173,255,1) !important;*/
+
+    }
+
+    .Main .main-content .easy-access-buttons  .view-list-items  .view-list-item  span.fa{
+        color: rgba(0,0,0,0.5);
+        cursor: pointer !important;
+        padding: 5px  0px !important;
+        margin : 0px !important;
+        font-size: 35px;
+        width : 100% !important;
+        height: 50px;
+
+        transition-duration: 0.3s;
+        transition-property: height,font-size;
+        transition-timing-function: ease-in;
+    }
+
+    .Main .main-content .easy-access-buttons  .view-list-items  .view-list-item  div.content-view{
+        color: rgba(0,0,0,0.5);
+        cursor: pointer;
+        white-space: normal !important;
+        width : 100% !important;
+        height: 70px;
+
+        transition-duration: 0.2s;
+        transition-property: height;
+        transition-timing-function: ease-in;
+    }
+
+    .Main .main-content .easy-access-buttons  .view-list-items  .view-list-item:hover  span{
+        color : white !important;
+    }
+
+    .Main .main-content .easy-access-buttons  .view-list-items  .view-list-item:hover  span.fa{
+        color :white !important;
+        font-size: 45px !important;
+    }
+
+
+
+
+
+
+    .infoIcon{
+        font-size: 25px;
+        cursor: pointer;
+        color: white;
+        margin: 12px 0px 0px 0px !important;
+        padding : 0px !important
+    }
+
+    /* TODO ------------------------------------------- Info Section ------------------------------------------  */
+    .Main .main-content .Header  .Info  .hiddenInfo {
+          border-bottom-left-radius: 2px;
+          border-bottom-right-radius: 2px;
+          display: block;
+          margin-right: 5px;
+          margin-top: 50px;
+          position: absolute;
+          right: 1px;
+          top: 1px;
+          /*display : none;*/
+          z-index: 1000;
+    }
+    .Main .main-content .Header  .Info  .hiddenInfo  .infoData{
+        width:400px;
+        height: auto;
+        background-color : white;
+        padding: 6px 0px 0px 0px;
+        box-shadow:  7px 8px 6px -7px rgba(35, 173, 255, 1);
+    }
+    .Main .main-content .Header  .Info  .hiddenInfo  .infoData  span{
+        padding: 0px;
+        margin: 0px;
+        text-align: right;
+        word-wrap: break-word;
+    }
+
+
+
+    .Main .main-content .Header  .Info  .hiddenInfo  .infoData  .bold{
+        font-weight: bold;
+    }
+    .Main .main-content .Header  .Info  .hiddenInfo  .infoData hr{
+        padding: 0px;
+        margin: 2px;
+    }
+    .Main .main-content .Header  .Info  .hiddenInfo  .infoData a{
+        color:blue;
+        font-size: 14px;
+        margin-top:2px;
+    }
+    .Main .main-content .Header  .Info  .hiddenInfo  .infoData  img{
+        margin-top:10px;
+    }
+    /*.Main .main-content .Header  .Info:hover  .hiddenInfo{
+        display: block;
+    }
+    .Main .main-content .Header  .Info  .infoIcon:hover  .hiddenInfo{
+        display: block;
+    }*/
+
+
+
+    .Main .main-content .Header  .Info  .hiddenInfo .clockView{}
+    .Main .main-content .Header  .Info  .hiddenInfo .clockView .infoData input.select-color {
+        padding: 0px !important;
+        margin: 0px !important;
+        border-radius: 0px !important;
+        box-shadow: none !important;
+        border: none !important;
+        width: 30px !important;
+        height: 20px !important;
+        cursor: pointer !important;
+    }
+
+
+    /* TODO ------------------------------------------- User Section ------------------------------------------  */
+    .Main .main-content .Header  .User img.userimg{
+        border-radius: 17.5px;
+        height: 35px;
+        margin : 2px 0px 0px 0px;
+        width: 35px;
+        float: right;
+    }
+    .Main .main-content .Header  .User  img.userimg:hover{
+        box-shadow         :  0 0 10px rgb(255, 96, 88);
+        cursor: pointer;
+    }
+    .Main .main-content .Header  .User span.userName{
+        bottom: 0;
+        font-size: 12px;
+        margin : 5px 0px 0px 0px;
+        max-width: calc(100% - 63px);
+        height: 35px;
+        padding : inherit;
+        position: relative;
+        text-align: right;
+        top: 0;
+        vertical-align: middle;
+        word-break: break-all;
+        word-wrap: break-word;
+        color: white;
+        float:right;
+    }
+    .Main .main-content .Header  .User  .menuBar{
+        float: right;
+        padding: 0px;
+        color: white;
+        width:20px;
+    }
+    i.splitFromLeft{
+        padding-left: 10px !important;
+    }
+
+    /* TODO ------------------------------------------- Navigation Section ------------------------------------------  */
+    .Main .main-content .Header  .User .showFabSpeed {
+        display: inline !important;
+    }
+    .Main .main-content .Header .Navigation  .navigationData{
+        width : 100%;
+        height:100%;
+    }
+
+    .Main .main-content .Header .Navigation .navigationData span.simpleActive{
+        border-bottom:3px solid #5d9ce9 !important;
+        color : #5d9ce9 !important;
+        background-color: transparent  !important;
+    }
+    .Main .main-content .Header .Navigation .navigationData span.advanceActive{
+        border-bottom:3px solid #5d9ce9 !important;
+        color : #5d9ce9 !important;
+        background-color: transparent  !important;
+    }
+    .Main .main-content .Header .Navigation .navigationData span.cloudActive{
+        border-bottom:3px solid #735ac4 !important;
+        color : #735ac4 !important;
+        background-color: transparent  !important;
+    }
+    .Main .main-content .Header .Navigation .navigationData span.desktopActive{
+        border-bottom:3px solid  #00acc1 !important;
+        color :  #00acc1 !important;
+        background-color: transparent  !important;
+    }
+    .Main .main-content .Header .Navigation .navigationData span.reportActive{
+        border-bottom:3px solid #c3d9ff !important;
+        color : #c3d9ff !important;
+        background-color: transparent  !important;
+    }
+    .Main .main-content .Header .Navigation .navigationData span.administrationActive{
+        border-bottom:3px solid #f47555 !important;
+        color : #f47555 !important;
+        background-color: transparent  !important;
+    }
+    .Main .main-content .Header .Navigation .navigationData span.dashboardActive{
+        border-bottom:3px solid #fbbb3d !important;
+        color : #fbbb3d !important;
+        background-color: transparent  !important;
+    }
+    .Main .main-content .Header .Navigation .navigationData span.mapActive{
+        border-bottom:3px solid #9560f4 !important;
+        color : #9560f4 !important;
+        background-color: transparent  !important;
+    }
+    .Main .main-content .Header .Navigation  .navigationData  span.spanMainNavIcon{
+        height : 50px  !important;
+        font-size: 10px;
+        padding: 18px 1px 1px 1px  !important;
+        margin: 0px 1px !important;
+        text-align: center;
+        position: relative !important;
+        background-color: transparent;
+        color: black;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .Main .main-content .Header .Navigation  .navigationData  #simpleActive.spanMainNavIcon:hover{
+        background-color: #5d9ce9;
+        color: white;
+    }
+    .Main .main-content .Header .Navigation  .navigationData  #advanceActive.spanMainNavIcon:hover{
+        background-color: #5d9ce9;
+        color: white;
+    }
+    .Main .main-content .Header .Navigation  .navigationData  #cloudActive.spanMainNavIcon:hover{
+        background-color: #735ac4;
+        color: white;
+    }
+    .Main .main-content .Header .Navigation  .navigationData  #desktopActive.spanMainNavIcon:hover{
+        background-color: #00acc1;
+        color: white;
+    }
+    .Main .main-content .Header .Navigation  .navigationData  #administrationActive.spanMainNavIcon:hover{
+        background-color: #f47555;
+        color: white;
+    }
+    .Main .main-content .Header .Navigation  .navigationData  #dashboardActive.spanMainNavIcon:hover{
+        background-color: #fbbb3d;
+        color: white;
+    }
+    .Main .main-content .Header .Navigation  .navigationData  #mapActive.spanMainNavIcon:hover{
+        background-color: #9560f4;
+        color: white;
+    }
+    .Main .main-content .Header .Navigation  .navigationData  #reportActive.spanMainNavIcon:hover{
+        background-color: #a7b0f0;
+        color: white;
+    }
+
+
+    .Main .main-content .Header .Navigation  .navigationData  span.spanMainNavIcon  span.showTopTriangle{
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid rgba(255, 255,255, 1);
+        display: none;
+        position: absolute;
+        text-align: center;
+        top: 0px;
+        right: calc(50% - 4px);
+    }
+
+    .Main .main-content .Header .Navigation  .navigationData  span.spanMainNavIcon:hover  span.showTopTriangle{
+        display: inline-block;
+    }
+
+
+    .Main .main-content .Header .Navigation  .navigationData  span.spanMainNavIcon div.main-nav-footer{
+        right : 50%;
+        width : 0px;
+        border-bottom: 5px solid transparent;
+        position: absolute;
+        bottom: 0px;
+        transition-duration: 0.5s;
+        transition-property: border-bottom,right,width;
+        transition-timing-function: ease-in;
+    }
+    .Main .main-content .Header .Navigation  .navigationData  span.spanMainNavIcon:hover div.main-nav-footer{
+        border-bottom: 3px solid white !important;
+        width : 100% !important;
+        right : 0px !important;
+    }
+
+
+
+    /* TODO ------------------------------------------- Logo Section ------------------------------------------  */
+    .Main .main-content .Header .Icon img{
+        /*border-radius: 45%;*/
+        height: calc(100% - 10px);
+        margin: 5px;
+        width: calc(100% - 10px);
+    }
+    .Main .main-content .Header .Icon  img:hover {
+        /*box-shadow         :  0 0 10px rgba(35,173,255,1);*/
+        cursor: pointer;
+    }
+
+
+
+}

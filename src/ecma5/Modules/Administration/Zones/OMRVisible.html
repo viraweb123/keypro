@@ -1,0 +1,25 @@
+
+<div   style="padding:  0px; float: right; width: 100%; ">
+    <!--<h6 ng-bind="'OMR'" style="margin:10px !important;"  ></h6>
+    <div class="dividerPanel"></div>-->
+    <div class="zonesHeader">
+        <span  >OMR</span>
+    </div>
+    <ul>
+        <i
+                ng-if="data.showLogins['/Omr']"
+                ng-class="{'selected-nav' : data.acriveNav =='OMR'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('OMR')">
+            <span class="icon-show fa fa-file-text-o"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'OMR'">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'OMR'}}
+            </md-tooltip>
+        </i>
+    </ul>
+
+</div>

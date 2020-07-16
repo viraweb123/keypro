@@ -1,0 +1,202 @@
+<style>
+    .modal-header{
+        background-color: #E75753 !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+
+    .modal-footer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-footer #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .modal-footer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+
+    .modal-footer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+
+    .modal-footer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+
+    .modal-footer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+
+    .modal-footer  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+
+    .modal-footer  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+    .sample-show-hide.ng-hide-add, .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 1.5s;
+        -moz-transition:all linear 1.5s;
+        -o-transition:all linear 1.5s;
+        transition:all linear 1.5s;
+        display:block !important;
+    }
+
+    .sample-show-hide.ng-hide-add.ng-hide-add-active,
+    .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 0.2s;
+        -moz-transition:all linear 0.2s;
+        -o-transition:all linear  0.2s;
+        transition:all linear  0.2s;
+        opacity:0;
+    }
+
+    .sample-show-hide.ng-hide-add,
+    .sample-show-hide.ng-hide-remove.ng-hide-remove-active {
+        -webkit-transition:all linear 3s;
+        -moz-transition:all linear 3s;
+        -o-transition:all linear  3s;
+        transition:all linear  3s;
+        opacity:1;
+    }
+
+    .animate-if {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+    .animate-if.ng-leave, .animate-if.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+</style>
+<div class="modal-header fontStyle" >
+    <span  class="pull-right">
+        {{'desktop.zl.security_rule'|translate}}
+    </span>
+    <span class="pull-left"  ng-click="func.cancel()" style="cursor: pointer;">
+        <md-tooltip style="z-index:100000 !important;" md-direction="top">
+            {{'desktop.zl.cancel' | translate}}
+        </md-tooltip>
+    </span>
+</div>
+<div class="modal-body row form-group  " >
+    <form role="form"  novalidate name="formRoleInfoEditName" style="max-height: 300px; overflow:hidden;" >
+        <div layout="row">
+
+            <input type="text"  style="display:none" />
+            <md-input-container
+                    class="md-block md-icon-float pull-right"
+                    ng-class = "{'col-sm-9 col-xs-9':data.isNew,'col-sm-12 col-xs-12':!data.isNew}"
+            >
+                <label  ng-bind="'desktop.zl.property_uuid'|translate"> </label>
+                <md-icon md-font-icon="fa fa-users"></md-icon>
+                <input  style="direction: ltr;text-align: left;"
+                        id="txtRole"
+                        required
+                        type="text"
+                        name="txtRole"
+                        ng-disabled="!data.isNew"
+                        ng-model="data.txtRole"
+                        minlength="1"
+                        maxlength="100"
+                        ng-pattern = "/^[a-zA-Z_.]([0-9a-zA-Z_.])*$/"
+                        ui-keypress="{13:'func.editRole()'}"
+                />
+                <div ng-messages="formRoleInfoEditName.txtRole.$error" role="alert">
+                    <div ng-message="required">
+                        {{'administration.zm.roles.error.message.require'|translate}}
+                    </div>
+                    <div ng-message="minlength">
+                        {{'administration.zm.roles.error.message.minlength_1'|translate}}
+                    </div>
+                    <div ng-message="maxlength">
+                        {{'administration.zm.roles.error.message.maxlength_100'|translate}}
+                    </div>
+                    <div ng-message="pattern">
+                        فقط عدد و حروف لاتین
+                    </div>
+                </div>
+            </md-input-container>
+            <span
+                    style="direction: ltr; text-align: left; margin-top: 19px; font-weight: bold; color: rgb(197, 197, 197); font-size: 17px; padding: 0px;"
+                    class="col-sm-3 pull-left"
+                    ng-if="data.isNew"
+            >ROLE_</span>
+        </div>
+        <div layout="row"  style="margin-top:10px;">
+            <md-checkbox
+                    ng-change = "func.activateChange()"
+                    ng-model="data.txtActive"
+                    style="left: 0; opacity: 1; position: relative;">
+                <span >{{'administration.zr.active'|translate}}</span>
+            </md-checkbox>
+            <md-tooltip  md-direction="top"  style="z-index: 10000000 !important;">
+                {{'administration.zr.active'|translate}}
+            </md-tooltip>
+        </div>
+    </form>
+
+
+</div>
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+        <form name="deleteFolderForm" novalidate role="form">
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="okButon"     class="md-raised" ng-click="func.edit()">
+                    <md-icon  md-font-icon="fa fa-{{data.buttonIcon}}  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" ng-bind="data.buttonLabel"></span>
+                </md-button>
+                <md-button id="cancelButon"     class="md-raised" ng-click="func.cancel()">
+                    <md-icon  md-font-icon="fa fa-remove  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;"  >{{'administration.zl.modal.cancel'|translate}}</span>
+                </md-button>
+            </section>
+        </form>
+    </div>
+</div>

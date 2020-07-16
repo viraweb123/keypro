@@ -1,0 +1,534 @@
+<style>
+    .modal-header{
+        background-color: rgb(38, 166, 154) !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+
+    .modal-footer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-footer #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .modal-footer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+    .modal-body #addFileButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-body #addFileButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-body #addFileButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .modal-body #addFileButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+
+    .modal-footer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+
+    .modal-footer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+
+    .modal-footer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+
+    .modal-footer  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+
+    .modal-footer  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+    @media screen and (-webkit-min-device-pixel-ratio: 0){
+        .modal-body .parent{
+            position: relative !important;
+        }
+        .modal-body .child{
+            position: absolute !important;
+        }
+    }
+    .child{
+        direction: rtl  !important;
+    }
+    .modal-body .thumbnail-viewer{
+        float : right;
+        text-align: center;
+    }
+    .modal-body .thumbnail-viewer div.selectDoc{
+        width:20px;
+        height:20px;
+        position: absolute;
+        border: 1px solid #00ACC1;
+        top: 5px;
+        z-index: 2;
+        left: 60px;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+    .modal-body  .thumbnail-viewer div.select{
+        display: inline-block !important;
+    }
+    .modal-body   .file span.check{
+        display: none;
+    }
+    .modal-body   .thumbnail-viewer div.select span.check{
+        display: inline-block !important;
+        color : #00ACC1;
+    }
+    .modal-body   .file div.unselect{
+        display: none;
+    }
+    .modal-body .thumbnail-viewer:hover div.unselect{
+        display: inline-block; !important;
+    }
+    .modal-body .thumbnail-viewer div.unselect:hover{
+        background-color : #00ACC1 !important;
+    }
+    .modal-body .file div.unselect:hover  .check{
+        display: inline-block; !important;
+        color : white !important;
+    }
+
+
+    .modal-body  .thumbnail-viewer  img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+        margin-top: 10px;
+        padding-top: 5px;
+    }
+    .modal-body  .thumbnail-viewer  .label{
+        color: black;
+        direction: rtl;
+        height: 40px !important;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 4px;
+        position: relative !important;
+        width: 100%;
+    }
+    .modal-body  .thumbnail-viewer  span.name{
+        display : inline-block;
+        height : 40px;
+        overflow : hidden;
+        padding : 5px;
+        text-align : center;
+        text-overflow : ellipsis;
+        white-space : nowrap;
+        width : 110px;
+        word-break : break-all;
+        word-wrap : break-word;
+        cursor: pointer;
+    }
+    .modal-body  .thumbnail-viewer:hover{
+        box-shadow         :  0 0 5px rgba(35,173,255,1);
+    }
+
+    .modal-body  .header-map{
+        padding: 0px !important;
+        margin: 2px 0px  !important;
+        text-align: center !important;
+    }
+
+    .modal-body  .header-map  .direction-icon{
+        cursor: pointer !important;
+        font-size: 20px !important;
+        font-weight: bold !important;
+    }
+
+
+    .sample-show-hide.ng-hide-add, .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 1.5s;
+        -moz-transition:all linear 1.5s;
+        -o-transition:all linear 1.5s;
+        transition:all linear 1.5s;
+        display:block !important;
+    }
+
+    .sample-show-hide.ng-hide-add.ng-hide-add-active,
+    .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 0.2s;
+        -moz-transition:all linear 0.2s;
+        -o-transition:all linear  0.2s;
+        transition:all linear  0.2s;
+        opacity:0;
+    }
+
+    .sample-show-hide.ng-hide-add,
+    .sample-show-hide.ng-hide-remove.ng-hide-remove-active {
+        -webkit-transition:all linear 3s;
+        -moz-transition:all linear 3s;
+        -o-transition:all linear  3s;
+        transition:all linear  3s;
+        opacity:1;
+    }
+
+    .animate-if {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+    .animate-if.ng-leave, .animate-if.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+    .modal-body .alert-mode-viewer-modal{
+        padding: 15px !important;
+        border: 1px solid rgb(197, 197, 197);
+        background-color: white;
+        margin : 10px !important;
+        transition-delay: 0s;
+        -moz-transition-delay: 0s;
+        -webkit-transition-delay: 0s;
+        transition-duration: 200ms;
+        -moz-transition-duration: 200ms;
+        -webkit-transition-duration: 200ms;
+        transition-property: all;
+        -moz-transition-property: all;
+        -webkit-transition-property: all;
+        transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        -webkit-transition-timing-function: ease-out;
+        width:calc(100% - 35px);
+    }
+
+
+
+    .modal-body .alert-mode-viewer-modal:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+    }
+    .modal-body  md-progress-linear .md-container{
+        height : 15px !important;
+    }
+    .modal-body  md-progress-linear .md-container .md-bar{
+        height : 15px !important;
+    }
+
+    .modal-body .checkbox-system{
+        padding : 10px !important;
+    }
+
+
+    .modal-body .not-result{
+        display : none;
+        height: 150px;
+        overflow: hidden;
+        margin-top : 20px;
+
+        margin-right: calc(50% - 125px);
+        width: auto ! important;
+        padding:50px 20px 20px 20px;
+        border: 1px solid rgba(197,197,197,1);
+    }
+
+    .modal-body .not-result.display{
+        display : inline-block;
+    }
+
+
+
+    .modal-body  .not-result  .dashboard-refresh{
+        font-size: 22px;
+        color: red;
+    }
+
+    .modal-body  .not-result  .dashboard-refresh:hover{
+        text-shadow: 2px 2px 4px rgba(255,0,0,1);
+    }
+
+    .modal-body  .not-result  .dashboard-ban{
+        font-size: 22px;
+        color: red;
+        margin-left:5px;
+    }
+
+    .modal-body .not-result  .dashboard-ban:hover{
+        text-shadow: 2px 2px 4px rgba(255,0,0,1);
+    }
+
+    .modal-body  .stampAndPreview{
+        width: 100%;
+        height : 220px !important;
+    }
+
+    .modal-body  .stampAndPreview .stamps{
+        /*width : 29%;*/
+        height : 100%;
+        margin: 0 !important;
+    }
+
+    .modal-body  .stampAndPreview .stamps  .selectStamp{
+        height : 50px;
+        padding : 0px !important;
+        margin : 0px !important;
+    }
+
+    .modal-body  .stampAndPreview .stamps  .stampsList{
+        height: calc(100% - 120px);
+        overflow-y: auto;
+    }
+
+    .modal-body  .stampAndPreview .stamps  .stampsButton{
+        height : 50px;
+        margin : 2px !important;
+    }
+
+
+
+
+    .modal-body  .stampAndPreview .stamps  .stampsList .fileViewer{
+        width: 80px;
+        float: right;
+        padding: 5px;
+        margin: 5px;
+        text-align: center;
+    }
+
+    .modal-body  .stampAndPreview .stamps  .stampsList .fileViewer img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        max-width: 75px  !important;
+        cursor: pointer;
+    }
+
+    .modal-body  .stampAndPreview .previews{
+        /*width : 69%;*/
+        height : 100%;
+        overflow: hidden;
+    }
+
+    .modal-body  .stampAndPreview .previews .media{
+        width : 100%;
+        height : 100%;
+        display : none;
+    }
+    .modal-body  .stampAndPreview .previews  .multimedia{
+        display : inline-block !important;
+    }
+
+    .modal-body  .stampAndPreview .previews  .pdfViewer{
+        display : inline-block !important;
+    }
+
+
+
+
+    .modal-body  .selectedStampsList{
+        width: 100%;
+        height : 85px !important;
+        overflow-y: auto;
+        overflow-x : hidden;
+        border-top: 1px solid rgba(197,197,197,1);
+    }
+
+    .modal-body  .selectedStampsList div.filter-alert{
+        float: right  !important;
+        padding: 6px  !important;
+        margin: 2px  !important;
+        border-radius: 0px !important;
+        width: 190px !important;
+        background-color: white;
+        border: 1px solid rgb(197, 197, 197);
+        height:75px;
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-body  .selectedStampsList  div.filter-alert:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+        color : white;
+        border: 1px solid rgba(35,173,255,1) !important;
+        background-color :  rgba(35,173,255,1)  !important;
+    }
+
+    .modal-body  .selectedStampsList div.filter-alert span.pull-left{
+        cursor: pointer;
+        font-size: 10px;
+        margin-top: 1px;
+        width: 10px;
+    }
+    .modal-body  .selectedStampsList  div.filter-alert span.pull-right{
+        font-size: 10px;
+        width : calc(100% - 20px);
+    }
+
+    .modal-body  .selectedStampsList  img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        max-width: 75px  !important;
+    }
+
+</style>
+<div class="modal-header">
+    <div class="form-group">
+        <div class="col-sm-11 pull-right"  style="text-align:center;">
+            <span class="pull-right">امضای دیجیتال</span>
+        </div>
+    </div>
+</div>
+<div class="modal-body row form-group" style="margin-bottom: -15px !important;padding-top: 0px !important;">
+
+
+    <div class="row form-group col-sm-12 stampAndPreview" style="margin: 0px; padding: 0px;">
+
+        <div class="stamps pull-right  col-sm-4 col-xs-4" style="margin:0px;padding:2px;  border-left: 1px solid  rgba(197,197,197,1);">
+
+            <div class="row form-group col-sm-12  selectStamp">
+
+                <md-input-container class="md-block  col-sm-12 "  style=" padding: 0;">
+                    <label>نوع امضای دیجیتال</label>
+                    <md-select
+                            class="md-block  col-sm-12 pull-right"
+                            placeholder="امضای دیجیتال"
+                            ng-model="data.selectedSign"
+                            style="min-width: 100%;padding-left: 0;padding-right: 0;">
+                        <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                        <md-option ng-value="sign" ng-repeat="sign in data.signs">{{sign.label}}</md-option>
+                    </md-select>
+                </md-input-container>
+
+            </div>
+
+            <div class="row form-group col-sm-12   stampsList">
+
+                <div ng-repeat="stamp in data.stamps"  class="fileViewer">
+                    <img ng-class="{'brithness-filter' : data.selectedStamp.stampId == stamp.stampId}"  ng-click="func.clickImage($event,stamp)"  src="{{stamp.thumbnailSrc}}" />
+                </div>
+
+            </div>
+
+
+            <div class="row form-group col-sm-12 stampsButton">
+                <form name="deleteFolderForm" novalidate role="form">
+
+                    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                        <md-button id="addFileButon"     class="md-raised" ng-click="func.addStamp()">
+                            <md-icon  md-font-icon="fa fa-plus fa-fw"></md-icon>
+                            <span style="margin-right: 3px;" >افزودن</span>
+                        </md-button>
+                    </section>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="previews pull-left col-sm-8 col-xs-8" style="margin:0px;padding:2px;">
+
+            <div
+                    class="media  pdf-viewer-allcontent-iner-style pdfViewer"
+                    id="modal-pdf-viewer-parent"  style="margin-top:0px;height:100%;max-height:100%;min-height:100%;">
+                <div id="modal-pdf-viewer-child" style="width:100%;height:100%;position: relative;">
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row form-group selectedStampsList" >
+
+        <div ng-repeat="(key,stamp) in data.addedStamps" class="alert alert-info  filter-alert" role="alert"   id="{{key}}">
+
+
+            <span style="width: 50px;margin-top: 24px;" class="control-label  pull-right"  ng-bind="stamp.type.label"></span>
+            <img  src="{{stamp.stamp.thumbnailSrc}}" />
+            <span style="margin-top: 24px; font-size: 14px;" class="control-label  pull-left  fa fa-fw fa-remove"  ng-click="func.removeStamp(key)">
+                <md-tooltip  md-direction="top"  style="z-index: 100000 !important;">
+                    حذف مهر
+                </md-tooltip>
+            </span>
+        </div>
+
+
+    </div>
+
+</div>
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+
+        <form name="deleteFolderForm" novalidate role="form">
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="okButon"     class="md-raised" ng-click="func.send()">
+                    <md-icon  md-font-icon="fa fa-paper-plane fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" >ارسال</span>
+                </md-button>
+                <md-button id="cancelButon"     class="md-raised" ng-click="func.cancel()">
+                    <md-icon  md-font-icon="fa fa-remove  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" >انصراف</span>
+                </md-button>
+            </section>
+
+        </form>
+    </div>
+</div>

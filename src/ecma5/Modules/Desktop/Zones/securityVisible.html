@@ -1,0 +1,219 @@
+<div class="sideLeft" ng-show="data.isShowItem && data.profile.prfTab.prfDocument.securityVisible">
+
+    <!--<h6 class="header color" ng-bind="'desktop.zl.security' | translate"></h6>
+    <div class="darkdivider desktop-background"></div>-->
+    <div class="zonesHeader">
+        <span ng-bind="'desktop.zl.security' | translate"></span>
+    </div>
+
+    <div class="security-side">
+
+
+        <div class="col-sm-12" style="padding: 0px; margin: 0px; width: 100%; overflow-x: auto;">
+            <table
+                   style="margin-top: 5px;"
+                   class=" desktop-background table table-responsive table-striped table-hover- table-condensed table-bordered ">
+                <caption>
+                    <span  class="pull-right">کاربران</span>
+                    <span class="fa fa-edit pull-left" ng-click="func.updateUsers()">
+                        <md-tooltip  md-direction="top">
+                            {{'desktop.zl.security_edit' | translate}}
+                        </md-tooltip>
+                    </span>
+                </caption>
+                <thead>
+                <tr style="height: 35px;">
+
+                    <th  class="position">
+                        <span class="fa fa-user">
+                              <md-tooltip  md-direction="top">
+                                    {{'desktop.zl.security_user' | translate}}
+                              </md-tooltip>
+                        </span>
+                    </th>
+                    <th  class="position">
+                        <span class="fa fa-eye">
+                              <md-tooltip  md-direction="top">
+                                    {{'desktop.zl.security_read' | translate}}
+                              </md-tooltip>
+                        </span>
+                    </th>
+                    <th  class="position">
+                        <span class="fa fa-edit">
+                              <md-tooltip  md-direction="top">
+                                    {{'desktop.zl.security_write' | translate}}
+                              </md-tooltip>
+                        </span>
+                    </th>
+                    <th  class="position">
+                        <span class="fa fa-trash">
+                              <md-tooltip  md-direction="top">
+                                    {{'desktop.zl.security_delete' | translate}}
+                              </md-tooltip>
+                        </span>
+                    </th>
+                    <th  class="position">
+                        <span class="fa fa-lock">
+                              <md-tooltip  md-direction="top">
+                                    {{'desktop.zl.security_security' | translate}}
+                              </md-tooltip>
+                        </span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="user in data.security.Users" ng-class="{'odd':$odd,'even':$even}">
+                    <td >
+                        <span style="word-wrap: break-word; word-break: break-all; text-align: justify; max-width: 100%; font-size: 10px; padding: 2px;" ng-bind="user.name">
+
+                        </span>
+                        <md-tooltip  md-direction="bottom">
+                           {{user.user}}
+                        </md-tooltip>
+                    </td>
+                    <td>
+                        <span style="color:#5d9ce9 !important;"
+                              ng-class="user.securityArray[3] ? 'fa fa-check yes' : 'fa fa-ban no'"></span>
+                    </td>
+                    <td>
+                        <span style="color:#5d9ce9 !important;"
+                              ng-class="user.securityArray[2] ? 'fa fa-check yes' : 'fa fa-ban no'"></span>
+                    </td>
+                    <td>
+                        <span style="color:#5d9ce9 !important;"
+                              ng-class="user.securityArray[1] ? 'fa fa-check yes' : 'fa fa-ban no'"></span>
+                    </td>
+                    <td>
+                         <span style="color:#5d9ce9 !important;"
+                               ng-class="user.securityArray[0] ? 'fa fa-check yes' : 'fa fa-ban no'"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="darkdivider desktop-background"></div>
+
+        <div class="col-sm-12" style="padding: 0px; margin: 0px; width: 100%; overflow-x: auto;">
+            <table
+                   style="margin-top: 5px;"
+                   class=" desktop-background table table-responsive table-striped table-hover- table-condensed table-bordered ">
+                <caption>
+                    <span  class="pull-right">نقش ها</span>
+                     <span class="fa fa-edit pull-left" ng-click="func.updateRoles()">
+                        <md-tooltip  md-direction="top">
+                            {{'desktop.zl.security_edit' | translate}}
+                        </md-tooltip>
+                    </span>
+                </caption>
+                <thead>
+                <tr style="height: 35px;">
+
+                    <th  class="position">
+                        <span class="fa fa-users">
+                              <md-tooltip  md-direction="top">
+                                    {{'desktop.zl.security_rule' | translate}}
+                              </md-tooltip>
+                        </span>
+                    </th>
+                    <th  class="position">
+                        <span class="fa fa-eye">
+                              <md-tooltip  md-direction="top">
+                                    {{'desktop.zl.security_read' | translate}}
+                              </md-tooltip>
+                        </span>
+                    </th>
+                    <th  class="position">
+                        <span class="fa fa-edit">
+                              <md-tooltip  md-direction="top">
+                                    {{'desktop.zl.security_write' | translate}}
+                              </md-tooltip>
+                        </span>
+                    </th>
+                    <th  class="position">
+                        <span class="fa fa-trash">
+                              <md-tooltip  md-direction="top">
+                                    {{'desktop.zl.security_delete' | translate}}
+                              </md-tooltip>
+                        </span>
+                    </th>
+                    <th  class="position">
+                        <span class="fa fa-lock">
+                              <md-tooltip  md-direction="top">
+                                    {{'desktop.zl.security_security' | translate}}
+                              </md-tooltip>
+                        </span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="role in data.security.Roles" ng-class="{'odd':$odd,'even':$even}">
+                    <td >
+                        <span style="word-wrap: break-word; word-break: break-all; text-align: justify; max-width: 100%; font-size: 10px; padding: 2px;" ng-bind="role.role"></span>
+                    </td>
+                    <td>
+                        <span style="color:#5d9ce9 !important;"
+                              ng-class="role.securityArray[3] ? 'fa fa-check yes' : 'fa fa-ban no'"></span>
+                    </td>
+                    <td>
+                        <span style="color:#5d9ce9 !important;"
+                              ng-class="role.securityArray[2] ? 'fa fa-check yes' : 'fa fa-ban no'"></span>
+                    </td>
+                    <td>
+                        <span style="color:#5d9ce9 !important;"
+                              ng-class="role.securityArray[1] ? 'fa fa-check yes' : 'fa fa-ban no'"></span>
+                    </td>
+                    <td>
+                         <span style="color:#5d9ce9 !important;"
+                               ng-class="role.securityArray[0] ? 'fa fa-check yes' : 'fa fa-ban no'"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+<div class="sideLeft" ng-show="!data.profile.prfTab.prfDocument.securityVisible">
+    <style>
+
+        .not-support-javascript{
+            width: 100%;
+
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid rgba(35,173,255,1);
+            padding : 10px;
+            transition-duration: 0.5s;
+            transition-property: background-color;
+            transition-timing-function: ease-in;
+            border-radius: 0px !important;
+        }
+
+        .not-support-javascript:hover {
+            box-shadow: 0 0 6px rgba(35, 173, 255, 1);
+            background-color: rgba(35, 173, 255, 1) !important;
+            color: white !important;
+        }
+
+        .not-support-javascript  img{
+            width:65px;
+            height: auto;
+        }
+
+        .not-support-javascript  h2{
+            font-family: IRANSans-web-bold;
+        }
+
+
+    </style>
+    <div  class="not-support-javascript">
+        <img src="static/img/Warning.png" />
+        <h6>امکان نمایش امنیت برای شما وجود ندارد.</h6>
+    </div>
+</div>

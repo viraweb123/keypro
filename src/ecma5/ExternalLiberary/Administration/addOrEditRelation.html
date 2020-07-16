@@ -1,0 +1,385 @@
+<style>
+    .modal-header{
+        background-color: #E75753 !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+
+
+    .form-generator{
+        overflow-y : auto;
+        overflow-x : hidden;
+    }
+
+    .modal-body .metadata-form input[type="text"],input[type="number"],input[type="email"],input[type="url"]{
+        direction: ltr;
+        text-align: right;
+    }
+
+    .modal-body .metadata-form input[type="text"]:active,input[type="text"]:focus{
+        outline: none !important;
+    }
+
+    .modal-body .metadata-form input[type="text"],input[type="number"],input[type="email"],input[type="url"]:-moz-placeholder {
+        text-align: right;
+    }
+    .modal-body .metadata-form input[type="text"],input[type="number"],input[type="email"],input[type="url"]:-ms-input-placeholder {
+        text-align: right;
+    }
+    .modal-body .metadata-form input[type="text"],input[type="number"],input[type="email"],input[type="url"]::-webkit-input-placeholder {
+        text-align: right;
+    }
+
+
+
+
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+    .modal-footer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+    .modal-footer #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+    .modal-footer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+    .modal-footer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+    .modal-footer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+    .modal-footer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+    .modal-footer  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+    .modal-footer  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+
+    .sample-show-hide.ng-hide-add, .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 1.5s;
+        -moz-transition:all linear 1.5s;
+        -o-transition:all linear 1.5s;
+        transition:all linear 1.5s;
+        display:block !important;
+    }
+
+    .sample-show-hide.ng-hide-add.ng-hide-add-active,
+    .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 0.2s;
+        -moz-transition:all linear 0.2s;
+        -o-transition:all linear  0.2s;
+        transition:all linear  0.2s;
+        opacity:0;
+    }
+
+    .sample-show-hide.ng-hide-add,
+    .sample-show-hide.ng-hide-remove.ng-hide-remove-active {
+        -webkit-transition:all linear 3s;
+        -moz-transition:all linear 3s;
+        -o-transition:all linear  3s;
+        transition:all linear  3s;
+        opacity:1;
+    }
+
+    .animate-if {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+    .animate-if.ng-leave, .animate-if.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+
+    .modal-body  form.metadata-form div.property{
+
+    }
+
+    .modal-body  form.metadata-form div.property  .property-header{
+        border-radius: 0px ! important;
+        border : 1px solid rgba(35,173,255,1);
+        height: 50px;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-body  form.metadata-form div.property .property-header:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-body  form.metadata-form div.property .property-header  span{
+        margin-top: 10px;
+        padding: 2px;
+    }
+
+    .modal-body  form.metadata-form div.property .activated{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+    .modal-body  form.metadata-form div.property .property-body{
+        border-bottom: 1px solid rgba(35,173,255,1);
+        border-left: 1px solid rgba(35,173,255,1);
+        border-right: 1px solid rgba(35,173,255,1);
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        margin-top: 0px ! important;
+        padding: 15px;
+    }
+
+    .modal-body  .modal-background {
+        background-color : rgba(35,173,255,1) !important;
+    }
+
+    .modal-body table tbody td.position-center img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+    }
+
+    .modal-body table  th{
+        color : white;
+    }
+
+    .modal-body  table  th.position{
+        color: white;
+        font-size: 12px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .modal-body table  th.position  a span {
+        color: white;
+    }
+
+    .modal-body  table td.position{
+        font-size: 14px;
+        text-align: center !important;
+        vertical-align: middle;
+    }
+
+    .modal-body  table tbody td.position-center  span{
+        overflow-wrap: break-word;
+        word-break: break-all;
+        text-align: justify;
+    }
+
+    .modal-body  table tbody  tr:nth-child(even){
+        background-color:   rgba(240, 197, 71, 0.8) !important;
+        color:white !important;
+    }
+
+    .modal-body   table img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+    }
+
+    .modal-body  form.metadata-form div.property .property-body-error {}
+
+    .modal-body  form.metadata-form div.property-body-error .property-header{
+        border : 1px solid rgba(255, 45, 120, 1) !important;
+    }
+    .modal-body  form.metadata-form div.property-body-error .property-header:hover{
+        box-shadow  :  0 0 10px rgba(255, 45, 120, 1) !important;
+        background-color : rgba(255, 45, 120, 1) !important;
+    }
+
+    .modal-body  form.metadata-form div.property-body-error .property-body{
+        border-bottom: 1px solid rgba(255, 45, 120, 1) !important;
+        border-left: 1px solid rgba(255, 45, 120, 1) !important;
+        border-right: 1px solid rgba(255, 45, 120, 1) !important;
+        box-shadow  :  0 0 10px rgba(255, 45, 120, 1) !important;
+    }
+
+    .modal-body  form.metadata-form div.property-body-error  .activated {
+        box-shadow: 0 0 10px rgba(255, 45, 120, 1) !important;
+        background-color: rgba(255, 45, 120, 1) !important;
+    }
+
+    .modal-body textarea{
+        resize: vertical !important;
+        width: 100%!important;
+        font-size: 15px !important;
+        padding: 5px !important;
+        margin:5px 0px !important;
+        border-radius: 0px !important;
+    }
+
+
+    .modal-body textarea.error-ocure{
+        border: 1px solid rgba(255, 45, 120, 1);
+        box-shadow  :  0 0 10px rgba(255, 45, 120, 1);
+    }
+
+
+</style>
+<div class="modal-header fontStyle" >
+    <span  class="pull-right">{{data.header|translate}}</span>
+</div>
+<div class="modal-body row form-group  " >
+
+    <form role="form" novalidate name="formGeneratorName" class="metadata-form row form-group "  style="overflow-y: auto; height: 300px;">
+
+        <div class="row form-group col-sm-12">
+            <div layout="row"   class="col-sm-6 col-xs-6 pull-right">
+                <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                    <label>{{'administration.zm.relation_definition_title'|translate}}</label>
+                    <input
+                            type="text"
+                            required
+                            name="title"
+                            ng-model="data.relation.title"
+                            minlength="1"
+                    />
+                    <div ng-messages="formGeneratorName['title'].$error" role="alert" >
+                        <div ng-message="required">
+                            لطفا برای فراداده یک نام وارد کنید
+                        </div>
+                        <div ng-message="minlength">
+                            حداقل یک کاراکتر وارد کنید
+                        </div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div layout="row"   class="col-sm-6 col-xs-6 pull-left">
+                    <md-input-container class="md-block  col-sm-12 "  style=" padding: 0;margin-top: 13px !important;">
+                        <label>نوع رابطه</label>
+                        <md-select
+                                class="md-block  col-sm-12 pull-right"
+                                placeholder="نوع رابطه"
+                                ng-disabled="data.isEdit"
+                                required
+                                ng-model="data.relation.relationType"
+                                style="min-width: 200px;">
+                            <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                            <md-option ng-value="relationType.value" ng-repeat="relationType in data.relationTypes">{{relationType.label}}</md-option>
+                        </md-select>
+                    </md-input-container>
+            </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+            <div layout="row"   class="col-sm-6 col-xs-6 pull-right">
+                <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                    <label>{{'administration.zm.relation_definition_titleA2B'|translate}}</label>
+                    <input
+                            type="text"
+                            required
+                            name="titleA2B"
+                            ng-model="data.relation.titleA2B"
+                            minlength="1"
+                    />
+                    <div ng-messages="formGeneratorName['titleA2B'].$error" role="alert" >
+                        <div ng-message="required">
+                            لطفا برای فراداده یک نام وارد کنید
+                        </div>
+                        <div ng-message="minlength">
+                            حداقل یک کاراکتر وارد کنید
+                        </div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div layout="row"   class="col-sm-6 col-xs-6 pull-left">
+                <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                    <label>{{'administration.zm.relation_definition_titleB2A'|translate}}</label>
+                    <input
+                            type="text"
+                            required
+                            name="titleB2A"
+                            ng-model="data.relation.titleB2A"
+                            minlength="1"
+                    />
+                    <div ng-messages="formGeneratorName['titleB2A'].$error" role="alert" >
+                        <div ng-message="required">
+                            لطفا برای فراداده یک نام وارد کنید
+                        </div>
+                        <div ng-message="minlength">
+                            حداقل یک کاراکتر وارد کنید
+                        </div>
+                    </div>
+                </md-input-container>
+            </div>
+        </div>
+
+        <div layout="row"   class="col-sm-12">
+            <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                توضیحات
+            </md-tooltip>
+                         <textarea
+                                 ng-class="{'error-ocure':formGeneratorName['description'].$error.required}"
+                                 placeholder="توضیحات"
+                                 name="description"
+                                 class="form-control col-sm-12"
+                                 ng-model="data.relation.description"
+                         >
+                        </textarea>
+        </div>
+
+    </form>
+
+</div>
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+
+        <form name="relationFooterForm" novalidate role="form">
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="okButon"     class="md-raised" ng-click="func.save()">
+                    <md-icon  md-font-icon="fa fa-{{data.isEdit ? 'edit' : 'plus'}}  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" >{{data.isEdit ? 'ذخیره' : 'ایجاد'}}</span>
+                </md-button>
+                <md-button id="cancelButon"     class="md-raised" ng-click="func.cancel()">
+                    <md-icon  md-font-icon="fa fa-remove  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;"  >انصراف</span>
+                </md-button>
+            </section>
+        </form>
+    </div>
+</div>

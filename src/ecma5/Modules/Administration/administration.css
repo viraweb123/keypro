@@ -1,0 +1,901 @@
+
+@media screen and (min-width: 650px) {
+    .administration{
+        width : 100vw !important;
+        height:  100% !important;
+        overflow : hidden !important;
+        padding:0px !important;
+        margin:  0px !important;
+    }
+
+    .administration .administration-background {
+        background-color : #ed4356 !important;
+    }
+
+    .administration  .SR  .administration-color{
+        border-right : 2px solid #ed4356;
+        color: #ed4356 !important;
+    }
+
+    .administration  .SR  .btn-icon{
+        background-color : transparent;
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: linear;
+    }
+
+    .administration  .SR  .btn-icon:hover > *{
+        color: white !important;
+        background-color:  #ed4356 !important;
+    }
+
+    .administration  .SR  .btn-icon:hover{
+        color: white !important;
+        background-color:  #ed4356 !important;
+        border-right : 2px solid white;
+        border-left : 2px solid white;
+    }
+
+    .administration .dividerPanel{
+        height: 1px;
+        border: 1px solid  #ed4356;
+        margin: 0px 5px;
+    }
+
+
+    .administration  .D div.hidden-item{
+        height : 100%;
+        width  : 100%;
+        display: none;
+        opacity: 0;
+        position: relative;
+        /*transition: opacity 3s ease-out;
+        -webkit-transition:  opacity 3s ease-out;
+        -moz-transition: opacity 3s ease-out;
+        -o-transition:  opacity 3s ease-out;
+        -ms-transition: opacity 3s ease-out;*/
+    }
+
+    .administration  .D  div.show{
+        display: inline !important;
+        opacity: 1 !important;
+    }
+
+    .administration .D  ul{
+        width : 100%;
+    }
+
+    .administration .D ul i.navbar-show{
+        padding:5px !important;
+        margin:5px  0px !important;
+        width : 100% !important;
+        word-break: break-all !important;
+        word-wrap: break-word !important;
+        min-height: 30px;
+        float:right;
+
+        background-color : transparent;
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: ease-out;
+
+    }
+
+    .administration .D ul i.selected-nav{
+        color : #ed4356;
+        border-right : 2px solid #ed4356;
+    }
+
+    .administration  .D  ul i.navbar-show:hover > *{
+        color: white !important;
+        background-color:  #ed4356 !important;
+        cursor: pointer;
+    }
+
+    .administration  .D  ul i.navbar-show:hover{
+        color: white !important;
+        background-color:  #ed4356 !important;
+        border-right : 2px solid white;
+        border-left : 2px solid white;
+        cursor: pointer;
+    }
+
+    .administration .D ul i.navbar-show .icon-show{
+        cursor: pointer;
+        font-size: 10px;
+        margin: 5px 0px;
+        width : 25px;
+        text-align: center;
+        float: right;
+    }
+
+    .administration .D ul i.navbar-show  span.label-show{
+        max-width: calc(100% - 40px);
+        float: right;
+        font-size: 10px  !important;
+        margin-top: 5px;
+        text-align: justify;
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+
+
+    .administration .CR div.tabel-body{
+        background-color: #fff; /*#ede223;*/
+        height: 100%;
+        overflow: hidden;
+        padding: 4px;
+        width: 100%;
+    }
+
+    .administration .CR div.tabel-body  div.body-view{
+        background-color: #23dde1;
+        width: 100%;
+        height: calc(100% - 10px);
+        overflow: auto;
+        padding-top: 10px;
+        background-color: white;
+        text-align: center;
+        vertical-align: middle;
+
+
+        overflow: hidden;
+    }
+
+    .administration .CR div.tabel-body  div.body-view .selectFilter{
+        background-color: white;
+
+        border-radius: 0px !important;
+        height : 70px !important;
+        /*box-shadow: 0 0 6px rgba(100,255,255,0.8) !important;*/
+        border : rgb(100,255,255) solid 1px;
+        margin-right: 5%;
+        text-align: right;
+        width: 90%;
+
+        box-shadow : none;
+        transition-duration: 0.5s;
+        transition-property: box-shadow;
+        transition-timing-function: ease-in;
+    }
+
+
+
+    .administration .CR div.tabel-body  div.body-view .selectFilter:hover{
+        box-shadow  :  0 0 10px rgba(100,255,255,0.8) !important;
+    }
+
+
+
+.administration .CR div.tabel-body  div.body-view .not-result{
+        display : none;
+        height: 200px;
+        overflow: hidden;
+        margin-top : calc(50vh - 150px);
+        margin-left: auto;
+        margin-right: auto;
+        width: auto ! important;
+        padding:50px 20px 20px 20px;
+        border: 1px solid rgba(197,197,197,1);
+    }
+    .administration .CR div.tabel-body  div.body-view .not-result.display{
+        display : inline-block;
+    }
+    .administration .CR div.tabel-body  div.body-view .not-result  .dashboard-refresh{
+        font-size: 22px;
+        color: red;
+    }
+    .dashboard .CR div.tabel-body  div.body-view .not-result  .dashboard-refresh:hover{
+        text-shadow: 2px 2px 4px rgba(255,0,0,1);
+    }
+    .dashboard .CR div.tabel-body  div.body-view .not-result  .dashboard-ban{
+        font-size: 22px;
+        color: red;
+        margin-left:5px;
+    }
+    .administration .CR div.tabel-body  div.body-view .not-result  .dashboard-ban:hover{
+        text-shadow: 2px 2px 4px rgba(255,0,0,1);
+    }
+
+
+
+
+    .administration .CR div.tabel-body  div.body-view table{
+        display : none;
+        /*max-height: calc(100vh - 170px);
+        overflow: hidden;*/
+        margin-left: auto;
+        margin-right: auto;
+        width: auto ! important;
+    }
+    .administration .CR div.tabel-body  div.body-view table  thead  {
+        background-color : #c3d9ff !important;
+        /*color: white !important;*/
+    }
+    .administration .CR div.tabel-body  div.body-view table  thead  a{
+        color: black !important;
+    }
+    .administration .CR div.tabel-body  div.body-view table  thead  a  span{
+        font-size:12px !important;
+    }
+    .administration .CR div.tabel-body  div.body-view table  thead  span{
+        font-size:12px !important;
+    }
+    .administration .CR div.tabel-body  div.body-view table  tr:hover{
+        /*box-shadow: 0 0 6px rgba(251,187,61,1) !important;*/
+        box-shadow: 0 0 6px rgba(35,173,255,1) !important;
+        cursor: pointer !important;
+    }
+    .administration .CR div.tabel-body  div.body-view table  tr.activated{
+        background-color: rgb(35, 173, 255) ! important;
+        color: white ! important;
+    }
+    .administration .CR div.tabel-body  div.body-view table  tr.activated  span{
+        color: white ! important;
+    }
+    .administration .CR div.tabel-body  div.body-view table  tr:nth-child(even){
+        /*background-color:   rgba(240, 197, 71, 0.8);
+        color:white !important;*/
+        background-color: rgba(224, 236, 255, 0.8);
+    }
+    .administration .CR div.tabel-body  div.body-view table  tr:nth-child(even)  td label{
+        color:white !important;
+    }
+    .administration .CR div.tabel-body  div.body-view table.display{
+        display : inline-block;
+    }
+    .administration .CR div.tabel-body  div.body-view table tbody td.position-center img{
+        height: 60px !important;
+        position: relative !important;
+        width: 60px !important;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    .administration .CR div.tabel-body  div.body-view table tbody td.position-center img:hover{
+        text-shadow: 2px 2px 4px #ed4356;
+    }
+    .administration .CR div.tabel-body  div.body-view table tbody td.position-center  span{
+        overflow-wrap: break-word;
+        word-break: break-all;
+        text-align: center;
+        padding : 0px !important;
+    }
+    .administration .CR div.tabel-body  div.body-view table tbody td.position-center .active{
+        color: #81c976;
+        font-size: 14px;
+    }
+    .administration .CR div.tabel-body  div.body-view table tbody td.position-center .unactive{
+        color: #ff695d;
+        font-size: 14px;
+    }
+
+    .administration .CR div.tabel-body  div.body-view-nothidden  div.view-filter ~ table{
+        max-height: calc(100vh - 290px) !important;
+    }
+    .administration .CR div.tabel-body  div.body-view-nothidden  table {
+        max-height: calc(100vh - 90px);
+    }
+
+    .administration .CR div.tabel-body  div.body-view-nothidden table  tr:nth-child(even){
+       /* background-color:   rgba(240, 197, 71, 0.8);
+        color:white !important;*/
+
+        background-color: rgba(224, 236, 255, 0.8);
+    }
+    .administration .CR div.tabel-body  div.body-view-nothidden table  tr:nth-child(even)  td label{
+        color:white !important;
+    }
+
+
+    .administration .CR div.tabel-body  div.body-view-nothidden table  tr span.alert-mode-viewer {
+        padding: 5px !important;
+        border: 1px solid rgba(35,173,255,1);
+        background-color: white;
+        margin : 5px  !important;
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: ease-in;
+        border-radius: 0px !important;
+        color:black;
+    }
+
+    .administration .CR div.tabel-body  div.body-view-nothidden table  tr span.alert-mode-viewer:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+        background-color :  rgba(35,173,255,1) !important;
+        color : white !important;
+        border:1px solid white !important;
+    }
+
+    .administration .CR div.tabel-body  div.body-view-nothidden table tbody tr:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+        background-color :  rgba(35,173,255,1) !important;
+        color : white !important;
+    }
+
+    .administration .CR div.tabel-body table tbody tr:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+        background-color :  rgba(35,173,255,1) !important;
+        color : white !important;
+    }
+
+
+
+    .administration .CR div.tabel-body form .metaDataButton{}
+    .administration .CR div.tabel-body  form .metaDataButton #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .administration .CR div.tabel-body  form .metaDataButton #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+    .administration .CR div.tabel-body  form .metaDataButton #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+    .administration .CR div.tabel-body  form .metaDataButton #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+    .administration .CR div.tabel-body form  .metaDataButton #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .administration .CR div.tabel-body  form .metaDataButton #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+    .administration .CR div.tabel-body form  .metaDataButton #cancelButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+    .administration .CR div.tabel-body form  .metaDataButton #cancelButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+    .administration  .D  .zonesHeader{
+        background-color: #ed4356;
+        color: white;
+        height: 28px;
+        margin-top: 0;
+        padding : 3px;
+        border-bottom:2px solid white;
+    }
+
+    .administration  .D  .zonesHeader  span{
+        margin-right: 10px !important;
+    }
+
+    .administration .CR   .assignDigitalSign{}
+    .administration .CR   .assignDigitalSign div.selectingSign{
+        border-bottom : 1px solid #ff7b7e;
+        height: 55%;
+        margin:0px !important;
+        padding: 0px !important;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectTree{
+        border-left : 1px solid #ff7b7e;
+        height: 100%;
+        margin:-3px 0px 3px 0px !important;
+        padding: 0px !important;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectTree  .zonesHeader{
+        background-color:#ff7b7e;
+        color: white;
+        height: 28px;
+        margin-right : 0px;
+        margin-left : 5px;
+        padding : 3px 3px 10px 3px;
+        border-bottom:2px solid white;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectTree  .zonesHeader span{
+        margin-right: 10px !important;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage{
+        border-left : 1px solid #ff7b7e;
+        height: 100%;
+        margin:-3px 0px 3px 0px !important;
+        padding: 0px !important;
+        overflow-y: hidden;
+        overflow-x:hidden;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .files-list{
+        overflow-y: auto;
+        overflow-x:hidden;
+        height: calc(100% - 30px);
+        margin:-3px 0px 3px 0px !important;
+        padding: 0px !important;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage  .zonesHeader{
+        background-color:#ff7b7e;
+        color: white;
+        height: 28px;
+        margin-right : 5px;
+        margin-left : 5px;
+        padding : 3px 3px 10px 3px;
+        border-bottom:2px solid white;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .zonesHeader span{
+        margin-right: 10px !important;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .thumbnail-viewer{
+        float : right;
+        text-align: center;
+        margin : 5px !important;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .thumbnail-viewer div.selectDoc{
+        width:20px;
+        height:20px;
+        position: absolute;
+        border: 1px solid #00ACC1;
+        top: 5px;
+        z-index: 2;
+        left: 60px;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .thumbnail-viewer div.select{
+        display: inline-block !important;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .file span.check{
+        display: none;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .thumbnail-viewer div.select span.check{
+        display: inline-block !important;
+        color : #00ACC1;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .file div.unselect{
+        display: none;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .thumbnail-viewer:hover div.unselect{
+        display: inline-block; !important;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .thumbnail-viewer div.unselect:hover{
+        background-color : #00ACC1 !important;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .file div.unselect:hover  .check{
+        display: inline-block; !important;
+        color : white !important;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .thumbnail-viewer  img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+        margin-top: 10px;
+        padding-top: 5px;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .thumbnail-viewer  .label{
+        color: black;
+        direction: rtl;
+        height: 40px !important;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 4px;
+        position: relative !important;
+        width: 100%;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .thumbnail-viewer  span.name{
+        display : inline-block;
+        height : 40px;
+        overflow : hidden;
+        padding : 5px;
+        text-align : center;
+        text-overflow : ellipsis;
+        white-space : nowrap;
+        width : 110px;
+        word-break : break-all;
+        word-wrap : break-word;
+        cursor: pointer;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectImage .thumbnail-viewer:hover{
+        box-shadow         :  0 0 5px rgba(35,173,255,1);
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectUserAndSendRequest{
+        height: 100%;
+        margin:-3px 0px 3px 0px !important;
+        padding: 0px !important;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectUserAndSendRequest  .zonesHeader{
+        background-color:#ff7b7e;
+        color: white;
+        height: 28px;
+        margin-right : 5px;
+        margin-left : 0px;
+        padding : 3px 3px 10px 3px;
+        border-bottom:2px solid white;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectUserAndSendRequest .zonesHeader span{
+        margin-right: 10px !important;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectUserAndSendRequest #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectUserAndSendRequest #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectUserAndSendRequest #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+    .administration .CR   .assignDigitalSign div.selectingSign div.selectUserAndSendRequest #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign{
+        height: 42%;
+        margin:0px !important;
+        padding: 0px !important;
+        overflow-y:hidden;
+        overflow-x : hidden;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .zonesHeader{
+        background-color:#ff7b7e;
+        color: white;
+        height: 28px;
+        margin-right : 0px;
+        margin-left : 0px;
+        padding : 3px 3px 10px 3px;
+        border-bottom:2px solid white;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .zonesHeader span{
+        margin-right: 10px !important;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams{
+        height: calc(100% - 30px);
+        overflow-y:auto;
+        overflow-x : hidden;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams .thumbnail-viewer{
+        float : right;
+        text-align: center;
+        margin : 5px !important;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams .thumbnail-viewer div.selectDoc{
+        width:20px;
+        height:20px;
+        position: absolute;
+        border: 1px solid #00ACC1;
+        top: 5px;
+        z-index: 2;
+        left: 60px;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams .thumbnail-viewer div.select{
+        display: inline-block !important;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams .file span.check{
+        display: none;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams .thumbnail-viewer div.select span.check{
+        display: inline-block !important;
+        color : #00ACC1;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams .file div.unselect{
+        display: none;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams .thumbnail-viewer:hover div.unselect{
+        display: inline-block; !important;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams .thumbnail-viewer div.unselect:hover{
+        background-color : #00ACC1 !important;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams .file div.unselect:hover  .check{
+        display: inline-block; !important;
+        color : white !important;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams .thumbnail-viewer  img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+        margin-top: 10px;
+        padding-top: 5px;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams .thumbnail-viewer  .label{
+        color: black;
+        direction: rtl;
+        height: 40px !important;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 4px;
+        position: relative !important;
+        width: 100%;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams .thumbnail-viewer  span.name{
+        display : inline-block;
+        height : 40px;
+        overflow : hidden;
+        padding : 5px;
+        text-align : center;
+        text-overflow : ellipsis;
+        white-space : nowrap;
+        width : 110px;
+        word-break : break-all;
+        word-wrap : break-word;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams .thumbnail-viewer  span.disabled-icon{
+        color : rgba(197, 197, 197, 0.5) !important;
+    }
+    .administration .CR   .assignDigitalSign div.viewSign .result-userStams .thumbnail-viewer:hover{
+        box-shadow         :  0 0 5px rgba(35,173,255,1);
+    }
+    .administration .CR   .assignDigitalSign div.assignButtonSign{
+        height: 12%;
+        margin:0px !important;
+        padding: 0px !important;
+    }
+    .administration .CR   .assignDigitalSign div.assignButtonSign #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .administration .CR   .assignDigitalSign div.assignButtonSign #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+    .administration .CR   .assignDigitalSign div.assignButtonSign #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+    .administration .CR   .assignDigitalSign div.assignButtonSign #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+    .administration .CR   .assignDigitalSign div.assignButtonSign  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+    .administration .CR   .assignDigitalSign div.assignButtonSign  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+
+
+
+
+    .administration .CR div.tabel-body .body-view-nothidden section #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .administration .CR div.tabel-body .body-view-nothidden section #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+    .administration .CR div.tabel-body .body-view-nothidden section #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+    .administration .CR div.tabel-body .body-view-nothidden section #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+    .administration .CR div.tabel-body .body-view-nothidden section #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .administration .CR div.tabel-body .body-view-nothidden section #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+    .administration .CR div.tabel-body .body-view-nothidden section #cancelButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+    .administration .CR div.tabel-body .body-view-nothidden section #cancelButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+    .administration .CR div.tabel-body .body-view-nothidden .view-buttons{
+        height: 50px;
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .administration .CR div.tabel-body .body-view-nothidden .view-filter{
+        padding: 8px !important;
+        max-height : 250px;
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        /*display: none;*/
+
+    }
+
+    .administration .CR div.tabel-body .body-view-nothidden .display-hidden-filters{
+        display: inline !important;
+    }
+
+
+    .administration .CR div.tabel-body .selectRelationGroup{
+        padding: 8px !important;
+        height : 70px;
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        width : 50%;
+        margin-right : 25%;
+        height:70px;
+    }
+
+    .administration .CR div.tabel-body .changeRelationGroup{
+        padding: 8px !important;
+        height : 70px;
+        /*box-shadow  :  0 0 10px rgba(35,173,255,1);*/
+        border : 1px solid rgb(35,173,255);
+        width : 95%;
+        margin-right : 2.5%;
+        height:70px;
+        margin-top: 15px;
+
+        box-shadow : none;
+        transition-duration: 0.5s;
+        transition-property: box-shadow;
+        transition-timing-function: ease-in;
+        overflow-y:auto;
+    }
+
+    .administration .CR div.tabel-body .changeRelationGroup:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1) !important;
+    }
+
+
+
+    .administration .CR div.tabel-body .changeRelationGroup #nav-icons{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .administration .CR div.tabel-body .changeRelationGroup #nav-icons:hover{
+        box-shadow  :  0 0 10px rgba(38, 166, 154,1);
+        background-color : rgba(38, 166, 154,1);
+        color : white;
+    }
+    .administration .CR div.tabel-body .changeRelationGroup #nav-icons:hover md-icon{
+        color : white;
+    }
+
+
+    .administration .CR div.tabel-body .changeRelationGroup div.create-select-relation-header{
+        padding : 0px !important;
+    }
+
+    .administration .CR div.tabel-body .changeRelationGroup div.create-select-relation-header md-input-container{
+        padding : 0px !important;
+    }
+
+    .administration .CR div.tabel-body .changeRelationGroup div.create-select-relation-header md-input-container md-select{
+        min-width: 200px !important;
+    }
+
+
+    .administration .CR div.tabel-body .viewRelationGroup{
+        padding: 8px !important;
+        height : calc(100% - 110px);
+        /*box-shadow  :  0 0 10px rgba(35,173,255,1);*/
+        border : 1px solid rgb(35,173,255);
+        width : 95%;
+        margin-right : 2.5%;
+        margin-top: 15px;
+        overflow-y: auto;
+        overflow-x : hidden;
+
+        box-shadow : none;
+        transition-duration: 0.5s;
+        transition-property: box-shadow;
+        transition-timing-function: ease-in;
+    }
+    .administration .CR div.tabel-body .viewRelationGroup:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1) !important;
+    }
+
+
+
+.administration .CR div.tabel-body .viewRelationGroup table{
+        max-height: calc(100vh - 170px);
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto ! important;
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table  thead  {
+        background-color : #c3d9ff !important;
+        /*color: white !important;*/
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table   thead  a{
+        color: black !important;
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table  thead  a  span{
+        font-size:12px !important;
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table   thead  span{
+        font-size:12px !important;
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table  tr:hover{
+        /*box-shadow: 0 0 6px rgba(251,187,61,1) !important;*/
+        box-shadow: 0 0 6px rgba(35,173,255,1) !important;
+        cursor: pointer !important;
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table  tr.activated{
+        background-color: rgb(35, 173, 255) ! important;
+        color: white ! important;
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table  tr.activated  span{
+        color: white ! important;
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table  tr:nth-child(even){
+        /*background-color:   rgba(240, 197, 71, 0.8);
+        color:white !important;*/
+        background-color: rgba(224, 236, 255, 0.8);
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table  tr:nth-child(even)  td label{
+        color:white !important;
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table.display{
+        display : inline-block;
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table tbody td.position-center img{
+        height: 60px !important;
+        position: relative !important;
+        width: 60px !important;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table tbody td.position-center img:hover{
+        text-shadow: 2px 2px 4px #ed4356;
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table tbody td.position-center  span{
+        overflow-wrap: break-word;
+        word-break: break-all;
+        text-align: center;
+        padding : 0px !important;
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table tbody td.position-center .active{
+        color: #81c976;
+        font-size: 14px;
+    }
+    .administration .CR div.tabel-body .viewRelationGroup table tbody td.position-center .unactive{
+        color: #ff695d;
+        font-size: 14px;
+    }
+
+
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0){
+    .parent{
+        position: relative !important;
+    }
+    .child{
+        position: absolute !important;
+    }
+}

@@ -1,0 +1,34 @@
+.link {
+    fill: none;
+    stroke: #666;
+    /*stroke: #5D9CE9;*/
+    stroke-width: 1.5px;
+}
+
+#licensing {
+    fill: #666;
+   /* fill: #449D44;*/
+}
+
+.link.licensing {
+    stroke: #666;
+    /*stroke: #449D44;*/
+}
+
+.link.resolved {
+    /*stroke-dasharray: 0,2 1;*/
+    stroke: #C9302C;
+}
+
+circle {
+    fill: #ccc;
+    stroke: #333;
+    stroke-width: 1.5px;
+}
+
+text {
+    font: 10px sans-serif;
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+}
+

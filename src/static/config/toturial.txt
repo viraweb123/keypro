@@ -1,0 +1,37 @@
+#---------------------------------------------- Main Info ------------------------------------------
+
+##syntax
+
+    {
+      "type" : "withSso"|"standard"[,
+      "SsoTokenName" : "set token name",
+      "getUserFromToken" : "service name from get user info",
+      "redirect" : "one function string from redirect login page"]
+    }
+
+#-----------------------------------------------Samples----------------------------------------------
+
+##standard (old version) type config
+
+    {
+      "type" : "standard"
+    }
+
+##with sso token
+
+    #with return address
+        {
+          "type" : "withSso",
+          "SsoTokenName" : "SSO.TOKEN",
+          "getUserFromToken" : "/KeydocPro/services/rest/auth/sso",
+          "redirect" : "function redirect(returnAddress){return \"http://sso.metro.com/?ReturnAddress=\"+returnAddress;}"
+        }
+
+    #not return address
+        {
+          "type" : "withSso",
+          "SsoTokenName" : "SSO.TOKEN",
+          "getUserFromToken" : "/KeydocPro/services/rest/auth/sso",
+          "redirect" : "function redirect(returnAddress){return \"http://localhost:1395/\"}"
+        }
+

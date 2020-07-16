@@ -1,0 +1,132 @@
+<div  class="tabel-body  assignDigitalSign" style="background-color: white;">
+
+    <!--TODO select Sign Image-->
+    <div  class="selectingSign col-sm-12 row form-group">
+
+        <!--TODO Tree select Sign Image-->
+        <div class="selectTree  form-group col-sm-4 col-md-4 col-xs-4">
+
+            <div class="zonesHeader">
+                <span ng-bind="'desktop.zr.taxonomy' | translate"></span>
+                <div class=" pull-left  refresh" >
+                    <a  ng-click="func.refreshTaxonomy()" class="getAgain">
+                        <i  class="fa fa-refresh" style="color:white !important;cursor: pointer;">
+                            <md-tooltip  md-direction="bottom">
+                                به روز رسانی
+                            </md-tooltip>
+                        </i>
+                    </a>
+                </div>
+            </div>
+
+            <div  class="parent" style="display: -webkit-box;display:-moz-box;width:100%;min-height: 83%; max-height:83%;overflow: auto;position: relative;">
+                <div
+                        tree-model
+                        tree-func="func.treeView"
+                        root-folder="data.root"
+                        current-node="data.tree"
+                        class="treeview child"
+                        style="padding-left: 10px;position: absolute !important;">
+                </div>
+            </div>
+
+        </div>
+        <!--TODO view  select tree Images and Folders Content -->
+        <div class="selectImage  form-group col-sm-4 col-md-4 col-xs-4">
+
+            <div class="zonesHeader">
+                <span  >انتخاب تصویر</span>
+            </div>
+
+            <div class="files-list row form-group">
+                <div  ng-repeat="doc in data.list"  class="thumbnail-viewer">
+
+                    <img  ng-class="{'brithness-filter' : data.selectedFileOrFolder.uuid == doc.uuid}"  ng-click="func.clickImage($event,doc)"  src="{{doc.thumbnailSrc}}" />
+                    <div class="label row" >
+                        <span ng-bind="doc.name"  class="name"  style="color:black"></span>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <!--TODO  select assigned user sign -->
+        <div class="selectUserAndSendRequest  form-group col-sm-4 col-md-4 col-xs-4">
+
+
+            <div class="zonesHeader">
+                <span  >انتخاب کاربر</span>
+            </div>
+
+            <div layout="row"  class="row form-group col-sm-12">
+                <md-input-container class="md-block  col-sm-12 "  style="padding: 0px; width: 100%;">
+                    <md-select
+                            class="md-block  col-sm-12 pull-right"
+                            placeholder="انتخاب کاربر"
+                            ng-model="data.selectedUser"
+                            ng-change="func.changeUser()"
+                            md-on-open="func.getUsersList()"
+                            style="min-width: 100%;padding:0px;">
+                        <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                        <md-option ng-value="user" ng-repeat="user in data.usersList">{{user}}</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+
+            <div layout="row"  class="row form-group col-sm-12">
+                <form name="assignSignForm" novalidate role="form">
+
+                    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                        <md-button id="okButon"     class="md-raised" ng-click="func.sendAssignedSign()">
+                            <md-icon  md-font-icon="fa fa-plus  fa-fw"></md-icon>
+                            <span style="margin-right: 3px;">ارسال</span>
+                        </md-button>
+                    </section>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    <!--TODO view Signed Images selected User-->
+    <div class="viewSign col-sm-12 row form-group">
+
+        <div class="zonesHeader">
+            <span  >لیست امضاهای دیجیتال {{data.selectedUser}}</span>
+        </div>
+
+
+        <div class="col-sm-12 row form-group result-userStams"  ng-if="data.userStampList!=null && data.selectedUser != null">
+            <div  ng-repeat="userStamp in data.userStampList"  class="thumbnail-viewer">
+
+                <img  ng-class="{'brithness-filter' : data.selectedStamp.id == userStamp.id}"  ng-click="func.clickStampImage($event,userStamp)"  src="{{userStamp.thumbnailSrc}}" />
+                <div class="label row" >
+                    <span  ng-click="func.toggleActiveStamp(userStamp,$index)"  class="name  fa" ng-class="{'fa-check-square-o': userStamp.active,'fa-square-o  disabled-icon':!userStamp.active}"  style="color:black">
+                        <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                        {{!userStamp.active?'':' غیر'}} فعال سازی امضای دیجیتال
+                        </md-tooltip>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!--TODO Signed Images selected to User Signed Images -->
+    <!--<div class="assignButtonSign col-sm-12 row form-group">
+
+        <form name="assignSignForm" novalidate role="form">
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="cancelButon"     class="md-raised" ng-click="func.removeAssignedSign()">
+                    <md-icon  md-font-icon="fa fa-remove  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;">حذف</span>
+                </md-button>
+            </section>
+        </form>
+
+    </div>-->
+
+</div>

@@ -1,0 +1,81 @@
+<style>
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+    }
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+    }
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+    .cropArea {
+        background: #E4E4E4;
+        overflow: hidden;
+        width:500px;
+        height:350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .activeType{
+        color : #337ab7
+    }
+    .croper-tollbar{
+        border: 1px solid;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        height: 30px;
+        margin-right: 220px;
+        opacity: 0.5;
+        padding-right: 5px;
+        padding-top: 2px;
+        position: absolute;
+        width: 60px;
+        z-index: 1000;
+    }
+    .icon-cropper{
+        font-size:25px;
+        cursor: pointer;
+    }
+</style>
+<div
+        class="modal-header fontStyle"
+        ng-bind="'administration.zl.modal.editUser'|translate"
+        style="font-size: 15px">
+</div>
+<div class="modal-body">
+    <form role="form" name="editUserForm">
+        <div class="panel-default ">
+            <div class="row form-group">
+                <div class="croper-tollbar">
+                    <span ng-click="data.areaType='square';"  class="fa fa-square-o icon-cropper" ng-class="{'activeType':data.areaType=='square'}"></span>
+                    <span ng-click="data.areaType='circle';"  class="fa fa-circle-o icon-cropper" ng-class="{'activeType':data.areaType=='circle'}"></span>
+                </div>
+                <div class="cropArea">
+                    <img-crop ng-if="data.areaType=='square'" area-type="square" image="data.img" result-image="data.CroppedImage"></img-crop>
+                    <img-crop ng-if="data.areaType=='circle'" area-type="circle" image="data.img" result-image="data.CroppedImage"></img-crop>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+        <div class="col-sm-4- pull-left">
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="okButon"     class="md-raised" ng-click="editUser(user)">
+                    <md-icon md-font-icon="fa fa-edit"></md-icon>
+                    <span >افزودن تصویر</span>
+                </md-button>
+                <md-button id="cancelButon"     class="md-raised" ng-click="cancel()">
+                    <md-icon md-font-icon="fa fa-remove"></md-icon>
+                    <span ng-bind="'administration.zl.modal.cancel'|translate"> </span>
+                </md-button>
+            </section>
+
+        </div>
+    </div>
+
+
+</div>

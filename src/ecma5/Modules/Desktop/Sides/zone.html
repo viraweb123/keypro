@@ -1,0 +1,286 @@
+<div  class="fileViewer{{data.nav.center.isOpened == true ? 'O' : ''}}">
+    <div class="D">
+        <div class="showItems">
+
+            <md-content class="mdContent  desktop-navigation" style=" max-height: 35px;" >
+                <div class="pull-right" style="text-align:center;padding: 0px 2px !important; overflow-x: auto !important; width: calc(100% - 100px) !important; overflow-y: auto; height: 37px;">
+                      <div style="display: table; margin: 0px auto;">
+                            <!--todo group 1 = {copy,move,purge,rename}-->
+                            <span   class="pull-right spanNavIcon fa fa-copy"             id="copyVisibleDesktop"               ng-click="func.runSelectFunction('copy')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.copy' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right   spanNavIcon fa fa-scissors"         id="moveVisibleDesktop"               ng-click="func.runSelectFunction('cut')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.transfer' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spanNavIcon fa fa-i-cursor"         id="renameVisibleDesktop"             ng-click="func.runSelectFunction('rename')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.rename' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right spliterVerticalDesktop"             id="group4SpliterDesktop"></span>
+                            <span   class="pull-right     spanNavIcon fa fa-trash"            id="purgeTrashVisibleDesktop"         ng-click="func.runSelectFunction('remove')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.remove' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <!--todo group 3 = {restore,checkOut,cancelCheckOut,checkIn}-->
+                            <span   class="pull-right     spanNavIcon fa fa-refresh"          id="restoreVisibleDesktop"            ng-click="func.runSelectFunction('restore')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.restore' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spliterVerticalDesktop"             id="group1SpliterDesktop" ></span>
+                            <!--todo group 2 = {download,print,about,TOC,exportZip}-->
+                            <span   class="pull-right     spanNavIcon fa fa-download"         id="downloadVisibleDesktop"           ng-click="func.runSelectFunction('download')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.download' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spanNavIcon fa fa-print"            id="printVisibleDesktop"              ng-click="func.runWithEventSelectFunction($event,'print')">
+                                <md-tooltip  md-direction="bottom" >
+                                       پیش نمایش و چاپ
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spanNavIcon fa fa-newspaper-o"      id="aboutVisibleDesktop"              ng-click="func.runWithEventSelectFunction($event,'showFolderPreview')">
+                                <md-tooltip  md-direction="bottom" >
+                                       تورق
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spanNavIcon fa fa-book"             id = "TOCVisibleDesktop"              ng-click="func.runWithEventSelectFunction($event,'TOC')">
+                                <md-tooltip  md-direction="bottom" >
+                                       فهرست
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spanNavIcon fa fa-file-archive-o"   id = "exportVisibleDesktop"           ng-click="func.runSelectFunction('exportZip')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.exportZip' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right spliterVerticalDesktop"             id="group2SpliterDesktop"></span>
+                            <span   class="pull-right     spanNavIcon fa fa-pencil-square-o"  id="checkOutVisibleDesktop"           ng-click="func.runSelectFunction('edit')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.edit' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right spanNavIcon fa-stack"               id="cancelCheckOutVisibleDesktop"     ng-click="func.runSelectFunction('cancelEdit')">
+                                <i class="fa fa-ban fa-stack-1x"  style=" color: red; z-index: 10; margin-top: -8px; font-size: 18px;"></i>
+                                <i class="fa fa-edit fa-stack-1x "  style="margin-top: -7px; font-size: 13px;"></i>
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.cancel' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spanNavIcon fa fa-upload"           id="checkInVisibleDesktop"            ng-click="func.runSelectFunction('updateFile')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.update' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right spliterVerticalDesktop"             id="group3SpliterDesktop" ></span>
+                            <!--todo group 4 = {lock,unlock,forceUnlock}-->
+                            <span   class="pull-right     spanNavIcon fa fa-lock"             id="lockVisibleDesktop"               ng-click="func.runSelectFunction('lock')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.lock' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spanNavIcon fa fa-unlock"           id="unlockVisibleDesktop"             ng-click="func.runSelectFunction('unlock')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.openLocked' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spanNavIcon fa fa-unlock-alt"       id="forceUnlockVisibleDesktop"        ng-click="func.runSelectFunction('forceUnlock')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.unlockForce' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right spliterVerticalDesktop"             id="group4SpliterDesktop"></span>
+                            <!--todo group 5 = {addSubscription,removeSubscription,bookmarks}-->
+                            <span   class="pull-right     spanNavIcon fa fa-share-alt"        id="addSubscriptionVisibleDesktop"    ng-click="func.runSelectFunction('subscribe')">
+                                <md-tooltip  md-direction="bottom" >
+                                        رصد کردن
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right spanNavIcon fa-stack"               id="removeSubscriptionVisibleDesktop" ng-click="func.runSelectFunction('unSubscribe')">
+                                <i class="fa fa-ban fa-stack-1x"  style="color: red; z-index: 10; margin-top: -8px; font-size: 18px;"></i>
+                                <i class="fa fa-share-alt fa-stack-1x "  style="margin-top: -7px; font-size: 13px;"></i>
+                                <md-tooltip  md-direction="bottom" >
+                                       انصراف از رصد کردن
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spanNavIcon fa fa-bookmark-o"       id="bookmarksVisibleDesktop"          ng-click="func.runSelectFunction('bookmark')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.bookmark' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right spliterVerticalDesktop"             id="group5SpliterDesktop"></span>
+                            <!--todo group 6 = {addCategory,addWorkFlow,templates,sign,webSite}-->
+                            <span   class="pull-right     spanNavIcon fa fa-list"             id="addCategoryVisibleDesktop"        ng-click="func.runSelectFunction('addCategories')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.addCategory' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spanNavIcon fa fa-cog"              id="startWorkflowVisibleDesktop"      ng-click="func.runSelectFunction('addWorkFlow')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.addWorkFlow' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spanNavIcon fa fa-vcard-o"          id="templatesVisibleDesktop"          ng-click="func.runSelectFunction('addTemplates')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.template' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spanNavIcon fa fa-lastfm"           id="signSelectingDesktop"             ng-click="func.runSelectFunction('signSelecting')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.electronicSelect' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spanNavIcon fa fa-link"             id="webSiteVisibleDesktop"            ng-click="func.runSelectFunction('relation')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.relation' | translate}}
+                                </md-tooltip>
+                            </span>
+							 <span class="pull-right spanNavIcon fa fa-object-ungroup showNavIcon"  id="compareDocsDesktop"	        ng-click="func.compareDocs()">
+									<md-tooltip  md-direction="bottom">
+									   مقایسه اسناد
+									</md-tooltip>
+							</span>
+                            <span   class="pull-right spliterVerticalDesktop"             id="group6SpliterDesktop"></span>
+
+                            <span   class="pull-right     spanNavIcon showNavIcon fa fa-arrow-right"       ng-click="func.runSelectFunction('selectPrevius')">
+                                <md-tooltip  md-direction="bottom" >
+                                    {{'desktop.zm.menu.previus' | translate}}
+                                </md-tooltip>
+                            </span>
+                            <span   class="pull-right     spanNavIcon showNavIcon fa fa-arrow-left"        ng-click="func.runSelectFunction('selectNext')">
+                                    <md-tooltip  md-direction="bottom" >
+                                         {{'desktop.zm.menu.next' | translate}}
+                                    </md-tooltip>
+                            </span>
+                      </div>
+
+                </div>
+                <div class="pull-left col-sm-2-" style="padding: 0px !important; width: 100px !important;">
+                    <section
+                            class="pull-left"
+                            style="width: 100px; max-height: 35px;"
+                            layout="row"
+                            layout-sm="column"
+                            layout-wrap>
+                        <md-checkbox
+                                class="pull-left"
+                                ng-change = "func.selectAll()"
+                                ng-model="data.selectAll"
+                                style="opacity: 1;  left: 0px; margin-top: 7px; margin-right: 5px;"><!--position: relative;-->
+                            <md-tooltip  md-direction="top">
+                                انتخاب تمام عناصر
+                            </md-tooltip>
+                        </md-checkbox>
+                        <div style="margin-top: 4px; color: white; background-color: rgb(0, 172, 193); height: 25px; text-align: center; width: 40px; margin-right: 25px;">
+                            <md-tooltip  md-direction="bottom">
+                                تعداد عناصر انتخاب شده
+                            </md-tooltip>
+                            <span ng-bind="data.selectedItems.length|pNumber"></span>
+                        </div>
+                    </section>
+                </div>
+
+            </md-content>
+
+            <div  class="list niseScrollClass" >
+                <div ng-repeat="doc in data.list"  class="file">
+                    <img
+                            ng-class="{'brithness-filter' : data.selectedFileOrFolder.uuid == doc.uuid}"
+                            ng-click="func.clickImage($event,doc)"
+                            src="{{doc.thumbnailSrc}}"
+                    />
+
+                    <span  class="pull-left" style="width: 20px; position: absolute; margin-top: 12px;">
+                        <span class="fa fa-share-alt" ng-show="doc.subscribed"></span>
+                        <span class="fa fa-edit"      ng-show="doc.checkedOut"></span>
+                        <span class="fa fa-lock"      ng-show="doc.locked"    ></span>
+                    </span>
+
+                    <div class="selectDoc {{doc.selected ? '' : 'un' }}select">
+                        <span class="fa fa-check check"  ng-click="func.choiceItem(doc)"></span>
+                    </div>
+
+                    <div class="label row" >
+                        <span style="direction: ltr;"   ng-bind="doc.name"  class="name">
+                            <md-tooltip  md-direction="top">
+                                {{doc.name}}
+                            </md-tooltip>
+                        </span>
+                    </div>
+
+                    <div class="footer-thumbnail"></div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="N desktop-background">
+
+        <span
+                class="opener-zone-center fa fa-chevron-{{data.nav.center.isOpened == false ? 'down' : 'up'}}"
+                ng-click="data.nav.center.isOpened = !data.nav.center.isOpened;">
+        </span>
+    </div>
+
+</div>
+
+<div  class="files">
+
+    <!-- --------------------------------  MultiMedia  --------------------------------- -->
+    <div  style="margin-top:0px;"  id="desktop-multimedia-viewer-parent" class="media {{data.viewer.type == 'media' ? 'multimedia' : ''}}">
+        <div class="videogular-container" style="width: 100% ! important;direction: ltr;position: relative;height: 100%;"
+             id="desktop-multimedia-viewer-child">
+            <keydoc-player
+                    runing ="data.viewer.player.func"
+                    id="key-doc-pro-media-shower-id">
+            </keydoc-player>
+        </div>
+    </div>
+
+    <!-- --------------------------------  PDF  --------------------------------- -->
+    <div
+            class="media  pdf-viewer-allcontent-iner-style {{data.viewer.type == 'pdf' ? 'pdfViewer' : ''}}"
+            id="desktop-pdf-viewer-parent"  style="margin-top:0px;height:100%;max-height:100%;min-height:100%;">
+        <div id="desktop-pdf-viewer-child" style="width:100%;height:100%;position: relative;">
+            <key-doc-pro-pdf-shower
+                    ng-if="data.viewer.pdf.showPDF == true"
+                    show-icons="data.viewer.pdf.showIcons"
+                    id="key-doc-pro-pdf-shower-id"
+                    change-url="data.viewer.pdf.changeURL"
+                    first-search = "data.viewer.pdf.firstSearch"
+                    path-url="data.viewer.pdf.url"
+                    show-file="data.viewer.pdf.isOpenfileShower" >
+            </key-doc-pro-pdf-shower>
+
+        </div>
+    </div>
+
+    <!-- -------------------------------- SWF -------------------------------- -->
+    <div class="media {{data.viewer.type == 'swf' ? 'swfViewer' : ''}}">
+        <div id="viewercontainer"
+             ng-class="{'open-file':data.isOpenfileShower,'close-file':!data.isOpenfileShower}">
+        </div>
+    </div>
+    <!-- -------------------------------- HTML -------------------------------- -->
+    <div class="media {{data.viewer.type == 'html' ? 'htmlViewer' : ''}}"  style="margin-top: 0px;">
+        <div id="viewercontainer"  style="overflow-y: auto; height: 100%; direction: initial; background: white;"   ng-bind-html="data.viewer.html.content"></div>
+    </div>
+
+    <!-- -------------------------------- IMAGE -------------------------------- -->
+    <div class="media col-sm-12 {{data.viewer.type == 'image' ? 'imageViewer' : ''}}"  style="margin:0px !important;padding: 0px !important;">
+        <image-viewer
+                runing ="data.viewer.image.func"
+                id="key-doc-pro-image-shower-id"
+        ></image-viewer>
+    </div>
+
+
+</div>

@@ -1,0 +1,26 @@
+
+<div   style="padding: 0px; float: right; width: 100%; ">
+    <!--<h6 ng-bind="'administration.zr.scripting' | translate" style="margin:10px !important;"  ></h6>
+    <div class="dividerPanel"></div>-->
+    <div class="zonesHeader">
+        <span ng-bind="'administration.zr.scripting' | translate"></span>
+    </div>
+    <ul>
+        <i
+                ng-if="data.showLogins['/scripting.jsp']"
+                ng-class="{'selected-nav' : data.acriveNav =='scripting'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('scripting')">
+            <span class="icon-show fa fa-code"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.scripting'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.scripting'|translate}}
+            </md-tooltip>
+        </i>
+
+    </ul>
+
+</div>

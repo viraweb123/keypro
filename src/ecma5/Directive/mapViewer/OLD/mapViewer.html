@@ -1,0 +1,320 @@
+<style>
+    .nav-bar {
+        height: 35px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+		courser : pointer;
+        width: 600px;
+        z-index: 100;
+        background-color: transparent;
+        margin-top: -40px;
+
+       /* background : -moz-linear-gradient(bottom, rgba(34,98,39,0.90), rgba(34,98,39,.20));
+        background : -webkit-linear-gradient(bottom, rgba(34,98,39,0.90), rgba(34,98,39,.20));*/
+    }
+    .nav-bar-sub {
+        height: 35px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        courser : pointer;
+        width: 600px;
+        z-index: 10;
+       /* background-color: red;*/
+        background-color: red;/*rgba(255, 255, 255, 0.6);*/
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+
+        /* background : -moz-linear-gradient(bottom, rgba(34,98,39,0.90), rgba(34,98,39,.20));
+         background : -webkit-linear-gradient(bottom, rgba(34,98,39,0.90), rgba(34,98,39,.20));*/
+    }
+
+
+	.nav-bar-parent{
+		position: fixed;
+        z-index: 11;
+        margin-left:10%;
+	}
+    .nav-bar-icons{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 25px;
+        margin: 5px !important;
+        text-align: center;
+        text-decoration: none !important;
+    }
+    .nav-bar-direction{
+        position: relative;
+        margin: 0 3px;
+    }
+    .nav-bar-icons-top{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        margin-top: 2px !important;
+        text-align: center;
+        text-decoration: none !important;
+    }
+    .nav-bar-icons-down{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        margin: 5px !important;
+        text-align: center;
+        text-decoration: none !important;
+    }
+    .nav-bar-icons-left{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        left: -3px;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: -25px !important;
+        position: absolute;
+        text-align: center;
+        text-decoration: none !important;
+    }
+    .nav-bar-icons-right{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        margin-top: -26px;
+        position: absolute;
+        right: -3px;
+        text-align: center;
+        text-decoration: none !important;
+    }
+    .show-icon{
+        display: block !important;
+    }
+    .hide-icon{
+        display: none !important;
+    }
+</style>
+
+    <!-- -------------------------------------------- Navbar -------------------------------------------- -->
+
+
+    <div  class="nav-bar-parent" ng-show="nodeValue.data.map && nodeValue.data.map != null">
+
+        <div class="nav-bar-sub"></div>
+
+
+        <div class="nav-bar" id="navigationCanvasID" >
+            <i
+                    ng-class="{ 'show-icon' :  data.flages.isEdit , 'hide-icon' : !data.flages.isEdit }"
+                    class="pull-left fa fa-pencil-square-o nav-bar-icons"
+                    ng-click="func.navBar.edit($event)"
+                    id="navEDIT">
+                <md-tooltip  md-direction="top">
+                    ویرایش
+                </md-tooltip>
+            </i>
+            <i
+                    ng-class="{ 'show-icon' : !data.flages.isEdit , 'hide-icon' : data.flages.isEdit }"
+                    class="pull-left fa fa-eye nav-bar-icons"
+                    ng-click="func.navBar.view($event)"
+                    id="navVIEW">
+                <md-tooltip  md-direction="top">
+                    نمایش
+                </md-tooltip>
+
+            </i>
+            <span class="pull-left nav-bar-direction">
+                <i
+                        class="fa fa-arrow-up nav-bar-icons-top"
+                        ng-click="func.navBar.direction.top.click($event)"
+                        ng-mousedown="func.navBar.direction.top.keydown($event)"
+                        ng-mouseup="func.navBar.direction.top.keyup($event)"
+                        id="navTOP">
+                <md-tooltip  md-direction="top">
+                    بالا
+                </md-tooltip>
+
+                </i>
+                <i
+                        class="fa fa-arrow-down nav-bar-icons-down"
+                        ng-click="func.navBar.direction.down.click($event)"
+                        ng-mousedown="func.navBar.direction.down.keydown($event)"
+                        ng-mouseup="func.navBar.direction.down.keyup($event)"
+                        id="navDOWN">
+                <md-tooltip  md-direction="top">
+                    پایین
+                </md-tooltip>
+
+                </i>
+                <i
+                        class="fa fa-arrow-right nav-bar-icons-right"
+                        ng-click="func.navBar.direction.right.click($event)"
+                        ng-mousedown="func.navBar.direction.right.keydown($event)"
+                        ng-mouseup="func.navBar.direction.right.keyup($event)"
+
+                        id="navRIGHT">
+                <md-tooltip  md-direction="top">
+                    راست
+                </md-tooltip>
+
+                </i>
+                <i
+                        class="fa fa-arrow-left nav-bar-icons-left"
+                        ng-click="func.navBar.direction.left.click($event)"
+                        ng-mousedown="func.navBar.direction.left.keydown($event)"
+                        ng-mouseup="func.navBar.direction.left.keyup($event)"
+                        id="navLEFT">
+                <md-tooltip  md-direction="top">
+                    چپ
+                </md-tooltip>
+
+                </i>
+            </span>
+            <i
+                    ng-class="{ 'show-icon' : !data.flages.isEdit , 'hide-icon' : data.flages.isEdit }"
+                    class="pull-right fa fa-circle-o nav-bar-icons"
+                    ng-click="func.navBar.createShape('circle')"
+                    id="navCIRCLE">
+                <md-tooltip  md-direction="top">
+                    دایره
+                </md-tooltip>
+
+            </i>
+            <i
+                    ng-class="{ 'show-icon' : !data.flages.isEdit , 'hide-icon' : data.flages.isEdit }"
+                    class="pull-right fa fa-square-o nav-bar-icons"
+                    ng-click="func.navBar.createShape('square')"
+                    id="navSQUAR"><!--ng-click="func.navBar.createShape.squar($event)"-->
+                <md-tooltip  md-direction="top">
+                    چهار گوش
+                </md-tooltip>
+
+            </i>
+            <i
+                    ng-class="{ 'show-icon' : !data.flages.isEdit , 'hide-icon' : data.flages.isEdit }"
+                    class="pull-right fa fa-object-group nav-bar-icons"
+                    ng-click="func.navBar.createShape('polygon')"
+                    id="navPOLY">
+                <md-tooltip  md-direction="top">
+                    چند ضلعی
+                </md-tooltip>
+
+            </i><!--ng-click="func.navBar.createShape.poly($event)"-->
+
+            <i
+                    ng-class="{ 'show-icon' : data.flages.isEdit , 'hide-icon' : !data.flages.isEdit }"
+                    class="pull-right fa fa-question  nav-bar-icons"
+                    ng-click="func.showQuery()"
+                    id="navRESULT"><!--ng-click="func.navBar.createShape.circle($event)"-->
+                <md-tooltip  md-direction="top">
+                    نتیجه
+                </md-tooltip>
+
+            </i>
+
+
+
+            <i
+                    ng-class="{ 'show-icon' : data.flages.isFull , 'hide-icon' : !data.flages.isFull }"
+                    class="pull-left fa fa-expand nav-bar-icons"
+                    ng-click="func.navBar.screen.goFull($event)"
+                    id="navFULL">
+                <md-tooltip  md-direction="top">
+                    تمام صفحه
+                </md-tooltip>
+
+            </i>
+            <i
+                    class="pull-left  nav-bar-icons"
+                    ng-click="func.navBar.screen.goFull($event)"
+                    id="navFULL">
+                <md-tooltip  md-direction="top">
+                    تمام صفحه
+                </md-tooltip>
+
+            </i>
+            <i
+                    class="pull-left"
+                    style="width: 100px ! important; text-align: center; color: white; vertical-align: middle; margin-top: 5px;"
+                >
+                <span  style="font-size: 15px; text-align: center; vertical-align: middle;">
+                    ({{data.p.x|en2faNum}} ,&nbsp;{{data.p.y|en2faNum}})
+                </span>
+            </i>
+            <i
+                    ng-class="{ 'show-icon' :  !data.flages.isFull , 'hide-icon' : data.flages.isFull }"
+                    class="pull-left fa fa-compress nav-bar-icons"
+                    ng-click="func.navBar.screen.backFull($event)"
+                    id="navBACKFULL">
+                <md-tooltip  md-direction="top">
+                    اندازه اصلی
+                </md-tooltip>
+
+            </i>
+            <i
+                    class="pull-left fa fa-eraser nav-bar-icons"
+                    ng-click="func.navBar.erase($event)"
+                    id="navERASE">
+                <md-tooltip  md-direction="top">
+                    پاک کردن
+                </md-tooltip>
+            </i>
+            <!--ng-click="func.navBar.download($event)"-->
+            <!--<i
+                    class="pull-left fa fa-download nav-bar-icons"
+                    data-placement="bottom"
+                    title="DOWNLOAD"
+                    data-toggle="tooltip"
+                    id="navDOWNLOAD"
+                    ngf-select="func.getImage($file)"
+                    ng-model="data.file"
+                    name="file"
+                    ngf-pattern="'image/*'"
+                    ngf-accept="'image/*'"
+                    ngf-max-size="2MB"
+                    ngf-min-height="100"
+                    ngf-resize="{width: 500, height: 500}"
+
+
+            >
+            </i>-->
+            <i
+                    class="pull-left fa fa-file-text nav-bar-icons"
+                    id="navDescription"
+                    name="description"
+                    ng-click ="func.description()">
+                <md-tooltip  md-direction="top">
+                    توضیحات
+                </md-tooltip>
+            </i>
+            <i
+                    class="pull-left fa fa-download nav-bar-icons"
+                    id="navDOWNLOAD"
+                    name="file"
+                    ng-click ="func.update()">
+                <md-tooltip  md-direction="top">
+                    ویرایش تصویر
+                </md-tooltip>
+            </i>
+
+            <i
+                    ng-show="nodeValue.data.map && nodeValue.data.map.parentId != 0"
+                    class="pull-left fa  fa-share nav-bar-icons"
+                    ng-click="func.navBar.goback($event)"
+                    id="navEDIT">
+                <md-tooltip  md-direction="top">
+                    برگشت
+                </md-tooltip>
+
+            </i>
+
+        </div>
+    </div>

@@ -1,0 +1,16 @@
+
+    <div class="N desktop-background">
+        <span
+                class="opener-zone opener-zone-desktop opener-zone-right fa fa-chevron-{{data.nav.right.isOpened == false ? 'left' : 'right'}}"
+                ng-click="func.closeOrOpenRight();"><!--data.nav.right.isOpened = !data.nav.right.isOpened;-->
+        </span>
+    </div>
+
+    <div class="D">
+        <div class="taxonomyVisible hidden-zone"       ui-view="taxonomyVisible"></div>
+        <!--<div class="categoriesVisible hidden-zone"     ui-view="categoriesVisible"></div>-->
+        <div class="trashVisible hidden-zone"          ui-view="trashVisible"></div>
+        <div class="metadataVisible hidden-zone"       ui-view="metadataVisible"></div>
+        <div class="templatesVisible hidden-zone"      ui-view="templatesVisible"></div>
+        <div class="personalVisible hidden-zone"       ui-view="personalVisible"></div>
+    </div>

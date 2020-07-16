@@ -1,0 +1,82 @@
+
+<div class="zonesHeaderR">
+    <span  >ذخیره</span>
+</div>
+
+<div class="CNK">
+
+
+
+    <!--<div class="storeRightHeader">
+        <h6 class="pull-right">
+            <span ng-bind="'search.zr.stored_search'|translate"></span>
+        </h6>
+    </div>
+    <hr style="padding: 0px; margin: 5px;"  />-->
+    <div class="storeRightBody">
+
+        <form name="storeAdvanceForm"    novalidate   style="max-height: 70px; !important">
+            <div layout="row"  class="row form-group" >
+                <md-input-container class="md-block md-icon-float pull-right">
+                    <label>نام جستجو</label>
+                    <input
+                            id="storeSearch"
+                            required
+                            type="text"
+                            name="storeSearch"
+                            ng-model="data.store.input"
+                            minlength="1"
+                            ui-keypress="{13:'func.saveOrEditStoreSearch(storeAdvanceForm)'}"
+                    />
+                </md-input-container>
+
+                <span
+                        style="margin-top:30px;"
+                        id="storeSearchBtn"
+                        class="md-raised  pull-left fa fa-save"
+                        ng-click="func.saveOrEditStoreSearch(storeAdvanceForm)">
+                    <md-tooltip  md-direction="top">
+                        {{(data.store.selectedStore != null)?'ویرایش':'ذخیره'}}
+                    </md-tooltip>
+                </span>
+
+
+            </div>
+
+
+
+        </form>
+
+
+        <div class="col-sm-12 row form-group stores-list"  ng-show="data.stores.length>0">
+
+            <div ng-repeat="store in data.stores"
+                 ng-class="{ 'active' : data.store.selectedStore.id == store.id }"
+                 class="alert  col-sm-12 alert-mode-viewer" role="alert"
+                 id="storeAdvance-{{store.id}}"
+                 style="margin: 3px 0px; float: right; padding: 5px;"
+            >
+                 <span
+                         class="fa fa-times pull-left store-remove"
+                         ng-click="func.removeStoreSearch(store,$index);">
+                     <md-tooltip  md-direction="top">
+                      {{'search.zr.search.remove'|translate}}
+                        </md-tooltip>
+                 </span>
+                <span   class="fa fa-search pull-left store-search"
+                        ng-click="func.searchStoreSearch(store);">
+                    <md-tooltip  md-direction="top">
+                      {{'search.zr.search.search'|translate}}
+                    </md-tooltip>
+
+                </span>
+                <span   style="padding-left:  4px;"   ng-click = "func.selectStoreSearch(store)"
+                        class="control-label pull-right alert-label" ng-bind="store.queryName">
+
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,189 @@
+<div  class="tabel-body">
+
+
+
+    <div class="body-view" >
+
+
+        <div class="selectFilter" >
+            <div layout="row" class="col-sm-1"></div>
+            <div layout="row" class="col-sm-5  col-xs-5" style="margin-top: 8px;">
+                <md-input-container class="md-block  col-sm-12 col-xs-12"  style=" padding: 0;">
+                    <label>فیلتر</label>
+                    <md-select
+                            class="md-block  col-sm-12 pull-right"
+                            placeholder="فیلتر"
+                            ng-model="data.filterElement"
+                            ng-change="func.changeFilter()"
+                            style="min-width: 100%;">
+                        <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                        <md-option ng-value="filter.value" ng-repeat="filter in data.Filters">{{filter.label}}</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div layout="row" class="col-sm-5 col-xs-5" style="  margin-bottom: 5px !important;">
+                <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12">
+                    <label>مقدار فیلتر</label>
+                    <input
+                            type="text"
+                            ng-model="data.filterValue"
+                    />
+                </md-input-container><!-- ui-keypress="{13:'func.filters()'}"-->
+            </div>
+        </div>
+
+        <div class="col-sm-12" style="max-height: calc(100vh - 170px);overflow-y: auto;">
+            <table  style="padding: 10px;"
+                class="table table-bordered- table-responsive display table-striped table-hover- table-condensed  show-hide-file" >
+            <caption>
+                <span  class="pull-right"  ng-bind="'administration.zr.users'|translate"></span>
+                <span style="margin-right:10px;font-size: 25px;" class="fa fa-user-plus pull-right" ng-click="func.addUser()">
+                    <md-tooltip  md-direction="top">
+                        {{'administration.zl.modal.addUSer'|translate}}
+                    </md-tooltip>
+                </span>
+            </caption>
+            <thead>
+                <th class="position-center" style="white-space: nowrap;padding: 4px !important;">
+                        <span ng-bind="'administration.zr.row'|translate"></span>
+                </th>
+                <th class="position-center" style="white-space: nowrap;padding: 4px !important;">
+                    <a  href="javascript:void(0)" ng-click=" data.sort.type = 'UserId'; data.sort.ascDesc = !data.sort.ascDesc">
+                        <span ng-show="data.sort.type == 'UserId' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                        <span ng-show="data.sort.type == 'UserId' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                        <span ng-bind="'administration.zr.users'|translate"></span>
+                    </a>
+                </th>
+                <th class="position-center" style="white-space: nowrap;padding: 4px !important;">
+                    <a  href="javascript:void(0)" ng-click=" data.sort.type = 'Name'; data.sort.ascDesc = !data.sort.ascDesc">
+                        <span ng-show="data.sort.type == 'Name' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                        <span ng-show="data.sort.type == 'Name' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                        <span ng-bind="'administration.zr.name'|translate"></span>
+                    </a>
+                </th>
+                <th class="position-center" style="white-space: nowrap;padding: 4px !important;">
+                    <a  href="javascript:void(0)" ng-click=" data.sort.type = 'Email'; data.sort.ascDesc = !data.sort.ascDesc">
+                        <span ng-show="data.sort.type == 'Email' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                        <span ng-show="data.sort.type == 'Email' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                        <span ng-bind="'administration.zr.email'|translate"></span>
+                    </a>
+                </th>
+                <th class="position-center" style="white-space: nowrap;padding: 4px !important;">
+                    <span  ng-bind="'administration.zr.roles'|translate"></span>
+                </th>
+                <th class="position-center" style="white-space: nowrap;padding: 2px !important;">
+
+                    <a  href="javascript:void(0)" ng-click=" data.sort.type = 'Profile'; data.sort.ascDesc = !data.sort.ascDesc">
+                        <span ng-show="data.sort.type == 'Profile' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                        <span ng-show="data.sort.type == 'Profile' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                        <span ng-bind="'administration.zr.profile'|translate"></span>
+                    </a>
+                </th>
+                <th class="position-center" style="white-space: nowrap;padding: 4px !important;">
+                    <a  href="javascript:void(0)" ng-click=" data.sort.type = 'Active'; data.sort.ascDesc = !data.sort.ascDesc">
+                        <span ng-show="data.sort.type == 'Active' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                        <span ng-show="data.sort.type == 'Active' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                        <span ng-bind="'administration.zr.active'|translate"></span>
+                    </a>
+                    <!--<span ng-bind="'administration.zr.active'|translate"></span>-->
+                </th>
+                <th class="position-center" style="padding: 4px !important;">
+                    <a  href="javascript:void(0)" ng-click=" data.sort.type = '$index'; data.sort.ascDesc = !data.sort.ascDesc">
+                        <span ng-show="data.sort.type == '$index' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                        <span ng-show="data.sort.type == '$index' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                        <span >تصویر</span>
+                    </a>
+                </th>
+                <th class="position-center" style="white-space: nowrap;padding: 4px !important;">
+                    ویرایش - حذف
+                </th>
+            </thead>
+            <tbody>
+            <tr
+                    ng-repeat="user in data.users | orderBy:data.sort.type:data.sort.ascDesc | listFilter:data.filterElement:data.filterValue"
+                    class="dashboard-select-table-tr"
+                    ng-class="{'rowOdd':$even, 'activated':data.selectUser==user.UserId}"
+                    ng-click="data.selectUser=user.UserId;">
+
+                <td class="position-center">
+                    <span class="col-sm-12" ng-bind="$index+1|en2faNum"></span>
+                </td>
+                <td class="position-center">
+                    <span class="col-sm-12" ng-bind="user.UserId|en2faNum"></span>
+                </td>
+                <td class="position-center">
+                    <span  class="col-sm-12" ng-bind="user.Name|en2faNum"></span>
+                </td>
+                <td class="position-center">
+                    <span  style="direction: ltr;" class="col-sm-12" ng-bind="user.Email|en2faNum"></span>
+                </td>
+                <td class="position-center">
+                    <div ng-repeat="role in user.Roles">
+                        <span class="col-sm-12" ng-bind="role|uppercase"></span>
+                    </div>
+                </td>
+                <td class="position-center">
+                    <span class="col-sm-12" ng-bind="user.Profile"></span>
+                </td>
+                <td class="position-center">
+                    <span ng-class="{'fa-check active' : user.Active , 'fa-remove unactive' : !user.Active }"
+                          class="col-sm-12 fa fa-check active"></span>
+                </td>
+                <td  class="position-center">
+                    <img
+                            style="cursor: pointer; border:1px solid;"
+                            src="{{user.thumbnailSrc}}"/>
+                </td>
+                <td class="position-center" >
+                    <span  class="row">
+                        <sapn class="fa fa-edit edlitUser fa-fw" ng-click="func.edit(user)">
+                            <md-tooltip  md-direction="top">
+                                {{'administration.zl.modal.editUser'|translate}}
+                            </md-tooltip>
+                        </sapn>
+                        <sapn class="fa fa-trash trash fa-fw" ng-click="func.remove(user)">
+                            <md-tooltip  md-direction="top">
+                                {{'administration.zl.modal.deleteUser'| translate}}
+                            </md-tooltip>
+                        </sapn>
+                    </span>
+                    <!--
+                    <span  class="row">
+                        <sapn class="fa fa-image operate fa-fw"></sapn>
+                        <sapn class="fa fa-commenting-o active fa-fw">
+                            <md-tooltip  md-direction="top">
+                                تنظیمات چت
+                            </md-tooltip>
+                        </sapn>
+                        <sapn class="fa fa-envelope envelope fa-fw">
+                            <md-tooltip  md-direction="top">
+                                تنظیمات  ایمیل
+                            </md-tooltip>
+                        </sapn>
+                    </span>
+                    <span  class="row">
+                        <sapn class="fa fa-wrench setting fa-fw"  >
+                            <md-tooltip  md-direction="top">
+                                تنظیمات
+                            </md-tooltip>
+                        </sapn>
+                        <sapn class="fa fa-trash trash fa-fw" ng-click="func.remove(user)">
+                            <md-tooltip  md-direction="top">
+                                {{'administration.zl.modal.deleteUser'| translate}}
+                            </md-tooltip>
+                        </sapn>
+                        <sapn class="fa fa-edit edlitUser fa-fw" ng-click="func.edit(user)">
+                            <md-tooltip  md-direction="top">
+                                {{'administration.zl.modal.editUser'|translate}}
+                            </md-tooltip>
+                        </sapn>
+                    </span>-->
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+
+    </div>
+
+</div>

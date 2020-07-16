@@ -1,0 +1,243 @@
+<div class="btn-group-vertical  vertical-buttons" role="group" >
+
+    <!-- TODO setting button -->
+    <div class="group-vertical settingVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'settingVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'administration.zr.Setting'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-gears fa-fw"
+                    ng-click="data.nav.right.select('settingVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>
+
+    <!-- TODO users button -->
+    <div class="group-vertical usersVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'usersVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'desktop.zl.security'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-lock fa-fw"
+                    ng-click="data.nav.right.select('usersVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>
+
+    <!-- TODO digital sign -->
+    <div class="group-vertical statsVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'digitalSignVisible'} "><!--statsVisible'-->
+            <md-tooltip  md-direction="left">
+                {{'administration.zr.digitalSign'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-sign-language fa-fw"
+                    ng-click="data.nav.right.select('digitalSignVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>
+
+    <!-- TODO language button -->
+    <!--<div class="group-vertical languageVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'languageVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'administration.zr.language'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-language fa-fw"
+                    ng-click="data.nav.right.select('languageVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>-->
+
+    <!-- TODO utilities button -->
+    <div class="group-vertical utilitiesVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'utilitiesVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'administration.zr.utilities'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa  fa-terminal fa-fw"
+                    ng-click="data.nav.right.select('utilitiesVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>
+
+    <!-- TODO repository button -->
+    <div class="group-vertical repositoryVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'repositoryVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'administration.zr.repository'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-hdd-o fa-fw"
+                    ng-click="data.nav.right.select('repositoryVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>
+
+    <!-- TODO dictionary button -->
+    <!--<div class="group-vertical dictionaryVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'dictionaryVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'administration.zr.dictionary'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-pencil-square fa-fw"
+                    ng-click="data.nav.right.select('dictionaryVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>-->
+
+    <!-- TODO OMR button -->
+    <div class="group-vertical OMRVisible"  ng-if="data.profile.prfMenu.prfTool.omrVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'OMRVisible'} ">
+            <md-tooltip  md-direction="left">
+                OMR
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-file-text fa-fw"
+                    ng-click="data.nav.right.select('OMRVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>
+
+    <!-- TODO timer button -->
+    <div class="group-vertical timerVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'timerVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'administration.zr.timer'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-clock-o fa-fw"
+                    ng-click="data.nav.right.select('timerVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>
+
+    <!-- TODO Automation button -->
+    <div class="group-vertical AutomationVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'AutomationVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'administration.zr.Automation'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-outdent fa-fw"
+                    ng-click="data.nav.right.select('AutomationVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>
+
+    <!-- TODO Workflow button -->
+    <div class="group-vertical WorkflowVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'WorkflowVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'administration.zr.Workflow'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide  fa fa-tasks fa-fw"
+                    ng-click="data.nav.right.select('WorkflowVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>
+
+    <!-- TODO Report button -->
+    <div class="group-vertical ReportVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'ReportVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'administration.zr.Report'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-book fa-fw"
+                    ng-click="data.nav.right.select('ReportVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>
+
+    <!-- TODO DatabaseQuery button -->
+    <div class="group-vertical DatabaseQueryVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'DatabaseQueryVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'administration.zr.DatabaseQuery'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-database fa-fw"
+                    ng-click="data.nav.right.select('DatabaseQueryVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>
+
+    <!-- TODO scripting button -->
+    <div class="group-vertical scriptingVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'scriptingVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'administration.zr.scripting'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-code fa-fw"
+                    ng-click="data.nav.right.select('scriptingVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>
+
+    <!-- TODO stats button -->
+    <div class="group-vertical statsVisible">
+        <div class="btn-icon"
+             ng-class="{'administration-color': data.nav.right.selectedSide == 'statsVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'administration.zr.stats'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-pie-chart fa-fw"
+                    ng-click="data.nav.right.select('statsVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider administration-background"></div>
+    </div>
+
+</div>

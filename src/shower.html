@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head >
+    <link rel="SHORTCUT ICON"       href="static/image/icons/viewer.png" />
+    <title>نسخه پیش نمایش فایل</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="shower/css/font-awesome.min.css">
+</head>
+<body>
+
+<style type="text/css">
+    body {
+        background-color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        /*background-color: rgba(25, 171, 197, 1);
+        box-shadow: 0 0 30px rgba(35, 173, 255, 1);
+        height: 95vh;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        width: 95%;*/
+
+        background-color: rgba(25, 171, 197, 1);
+        box-shadow: 0 0 30px rgba(35, 173, 255, 1);
+        height: 100vh;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .fullscreen {
+        /*background-color: #333;*/
+        background-color: rgba(25, 171, 197, 1);
+    }
+
+    .container a, u {
+        text-decoration: none !important;
+    }
+
+
+    .container a:active, a:focus {
+        outline: none !important;
+    }
+
+    .container li:active, li:focus {
+        outline: none !important;
+    }
+
+
+
+    .container div:active, div:focus {
+        outline: none !important;
+    }
+
+    .container span:active,span:focus {
+        outline: none !important;
+    }
+
+    .container i:active,i:focus {
+        outline: none !important;
+    }
+
+    .container div:active, div:focus {
+        outline: none !important;
+    }
+
+    .container img:active, img:focus {
+        outline: none !important;
+    }
+
+</style>
+
+<div class="container" id="container">
+
+</div>
+
+<script src="shower/js/jquery.min.js"></script>
+<script src="shower/js/html2canvas.min.js"></script>
+<script src="shower/js/three.min.js"></script>
+<script src="shower/js/pdf.min.js"></script>
+
+<script src="shower/js/3dflipbook.min.js"></script>
+<script type="text/javascript">
+
+    function theKingIsBlackPageCallback(n) {
+        return {
+            type: 'image',
+            src: 'shower/books/image/theKingIsBlack/'+(n+1)+'.jpg',
+            interactive: false
+        };
+    }
+
+    $('#container').FlipBook({
+        pageCallback: theKingIsBlackPageCallback,
+        pages: 101,
+        propertiesCallback: function(props) {
+            props.cover.color = 0x000000;
+            return props;
+        },
+        template: {
+            html: 'shower/templates/default-book-view.html',
+            styles: [
+                'shower/css/short-white-book-view.css'
+            ],
+            script: 'shower/js/default-book-view.js',
+            sounds: {
+                startFlip: 'shower/sounds/start-flip.mp3',
+                endFlip: 'shower/sounds/end-flip.mp3'
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>

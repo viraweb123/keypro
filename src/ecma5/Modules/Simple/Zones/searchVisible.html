@@ -1,0 +1,26 @@
+<style>
+    @media screen and (-webkit-min-device-pixel-ratio: 0){
+        .parent{
+            position: relative !important;
+        }
+        .child{
+            position: absolute !important;
+        }
+    }
+</style>
+
+<div class="zonesHeader" style=" margin-right: 0 !important;">
+    <span  >درخت جستجو</span>
+</div>
+
+<div class="parent"  style="height:calc(100vh - 90px) !important;" >
+    <div
+            ng-if="data.roleListFrequecy!=null"
+            tree-model
+            tree-func="data.treeNav"
+            class="treeview child"
+            root-folder="data.roleListFrequecy"
+            current-node="data.treefrequency"
+            style="padding-left: 10px;">
+    </div>
+</div>

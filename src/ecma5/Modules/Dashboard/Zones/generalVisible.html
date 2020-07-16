@@ -1,0 +1,88 @@
+<div   style="padding:  0px; float: right; width: 100%; ">
+    <!--<h6 ng-bind="'dashboard.zr.general' | translate" style="margin:10px !important;" class="dashboard-background-"></h6>
+    <div class="dividerPanel"></div>-->
+    <div class="zonesHeader">
+        <span ng-bind="'dashboard.zr.general' | translate"></span>
+    </div>
+    <ul>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='generallastModifiedDocuments'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('generallastModifiedDocuments')">
+            <span class="icon-show fa fa-edit"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.general_last_modified_documents'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.general_last_modified_documents'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='generallastMonthTopModifiedDocuments'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('generallastMonthTopModifiedDocuments')">
+            <span class="icon-show fa fa-file"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.general_last_month_top_modified_documents'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.general_last_month_top_modified_documents'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='generallastMonthTopViewedDocuments'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('generallastMonthTopViewedDocuments')">
+            <span class="icon-show fa fa-eye"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.general_last_month_top_viewed_documents'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.general_last_month_top_viewed_documents'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='generallastUploadedDocuments'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('generallastUploadedDocuments')">
+            <span class="icon-show fa fa-upload "></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.general_last_uploaded_documents'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.general_last_uploaded_documents'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='generallastWeekTopModifiedDocuments'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('generallastWeekTopModifiedDocuments')">
+            <span class="icon-show fa  fa-pencil-square-o "></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.general_last_week_top_modified_documents'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.general_last_week_top_modified_documents'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='generallastWeekTopViewedDocuments'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('generallastWeekTopViewedDocuments')">
+            <span class="icon-show fa  fa-eye "></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.general_last_week_top_viewed_documents'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.general_last_week_top_viewed_documents'|translate}}
+            </md-tooltip>
+        </i>
+    </ul>
+
+</div>

@@ -1,0 +1,13 @@
+
+    <div class="N advance-background">
+            <span
+                    class="opener-zone opener-zone-advance opener-zone-right fa fa-chevron-{{data.nav.right.isOpened == false ? 'left' : 'right'}}"
+                    ng-click="data.nav.right.isOpened = !data.nav.right.isOpened;">
+            </span>
+    </div>
+    <div class="D">
+        <div class="smetadataVisible hidden-zone"              ui-view="smetadataVisible"></div>
+        <!--<div class="keyWordsCloudVisible hidden-zone"        ui-view="keyWordsCloudVisible"></div>-->
+        <div class="storeVisible hidden-zone"                ui-view="storeVisible"></div>
+        <div class="newsVisible hidden-zone"                 ui-view="newsVisible"></div>
+    </div>

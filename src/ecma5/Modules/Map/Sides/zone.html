@@ -1,0 +1,16 @@
+<div   class="row form-group co-sm-12"  style="min-height: calc(100vh - 70px);">
+
+    <div style="height: calc(100vh - 55px); padding: 5px;position: relative;top: -10px;width: 100%;"  ng-if="!notReadyMap">
+        <div
+                ng-show="data.mapViewer.data.map && data.mapViewer.data.map!=null"
+                class="parent-map-viewer-tag-id"
+                id="parent-map-viewer-tag-id"
+                map-viewer
+                style="height:100%"
+                node-value = "data.mapViewer"
+                run-init="data.runInit"
+
+        ></div>
+    </div>
+
+</div>

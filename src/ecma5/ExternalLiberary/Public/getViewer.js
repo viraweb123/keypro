@@ -1,0 +1,88 @@
+"use strict";
+
+var fileTypeFromViewerHashTable = {
+    //------------------------------------ IMAGE --------------------------------------------------------
+    "image/tiff": "image",
+    "image/gif": "image",
+    "image/jpeg": "image",
+    "image/pjpeg": "image",
+    "image/png": "image",
+    "image/ico": "image",
+    "image/x-ico": "image",
+    "image/icon": "image",
+    "image/x-icon": "image",
+    "image/webp": "image",
+    //------------------------------------ PDF --------------------------------------------------------
+    "text/richtext": "pdfjs",
+    "application/rtf": "pdfjs",
+    "text/plain": "pdfjs",
+    "application/x-rtf": "pdfjs",
+    "application/pdf": "pdfjs",
+    "application/vnd.ms-excel": "pdfjs",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document": "pdfjs",
+    "application/msword": "pdfjs",
+    "application/vnd.ms-powerpoint": "pdfjs",
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation": "pdfjs",
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": "pdfjs",
+    "image/vnd.dwg": "pdfjs",
+    "image/vnd.dxf": "pdfjs",
+    "application/vnd.oasis.opendocument.text": "pdfjs",
+    //------------------------------------ VIDEO --------------------------------------------------------
+    "video/mp4": "video",
+    "video/mpeg": "video",
+    "video/x-mpeg": "video",
+    "video/ogg": "video",
+    "video/x-ogg": "video",
+    "video/webm": "video",
+    "video/x-webm": "video",
+    "webm": "video",
+    "x-webm": "video",
+    //------------------------------------ AUDIO --------------------------------------------------------
+    "audio/mpeg": "audio",
+    "audio/mpeg3": "audio",
+    "audio/x-mpeg-3": "audio",
+    "audio/vnd.dece.audio": "audio",
+    "audio/ogg": "audio",
+    "audio/x-ogg": "audio",
+    "audio/x-aac": "audio",
+    "audio/webm": "audio",
+    "audio/x-webm": "audio",
+    //------------------------------------ NOT AVAILEBALE --------------------------------------------------------
+    "image/bmp": "notavailable",
+    "video/avi": "notavailable",
+    "video/x-ms-wmv": "notavailable",
+    "image/x-windows-bmp": "notavailable",
+    "image/vnd.microsoft.icon": "notavailable",
+    "image/psd": "notavailable",
+    "application/octet-stream": "notavailable",
+    "application/acad": "notavailable",
+    "application/dxf": "notavailable",
+    "text/x-sql": "notavailable",
+    "application/xml": "notavailable",
+    "text/xml": "notavailable",
+    "application/vnd.android.package-archive": "notavailable",
+    "application/x-troff-msvideo": "notavailable",
+    "video/msvideo": "notavailable",
+    "video/x-msvideo": "notavailable",
+    "video/x-matroska": "notavailable", //mkv format show in chrome
+    "application/javascript": "notavailable",
+    "application/json": "notavailable",
+    "text/css": "notavailable",
+    "application/zip": "notavailable",
+    "application/x-7z-compressed": "notavailable",
+    "video/3gpp2": "notavailable",
+    "video/3gpp": "notavailable",
+    "audio/x-wav": "notavailable",
+    "font/ttf": "notavailable",
+    "application/typescript": "notavailable",
+    "application/x-tar": "notavailable",
+    //------------------------------------ FLASH --------------------------------------------------------
+    "application/x-shockwave-flash": "flash",
+    "video/x-flv": "flash",
+    //------------------------------------ HTML ---------------------------------------------------------
+    "text/html": "html",
+    "application/xhtml+xml": "html"
+};
+var getViewer = function getViewer(mime) {
+    return fileTypeFromViewerHashTable[mime] || "none";
+};

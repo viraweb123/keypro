@@ -1,0 +1,99 @@
+
+<div class="btn-group-vertical  vertical-buttons" role="group" >
+
+    <!-- TODO metadata button -->
+    <div class="group-vertical metadataVisible">
+        <div class="btn-icon" ng-class="{'desktop-color': data.nav.right.selectedSide == 'metadataVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'desktop.zr.metadata'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-list-alt fa-fw"
+                    ng-click="data.nav.right.select('metadataVisible')">
+            </span>
+        </div>
+        <div class="darkdivider desktop-background"></div>
+    </div>
+
+
+    <!-- TODO taxonomy button -->
+    <div class="group-vertical taxonomyVisible">
+        <div class="btn-icon"
+             ng-class="{'desktop-color': data.nav.right.selectedSide == 'taxonomyVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'desktop.zr.taxonomy'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-sitemap fa-fw"
+                    ng-click="data.nav.right.select('taxonomyVisible')"
+                    >
+            </span>
+        </div>
+        <div class="darkdivider desktop-background"></div>
+    </div>
+
+    <!-- TODO categories button -->
+    <!--<div class="group-vertical categoriesVisible">
+        <div class="btn-icon" ng-class="{'desktop-color': data.nav.right.selectedSide == 'categoriesVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'desktop.zr.categories'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-file fa-fw"
+                    ng-click="data.nav.right.select('categoriesVisible')">
+            </span>
+        </div>
+        <div class="darkdivider desktop-background"></div>
+    </div>-->
+
+    <!-- TODO templates button -->
+    <div class="group-vertical templatesVisible" ng-if="data.profile.prfStack.templatesVisible">
+        <div class="btn-icon"
+             ng-class="{'desktop-color': data.nav.right.selectedSide == 'templatesVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'desktop.zr.templates'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-vcard-o fa-fw"
+                    ng-click="data.nav.right.select('templatesVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider desktop-background"></div>
+    </div>
+
+    <!-- TODO personal button -->
+    <!--
+    data.profile.prfTab.prfDocument.securityVisible
+    data.profile.prfTab.prfDocument.notesVisible
+    -->
+    <div class="group-vertical personalVisible"  ng-if="data.profile.prfStack.personalVisible">
+        <div class="btn-icon"
+             ng-class="{'desktop-color': data.nav.right.selectedSide == 'personalVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'desktop.zr.personal'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-user fa-fw"
+                    ng-click="data.nav.right.select('personalVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider desktop-background"></div>
+    </div>
+
+    <!-- TODO trash button -->
+    <div class="group-vertical trashVisible">
+        <div class="btn-icon" ng-class="{'desktop-color': data.nav.right.selectedSide == 'trashVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'desktop.zr.trash'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-trash fa-fw"
+                    ng-click="data.nav.right.select('trashVisible')">
+            </span>
+        </div>
+        <div class="darkdivider desktop-background"></div>
+    </div>
+
+</div>
