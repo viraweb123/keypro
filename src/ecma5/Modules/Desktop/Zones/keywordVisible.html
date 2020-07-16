@@ -1,0 +1,91 @@
+<div class="sideLeft" ng-show="data.isShowItem">
+
+   <!-- <h6 class="header color" ng-bind="'desktop.zl.tag' | translate"></h6>
+    <div class="darkdivider desktop-background"></div>-->
+    <div class="zonesHeader">
+        <span ng-bind="'desktop.zl.tag' | translate"></span>
+
+        <div class=" pull-left  refresh" ng-show="data.selectedFileOrFolder != null && data.profile.prfMenu.prfEdit.addKeywordVisible" >
+            <a  ng-click="func.showThesaurusTree()" class="getAgain">
+                <i  class="fa fa-book">
+                    <md-tooltip  md-direction="bottom">
+                        اصلاح نامه
+                    </md-tooltip>
+                </i>
+            </a>
+        </div>
+
+    </div>
+    <form role="form" novalidate name="formDesktopKeywordsName" class="form-generator" >
+
+        <div layout="row"   class="row form-group col-sm-12 col-xs-12"  style="padding:0px;margin-top: 25px;">
+            <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                <label>برچسب</label>
+                <input
+                        ng-disabled="!data.profile.prfMenu.prfEdit.addKeywordVisible"
+                        id="#{{keyword}}"
+                        type="text"
+                        required
+                        name="keyword"
+                        ng-model="data.NewKeyword"
+                        minlength="1"
+                        ui-keypress="{13:'func.addKeyword(formDesktopKeywordsName)'}"
+                        ng-pattern="/.+/gi"
+                />
+                <div ng-messages="formDesktopKeywordsName[keyword].$error" role="alert"  >
+                    <div ng-message="pattern" >
+                        عبارت ورودی صحیح نمی باشد
+                    </div>
+                    <div ng-message="required">
+                        لطفا برای محتوا عبارتی را وارد کنید
+                    </div>
+                    <div ng-message="minlength">
+                        حداقل یک کاراکتر وارد کنید
+                    </div>
+                </div>
+            </md-input-container>
+        </div>
+
+
+
+    </form>
+
+    <div ng-show="data.keywords.length > 0" class="row  keywords-result"
+         style="overflow: auto; border: 2px solid rgba(91, 154, 217, 0.8); padding: 4px; margin-top: 10px !important;">
+
+        <div class="keyword-viewer"  id="KeyWordsDoc-{{$index}}"  ng-repeat="keyword in data.keywords track by $index">
+            <span  class="pull-right"   ng-bind="keyword">
+                <md-tooltip  md-direction="bottom">
+                    {{keyword}}
+                </md-tooltip>
+            </span>
+
+
+
+            <i class="fa fa-remove pull-left" style="cursor: pointer;"
+               ng-if="data.profile.prfMenu.prfEdit.removeKeywordVisible"
+               ng-click="func.deleteKeyword($index);">
+                <md-tooltip  md-direction="bottom">
+                    حذف
+                </md-tooltip>
+            </i>
+        </div>
+
+
+        <!--<div ng-repeat="keyword in data.keywords" class="alert alert-info- alert-mode-viewer" role="alert"
+             id="KeyWordsDoc-{{$index}}" style="margin: 3px; float: right; padding: 5px;">
+                 <span class="fa fa-remove pull-left"
+                       style="cursor: pointer; margin-top: 3px; font-size: 9px;color:red;"
+                       ng-click="func.deleteKeyword($index);">
+                        <md-tooltip  md-direction="bottom">
+                            حذف
+                        </md-tooltip>
+                 </span>
+                <span style="margin-top: -5px;padding-top: 4px;font-size: 11px;"
+                      class="control-label pull-right" ng-bind="keyword">
+                </span>
+        </div>-->
+    </div>
+
+
+</div>

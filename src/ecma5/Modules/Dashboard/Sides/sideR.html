@@ -1,0 +1,104 @@
+<div class="btn-group-vertical  vertical-buttons" role="group" >
+
+    <!-- TODO user button -->
+    <div class="group-vertical userVisible"  ng-if="data.profile.prfDashboard.userVisible">
+        <div class="btn-icon"
+             ng-class="{'dashboard-color': data.nav.right.selectedSide == 'userVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'dashboard.zr.user'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-user fa-fw"
+                    ng-click="data.nav.right.select('userVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider dashboard-background"></div>
+    </div>
+
+
+
+    <!-- TODO email button -->
+    <div class="group-vertical emailVisible"   ng-if="data.profile.prfDashboard.mailVisible">
+        <div class="btn-icon"
+             ng-class="{'dashboard-color': data.nav.right.selectedSide == 'emailVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'dashboard.zr.email'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-envelope-o fa-fw"
+                    ng-click="data.nav.right.select('emailVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider dashboard-background"></div>
+    </div>
+
+    <!-- TODO general button -->
+    <div class="group-vertical generalVisible"  ng-if="data.profile.prfDashboard.generalVisible">
+        <div class="btn-icon"
+             ng-class="{'dashboard-color': data.nav.right.selectedSide == 'generalVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'dashboard.zr.general'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-globe fa-fw"
+                    ng-click="data.nav.right.select('generalVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider dashboard-background"></div>
+    </div>
+
+    <!-- TODO news button -->
+    <div class="group-vertical newsVisible" ng-if="data.profile.prfDashboard.generalVisible">
+        <div class="btn-icon"
+             ng-class="{'dashboard-color': data.nav.right.selectedSide == 'newsVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'dashboard.zr.news'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-newspaper-o fa-fw"
+                    ng-click="data.nav.right.select('newsVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider dashboard-background"></div>
+    </div>
+
+    <!-- TODO workflow button -->
+    <div class="group-vertical workflowVisible"  ng-if="data.profile.prfDashboard.newsVisible">
+        <div class="btn-icon"
+             ng-class="{'dashboard-color': data.nav.right.selectedSide == 'workflowVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'dashboard.zr.workflow'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-gear fa-fw"
+                    ng-click="data.nav.right.select('workflowVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider dashboard-background"></div>
+    </div>
+
+    <!-- TODO bookmark button -->
+    <!--<div class="group-vertical bookmarkVisible">
+        <div class="btn-icon"
+             ng-class="{'dashboard-color': data.nav.right.selectedSide == 'bookmarkVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'dashboard.zr.bookmark' | translate}}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-bookmark-o fa-fw"
+                    ng-click="data.nav.right.select('bookmarkVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider dashboard-background"></div>
+    </div>-->
+
+
+
+
+</div>

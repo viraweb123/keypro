@@ -1,0 +1,23 @@
+<div   style="padding:  0px; float: right; width: 100%; ">
+    <!--<h6 ng-bind="'dashboard.zr.news' | translate" style="margin:10px !important;" class="dashboard-background-"></h6>
+    <div class="dividerPanel"></div>-->
+    <div class="zonesHeader">
+        <span ng-bind="'dashboard.zr.news' | translate"></span>
+    </div>
+    <ul>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='news'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('news')">
+            <span class="icon-show fa fa-lock"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'dashboard.zr.news'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dashboard.zr.news'|translate}}
+            </md-tooltip>
+        </i>
+    </ul>
+
+</div>

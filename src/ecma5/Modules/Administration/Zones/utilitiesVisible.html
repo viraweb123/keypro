@@ -1,0 +1,130 @@
+
+<div   style="padding:  0px; float: right; width: 100%; ">
+    <!--<h6 ng-bind="'administration.zr.utilities' | translate" style="margin:10px !important;"  ></h6>
+    <div class="dividerPanel"></div>-->
+    <div class="zonesHeader">
+        <span ng-bind="'administration.zr.utilities' | translate"></span>
+    </div>
+
+    <ul>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='checkEmail'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('checkEmail')">
+            <span class="icon-show fa fa-envelope"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.utilities.checkEmail'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.utilities.checkEmail'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='checkTextExtraction'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('checkTextExtraction')">
+            <span class="icon-show fa fa-file-text"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.utilities.checkTextExtraction'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.utilities.checkTextExtraction'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='css'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('css')">
+            <span class="icon-show fa fa-css3"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.utilities.css'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.utilities.css'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='dbRepositoryView'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('dbRepositoryView')">
+            <span class="icon-show fa fa-archive"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.utilities.dbRepositoryView'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.utilities.dbRepositoryView'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='listIndexes'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('listIndexes')">
+            <span class="icon-show fa fa-list-ol"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.utilities.listIndexes'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.utilities.listIndexes'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='logCat'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('logCat')">
+            <span class="icon-show fa fa-map fa-rotate-90"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.utilities.logCat'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.utilities.logCat'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='rebuildIndexes'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('rebuildIndexes')">
+            <span class="icon-show fa  fa-refresh"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.utilities.rebuildIndexes'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.utilities.rebuildIndexes'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='repositoryChecker'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('repositoryChecker')">
+            <span class="icon-show fa fa-inbox"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.utilities.repositoryChecker'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.utilities.repositoryChecker'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='systemProperties'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('systemProperties')">
+            <span class="icon-show fa fa-certificate"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.utilities.systemProperties'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.utilities.systemProperties'|translate}}
+            </md-tooltip>
+        </i>
+
+    </ul>
+
+</div>

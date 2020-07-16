@@ -1,0 +1,94 @@
+
+
+.button-with-icon {
+    display: inline-block;
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    position:relative;
+}
+.button-with-icon:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    opacity: 0;
+    padding-top: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 0.5s;
+    width: 100%;
+}
+.button-with-icon span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.button-with-icon:hover span {
+    padding-right: 25px;
+}
+.button-with-icon:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.button-with-icon:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+.button-with-icon   span:after{
+    position: absolute;
+    opacity: 0;
+    top: 3px;
+    font-size:15px;
+    right: -20px;
+    transition: 0.5s;
+}
+
+
+
+/* Info Background Color */
+.button-info {
+    background-color: #008CBA !important;
+}
+.button-danger{
+    background-color: #f4511e !important;
+}
+.button-success{
+    background-color:#4CAF50 !important;
+}
+.button-warning{
+    background-color: #f0ad4e !important;
+}
+
+
+/* Info Icon */
+.info:after {
+    font-family: FontAwesome;
+    content:    "\f129";
+}
+.danger:after {
+    font-family: FontAwesome;
+    content:   "\f00d";
+}
+.success:after {
+    font-family: FontAwesome;
+    content:   "\f00c";
+}
+.warning:after {
+    font-family: FontAwesome;
+    content:    "\f071";
+}
+
+

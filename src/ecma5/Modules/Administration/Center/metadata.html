@@ -1,0 +1,69 @@
+<div  class="tabel-body">
+  <div class="body-view" >
+    <table style="height: calc(100vh - 90px);max-height: calc(100vh - 90px) !important; border: 1px solid rgb(197, 197, 197); overflow-y: auto;padding:10px !important;"  class="table table-bordered- table-responsive table-striped table-hover- table-condensed  show-hide-file display" >
+      <caption>
+        <span  class="pull-right">لیست فراداده</span>
+          <span style="margin-right:10px;font-size: 25px;" class="fa fa-plus-circle pull-right" ng-click="func.addMetaData()">
+                    <md-tooltip  md-direction="top">
+                        ایجاد فراداده جدید
+                    </md-tooltip>
+                </span>
+      </caption>
+      <thead style="background-color:#c3d9ff !important;/*color:white !important*/">
+          <th class="position-center" >
+                  <span style="white-space: nowrap;padding: 0px 15px ! important;"  ng-bind="'administration.zr.row'|translate"></span>
+          </th>
+          <th class="position-center" >
+            <a  href="javascript:void(0)" ng-click=" data.sort.type = 'label'; data.sort.ascDesc = !data.sort.ascDesc">
+              <span ng-show="data.sort.type == 'label' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+              <span ng-show="data.sort.type == 'label' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+              <span style="white-space: nowrap;padding: 0px 15px ! important;" >برچسب</span>
+            </a>
+          </th>
+          <th class="position-center" >
+            <a  href="javascript:void(0)" ng-click=" data.sort.type = 'name'; data.sort.ascDesc = !data.sort.ascDesc">
+              <span ng-show="data.sort.type == 'name' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+              <span ng-show="data.sort.type == 'name' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+              <span style="white-space: nowrap;padding: 0px 15px ! important;" >نام</span>
+            </a>
+          </th>
+          <th class="position-center" >
+              <span  style="white-space: nowrap;padding: 0px 15px ! important;"  class="active col-sm-12">
+                            ویرایش-حذف
+            </span>
+          </th>
+      </thead>
+      <tbody>
+      <tr     ng-repeat="p in data.propertyGroups | orderBy:data.sort.type:data.sort.ascDesc"
+              class="dashboard-select-table-tr"
+              ng-class="{'rowOdd':$even , 'activated':data.selectMetadata==p.name}"
+              ng-click="data.selectMetadata=p.name;"
+      >
+        <td class="position-center">
+          <span ng-bind="$index+1|en2faNum"></span>
+        </td>
+        <td class="position-center">
+          <span style="white-space: nowrap;" ng-bind="p.label|en2faNum"></span>
+        </td>
+        <td class="position-center">
+          <span  style="white-space: nowrap;" ng-bind="p.name|en2faNum"></span>
+        </td>
+        <td class="position-center" style="width: 85px;">
+          <div class="row col-sm-12" style="padding: 5px;">
+              <sapn class="fa fa-edit active fa-fw"  ng-click="func.editOrCreateMetaData(p)">
+                <md-tooltip  md-direction="top">
+                  ویرایش فراداده
+                </md-tooltip>
+              </sapn>
+              <sapn class="fa fa-trash envelope fa-fw" ng-click="func.removeMetadata(p)">
+                <md-tooltip  md-direction="top">
+                  حذف فراداده
+                </md-tooltip>
+              </sapn>
+           </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

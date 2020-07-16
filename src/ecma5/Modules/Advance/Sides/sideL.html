@@ -1,0 +1,83 @@
+<div class="btn-group-vertical  vertical-buttons" role="group" >
+
+
+
+    <!-- TODO content button -->
+    <div class="group-vertical contentVisible">
+        <div class="btn-icon"
+             ng-class="{'advance-color': data.nav.left.selectedSide == 'contentVisible'} ">
+            <md-tooltip  md-direction="right">
+                {{'search.zm.tree_frequency_content'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-file-text-o fa-fw"
+                    ng-click="data.nav.left.select('contentKeywordsNoteVisible','contentVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider advance-background"></div>
+    </div>
+
+
+    <!-- TODO keyword button -->
+    <div class="group-vertical keyVisible">
+        <div class="btn-icon"
+             ng-class="{'advance-color': data.nav.left.selectedSide == 'keyVisible'} ">
+            <md-tooltip  md-direction="right">
+                {{'search.zl.tag_placeholder'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-tag fa-fw"
+                    ng-click="data.nav.left.select('contentKeywordsNoteVisible','keyVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider advance-background"></div>
+    </div>
+
+    <!-- TODO note button -->
+    <div class="group-vertical noteVisible">
+        <div class="btn-icon"
+             ng-class="{'advance-color': data.nav.left.selectedSide == 'noteVisible'} ">
+            <md-tooltip  md-direction="right">
+                {{'search.zm.note'|translate }}
+            </md-tooltip>
+            <span class="font-slide fa fa-sticky-note fa-fw" ng-click="data.nav.left.select('contentKeywordsNoteVisible','noteVisible')">
+            </span>
+        </div>
+        <div class="darkdivider advance-background"></div>
+    </div>
+
+    <!-- TODO systematic button -->
+    <div class="group-vertical systematicVisible">
+        <div class="btn-icon"
+             ng-class="{'advance-color': data.nav.left.selectedSide == 'systematicVisible'} ">
+            <md-tooltip  md-direction="right">
+                {{'search.zl.systematic'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-tv fa-fw"
+                    ng-click="data.nav.left.select('systematicVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider advance-background"></div>
+    </div>
+
+    <!-- TODO categories button -->
+    <div class="group-vertical categoryVisible"  ng-if="data.profile.prfStack.categoriesVisible">
+        <div class="btn-icon"
+             ng-class="{'advance-color': data.nav.left.selectedSide == 'categoryVisible'} ">
+            <md-tooltip  md-direction="right">
+                دسته بندی
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-list fa-fw"
+                    ng-click="data.nav.left.select('categoryVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider advance-background"></div>
+    </div>
+
+</div>

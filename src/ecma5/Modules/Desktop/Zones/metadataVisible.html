@@ -1,0 +1,37 @@
+<div class="sideRight" >
+
+    <div class="zonesHeader">
+        <span ng-bind="'search.zm.tree_frequency_metadata' | translate"></span>
+        <div class=" pull-left  refresh" >
+            <a  ng-click="func.refreshMetaData()" class="getAgain">
+                <i  class="fa fa-refresh">
+                    <md-tooltip  md-direction="bottom">
+                        به روز رسانی
+                    </md-tooltip>
+                </i>
+            </a>
+        </div>
+        <div class=" pull-left  refresh"  ng-if="data.profile.prfMenu.prfEdit.addPropertyGroupVisible" >
+            <a  ng-click="func.createMetaData()"  class="getAgain">
+                <i  class="fa fa-plus">
+                    <md-tooltip  md-direction="bottom">
+                        ایجاد رکورد
+                    </md-tooltip>
+                </i>
+            </a>
+        </div>
+    </div>
+
+    <!--<div class="darkdivider desktop-background"></div>-->
+    <div class="parent"  style="height:calc(100vh - 90px) !important;">
+        <div
+                tree-model
+                tree-func="data.trees.metadata"
+                class="treeview child"
+                root-folder="data.trees.metadataVisible"
+                current-node="data.trees.metadataTree"
+                profile = "data.profile"
+                style="padding-left: 20px;">
+        </div>
+    </div>
+</div>

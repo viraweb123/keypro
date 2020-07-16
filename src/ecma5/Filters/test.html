@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+
+
+        <video
+
+               id="video"
+               controls
+               autoplay="true"
+               autobuffer = "true"
+               loop
+               src = "http://192.168.2.10:8090/KeydocPro/services/rest/document/getMedia?docId=6fe38ea4-7d12-4508-92da-e5a7310e867d&authId=YWRtaW46YWRtaW4="
+        >
+        </video>
+
+
+        <script type="text/javascript">
+
+
+
+           var player = document.getElementById("video");
+           player.addEventListener('loadedmetadata',  function(e){
+
+               try{
+                   player.play();
+               }catch(e){
+                   console.error(e);
+               }
+           });
+
+           player.addEventListener('progress' , function(){
+               console.log(this);
+           });
+        </script>
+
+    </body>
+</html>

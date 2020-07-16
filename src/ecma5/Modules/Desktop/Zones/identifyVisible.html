@@ -1,0 +1,196 @@
+<div
+        class="sideLeft"
+        ng-show="data.isShowItem  && data.selectedFileOrFolder != null && (data.selectedFileOrFolder.type == 'FOLDER' || (data.selectedFileOrFolder.type == 'FILE' && !data.profile.PropertyGroupOnlyForFolders))"
+>
+
+    <!--<h6 class="header color" ng-bind="'desktop.zl.metadata' | translate"></h6>
+    <div class="darkdivider desktop-background"></div>-->
+    <div class="zonesHeader">
+        <span ng-bind="'desktop.zl.metadata' | translate"></span>
+
+        <div class=" pull-left  refresh" ng-show="data.selectedFileOrFolder != null && data.selectedFileOrFolder.type == 'FOLDER' && data.profile.prfMenu.prfEdit.updatePropertyGroupVisible" >
+            <a  ng-click="func.saved2Clipboard()" class="getAgain"  >
+                <i  class="fa fa-clipboard">
+                    <md-tooltip  md-direction="bottom">
+                        ذخیره فراداده جاری
+                    </md-tooltip>
+                </i>
+            </a>
+        </div>
+        <div class=" pull-left  refresh" ng-show="data.clipboardFolder != null" >
+            <a  ng-click="func.removeSaved2Clipboard()" class="getAgain">
+                <i  class="fa fa-trash">
+                    <md-tooltip  md-direction="bottom">
+                        حذف حافظه
+                    </md-tooltip>
+                </i>
+            </a>
+        </div>
+        <div class=" pull-left  refresh" ng-show="data.clipboardFolder != null  && data.profile.prfMenu.prfEdit.updatePropertyGroupVisible" >
+            <a  ng-click="func.showSaved2Clipboard()" class="getAgain">
+                <i  class="fa fa-eye">
+                    <md-tooltip  md-direction="bottom">
+                        نمایش فراداده موقت
+                    </md-tooltip>
+                </i>
+            </a>
+        </div>
+
+    </div>
+
+
+
+    <div class="col-sm-12 identify-side" ng-show="data.selectedFileOrFolder != null" >
+
+        <div layout="row"  class="row form-group col-sm-12" style=" padding: 0;">
+            <md-input-container class="md-block  col-sm-12 "  style=" padding: 0;">
+                <!--<label>انتخاب نوع فراداده</label>-->
+                <md-select
+                        ng-disabled="data.PropertyGroup!=null || !data.profile.prfMenu.prfEdit.updatePropertyGroupVisible"
+                        class="md-block  col-sm-12 pull-right"
+                        placeholder="انتخاب فراداده"
+                        ng-model="data.selectMetadata"
+                        ng-change="func.changeMetaData()"
+                        md-on-open="func.getMetadataList()"
+                ><!--style="min-width: 200px;"-->
+                    <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                    <md-option ng-value="metadata" ng-repeat="metadata in data.metadatas">{{metadata.label}}</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+
+       <!--
+           <ul class="row form-group" style="margin-top: 7px;" ng-show="data.PropertyGroups.length>=0">
+                <li ng-repeat="PropertyGroup in data.PropertyGroups"
+                    ng-class="{ 'active' : data.selectPropertyGroup == PropertyGroup.name }"
+                    ng-click="func.changePropertyGroup(PropertyGroup)">
+                    <span  ng-bind="PropertyGroup.label"></span>
+                </li>
+            </ul>
+        -->
+
+
+        <div class="row form-group showPropertyGroup" >
+
+            <!--<form-generator
+                    style="position: relative; padding: 0px 0px 0px 5px;"
+                    initiallize="data.formMetadata"
+                    funcs = "func.formMetadata"
+                    buttons = "data.metadataButtons"
+            ></form-generator>-->
+
+            <generator
+                    style="position: relative; padding: 0px 0px 0px 5px;"
+                    external-scope = "externalScope">
+            </generator>
+
+        </div>
+
+        <div class="col-sm-12 row form-group desktop-metadata"  ng-if="data.selectMetadata!=null">
+                <style>
+                    .desktop-metadata{}
+
+                    .desktop-metadata #success-occure{
+                        border-radius: 0px ! important;
+                        transition-duration: 0.5s;
+                        transition-property: background-color,color;
+                        transition-timing-function: ease-in;
+                    }
+                    .desktop-metadata #success-occure:hover{
+                        box-shadow  :  0 0 10px rgba(35,173,255,1);
+                        background-color : rgba(35,173,255,1);
+                        color : white;
+                    }
+                    .desktop-metadata #success-occure md-icon{
+                        padding-left: 5px !important;
+                        border-left: 1px solid rgba(35,173,255,1);
+                    }
+                    .desktop-metadata #success-occure:hover md-icon{
+                        color : white;
+                        border-left: 1px solid white !important;
+                    }
+
+                    .desktop-metadata  #error-occure{
+                        border-radius: 0px ! important;
+                        transition-duration: 0.5s;
+                        transition-property: background-color,color;
+                        transition-timing-function: ease-in;
+                    }
+                    .desktop-metadata  #error-occure:hover{
+                        box-shadow  :  0 0 10px rgba(255,134,29,1);
+                        background-color : rgba(255,134,29,1);
+                        color : white;
+                    }
+                    .desktop-metadata  #error-occure md-icon{
+                        padding-left: 5px !important;
+                        border-left: 1px solid rgba(255,134,29,1);
+                    }
+                    .desktop-metadata  #error-occure:hover md-icon{
+                        color : white;
+                        border-left: 1px solid white !important;
+                    }
+                </style>
+                <section layout="row" layout-sm="column" layout-align="center center" >
+
+                    <md-button id="success-occure" ng-disabled="!data.profile.prfMenu.prfEdit.updatePropertyGroupVisible"    class="md-raised" ng-click="externalScope.externalFuncs.editMetadataFrom()" >
+                        <md-icon md-font-icon="fa fa-pencil-square-o"></md-icon>
+                        <span ng-bind="'modal.desktop.confirmation'|translate"> </span>
+                    </md-button>
+                    <md-button id="error-occure"   ng-disabled="!data.profile.prfMenu.prfEdit.removePropertyGroupVisible"  class="md-raised" ng-click="externalScope.externalFuncs.removeMetadataForm()" >
+                        <md-icon md-font-icon="fa fa-trash"></md-icon>
+                        <span ng-bind="'modal.desktop.delete'|translate"></span>
+                    </md-button>
+                </section>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+
+
+<div
+        class="sideLeft"
+        ng-show="data.isShowItem  && data.selectedFileOrFolder != null && (data.selectedFileOrFolder.type == 'FILE' && data.profile.PropertyGroupOnlyForFolders == true)"
+>
+    <style>
+
+        .not-support-javascript{
+            width: 100%;
+
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid rgba(35,173,255,1);
+            padding : 10px;
+            transition-duration: 0.5s;
+            transition-property: background-color;
+            transition-timing-function: ease-in;
+            border-radius: 0px !important;
+        }
+
+        .not-support-javascript:hover {
+            box-shadow: 0 0 6px rgba(35, 173, 255, 1);
+            background-color: rgba(35, 173, 255, 1) !important;
+            color: white !important;
+        }
+
+        .not-support-javascript  img{
+            width:65px;
+            height: auto;
+        }
+
+        .not-support-javascript  h2{
+            font-family: IRANSans-web-bold;
+        }
+
+
+    </style>
+    <div  class="not-support-javascript">
+        <img src="static/img/Warning.png" />
+        <h6>شما مجوز افزودن فراداده به سند ها را ندارید.</h6>
+    </div>
+</div>
+

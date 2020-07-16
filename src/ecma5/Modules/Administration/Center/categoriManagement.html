@@ -1,0 +1,29 @@
+<style>
+    .administration .tabel-body  div.parent{
+        height: calc(100vh - 75px);
+        overflow: auto;
+        display: -moz-box;
+        display: -webkit-box;
+        width: 100%;
+        margin-top: 10px;
+        /* direction: ltr;*/
+
+    }
+    .administration .tabel-body  div.parent div.child{
+        direction: rtl  !important;
+    }
+</style>
+
+<div  class="tabel-body" style="background-color: white;height: 100%;position: relative;width: 100%;padding: 10px;">
+    <div class="parent">
+        <div
+                tree-model
+                tree-func="data.trees.category"
+                class="treeview child"
+                root-folder="data.trees.categoryVisible"
+                current-node="data.trees.categoryTree"
+                style="padding-left: 10px;">
+        </div>
+    </div>
+
+</div>

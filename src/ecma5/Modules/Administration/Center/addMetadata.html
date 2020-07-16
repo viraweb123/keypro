@@ -1,0 +1,167 @@
+<div  class="tabel-body" style="background-color: white;">
+
+    <div class="body-view-nothidden" style="padding: 10px ! important;/* overflow: auto;*/ height: 100%;">
+
+        <!---moz-inline-box-->
+        <table  style="display: block; overflow-x :auto !important;  overflow-y :auto !important;" class="table table-bordered- table-responsive table-striped table-hover- table-condensed " >
+            <caption>
+                <span  class="pull-right">فراداده ها</span>
+                 <span style="font-size: 25px;margin-right:10px;" class="fa fa-plus-circle pull-right" ng-click="func.addMetadata()">
+                    <md-tooltip  md-direction="top">
+                        ایجاد
+                    </md-tooltip>
+                </span>
+            </caption>
+            <thead  style="background-color:#c3d9ff !important;/*color:white !important*/">
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" ng-bind="'administration.zr.row'|translate"></span>
+                </th>
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" >نام</span>
+                </th>
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۱</span>
+                </th>
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۲</span>
+                </th>
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۳</span>
+                </th>
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۴</span>
+                </th>
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۵</span>
+                </th>
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۶</span>
+                </th>
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۷</span>
+                </th>
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۸</span>
+                </th>
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۹</span>
+                </th>
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۱0</span>
+                </th>
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۱۱</span>
+                </th>
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویژگی ۱۲</span>
+                </th>
+                <th class="position-center" >
+                    <span style="white-space: nowrap;padding: 0px 15px ! important;" >ویرایش - حذف</span>
+                </th>
+            </thead>
+            <tbody>
+
+                <tr     ng-repeat="metadata in data.metadatas"
+                        class="dashboard-select-table-tr"
+                        ng-class="{'rowOdd':$even , 'activated':data.selectMetadata==metadata.id}"
+                >
+                    <td class="position-center">
+                        <span ng-bind="$index+1|en2faNum"></span>
+                    </td>
+                    <td class="position-center">
+                        <span class="col-sm-12"  ng-bind="metadata.groupName" ></span>
+                    </td>
+                    <td class="position-center">
+                        <span class="col-sm-12">
+                            {{metadata.property1.name == null ? '-' : metadata.property1.name+" "+metadata.property1.label}}
+                        </span>
+                    </td>
+                    <td class="position-center">
+                        <span class="col-sm-12">
+                            {{metadata.property2.name == null ? '-' : metadata.property2.name+" "+metadata.property2.label}}
+                        </span>
+                    </td>
+                    <td class="position-center">
+                        <span class="col-sm-12">
+                            {{metadata.property3.name == null ? '-' : metadata.property3.name+" "+metadata.property3.label}}
+                        </span>
+                    </td>
+                    <td class="position-center">
+                        <span class="col-sm-12">
+                            {{metadata.property4.name == null ? '-' : metadata.property4.name+" "+metadata.property4.label}}
+                        </span>
+                    </td>
+                    <td class="position-center">
+                        <span class="col-sm-12">
+                            {{metadata.property5.name == null ? '-' : metadata.property5.name+" "+metadata.property5.label}}
+                        </span>
+                    </td>
+                    <td class="position-center">
+                        <span class="col-sm-12">
+                            {{metadata.property6.name == null ? '-' : metadata.property6.name+" "+metadata.property6.label}}
+                        </span>
+                    </td>
+                    <td class="position-center">
+                        <span class="col-sm-12">
+                            {{metadata.property7.name == null ? '-' : metadata.property7.name+" "+metadata.property7.label}}
+                        </span>
+                    </td>
+                    <td class="position-center">
+                        <span class="col-sm-12">
+                            {{metadata.property8.name == null ? '-' : metadata.property8.name+" "+metadata.property8.label}}
+                        </span>
+                    </td>
+                    <td class="position-center">
+                        <span class="col-sm-12">
+                            {{metadata.property9.name == null ? '-' : metadata.property9.name+" "+metadata.property9.label}}
+                        </span>
+                    </td>
+                    <td class="position-center">
+                        <span class="col-sm-12">
+                            {{metadata.property10.name == null ? '-' : metadata.property10.name+" "+metadata.property10.label}}
+                        </span>
+                    </td>
+                    <td class="position-center">
+                        <span class="col-sm-12">
+                            {{metadata.property11.name == null ? '-' : metadata.property11.name+" "+metadata.property11.label}}
+                        </span>
+                    </td>
+                    <td class="position-center">
+                        <span class="col-sm-12">
+                            {{metadata.property12.name == null ? '-' : metadata.property12.name+" "+metadata.property12.label}}
+                        </span>
+                    </td>
+
+
+
+                    <td class="position-center">
+
+                        <span  style="text-align: center;padding: 0px; width: 40px;">
+                            <sapn
+                                    style="cursor: pointer;"
+                                    class="fa fa-edit"
+                                    ng-click="func.edit(metadata)">
+                                <md-tooltip  md-direction="top">
+                                   ویرایش
+                                </md-tooltip>
+                            </sapn>
+                            <sapn
+                                    style="cursor: pointer;"
+                                    class="fa fa-trash"
+                                    ng-click="func.remove(metadata)">
+                                <md-tooltip  md-direction="top">
+                                   حذف
+                                </md-tooltip>
+                            </sapn>
+                        </span>
+
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>

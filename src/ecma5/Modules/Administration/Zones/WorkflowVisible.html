@@ -1,0 +1,27 @@
+
+<div   style="padding:  0px; float: right; width: 100%; ">
+    <!--<h6 ng-bind="'administration.zr.Workflow' | translate" style="margin:10px !important;"  ></h6>
+    <div class="dividerPanel"></div>-->
+    <div class="zonesHeader">
+        <span ng-bind="'administration.zr.Workflow' | translate"></span>
+    </div>
+
+    <ul>
+        <i
+                ng-if="data.showLogins['/Workflow']"
+                ng-class="{'selected-nav' : data.acriveNav =='Workflow'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('Workflow')">
+            <span class="icon-show fa fa-tasks"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.Workflow'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'dministration.zr.Workflow'|translate}}
+            </md-tooltip>
+        </i>
+
+    </ul>
+
+</div>

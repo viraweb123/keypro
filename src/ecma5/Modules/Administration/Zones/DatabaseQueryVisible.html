@@ -1,0 +1,25 @@
+
+<div   style="padding:  0px; float: right; width: 100%; ">
+    <!--<h6 ng-bind="'administration.zr.DatabaseQuery' | translate" style="margin:10px !important;"  ></h6>
+    <div class="dividerPanel"></div>-->
+    <div class="zonesHeader">
+        <span ng-bind="'administration.zr.DatabaseQuery' | translate"></span>
+    </div>
+    <ul>
+        <i
+                ng-if="data.showLogins['/DatabaseQuery']"
+                ng-class="{'selected-nav' : data.acriveNav =='DatabaseQuery'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('DatabaseQuery')">
+            <span class="icon-show fa fa-database"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.DatabaseQuery'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.DatabaseQuery'|translate}}
+            </md-tooltip>
+        </i>
+    </ul>
+
+</div>

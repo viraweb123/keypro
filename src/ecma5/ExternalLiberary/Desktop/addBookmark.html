@@ -1,0 +1,282 @@
+<style>
+    .modal-header{
+        background-color: rgb(38, 166, 154) !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+
+    .modal-footer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-footer #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .modal-footer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+
+    .modal-footer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+
+    .modal-footer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+
+    .modal-footer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+
+    .modal-footer  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+
+    .modal-footer  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+
+    .modal-body  table tbody tr:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1) !important;
+        cursor: pointer !important;
+        background-color :  rgba(35,173,255,1) !important;
+        color : white !important;
+    }
+
+    .modal-body  table tbody tr:nth-child(even){
+        background-color: rgba(224, 236, 255, 1);
+    }
+
+    .modal-body table  th{
+        color : black;
+    }
+
+    .modal-body .result-view table  th.position{
+        color: black;
+        font-size: 12px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .modal-body .result-view table  th.position  a span {
+        color: black;
+    }
+
+    .modal-body .result-view table td.position{
+        font-size: 14px;
+        text-align: center !important;
+        vertical-align: middle;
+    }
+
+    .modal-body .result-view  table tbody td.position-center  span{
+        overflow-wrap: break-word;
+        word-break: break-all;
+        text-align: justify;
+    }
+
+    .modal-body .result-view  table img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+    }
+
+
+    .modal-body #addOrEditBookmark{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-body #addOrEditBookmark:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+    .modal-body #addOrEditBookmark:hover md-icon{
+        color : white;
+    }
+
+    .modal-body #cancelBookmark{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-body #cancelBookmark:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+    .modal-body #cancelBookmark:hover md-icon{
+        color : white;
+    }
+
+
+    .modal-body table  tr.activated{
+        background-color: rgb(35, 173, 255) !important;
+        color: white !important;
+    }
+    .modal-body table  tr.activated  span{
+        color: white !important;
+    }
+
+
+</style>
+<div class="modal-header fontStyle" >علامت گذاری</div>
+
+<div class="modal-body row" >
+
+    <div class="row form-group col-sm-12 ">
+        <form name="bookmarkForm" novalidate role="form">
+
+            <div layout="row">
+
+                <md-input-container class="md-block md-icon-float col-sm-9 pull-right">
+                    <label>علامت گذاری</label>
+                    <!--<md-icon md-font-icon="fa fa-user"></md-icon>-->
+                    <input
+                            id="txtFolderName"
+                            required
+                            type="text"
+                            name="txtBookmarkName"
+                            ng-model="data.bookmark.name"
+                            minlength="2"
+                            maxlength="100"
+                            focus-me="true"
+                            ui-keypress="{13:'func.checkTrue()'}"
+                    />
+                    <div ng-messages="bookmarkForm.txtBookmarkName.$error" role="alert">
+                        <div ng-message="required">
+                            لطفا یک نام برای علامت جدید وارد کنید
+                        </div>
+                        <div ng-message="minlength">
+                            نام علامت حداقل باید ۲ کاراکتر داشته باشد
+                        </div>
+                        <div ng-message="minlength">
+                            نام علامت نباید بیش از ۱۰۰ کاراکتر داشته باشد
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <section  class="col-sm-3 pull-left"  layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                    <md-button  ng-click="func.editOrCreateBookMark()" style="min-width:25px !important;" id="addOrEditBookmark"  class="md-raised pull-left">
+                        <md-icon  md-font-icon="fa fa-{{data.bookmark.id ? 'edit' : 'plus'}}"></md-icon>
+                        <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                            {{data.bookmark.id ? 'ویرایش' : 'ایجاد' }}
+                        </md-tooltip>
+                    </md-button>
+                    <md-button style="min-width:25px !important;" id="cancelBookmark"  class="md-raised  pull-right" ng-click="func.cancelBookmark()" >
+                        <md-icon  md-font-icon="fa  fa-remove"></md-icon>
+                        <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                           انصراف
+                        </md-tooltip>
+                    </md-button>
+                </section>
+
+
+            </div>
+
+
+
+
+        </form>
+    </div>
+
+    <div class="row form-group col-sm-12  result-view"  style="overflow: auto; max-height: 200px;">
+        <table   class=" modal-background table table-responsive table-striped table-hover- table-condensed table-bordered ">
+            <thead>
+            <tr style="height: 35px;">
+                <th  class="position">
+                    <span >علامت</span>
+                </th>
+                <th  class="position">
+                    <span >کاربر</span>
+                </th>
+                <th  class="position">
+                    <span  >ویرایش-حذف</span>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr
+                        ng-class="{'activated':data.bookmark.id==bookmark.id}"
+                        class="cursor-tr select-table-tr"
+                        ng-repeat="(key,bookmark) in data.bookmarks"
+                >
+                    <td class="position">
+                        <span ng-bind="bookmark.name" ></span>
+                    </td>
+                    <td class="position">
+                        <span ng-bind="bookmark.user" ></span>
+                    </td>
+                    <td class="position">
+                        <span  class="row">
+                            <sapn class="fa fa-edit fa-fw" ng-click="func.editBookmark(key)">
+                                <md-tooltip  md-direction="top">
+                                    {{'administration.zl.modal.editUser'|translate}}
+                                </md-tooltip>
+                            </sapn>
+                            <sapn class="fa fa-trash trash fa-fw" ng-click="func.removeBookmark(key)">
+                                <md-tooltip  md-direction="top">
+                                    {{'administration.zl.modal.deleteUser'| translate}}
+                                </md-tooltip>
+                            </sapn>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+
+        <form name="renameForm" novalidate role="form">
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="okButon"   class="md-raised" ng-click="func.cancel()">
+                    <md-icon md-font-icon="fa fa-remove fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" >بازگشت</span>
+                </md-button>
+            </section>
+        </form>
+    </div>
+</div>

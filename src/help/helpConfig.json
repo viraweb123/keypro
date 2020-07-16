@@ -1,0 +1,60 @@
+{
+  'list' : [
+
+    {
+      'access' : 'prfTab.administrationVisible',
+      'group' : 'admin',
+      'title' : 'آموزش مدیریت سامانه مدیریت اسناد دانش هم آرا',
+      'thumbnail' : './resource/image/admin.jpg',
+      'source' : {
+        'title' : 'نمایش فیلم آموزشی',
+        'link' : './resource/video/admin.mp4'
+      }
+    },
+
+    {
+      'access' : 'prfTab.desktopVisible',
+      'group' : 'desktop',
+      'title' : 'آموزش Desktop سامانه مدیریت اسناد دانش هم آرا',
+      'thumbnail' : './resource/image/desktop.jpg',
+      'source' : {
+        'title' : 'نمایش فیلم آموزشی',
+        'link' : './resource/video/desktop.mp4'
+      }
+    },
+
+    {
+      'access' : 'prfTab.desktopVisible',
+      'group' : 'desktop',
+      'title' : 'آموزش Desktop سامانه مدیریت اسناد دانش هم آرا',
+      'thumbnail' : './resource/image/desktop_pdf.png',
+      'source' : {
+        'title' : 'نمایش فایل آموزشی',
+        'link' : './resource/document/dhamarahelp.pdf'
+      }
+    },
+
+    {
+      'access' : 'prfTab.dashboardVisible',
+      'group' : 'dashboard',
+      'title' : 'آموزش صفحه داشبورد سامانه مدیریت اسناد دانش هم آرا',
+      'thumbnail' : './resource/image/kartabl.jpg',
+      'source' : {
+        'title' : 'نمایش فیلم آموزشی',
+        'link' : './resource/video/kartabl.mp4'
+      }
+    },
+
+    {
+      'access' : 'prfTab.searchVisible',
+      'group' : 'search',
+      'title' : 'آموزش صفحه جستجوی سامانه مدیریت اسناد دانش هم آرا',
+      'thumbnail' : './resource/image/search.jpg',
+      'source' : {
+        'title' : 'نمایش فیلم آموزشی',
+        'link' : './resource/video/search.mp4'
+      }
+    }
+
+  ]
+}

@@ -1,0 +1,114 @@
+<style>
+    form.map-form-images-viewer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    form.map-form-images-viewer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    form.map-form-images-viewer #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    form.map-form-images-viewer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+
+    form.map-form-images-viewer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    form.map-form-images-viewer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+
+    form.map-form-images-viewer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+
+    form.map-form-images-viewer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+
+</style>
+
+<div class="row form-group  map-right-main-content">
+    <div class="header">
+
+        <form
+                class="map-form-images-viewer"
+                name="mapAdderRemoverForm"
+                novalidate>
+
+            <md-button
+                    id="okButon"
+                    class="md-raised"
+                    ng-click="func.map.add(0)">
+                <md-icon  md-font-icon="fa fa-plus  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;"  >افزودن</span>
+                <md-tooltip  md-direction="top">
+                    {{'map.zl.add.map'|translate}}
+                </md-tooltip>
+            </md-button>
+
+
+            <md-button
+                    id="cancelButon"
+                    class="md-raised"
+                    ng-click="func.remove()">
+                <md-icon  md-font-icon="fa fa-trash  fa-fw"></md-icon>
+                <span style="margin-right: 3px;" >حذف</span>
+                <md-tooltip  md-direction="top">
+                    {{'map.zl.remove.map'|translate}}
+                </md-tooltip>
+            </md-button>
+
+        </form>
+
+    </div>
+    <div class="body">
+
+
+        <div  ng-repeat="map in data.maps" >
+
+            <div class="col-sm-12 ">
+                <div  id="images" class="image-view">
+
+                    <img
+                            ng-class="{'selected' : map.id  == data.selected }"
+                            style="cursor: pointer;"
+                            title="{{map.title}}"
+                            ng-click="func.click($event,map)"
+                            uuid="{{map.id}}"
+                            src="{{map.thumbnailSrc}}"
+                    />
+                    <md-tooltip  md-direction="left">
+                        {{map.title}}
+                    </md-tooltip>
+                    <!--<div class="map-thumbnail"></div>-->
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>

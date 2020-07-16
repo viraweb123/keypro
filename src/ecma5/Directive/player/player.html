@@ -1,0 +1,655 @@
+<style>
+    .keydocpro-directive-player-id{
+        height:100%;
+        width:100%;
+        background-color: #00a8c6;
+        position: relative;
+
+
+
+
+    }
+    .keydocpro-directive-player-id   .player {
+        left: 2.5% !important;
+        position: absolute !important;
+        width: 95% !important;
+        bottom: 20px !important;
+        background-color : rgba(201, 210, 204, 0.7)  !important;
+        background: #2a2a2a;
+        box-sizing: border-box;
+        border-radius: 0px;/*5px;*/
+        height: 50px;
+        -moz-box-sizing: border-box;
+        float: left;
+        font-family: Arial, sans-serif;
+        padding: 0;
+        z-index: 2;
+        opacity: 0;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        /*webkit-transition: opacity 0.3s ease-in;
+        transition: opacity 0.3s ease-in;*/
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+
+        transition-duration: 0.5s;
+        transition-property: opacity;
+        transition-timing-function: ease-in;
+    }
+
+    .keydocpro-directive-player-id:hover{
+        opacity : 1 !important;
+    }
+
+
+    .keydocpro-directive-player-id:hover  .player , .keydocpro-directive-player-id.hover .player{
+        opacity: 1 !important;
+    }
+    .keydocpro-directive-player-id  video,audio {
+        width :100%  !important;
+        height:100%  !important;
+        border:1px solid #2e52a4;
+    }
+    .keydocpro-directive-player-id  video:hover  .player{
+        opacity: 1 !important;
+    }
+    .keydocpro-directive-player-id  audio:hover  .player{
+        opacity: 1 !important;
+    }
+    .keydocpro-directive-player-id   .c5p{
+        display: inline;
+        height: 100%;
+        padding: 5px 5px 5px 10px;
+        position: relative;
+        /*width: 5%;*/
+    }
+    .keydocpro-directive-player-id   .c75p{
+        display: inline-block;
+        height: 100%;
+        /*padding: 2px 2px 2px 10px;*/
+        /*width: 75%;*/
+        float:left;
+        padding-left:10px;
+    }
+    .keydocpro-directive-player-id   .icon{
+        font-size: 20px;
+        margin-top: 10px;
+        cursor: pointer;
+        color: white;
+    }
+    .keydocpro-directive-player-id   .icon:hover {
+        text-shadow: 2px 2px 4px #fff;
+    }
+    .keydocpro-directive-player-id input[type=range].vVertical {
+
+        -webkit-appearance: none;
+        background-color: transparent !important;
+        width: 60px !important;
+        margin-top: -6px;
+        padding-top: 0;
+        height:10px !important;
+
+        -webkit-transform:rotate(270deg) !important;
+        -moz-transform:rotate(270deg) !important;
+        -o-transform:rotate(270deg) !important;
+        -ms-transform:rotate(270deg) !important;
+        transform:rotate(270deg) !important;
+        z-index: 0 !important;
+    }
+    .keydocpro-directive-player-id input[type=range].vVertical:hover {
+
+        text-shadow: 2px 2px 4px #fff;
+    }
+
+
+    .keydocpro-directive-player-id input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none  !important;
+        /*background-color: red;*/
+        width: 20px;
+        height: 20px;
+    }
+    .keydocpro-directive-player-id .player .progress {
+        width: 100%;
+        height: 20px;
+        border-radius: 0px;
+        background: #676767;
+        box-shadow: inset 0 -5px 10px rgba(0,0,0,0.1);
+        float: left;
+        cursor: pointer;
+        margin: 15px 0 0 0;
+        padding: 0;
+        position: relative;
+        font-variant: normal;
+        direction : ltr !important;
+    }
+    .keydocpro-directive-player-id .player .progress-bar {
+        background: #33b5d5;
+        box-shadow: inset -30px 0px 69px -20px #89f6f5;
+        /*border-radius: 5px;*/
+        border-radius: 0px;
+        height: 100%;
+        position: absolute;
+        z-index: 999;
+        width: 0;
+        direction : ltr !important;
+    }
+    .keydocpro-directive-player-id .player .button-holder {
+        position: absolute;
+        right: -5px;
+    }
+    .keydocpro-directive-player-id .player .progress-button {
+        background: #fff;
+        /*box-shadow: 0 0 20px rgba(0,0,0,0.3);*/
+        /*border-radius: 30px;*/
+        /*width: 20px;*/
+        width : 10px;
+        height: 20px;
+        position: absolute;
+        /*left: -20px;*/
+        left : -10px;
+        text-decoration: overline;
+        direction : ltr !important;
+    }
+    .keydocpro-directive-player-id .player [class^="buffered"] {
+        background: rgba(255,255,255,0.1);
+        position: absolute;
+        top: 0;
+        left: 30px;
+        height: 100%;
+        border-radius: 5px;
+        z-index: 1;
+    }
+    .keydocpro-directive-player-id .volume{
+        opacity: 0;
+        webkit-transition: opacity 0.3s ease-in;
+        transition: opacity 0.3s ease-in;
+    }
+    .keydocpro-directive-player-id  .speaker{}
+
+    .keydocpro-directive-player-id .speaker:hover  .volume {
+        opacity: 1 !important;
+    }
+
+    .keydocpro-directive-player-id  .buffered{
+        background: rgba(255,255,255,0.1);
+        position: absolute;
+        top: 0;
+        left: 30px;
+        height: 100%;
+        border-radius: 5px;
+        z-index: 1;
+    }
+
+    .keydocpro-directive-player-id  .time{
+        left: 5px;
+        position: absolute;
+        z-index: 1000;
+    }
+
+
+    .tag-viewers{
+        /*background-color: transparent;*/
+        background-color: white !important;/*rgba(201, 210, 204, 0.9) !important;*/
+        float: left;
+        height: 200px;
+        max-height: 200px;
+        overflow-x: auto;
+        overflow-y: auto;
+        position: absolute;
+        width: calc(100% - 50px);
+        z-index: 10;
+        margin-left:25px;
+    }
+    .tag-viewers-sub {
+        height: 200px;
+        float: left;
+        width: 380px;
+        z-index: 9;
+        position: absolute;
+        background-color: rgba(187, 83, 40, 1);/*red;/*rgba(255, 255, 255, 0.6);*/
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+        opacity:0.85;
+        margin-left:15px;
+    }
+
+    .bind-time{
+        color: white;
+        font-size: 28px;
+        opacity: 0;
+        position: absolute;
+        top: -5px;
+        z-index: 10000;
+        font-weight: bold;
+        left: 0px;
+    }
+
+
+    .tag-add{
+       /* background-color: transparent;*/
+        background-color: white !important;/*rgba(101, 160, 244, 1) !important;*/
+        height: 200px;
+        right: 0px;
+        overflow-x: auto;
+        overflow-y: auto;
+        position: absolute;
+        width: 300px;
+        z-index: 10;
+    }
+    .tag-add-sub {
+        background-color: rgba(187, 83, 40, 1);/*red;*/
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+        right: 0px;
+        height: 200px;
+        opacity: 0.85;
+        position: absolute;
+        width: 400px;
+        z-index: 9;
+    }
+
+    .video-form-element{
+        padding:3px !important;
+        margin : 3px !important;
+    }
+
+    #player-thumnail-show-id{
+        width:70px;
+        height:70px;
+        border:1px solid black;
+        /*margin-top: -10px;*/
+    }
+
+    .show-center-item{
+        text-align: center;
+        vertical-align: middle;
+        /*padding:0px;*/
+    }
+
+
+    .keydocpro-directive-player-id  .tag-viewers  .text-white-shadow:hover{
+        text-shadow: 2px 2px 4px #fff;
+    }
+
+
+    .video-form-element #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .video-form-element #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+    .video-form-element #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+    .video-form-element #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+    .video-form-element #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .video-form-element #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+    .video-form-element #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+    .video-form-element #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+    .tag-viewers  th.position{
+        color: black !important;
+        font-size: 12px;
+        text-align: center;
+        vertical-align: middle;
+        border :0px;
+    }
+
+    .tag-viewers  th.position  a span {
+        color: black;
+    }
+
+    .tag-viewers   table tr th  span{
+        cursor: pointer;
+    }
+
+    .tag-viewers   td.position{
+        font-size: 14px;
+        text-align: center !important;
+        vertical-align: middle;
+        border :0px;
+        color:black;
+    }
+
+    .tag-viewers   table{
+        border : 0px;
+        color:white;
+    }
+
+    .tag-viewers   table  tbody tr{
+
+        transition-duration: 0.5s;
+        transition-property: background-color,box-shadow;
+        transition-timing-function: ease-in;
+        border-radius: 10px;
+    }
+
+    .tag-viewers   table  tbody tr:hover{
+        /*background-color: #fff !important;*/
+        /*color : black !important;*/
+        /*box-shadow  :  0 0 15px #fff;*/
+        color : white !important;
+        box-shadow: 0 0 6px rgba(35,173,255,1)  !important;
+        background-color: rgba(35,173,255,1) !important;
+    }
+
+    .tag-viewers   table  tbody tr:hover span{
+        color : white !important;
+    }
+
+    .tag-viewers   table  tbody tr:hover span.remove-tag-icon{
+        color : white !important;
+    }
+
+
+    .tag-viewers   table  tbody tr td{
+        border-radius: 0px !important;
+    }
+
+
+
+</style>
+<!--<div class="tag-add-sub show-hide-file"  ng-show="data.tag.addTag != null"></div>-->
+<div class="tag-add show-hide-file"  ng-show="data.tag.addTag != null">
+    <div class="row form-group"  style="margin: 15px 5px;color:black;">
+
+        <div class="row col-sm-12 form-group video-form-element">
+            <div class="col-sm-6 pull-right" style="padding: 1px;">
+                <div class="col-sm-7 pull-right" style="padding-left: 5px;">
+                    <span  class="label-form pull-left"  ng-bind="'directive.player.form.startTime'|translate"></span>
+                </div>
+                <div class="col-sm-5 pull-left" style="padding-right: 5px;">
+                    <span  class="label-form pull-right" >{{data.tag.start.toFixed(2)}}</span>
+                </div>
+            </div>
+            <div class="col-sm-6 pull-left" style="padding: 1px;">
+                <div class="col-sm-7 pull-right" style="padding-left: 5px;">
+                    <span  class="label-form pull-left"  ng-bind="'directive.player.form.endTime'|translate"></span>
+                </div>
+                <div class="col-sm-5 pull-left" style="padding-right: 5px;">
+                    <span  class="label-form pull-right" >{{data.tag.end.toFixed(2)}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row col-sm-12 form-group video-form-element"  style="height: 75px;">
+            <div class="col-sm-8- pull-right"  style="width: calc(100% - 110px);">
+                <div class="col-sm-12" style="padding-right: 5px;">
+                    <input
+                            style="margin-top: -8px; padding: 3px;"
+                            class="form-control col-sm-12"
+                            placeholder="نام تگ"
+                            type="text"
+                            ng-model="data.tag.label"
+                    />
+                </div>
+            </div>
+
+            <div class="col-sm-4- tag-iamge pull-left" style="height: 70px; padding: 0px 0px 0px 10px !important; text-align: center;">
+                <canvas width="70" height="70" id="player-thumnail-show-id"  ></canvas>
+            </div>
+        </div>
+        <div class="row  form-group video-form-element" style="padding: 1px ! important; margin: 1px ! important;">
+            <hr class="col-sm-12 "  style="padding: 0px ! important; margin: 0px ! important;" />
+        </div>
+        <div class="row form-group video-form-element">
+            <div class="video-form-element-">
+
+                <section style="direction: rtl;" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                    <md-button id="okButon"
+                               ng-disabled="data.tag.start == -1 || data.tag.end   == -1 || data.tag.start >= data.tag.end  || data.tag.label.trim() == ''"
+                               class="md-raised"
+                               ng-click="func.tag.addNewTag()">
+                        <md-icon  md-font-icon="fa fa-save  fa-fw"></md-icon>
+                        <span style="margin-right: 3px;"  ng-bind="'directive.player.form.save'|translate"> </span>
+                    </md-button>
+                    <md-button id="cancelButon"     class="md-raised" ng-click="func.tag.stop()">
+                        <md-icon  md-font-icon="fa fa-remove  fa-fw"></md-icon>
+                        <span style="margin-right: 3px;"  ng-bind="'desktop.zl.cancel'|translate"> </span>
+                    </md-button>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+<span   ng-show="data.showTag == false && data.tagButtom "   class="fa fa-tag"   ng-click = "data.showTag = true" style="text-shadow:2px 3px 14px white;text-align: center; position: absolute; z-index: 11; cursor: pointer; font-size: 30px; margin-left: 20px; margin-top: 5px;">
+     <md-tooltip  md-direction="bottom">
+          {{'directive.player.tooltip.showTagsList'|translate}}
+     </md-tooltip>
+</span>
+<!--<div class="tag-viewers-sub sample-show-hide"  ng-show="data.showTag == true"></div>-->
+<div class="tag-viewers sample-show-hide"  ng-show="data.showTag == true">
+        <div class="col-sm-12 row form-group"  style="margin-top: 0px !important;height: 120px;">
+            <div style="text-align: center; position: relative; height: 20px; margin: 3px !important; top: 2px;" class="row col-sm-12 form-group">
+                <span class="fa fa-remove  text-white-shadow" ng-click = "data.showTag = false" style="text-align: center; cursor: pointer;color:black;">
+                   <md-tooltip  md-direction="top">
+                      {{'directive.player.tooltip.hiddenTag'|translate}}
+                    </md-tooltip>
+                </span>
+            </div>
+            <div class="row form-group" ng-if="data.item.tags != null">
+                <table   class="table table-responsive table-striped   table-condensed table-bordered ">
+                    <thead>
+                        <tr style="height: 35px;">
+                            <th  class="position">
+                                <span ng-bind="'search.zm.meta_table_rowId'|translate"></span>
+                            </th>
+                            <th   class="position">
+                                <a href="javascript:void(0)" ng-click=" data.sort.type = 'title' ; data.sort.ascDesc = !data.sort.ascDesc">
+                                    <md-tooltip  md-direction="top">
+                                        {{'directive.player.table.name'|translate}}
+                                    </md-tooltip>
+                                    <span ng-show="data.sort.type == 'title' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                                    <span ng-show="data.sort.type == 'title' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                                    <span  ng-bind="'directive.player.table.name'|translate"></span>
+                                </a>
+                            </th>
+                            <th  class="position">
+                                <span  ng-bind="'directive.player.table.image' | translate"> </span>
+                            </th>
+                            <th   class="position">
+                                <a href="javascript:void(0)" ng-click=" data.sort.type = 'timeStart' ; data.sort.ascDesc = !data.sort.ascDesc">
+                                    <md-tooltip  md-direction="top">
+                                        {{'directive.player.table.name'|translate}}
+                                    </md-tooltip>
+                                    <span ng-show="data.sort.type == 'timeStart' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                                    <span ng-show="data.sort.type == 'timeStart' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                                    <span ng-bind="'directive.player.table.start'|translate"></span>
+                                </a>
+                            </th>
+                            <th   class="position">
+                                <a href="javascript:void(0)" ng-click=" data.sort.type = 'timeEnd' ; data.sort.ascDesc = !data.sort.ascDesc">
+                                    <md-tooltip  md-direction="top">
+                                        {{'directive.player.table.end'|translate}}
+                                    </md-tooltip>
+                                    <span ng-show="data.sort.type == 'timeEnd' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                                    <span ng-show="data.sort.type == 'timeEnd' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                                    <span  ng-bind="'directive.player.table.end'|translate"></span>
+                                </a>
+                            </th>
+                            <td  class="position">
+                                <span class="remove-tag-icon"  >نمایش-حذف</span>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                                class="cursor-tr select-table-tr"
+                                style="border-bottom:1px solid white !important; border-radius: 0px !important;background-color: transparent;"
+                                ng-repeat="tag in data.item.tags | orderBy:data.sort.type:data.sort.ascDesc"
+                        >
+                            <td class="position">
+                                <span      ng-bind="($index+1)|pNumber"></span>
+                            </td>
+                            <td class="position">
+                                <span   ng-bind="tag.title|pNumber"  ng-click="func.changeTag(tag.timeStart,tag.timeEnd)"></span>
+                            </td>
+                            <td class="position">
+                                <img  src="{{tag.thumbnail}}"  style="height:40px;width:auto;"  id="video-thumbnail-{{tag.id}}" />
+                            </td>
+                            <td class="position">
+                                <span ng-bind="func.convertTime(tag.timeStart/1000)|en2faNum"></span>
+                            </td>
+                            <td class="position">
+                                <span ng-bind="func.convertTime(tag.timeEnd/1000)|en2faNum"></span>
+                            </td>
+                            <td class="position">
+                                <!--color: white;-->
+                                <span
+                                        style="cursor: pointer;"
+                                        class="fa fa-trash"
+                                        ng-click="func.tag.removeSelectedTag(tag)">
+                                    <md-tooltip  md-direction="top">
+                                     {{'directive.player.tooltip.removeTag'|translate}}
+                                    </md-tooltip>
+                                </span>
+
+                                <span
+                                        style="cursor: pointer;margin-left:5px;"
+                                        class="fa fa-play"
+                                        ng-click="func.changeTag(tag.timeStart,tag.timeEnd)">
+                                    <md-tooltip  md-direction="top">
+                                     نمایش تگ
+                                    </md-tooltip>
+                                </span>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row form-group" ng-if="data.item.tags == null">
+                <div class="show-center-item" style="margin-top:20px">
+                    <span style="color: white; direction: ltr; font-size: 20px;"  ng-bind="'desktop.zm.create_doc_rel_modal_no_result_found'|translate"></span>
+                    &nbsp;
+                    <span  class="text-white-shadow fa fa-ban" style="font-size: 22px; color: white;top: 5px;" ></i></span>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="col-sm-12 keydocpro-directive-player-id">
+    <video ng-show="data.item.type == 'video'"
+           id="directive-player-id"
+           autoplay="true"
+           autobuffer = "false"
+           loop><!--preload="metadata"  src="{{data.video|trustUrl}}"poster="{{data.item.thumbnail}}"-->
+    </video>
+    <audio ng-show="data.item.type == 'audio'"
+           id="directive-player-id"
+           autoplay="true"
+           autobuffer = "false"
+           loop>
+    </audio><!--preload="metadata"  preload="metadata" src="{{data.audio|trustUrl}}" poster="{{data.item.thumbnail}}"-->
+    <div class="player">
+        <div class="c5p" style=" /*top: -17px;*/  float:left;width : 35px;">
+            <span   ng-click="data.tag.addTag == null &&  func.icons.play()"   class="fa icon"
+                    ng-class='{"fa-play" : data.icons.play == "pause" , "fa-pause" : data.icons.play == "play"}'
+            >
+                <md-tooltip  md-direction="top">
+                      {{(data.icons.play != 'play' ? 'directive.player.play' : 'directive.player.pause' ) | translate}}
+                </md-tooltip>
+            </span>
+        </div>
+        <div class="c75p" style="width : calc(100% - 185px)">
+            <div class="progress" ng-click="func.mouseDownEvent($event)"  >
+
+                <span class="fa fa-angle-left bind-time"   id="firstBind" style="position: absolute;color:white;z-index: 10000;opacity:0;"></span>
+                <span id="show-width-progressbar-id" style="position: absolute; color: white; z-index: 10000; left: 196.217px; height: 30px; background-color: yellow; opacity: 0.2; "></span>
+                <span class="fa fa-angle-right bind-time"  id="lastBind" style="position: absolute;color:white;z-index: 10000;opacity:0;"></span>
+                <div class="progress-bar">
+                    <div class="button-holder">
+                        <div class="progress-button">
+                            <md-tooltip  md-direction="top">
+                                {{currentTime}}
+                            </md-tooltip>
+                        </div>
+                    </div>
+                </div>
+                <div class="time">
+                    <span class="currentTime" ></span><!--ng-bind="data.time.current|pNumber"-->
+                    <span  > / </span>
+                    <span class="durationTime"></span><!--ng-bind="data.time.duration|pNumber"-->
+                </div>
+            </div>
+        </div>
+        <div class="c5p pull-right"  ng-show="data.tagButtom"  style="width : 35px;margin-right: 5px;">
+            <span ng-click="func.icons.tag()"  class="fa icon  fa-tag fa-fw">
+               <md-tooltip  md-direction="top">
+                   {{'directive.player.tooltip.addTag'|translate}}
+               </md-tooltip>
+            </span>
+        </div>
+        <div class="c5p pull-right"  style="width : 35px;">
+            <span ng-click="func.icons.resize()"  class="fa icon"
+                  ng-class='{"fa-arrows-alt" : data.icons.zoom == "notFullScreen" , "fa-compress" : data.icons.zoom == "fullScreen"}'>
+               <md-tooltip  md-direction="top">
+                      {{(data.icons.zoom == 'notFullScreen' ? 'directive.player.fullScreen' : 'directive.player.notFullScreen' ) | translate}}
+               </md-tooltip>
+            </span>
+        </div>
+        <div class="c5p pull-right  speaker" style="width : 35px;">
+            <span ng-click="func.icons.sound()" class="fa icon "
+                    ng-class='{
+                        "fa-volume-up" : data.icons.volume == 1 ,
+                        "fa-volume-down" : data.icons.volume < 1 && data.icons.volume > 0,
+                        "fa-volume-off" : data.icons.volume == 0 ,
+                     }'
+            >
+               <md-tooltip  md-direction="top">
+                      {{'directive.player.sound' | translate}}
+               </md-tooltip>
+            </span>
+            <div style="position: relative; right: 16px; bottom: 55px;">
+                <input
+                        class="pull-left vVertical volume"
+                        ng-attr-title="{{data.icons.volume}}"
+                        type="range"
+                        min="0"
+                        name = "rangePage"
+                        max="1"
+                        step="0.05"
+                        ng-model="data.icons.volume"
+                        ng-change="func.icons.changeVolume()"
+                        style="direction:ltr;"
+                        type="range"
+                />
+            </div>
+        </div>
+        <div class="c5p pull-right">
+            <span ng-click="data.tag.addTag == null && func.icons.stop()"  class="fa icon  fa-stop">
+               <md-tooltip  md-direction="top">
+                     {{'directive.player.stop' | translate}}
+               </md-tooltip>
+            </span>
+        </div>
+    </div>
+</div>

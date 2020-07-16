@@ -1,0 +1,121 @@
+<style>
+    .modal-header{
+        background-color: rgb(38, 166, 154) !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+    .modal-footer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-footer #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .modal-footer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+    .modal-footer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+
+    .modal-footer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+
+    .modal-footer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+
+    .modal-footer  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+
+    .modal-footer  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+
+
+    .modal-body input.select-color {
+        padding: 0px !important;
+        margin: 0px !important;
+        border-radius: 0px !important;
+        box-shadow: none !important;
+        border: none !important;
+        width: 30px !important;
+        height: 20px !important;
+        cursor: pointer !important;
+    }
+
+
+</style>
+<div class="modal-header fontStyle">ساعت سیستم</div>
+<div class="modal-body row"  style="text-align: center;">
+
+
+    <div class="change-color-clock" >
+        <input class="select-color" type="color"  ng-model="data.color"  value="#{{data.color}}" >
+        <md-tooltip  md-direction="top">
+           انتخاب رنگ
+        </md-tooltip>
+    </div>
+
+    <div  style="min-width: 200px;min-height: 200px;overflow: auto;">
+        <canvas
+                id="canvasClockViewer"
+                width="180"
+                height="180"
+                style="background-color:transparent"
+        >
+        </canvas>
+    </div>
+
+</div>
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+
+        <form name="cutFormm" novalidate role="form">
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button   id="okButon"     class="md-raised" ng-click="func.cancel()">
+                    <md-icon  md-font-icon="fa  fa-remove fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" >بازگشت</span>
+                </md-button>
+            </section>
+        </form>
+    </div>
+</div>

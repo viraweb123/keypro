@@ -1,0 +1,55 @@
+<div class="btn-group-vertical  vertical-buttons" role="group" >
+
+    <!-- TODO searchVisible button -->
+    <div class="group-vertical searchVisible">
+        <div class="btn-icon"
+             ng-class="{'simple-color': data.nav.right.selectedSide == 'searchVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'search.zr.search_result'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-sitemap fa-fw"
+                    ng-click="data.nav.right.select('searchVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider simple-background"></div>
+    </div>
+
+
+
+    <!-- TODO foamTreeVisible button -->
+    <div class="group-vertical foamTreeVisible">
+        <div class="btn-icon"
+             ng-class="{'simple-color': data.nav.right.selectedSide == 'foamTreeVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'search.zr.search_foamTree'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-area-chart fa-fw"
+                    ng-click="data.nav.right.select('foamTreeVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider simple-background"></div>
+    </div>
+
+    <!-- TODO circlesVisible button -->
+    <div class="group-vertical circlesVisible">
+        <div class="btn-icon"
+             ng-class="{'simple-color': data.nav.right.selectedSide == 'circlesVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'search.zr.search_circles'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-pie-chart fa-fw"
+                    ng-click="data.nav.right.select('circlesVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider simple-background"></div>
+    </div>
+
+
+
+</div>

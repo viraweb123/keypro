@@ -1,0 +1,847 @@
+
+@media screen and (min-width: 650px) {
+    .cloud{
+        width : 100vw !important;
+        height:  100% !important;
+        overflow : hidden !important;
+        padding:0px !important;
+        margin:  0px !important;
+    }
+
+    .cloud  .SR .map-color {
+        border-right : 2px solid #9560f4;
+        color: #9560f4 !important;
+    }
+
+    .cloud  .SR  .btn-icon:hover > *{
+        color: white !important;
+        background-color:  #9560f4 !important;
+    }
+
+    .cloud  .SR  .btn-icon:hover{
+        color: white !important;
+        background-color:  #9560f4 !important;
+        border-right : 2px solid white;
+    }
+
+
+    .cloud .ZRJ  .map-right-main-content{
+        height : 100% !important;
+        overflow: hidden !important;
+    }
+
+    .cloud .ZRJ  .map-right-main-content  div.header{
+        height : 50px !important;
+        padding : 3px;
+        margin : 3px;
+        border-bottom: 1px solid;
+        width : calc(100% - 6px);
+    }
+
+    .cloud .ZRJ  .map-right-main-content  div.header  form{
+        text-align: center;
+        vertical-align: middle;
+        margin: -2px;
+    }
+
+
+    .cloud .ZRJ  .map-right-main-content  div.body{
+        height : calc(100vh - 112px) !important;
+        padding : 3px;
+        margin : 3px;
+        width : calc(100% - 6px);
+        overflow-x : hidden !important;
+        overflow-y : auto !important;
+        text-align: center !important;
+    }
+
+    .cloud .ZRJ  .map-right-main-content  div.body  .image-view{
+        padding:5px;
+    }
+
+    .cloud .ZRJ  .map-right-main-content  div.body  .image-view img{
+        height: 90px !important;
+        position: relative !important;
+        width: auto !important;
+    }
+
+    .cloud .ZRJ  .map-right-main-content  div.body  img:hover{
+        cursor: pointer;
+        box-shadow         :  0 0 5px rgba(35,173,255,1);
+    }
+
+    .cloud .ZRJ  .map-right-main-content  div.body  img.selected{
+        -webkit-filter: blur(2px);
+        -moz-filter: blur(2px);
+        -o-filter: blur(2px);
+        -ms-filter: blur(25px);
+        filter: blur(2px);
+    }
+
+
+    .cloud .ZRJ  .table-view{
+        width : calc(100% - 20px);
+        height: calc(100vh - 160px);
+        overflow-y:auto;
+        overflow-x:auto !important;
+        float: right;
+        margin:10px;
+        padding:0px !important;
+    }
+
+    .cloud .ZRJ  .table-view table{
+        max-height: calc(100vh - 120px);
+        overflow-x : hidden;
+        overflow-y : auto;
+        margin-right: auto;
+        /*width: auto ! important;*/
+        margin-left: 15px !important;
+    }
+
+    .cloud    .ZRJ .table-view  table  thead  {
+        /*background-color : #9560f4 !important;
+        color: white !important;*/
+        background-color : #c3d9ff !important;
+    }
+
+    .cloud    .ZRJ .table-view  table  thead  a{
+        color: black !important;
+    }
+
+    .cloud    .ZRJ .table-view  table  thead  a  span{
+        font-size:12px !important;
+    }
+
+    .cloud    .ZRJ .table-view  table  thead  span{
+        font-size:12px !important;
+    }
+
+    .cloud    .ZRJ .table-view  table tbody tr:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1) !important;
+        cursor: pointer !important;
+        background-color :  rgba(35,173,255,1) !important;
+        color : white !important;
+    }
+
+
+    .cloud  .ZRJ   .table-view  table  tr.activate{
+        background-color : #5d9ce9 !important;
+        color : white !important;
+    }
+
+    .cloud    .ZRJ .table-view  table  tr:nth-child(even){
+        /*background-color:   rgba(240, 197, 71, 0.8);
+        color:white;*/
+        background-color: rgba(224, 236, 255, 0.8);
+    }
+
+    .cloud  .ZRJ .table-view  table  tr:nth-child(even)  td label{
+        color:black !important;
+    }
+
+    .cloud    .ZRJ .table-view  table.display{
+        display : inline-block;
+    }
+
+    .cloud   .ZRJ  .table-view  table tbody td.position-center img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+    }
+
+    .cloud    .ZRJ .table-view  table tbody td.position-center  span{
+        overflow-wrap: break-word;
+        word-break: break-all;
+        text-align: justify;
+    }
+
+    .cloud  .CRZ  .body-cloud{
+        width: 100%;
+        height: 100%;
+        padding-top: 1px;
+        background-color: white;
+    }
+
+    .cloud  .CRZ  .body-cloud  div.filters-list{
+        height: 70px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 10px;
+        width: calc(100% - 20px);
+        border: 1px solid rgb(197, 197, 197);
+        margin:10px;
+    }
+    .cloud  .CRZ  .body-cloud  div.filters-list  div.filter-alert{
+        float: right  !important;
+        padding: 6px  !important;
+        margin: 2px  !important;
+        border-radius: 0px !important;
+        max-width: 250px !important;
+        min-width: 110px  !important;
+        background-color: white;
+        border: 1px solid rgb(197, 197, 197) !important;
+        height:50px;
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: ease-in;
+    }
+    .cloud  .CRZ  .body-cloud  div.filters-list  div.filter-alert:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+        background-color :  rgba(35,173,255,1);
+        color : white;
+    }
+    .cloud  .CRZ  .body-cloud  div.filters-list  div.filter-alert span.pull-left{
+        cursor: pointer;
+        font-size: 10px;
+        margin-top: 1px;
+        width: 10px;
+    }
+    .cloud  .CRZ  .body-cloud  div.filters-list  div.filter-alert span.pull-right{
+        font-size: 10px;
+        width : calc(100% - 20px);
+    }
+
+
+    /*.cloud  .CRZ  .body-cloud div.filters-list ~ div.search-result{*/
+    .cloud  .CRZ  .body-cloud div.search-result{
+        height: calc(100vh - 190px) !important;
+        overflow: hidden;
+        padding: 0px;
+        width: calc(100% - 20px);
+    }
+
+
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view{
+        max-height : calc(100% - 20px) !important;
+        /*display: inline !important;*/
+        width: 100%;
+        background-color: transparent;
+        overflow-y:auto;
+        border: 1px solid #5d9ce9;
+        margin : 0px 8px;
+
+    }
+
+
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view  .alert-mode-viewer{
+        padding: 15px !important;
+        border: 1px solid rgb(197, 197, 197);
+        background-color: white;
+        margin : 5px !important;
+        transition-delay: 0s;
+        -moz-transition-delay: 0s;
+        -webkit-transition-delay: 0s;
+        transition-duration: 200ms;
+        -moz-transition-duration: 200ms;
+        -webkit-transition-duration: 200ms;
+        transition-property: all;
+        -moz-transition-property: all;
+        -webkit-transition-property: all;
+        transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        -webkit-transition-timing-function: ease-out;
+
+    }
+
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view  .search-complate{
+        width:calc(100% - 35px);
+    }
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view  .search-half{
+        width:calc(50% - 20px);
+    }
+
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view  .alert-mode-viewer:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+    }
+
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view  .alert-mode-viewer   span.showViewerResultStart{
+        font-size: 15px;
+        padding: 3px;
+        margin: 0px !important;
+        cursor: pointer;
+        float : left;
+        color : rgba(35,173,255,1);
+    }
+
+
+
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view  .alert-mode-viewer   div.cloud-footer{
+        right : 50%;
+        width : 0px;
+        border-bottom: 5px solid transparent;
+        position: absolute;
+        bottom: 0px;
+
+        transition-duration: 0.5s;
+        transition-property: border-bottom,right,width;
+        transition-timing-function: ease-in;
+    }
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view  .alert-mode-viewer:hover div.cloud-footer{
+        border-bottom: 5px solid #5d9ce9 !important;
+        width : 100% !important;
+        right : 0px !important;
+    }
+
+
+    .cloud div.search-image{
+        width : 100px;
+        border-left : 1px solid rgba(197,197,197,1);
+        text-align: center;
+        height : 100%;
+    }
+
+    .cloud div.search-image img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        max-width: 80px !important;
+        cursor: pointer;
+    }
+
+    .cloud div.search-image img:hover{
+        box-shadow: 0 0 6px rgba(251,187,61,1) !important;
+        cursor: pointer !important;
+    }
+
+
+    .cloud div.search-image  div.image-nav{
+        /*width: 15px !important;
+        float: right !important;
+        margin-top: -60px !important;
+        position: absolute !important;*/
+        width:  60px !important;
+        float: right !important;
+        margin-top: -56px !important;
+        position: absolute !important;
+        padding-left: 20px;
+    }
+
+    .cloud div.search-image  div.image-nav  span.nav-content{
+       /* margin: 0px !important;
+        font-size: 12px !important;
+        width: 100% !important;*/
+        margin: 0px !important;
+        font-size: 12px !important;
+        width: 47% !important;
+    }
+
+    .cloud div.search-image .hidden-result-sub {
+        /*width: 450px;
+
+        height: 130px;
+        position: absolute;
+        margin-top: -6px;
+        margin-right: 10px;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+        opacity:0.5;
+        background-color: rgba(0, 0, 0, 0.90);
+        display: none;
+        z-index:100;*/
+        width: 450px;
+
+        height: 120px;
+        position: absolute;
+        margin-top: 6px;
+        margin-right: 10px;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+        opacity:0.5;
+        background-color: rgba(0, 0, 0, 0.90);
+        display: none;
+        z-index:100;
+    }
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view .search-navigation .view-descriptions .hidden-result {
+        /*margin-right: 10px;
+        margin-top: 6px;
+        color: white;
+        overflow-y: auto;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        display: none;
+        z-index: 101;
+        background-color: transparent;
+        width:450px;
+        height:130px;
+        padding : 7px !important;*/
+        background-color: rgba(0,0,0,0.4);
+        color: white;
+        display: none;
+        min-height: 135px;
+        left: 1px;
+        margin-top: 30px;
+        position: absolute;
+        top: 1px;
+        width: 380px;
+        z-index: 2147483647 !important;
+        padding: 5px;
+
+    }
+
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view .search-navigation .view-descriptions:hover  .hidden-result{
+        display: block !important;
+    }
+
+
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view .search-navigation .view-descriptions .hidden-result  .arrow-right-view{
+        border-bottom : 15px solid transparent !important;
+        border-left : 15px solid rgba(197, 197, 197, 0.85) !important;
+        height: 0 !important;
+        margin-right: -15px !important;
+        width: 0 !important;
+    }
+
+    .cloud div.search-image .show-result-list:hover .hidden-result-sub{
+        display: block !important;
+    }
+   /* .cloud div.search-image .show-result-list:hover .hidden-result{
+        display: block !important;
+    }*/
+
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view .search-navigation .view-descriptions .hidden-result  span.content-label{
+        /*direction: ltr;
+        max-width: 75%;
+        text-align: justify;
+        word-break: break-all;
+        word-wrap: break-word;*/
+        direction: ltr;
+        max-width: 75%;
+        text-align: justify;
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+
+
+
+
+
+
+
+    .cloud  .CRZ  .body-cloud  .not-result{
+        display : none;
+        height: 150px;
+        overflow: hidden;
+        margin-top : 20px;
+
+        margin-right: calc(50% - 125px);
+        width: auto ! important;
+        padding:50px 20px 20px 20px;
+        border: 1px solid rgba(197,197,197,1);
+    }
+
+    .cloud  .CRZ  .body-cloud .not-result.display{
+        display : inline-block;
+    }
+
+
+
+    .cloud  .CRZ  .body-cloud .not-result  .dashboard-refresh{
+        font-size: 22px;
+        color: red;
+    }
+
+    .cloud  .CRZ  .body-cloud .not-result  .dashboard-refresh:hover{
+        text-shadow: 2px 2px 4px rgba(255,0,0,1);
+    }
+
+    .cloud  .CRZ  .body-cloud .not-result  .dashboard-ban{
+        font-size: 22px;
+        color: red;
+        margin-left:5px;
+    }
+
+    .cloud  .CRZ  .body-cloud .not-result  .dashboard-ban:hover{
+        text-shadow: 2px 2px 4px rgba(255,0,0,1);
+    }
+
+
+
+    .cloud  .CRZ div.list-view .keyword-viewer{
+        float: right;
+        margin: 3px;
+        text-align: center;
+        border: 1px solid rgb(197, 197, 197);
+        padding: 10px;
+        max-width : 300px;
+        min-width: 150px;
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: ease-in;
+    }
+
+    .cloud  .CRZ div.list-view .keyword-viewer:hover{
+        box-shadow    :  0 0 5px rgba(35,173,255,1);
+        color : white;
+        background-color :  rgba(35,173,255,1);
+    }
+
+    .cloud  .CRZ div.list-view .keyword-viewer  span{
+        text-align: justify !important;
+        text-overflow: ellipsis !important;
+        overflow: hidden !important;
+        font-size: 14px !important;
+        width: calc(100% - 20px) !important;
+        white-space: nowrap !important;
+    }
+
+
+
+    .cloud .color{
+        color : #5d9ce9 !important;
+    }
+
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view  .search-half .view-half-cloud{
+        max-height: 50px;
+        overflow-y: auto;
+    }
+
+
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view .search-navigation{}
+
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view .search-navigation  span.spanNavIcon{
+        height : 35px;
+        padding-bottom: 1px !important;
+        padding-left: 1px !important;
+        padding-right: 1px !important;
+        padding-top: 8px !important;
+        margin: 0px !important;
+        width : 25px;
+        font-size: 16px;
+        text-align: center;
+        position: relative !important;
+
+        background-color: transparent;
+        color: black;
+
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+
+    }
+
+    .cloud  .CRZ  .body-cloud  .search-result  .list-view .search-navigation  span.spanNavIcon:hover{
+        background-color: #5d9ce9 !important;
+        color: white !important;
+    }
+
+
+    .cloud  .CRZ  .body-cloud    .paginated-view{
+        height : 45px !important;
+        display: inline-block !important;
+        width: 100%;
+        background-color: transparent;
+        margin-top: -12px;
+    }
+    .cloud  .CRZ  .body-cloud  .paginated-view  .centered-pager{
+        /*margin-right: calc(50% - 250px) !important;*/
+        text-align: center;
+        /*width: 500px;*/
+    }
+
+    .cloud  .CRZ  .body-cloud  .paginated-view .centered-pager .total-view{
+        color: white ! important;
+        margin-right: 2px;
+        margin-bottom: 2px;
+        margin-left: 2px;
+        padding: 5px ! important;
+        border-radius: 0px ! important;
+    }
+
+
+    .cloud  div#viewCloud{
+        position: absolute;
+        height: 100%;
+        width: 0px;
+        left:0px;
+        float : left !important;
+        /*background-color: rgba(35,109,255,0.75);*/
+        background-color : rgba(250, 240, 230, 0.92);
+        border : 2px solid black;
+
+        transition-duration: 1s;
+        transition-property: width,display;
+        transition-timing-function: linear;
+
+        z-index: 3;
+    }
+
+    .cloud  div.showCloud{
+        width: 600px !important;
+    }
+
+
+    .cloud  span.spanCloudIcon{
+        height : 50px  !important;
+        font-size: 10px;
+        padding: 18px 6px 1px 1px  !important;
+        margin: 10px 1px 1px 1px !important;
+        text-align: center;
+        position: relative !important;
+        background-color: transparent;
+        color: black;
+        margin-top : 10px;
+        width: 30px;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .cloud  span.spanCloudIcon  span.fa{
+        font-size: 16px;
+    }
+    .cloud  span.spanCloudIcon:hover{
+        background-color: #5d9ce9;
+        color: white;
+    }
+    .cloud  span.spanCloudIconActivated{
+        background-color: #F0F0F0 !important;
+        color: #5d9ce9 !important;
+    }
+    .cloud  span.spanCloudIcon div.cloud-nav-footer{
+        right : 50%;
+        width : 0px;
+        border-bottom: 5px solid transparent;
+        position: absolute;
+        bottom: 0px;
+        transition-duration: 0.5s;
+        transition-property: border-bottom,right,width;
+        transition-timing-function: ease-in;
+    }
+    .cloud  span.spanCloudIcon:hover div.cloud-nav-footer{
+        border-bottom: 3px solid #fbbb3d !important;
+        width : 100% !important;
+        right : 0px !important;
+    }
+    .cloud  span.spanCloudIconActivated div.cloud-nav-footer{
+        border-bottom: 3px solid #5d9ce9 !important;
+        width : 100% !important;
+        right : 0px !important;
+    }
+
+    .cloud  span.spanCloudIcon span.showTopTriangleCloud{
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid rgba(255, 255,255, 1);
+        display: none;
+        position: absolute;
+        text-align: center;
+        top: 0px;
+        right: calc(50% - 6px);
+    }
+
+    .cloud  span.spanCloudIcon:hover span.showTopTriangleCloud{
+        display: inline-block;
+    }
+
+
+
+
+    .jqcloud > span.w1 {
+        font-size: 10px !important;
+        font-family: iransans-web-light  !important;
+    }
+    .jqcloud > span.w1:hover{
+        color : white !important;
+        cursor: pointer;
+        position: absolute !important;
+        padding:3px;
+        -webkit-transition: color 1s;
+        -moz-transition: color 1s;
+        -o-transition: color 1s;
+        transition  : color 1s;
+        background-color: #980ce0 !important;
+        -webkit-transition: background-color 1s;
+        -moz-transition: background-color 1s;
+        -o-transition: background-color 1s;
+        transition  : background-color 1s;
+    }
+    .jqcloud > span.w2 {
+        font-size: 12px !important;
+        font-family: iransans-web-light  !important;
+    }
+    .jqcloud > span.w2:hover{
+        color : white !important;
+        cursor: pointer;
+        position: absolute !important;
+        padding:3px;
+        -webkit-transition: color 1s;
+        -moz-transition: color 1s;
+        -o-transition: color 1s;
+        transition  : color 1s;
+        background-color: #1f64ee !important;
+        -webkit-transition: background-color 1s;
+        -moz-transition: background-color 1s;
+        -o-transition: background-color 1s;
+        transition  : background-color 1s;
+    }
+    .jqcloud > span.w3 {
+        font-size: 19px !important;
+        font-family: iransans-web-light  !important;
+    }
+    .jqcloud > span.w3:hover{
+        color : white !important;
+        cursor: pointer;
+        position: absolute !important;
+        padding:3px;
+        -webkit-transition: color 1s;
+        -moz-transition: color 1s;
+        -o-transition: color 1s;
+        transition  : color 1s;
+        background-color: #32bdec !important;
+        -webkit-transition: background-color 1s;
+        -moz-transition: background-color 1s;
+        -o-transition: background-color 1s;
+        transition  : background-color 1s;
+    }
+    .jqcloud > span.w4 {
+        font-size: 24px !important;
+        font-family: iransans-web-light  !important;
+    }
+    .jqcloud > span.w4:hover{
+        color : white !important;
+        cursor: pointer;
+        position: absolute !important;
+        padding:3px;
+        -webkit-transition: color 1s;
+        -moz-transition: color 1s;
+        -o-transition: color 1s;
+        transition  : color 1s;
+        background-color: #24ae83 !important;
+        -webkit-transition: background-color 1s;
+        -moz-transition: background-color 1s;
+        -o-transition: background-color 1s;
+        transition  : background-color 1s;
+    }
+    .jqcloud > span.w5 {
+        font-size: 30px !important;
+        font-family: iransans-web-light  !important;
+    }
+    .jqcloud > span.w5:hover{
+        color : white !important;
+        cursor: pointer;
+        position: absolute !important;
+        padding:3px;
+        -webkit-transition: color 1s;
+        -moz-transition: color 1s;
+        -o-transition: color 1s;
+        transition  : color 1s;
+        background-color: #1edc2f !important;
+        -webkit-transition: background-color 1s;
+        -moz-transition: background-color 1s;
+        -o-transition: background-color 1s;
+        transition  : background-color 1s;
+    }
+    .jqcloud > span.w6 {
+        font-size: 35px !important;
+        font-family: iransans-web-light  !important;
+    }
+    .jqcloud > span.w6:hover{
+        color : white !important;
+        cursor: pointer;
+        position: absolute !important;
+        padding:3px;
+        -webkit-transition: color 1s;
+        -moz-transition: color 1s;
+        -o-transition: color 1s;
+        transition  : color 1s;
+        background-color: #acdf3c !important;
+        -webkit-transition: background-color 1s;
+        -moz-transition: background-color 1s;
+        -o-transition: background-color 1s;
+        transition  : background-color 1s;
+    }
+    .jqcloud > span.w7 {
+        font-size: 42px !important;
+        font-family: iransans-web-light  !important;
+    }
+    .jqcloud > span.w7:hover{
+        color : white !important;
+        cursor: pointer;
+        position: absolute !important;
+        padding:3px;
+        -webkit-transition: color 1s;
+        -moz-transition: color 1s;
+        -o-transition: color 1s;
+        transition  : color 1s;
+        background-color: #ad843a !important;
+        -webkit-transition: background-color 1s;
+        -moz-transition: background-color 1s;
+        -o-transition: background-color 1s;
+        transition  : background-color 1s;
+    }
+    .jqcloud > span.w8 {
+        font-size: 47px !important;
+        font-family: iransans-web-light  !important;
+    }
+    .jqcloud > span.w8:hover{
+        color : white !important;
+        cursor: pointer;
+        position: absolute !important;
+        padding:3px;
+        -webkit-transition: color 1s;
+        -moz-transition: color 1s;
+        -o-transition: color 1s;
+        transition  : color 1s;
+        background-color: #cc841d !important;
+        -webkit-transition: background-color 1s;
+        -moz-transition: background-color 1s;
+        -o-transition: background-color 1s;
+        transition  : background-color 1s;
+    }
+    .jqcloud > span.w9 {
+        font-size: 52px !important;
+        font-family: iransans-web-light  !important;
+    }
+    .jqcloud > span.w9:hover{
+        color : white !important;
+        cursor: pointer;
+        position: absolute !important;
+        padding:3px;
+        -webkit-transition: color 1s;
+        -moz-transition: color 1s;
+        -o-transition: color 1s;
+        transition  : color 1s;
+        background-color: #df5522 !important;
+        -webkit-transition: background-color 1s;
+        -moz-transition: background-color 1s;
+        -o-transition: background-color 1s;
+        transition  : background-color 1s;
+    }
+    .jqcloud > span.w10 {
+        font-size: 60px !important;
+        font-family: iransans-web-light  !important;
+    }
+    .jqcloud > span.w10:hover{
+        color : white !important;
+        cursor: pointer;
+        position: absolute !important;
+        padding:3px;
+        -webkit-transition: color 1s;
+        -moz-transition: color 1s;
+        -o-transition: color 1s;
+        transition  : color 1s;
+        background-color: #da0b0c !important;
+        -webkit-transition: background-color 1s;
+        -moz-transition: background-color 1s;
+        -o-transition: background-color 1s;
+        transition  : background-color 1s;
+    }
+
+    .jqcloud span.jqcloud-word{
+        border-radius: 2px;
+    }
+
+
+
+
+
+}

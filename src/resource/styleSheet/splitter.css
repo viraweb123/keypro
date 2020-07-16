@@ -1,0 +1,35 @@
+div[splitter]{
+    height:400px;
+    left:0px;
+    top: 2px;
+    width: 800px;
+    /*border: 2px solid black;*/
+}
+.horizontal.split-handler{
+    padding: 0 0 0 0;
+    width: 6px;
+    height: 100%;
+    cursor: ew-resize;
+    background-color: gray;
+    z-index:999;
+}
+div#vertical[splitter]{
+    top:0px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    height: 600px;
+    width: 100%;
+    /*border: 2px solid black;*/
+}
+.vertical.split-handler{
+    padding: 0 0 0 0;
+    height: 6px;
+    width: 100% !important;
+    cursor: ns-resize;
+    background-color: gray;
+    z-index:999;
+    top: 20%;
+    background-image: url("/resource/img/hgrabber.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}

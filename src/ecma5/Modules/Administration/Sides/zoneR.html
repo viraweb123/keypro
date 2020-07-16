@@ -1,0 +1,26 @@
+
+    <div class="N administration-background">
+                <span
+                        class="opener-zone opener-zone-administration opener-zone-right fa fa-chevron-{{data.nav.right.isOpened == false ? 'left' : 'right'}}"
+                        ng-click="func.closeOrOpenRight()">
+                </span>
+    </div>
+
+    <div class="D">
+        <div class="settingVisible hidden-item"               ui-view="settingVisible"></div>
+        <div class="usersVisible hidden-item"                 ui-view="usersVisible"></div>
+        <div class="digitalSignVisible hidden-item"           ui-view="digitalSignVisible"></div>
+        <!--<div class="languageVisible hidden-item"              ui-view="languageVisible"></div>-->
+        <div class="utilitiesVisible hidden-item"             ui-view="utilitiesVisible"></div>
+        <div class="repositoryVisible hidden-item"            ui-view="repositoryVisible"></div>
+       <!-- <div class="dictionaryVisible hidden-item"            ui-view="dictionaryVisible"></div>-->
+        <div class="OMRVisible hidden-item"                   ui-view="OMRVisible"></div>
+        <div class="timerVisible hidden-item"                 ui-view="timerVisible"></div>
+        <div class="AutomationVisible hidden-item"            ui-view="AutomationVisible"></div>
+        <div class="WorkflowVisible hidden-item"              ui-view="WorkflowVisible"></div>
+        <div class="ReportVisible hidden-item"                ui-view="ReportVisible"></div>
+        <div class="DatabaseQueryVisible hidden-item"         ui-view="DatabaseQueryVisible"></div>
+        <div class="scriptingVisible hidden-item"             ui-view="scriptingVisible"></div>
+        <div class="statsVisible hidden-item"                 ui-view="statsVisible"></div>
+
+    </div>

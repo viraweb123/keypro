@@ -1,0 +1,150 @@
+<div  class="tabel-body">
+
+
+    <div class="body-view" >
+
+        <table class="table table-bordered- table-responsive table-striped table-hover- table-condensed  show-hide-file" >
+            <caption>
+                <span  class="pull-right" ng-bind="'dashboard.zr.email_electronic_mails'|translate"></span>
+            </caption>
+            <thead>
+                <th class="position-center" >
+                    <span style="padding: 0px 15px ! important;" ng-bind="'administration.zr.row'|translate"></span>
+                </th>
+                <th class = "position-center" >
+                    <a  href="javascript:void(0)" ng-click=" data.sort.type = 'mail.content'; data.sort.ascDesc = !data.sort.ascDesc">
+                        <span ng-show="data.sort.type == 'mail.content' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                        <span ng-show="data.sort.type == 'mail.content' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                        <span style="padding: 0px 15px ! important;" ng-bind="'search.zm.tree_frequency_content'|translate"></span>
+                    </a>
+                </th>
+                <th class = "position-center" >
+                    <a  href="javascript:void(0)" ng-click=" data.sort.type = 'mail.sentDate'; data.sort.ascDesc = !data.sort.ascDesc">
+                        <span ng-show="data.sort.type == 'mail.sentDate' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                        <span ng-show="data.sort.type == 'mail.sentDate' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                        <span style="padding: 0px 15px ! important;" ng-bind="'dashboard.zr.list.send_history'|translate"></span>
+                    </a>
+                </th>
+                <th class = "position-center"   style="max-width: 230px;width: 230px;">
+                    <a  href="javascript:void(0)" ng-click=" data.sort.type = 'mail.to.length'; data.sort.ascDesc = !data.sort.ascDesc">
+                        <span ng-show="data.sort.type == 'mail.to.length' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                        <span ng-show="data.sort.type == 'mail.to.length' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                        <span style="padding: 0px 15px ! important;" ng-bind="'to'"></span>
+                    </a>
+                </th>
+                <th class = "position-center"   style="max-width: 230px;width: 230px;">
+                    <a  href="javascript:void(0)" ng-click=" data.sort.type = 'mail.cc.length'; data.sort.ascDesc = !data.sort.ascDesc">
+                        <span ng-show="data.sort.type == 'mail.cc.length' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                        <span ng-show="data.sort.type == 'mail.cc.length' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                        <span style="padding: 0px 15px ! important;" ng-bind="'cc'"></span>
+                    </a>
+                </th>
+                <th class = "position-center"  style="max-width: 230px;width: 230px;">
+                    <a  href="javascript:void(0)" ng-click=" data.sort.type = 'mail.bcc.length'; data.sort.ascDesc = !data.sort.ascDesc">
+                        <span ng-show="data.sort.type == 'mail.bcc.length' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                        <span ng-show="data.sort.type == 'mail.bcc.length' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                        <span style="padding: 0px 15px ! important;" ng-bind="'bcc'"></span>
+                    </a>
+                </th>
+            </thead>
+            <tbody>
+            <tr
+                    ng-repeat="item in data.list | orderBy:data.sort.type:data.sort.ascDesc"
+                    class="dashboard-select-table-tr"
+                    ng-class="{'rowOdd':$even}"
+                    ng-click = "func.go2Desktop(item)"
+
+            >
+
+                <td class="position-center">
+                    <span  ng-bind="$index+1|en2faNum"></span>
+                </td>
+                <td class="position-center">
+                     <span  style="word-break: break-all; word-wrap: break-word;" class="fa fa-eye" ng-click="func.showContent(item.mail.content)">
+                        <md-tooltip  md-direction="top">
+                            {{'search.zm.tree_frequency_content' | translate}}
+                        </md-tooltip>
+                     </span>
+                </td>
+                <td class="position-center">
+                    <span  ng-bind="item.mail.sentDate|persianDate:'yyyy/MM/dd'|en2faNum"></span>
+                </td>
+                <td class="position-center">
+                    <div   class="form-group row col-sm-12 justifyText"  style="color:#000;margin-bottom:0px !important;cursor: text !important;">
+
+                        <div
+                                ng-repeat="to in item.mail.to"
+                                class="alert-dashboard-viewer col-sm-2-  dashboard-alert"
+                                role="alert"
+                                style="margin: 3px; float: right; padding: 5px;cursor: pointer;width:100px">
+                            <md-tooltip  md-direction="bottom">
+                                {{to}}
+                            </md-tooltip>
+                            <span style="font-size: 14px; color: black;" class="font-slide fa  fa-envelope-o fa-fw  pull-right"></span>
+                            <span style="margin-top: -5px;padding-top: 4px;font-size: 11px; text-align: justify;word-wrap: break-word;"
+                                      class="control-label pull-right-" ng-bind="to"></span>
+                        </div>
+                    </div>
+                </td>
+                <td class="position-center">
+                    <div   class="form-group row col-sm-12 justifyText"  style="color:#000;margin-bottom:0px !important;cursor: text !important;">
+
+                        <div
+                                ng-repeat="cc in item.mail.cc"
+                                class="alert-dashboard-viewer col-sm-2-  dashboard-alert"
+                                role="alert"
+                                style="margin: 3px; float: right; padding: 5px;cursor: pointer;width:100px">
+                            <md-tooltip  md-direction="bottom">
+                                {{cc}}
+                            </md-tooltip>
+                            <span style="font-size: 14px; color: black;" class="font-slide fa  fa-envelope-o fa-fw  pull-right"></span>
+                            <span style="margin-top: -5px;padding-top: 4px;font-size: 11px; text-align: justify;word-wrap: break-word;"
+                                  class="control-label pull-right-" ng-bind="cc"></span>
+                        </div>
+                    </div>
+                </td>
+                <td class="position-center">
+                    <div   class="form-group row col-sm-12 justifyText"  style="color:#000;margin-bottom:0px !important;cursor: text !important;">
+
+                        <div
+                                ng-repeat="bcc in item.mail.bcc"
+                                class="alert-dashboard-viewer col-sm-2-  dashboard-alert"
+                                role="alert"
+                                style="margin: 3px; float: right; padding: 5px;cursor: pointer;width:100px">
+                            <md-tooltip  md-direction="bottom">
+                                {{bcc}}
+                            </md-tooltip>
+                            <span style="font-size: 14px; color: black;" class="font-slide fa  fa-envelope-o fa-fw  pull-right"></span>
+                            <span style="margin-top: -5px;padding-top: 4px;font-size: 11px; text-align: justify;word-wrap: break-word;"
+                                  class="control-label pull-right-" ng-bind="bcc"></span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="not-result">
+
+            <div class="col-sm-12"  style="padding-bottom: 10px;">
+                <span   ng-click="func.todo()">
+                    <i class="dashboard-refresh fa fa-refresh">
+                        <md-tooltip  md-direction="top">
+                            امتحان دوباره
+                        </md-tooltip>
+                    </i>
+                </span>
+            </div>
+            <div class="col-sm-12">
+                <span   style="cursor: pointer">
+                    <i class="dashboard-ban fa fa-ban">
+                    </i>
+                </span>
+                <span style="color: #893247; direction: ltr; font-size: 20px;"  ng-bind="'desktop.zm.create_doc_rel_modal_no_result_found'|translate"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,74 @@
+
+<div class="zonesHeaderR">
+    <span  >اخبار ذخیره شده</span>
+</div>
+
+<div class="CNK">
+
+    <!--<div class="newsRightHeader">
+        <h6  class="pull-right"><span ng-bind="'search.zr.stored_news'|translate"></span></h6>
+    </div>
+    <hr style="padding: 0px; margin: 5px;" />-->
+    <div class="newsRightBody">
+        <form name="newsAdvanceForm"    novalidate   style="max-height: 70px; !important">
+            <div layout="row"  class="row form-group" >
+                <md-input-container class="md-block md-icon-float pull-right">
+                    <label>نام اخبار</label>
+                    <input
+                            id="newsSearch"
+                            required
+                            type="text"
+                            name="newsSearch"
+                            ng-model="data.news.input"
+                            minlength="1"
+                            ui-keypress="{13:'func.saveOrEditStoreNews(newsAdvanceForm)'}"
+                    />
+                </md-input-container>
+
+                <span
+                        style="margin-top:30px;"
+                        id="newsSearchBtn"
+                        class="md-raised  pull-left fa fa-save"
+                        ng-click="func.saveOrEditStoreNews(newsAdvanceForm)">
+                    <md-tooltip  md-direction="top">
+                        {{(data.news.selectedNews != null)?'ویرایش':'ذخیره'}}
+                    </md-tooltip>
+                </span>
+
+
+            </div>
+
+
+
+        </form>
+        <div class="col-sm-12 row form-group news-list"  ng-show="data.newes.length>0">
+
+            <div ng-repeat="news in data.newes"
+                 ng-class="{ 'active' : data.news.selectedNews.id == news.id }"
+                 class="alert  col-sm-12 alert-mode-viewer" role="alert"
+                 id="newsAdvance-{{news.id}}"
+                 style="margin: 3px 0px; float: right; padding: 5px;"
+            >
+                 <span
+                         class="fa fa-times pull-left news-remove"
+                         ng-click="func.removeStoreNews(news,$index);">
+                     <md-tooltip  md-direction="top">
+                      {{'search.zr.search.remove'|translate}}
+                        </md-tooltip>
+                 </span>
+                <span   class="fa fa-search pull-left news-search"
+                        ng-click="func.selectStoreNews(news,true);">
+                    <md-tooltip  md-direction="top">
+                      {{'search.zr.search.search'|translate}}
+                    </md-tooltip>
+
+                </span>
+                <span   style="padding-left:  4px;"   ng-click = "func.selectStoreNews(news)"
+                        class="control-label pull-right alert-label" ng-bind="news.queryName">
+
+                </span>
+            </div>
+
+        </div>
+    </div>
+</div>

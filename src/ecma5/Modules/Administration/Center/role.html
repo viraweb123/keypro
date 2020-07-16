@@ -1,0 +1,91 @@
+<div  class="tabel-body">
+
+
+    <div class="body-view" >
+
+        <div class="col-sm-12" style="max-height: calc(100vh - 80px);overflow-y: auto;">
+
+        <table class="table table-bordered- table-responsive table-striped table-hover- table-condensed  show-hide-file" >
+            <caption>
+                <span  class="pull-right"  ng-bind="'administration.zr.roles'|translate"></span>
+                <span style="margin-right:10px;font-size: 25px;" class="fa fa-plus-circle pull-right" ng-click="func.add()">
+                    <md-tooltip  md-direction="top">
+                         افزودن نقش
+                    </md-tooltip>
+                </span>
+            </caption>
+            <thead>
+                <th class="position-center" >
+                    <span style="padding: 0px 15px ! important;" ng-bind="'administration.zr.row'|translate"></span>
+                </th>
+
+                <th class="position-center" >
+                    <span style="padding: 0px 15px ! important;" ng-bind="'administration.zr.roles'|translate"></span>
+                </th>
+                <th class="position-center" >
+                    <span style="padding: 0px 15px ! important;" ng-bind="'administration.zr.active'|translate"></span>
+                </th>
+                <th class="position-center" >
+                    <span  style="padding: 0px 15px ! important;">ویرایش-حذف</span>
+                </th>
+            </thead>
+            <tbody>
+            <tr
+                    ng-repeat="(roleKey,role) in data.Roles"
+                    class="dashboard-select-table-tr"
+                    ng-class="{'rowOdd':$even, 'activated':data.selectRole==roleKey}""
+                    ng-click="data.selectRole=roleKey;"
+            >
+
+                <td class="position-center">
+                    <span class="col-sm-12" ng-bind="$index+1|en2faNum"></span>
+                </td>
+                <td class="position-center">
+                    <span class="col-sm-12" ng-bind="role.id|en2faNum"></span>
+                </td>
+                <td class="position-center">
+                    <span ng-class="{'fa-check active' : role.active , 'fa-remove unactive' : !role.active }"
+                          class="col-sm-12 fa fa-check active"></span>
+                </td>
+                <td class="position-center" >
+                    <sapn class="fa fa-edit edlitUser fa-fw" ng-click="func.edit(roleKey)">
+                        <md-tooltip  md-direction="top">
+                            ویرایش نقش
+                        </md-tooltip>
+                    </sapn>
+                    <sapn class="fa fa-trash trash fa-fw" ng-click="func.remove(roleKey)">
+                        <md-tooltip  md-direction="top">
+                           حذف نقش
+                        </md-tooltip>
+                    </sapn>
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="not-result">
+
+            <div class="col-sm-12"  style="padding-bottom: 10px;">
+                <span   ng-click="func.todo()">
+                    <i class="dashboard-refresh fa fa-refresh">
+                        <md-tooltip  md-direction="top">
+                            امتحان دوباره
+                        </md-tooltip>
+                    </i>
+                </span>
+            </div>
+            <div class="col-sm-12">
+                <span   style="cursor: pointer">
+                    <i class="dashboard-ban fa fa-ban">
+                    </i>
+                </span>
+                <span style="color: #893247; direction: ltr; font-size: 20px;"  ng-bind="'desktop.zm.create_doc_rel_modal_no_result_found'|translate"></span>
+            </div>
+
+        </div>
+
+        </div>
+
+    </div>
+
+</div>

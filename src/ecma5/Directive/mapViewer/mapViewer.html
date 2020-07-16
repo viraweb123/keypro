@@ -1,0 +1,272 @@
+<style>
+    .mapViewer:-moz-full-screen {
+        height: 100%;
+    }
+    .mapViewer:-webkit-full-screen {
+        height: 100%;
+    }
+    .mapViewer:-ms-fullscreen {
+        height: 100%;
+    }
+    .mapViewer:fullscreen {
+        height: 100%;
+    }
+    .ol-rotate {
+        top: 3em;
+    }
+    .nav-bar {
+        height: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        courser : pointer;
+        width: 400px;
+        z-index: 100;
+        background-color: rgba(201, 210, 204, 0.7)  !important;
+        /*margin-top: -40px;*/
+        margin-top: 5px !important;
+    }
+    .nav-bar-sub {
+        height: 35px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        courser : pointer;
+        width: 600px;
+        z-index: 10;
+        background-color: red;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+
+    }
+    .nav-bar-parent{
+        position: fixed;
+        z-index: 11;
+        margin-left:10%;
+    }
+    .nav-bar-icons{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 25px;
+        margin: 5px !important;
+        text-align: center;
+        text-decoration: none !important;
+
+        transition-duration: 0.5s;
+        transition-property: color;
+        transition-timing-function: linear;
+    }
+    .nav-bar-icons:hover{
+        color : #5d9ce9 !important;
+    }
+    .nav-bar-direction{
+        position: relative;
+        margin: 0 3px;
+    }
+    .nav-bar-icons-top{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        margin-top: 2px !important;
+        text-align: center;
+        text-decoration: none !important;
+    }
+    .nav-bar-icons-down{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        margin: 5px !important;
+        text-align: center;
+        text-decoration: none !important;
+    }
+    .nav-bar-icons-left{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        left: -3px;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: -25px !important;
+        position: absolute;
+        text-align: center;
+        text-decoration: none !important;
+    }
+    .nav-bar-icons-right{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        margin-top: -26px;
+        position: absolute;
+        right: -3px;
+        text-align: center;
+        text-decoration: none !important;
+    }
+    .nav-bar  .spliter-icons{
+        float: left;
+        border-right: 1px solid white;
+        text-align: center;
+        vertical-align: middle;
+        margin: 4px 2px 2px;
+        height: 30px;
+    }
+    .nav-bar  .spliter-icons .show-icon-map{
+        display: block !important;
+    }
+    .nav-bar  .spliter-icons .hide-icon-map{
+        display: none !important;
+    }
+    .nav-bar  .spliter-icons .activeButton{
+        color : #9cc0ff !important;
+    }
+    .nav-bar  .spliter-icons .activeButtonBox{
+        color : #9cc0ff !important;
+        border-color :  #9cc0ff !important;
+    }
+</style>
+<div style="position: absolute;text-align: center"  class="col-sm-12  map-viewer-class">
+    <!--<div class="nav-bar-sub"></div>-->
+    <div class="nav-bar row" id="navigationCanvasID" >
+        <div class="spliter-icons">
+            <i
+                    ng-class="{ 'show-icon-map' :  !data.flages.isEdit , 'hide-icon-map' : data.flages.isEdit }"
+                    class="pull-left fa fa-pencil-square-o nav-bar-icons"
+                    ng-click="func.navBar.edit($event)"
+                    id="navEDIT">
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.edit'|translate}}
+                </md-tooltip>
+            </i>
+            <i
+                    ng-class="{ 'show-icon-map' : data.flages.isEdit , 'hide-icon-map' : !data.flages.isEdit }"
+                    class="pull-left fa fa-eye nav-bar-icons"
+                    ng-click="func.navBar.view($event)"
+                    id="navVIEW">
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.view'|translate}}
+                </md-tooltip>
+            </i>
+        </div>
+        <div class="spliter-icons"  ng-if="data.flages.isEdit">
+            <i class="pull-right fa fa-circle-o nav-bar-icons"
+                    ng-click="func.navBar.createShape('Circle')"
+                    ng-class="{'activeButton': data.type == 'Circle'}"
+                    id="navSTAR">
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.star'|translate}}
+                </md-tooltip>
+            </i>
+            <i class="pull-right fa fa-star-o nav-bar-icons"
+               ng-click="func.navBar.createShape('Star')"
+               ng-class="{'activeButton': data.type == 'Star'}"
+               id="navCIRCLE">
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.circle'|translate}}
+                </md-tooltip>
+            </i>
+            <i
+                    class="pull-right fa fa-square-o nav-bar-icons"
+                    ng-click="func.navBar.createShape('Square')"
+                    ng-class="{'activeButton': data.type == 'Square'}"
+                    id="navSQUAR">
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.square'|translate}}
+                </md-tooltip>
+            </i>
+            <i
+                    class="pull-right nav-bar-icons"
+                    style="width: 30px; height: 20px; border: 3px solid white; margin-top: 7px; border-radius: 4px;"
+                    ng-click="func.navBar.createShape('Box')"
+                    ng-class="{'activeButtonBox': data.type == 'Box'}"
+                    id="navBOX">
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.box'|translate}}
+                </md-tooltip>
+            </i>
+            <i
+                    class="pull-right fa fa-object-group nav-bar-icons"
+                    ng-click="func.navBar.createShape('Polygon')"
+                    ng-class="{'activeButton': data.type == 'Polygon'}"
+                    id="navPOLY">
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.polygon'|translate}}
+                </md-tooltip>
+            </i>
+            <i
+                    class="pull-right fa fa-pencil-square-o nav-bar-icons nav-bar-icons"
+                    ng-click="func.navBar.createShape('Edit')"
+                    ng-class="{'activeButton': data.type == 'Edit'}"
+                    id="navEdit"
+            >
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.edit'|translate}}
+                </md-tooltip>
+            </i>
+        </div>
+        <div class="spliter-icons" ng-show="nodeValue.data.map && nodeValue.data.map.parentId != 0">
+            <i
+                    class="pull-left fa  fa-share nav-bar-icons"
+                    ng-click="func.navBar.goback($event)"
+                    id="navEDIT">
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.back'|translate}}
+                </md-tooltip>
+            </i>
+        </div>
+        <div class="spliter-icons">
+            <i
+                    ng-class="{ 'show-icon-map' :  ! data.flages.isFull , 'hide-icon-map' : data.flages.isFull }"
+                    class="pull-left fa fa-expand  nav-bar-icons"
+                    ng-click="func.navBar.screen.goFull($event)"
+                    id="navFULL">
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.screen.full'|translate}}
+                </md-tooltip>
+            </i>
+            <i
+                    ng-class="{ 'show-icon-map' :  data.flages.isFull , 'hide-icon-map' : !data.flages.isFull }"
+                    class="pull-left fa fa-compress nav-bar-icons"
+                    ng-click="func.navBar.screen.backFull($event)"
+                    id="navBACKFULL">
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.screen.normal'|translate}}
+                </md-tooltip>
+            </i>
+            <i
+                    class="pull-left fa fa-download nav-bar-icons"
+                    id="navDOWNLOAD"
+                    name="file"
+                    ng-click ="func.navBar.update()">
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.update'|translate}}
+                </md-tooltip>
+            </i>
+            <i
+                    class="pull-left fa fa-eraser nav-bar-icons"
+                    ng-click="func.navBar.erase($event)"
+                    id="navERASE">
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.erase'|translate}}
+                </md-tooltip>
+            </i>
+            <i
+                    ng-class="{ 'show-icon-map' : !data.flages.isEdit , 'hide-icon-map' : data.flages.isEdit }"
+                    class="pull-right fa fa-question  nav-bar-icons"
+                    ng-click="func.showQuery()"
+                    id="navRESULT"><!--ng-click="func.navBar.createShape.circle($event)"-->
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.result'|translate}}
+                </md-tooltip>
+            </i>
+        </div>
+    </div>
+</div>
+<div id="mapViewer" style="height:100%" class="mapViewer"></div>

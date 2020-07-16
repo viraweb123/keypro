@@ -1,0 +1,434 @@
+<style>
+    .modal-header{
+        background-color: rgb(38, 166, 154) !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+
+    .modal-footer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-footer #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .modal-footer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+
+    .modal-footer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+
+    .modal-footer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+
+    .modal-footer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+
+    .modal-footer  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+
+    .modal-footer  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+
+
+
+
+    .modal-body .alert-mode-viewer-modal{
+        padding: 15px !important;
+        border: 1px solid rgb(197, 197, 197);
+        background-color: white;
+        margin : 10px !important;
+        transition-delay: 0s;
+        -moz-transition-delay: 0s;
+        -webkit-transition-delay: 0s;
+        transition-duration: 200ms;
+        -moz-transition-duration: 200ms;
+        -webkit-transition-duration: 200ms;
+        transition-property: all;
+        -moz-transition-property: all;
+        -webkit-transition-property: all;
+        transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        -webkit-transition-timing-function: ease-out;
+        width:calc(100% - 35px);
+    }
+
+
+    .modal-body #addFileButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-body #addFileButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+
+
+    .modal-body #addFileButon:hover md-icon{
+        color : white;
+    }
+
+    .modal-body #uploadFilesButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-body #uploadFilesButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-body #uploadFilesButon:hover md-icon{
+        color : white;
+    }
+
+    .modal-body .alert-mode-viewer-modal:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+    }
+    .modal-body  md-progress-linear .md-container{
+        height : 15px !important;
+    }
+    .modal-body  md-progress-linear .md-container .md-bar{
+        height : 15px !important;
+    }
+
+    .modal-body   span.isSignPermit{
+        width: calc(100% - 170px);
+    }
+    .modal-body   span.notisSignPermit{
+        width: calc(100% - 50px);
+    }
+
+
+    .modal-body div.images-list{
+        margin-top: 10px !important;
+        overflow-y: auto !important;
+        max-height: 240px !important;
+        border: 1px solid rgb(197,197,197) !important;
+    }
+
+    .modal-body div.images-list div.image-viewer{
+        margin:2px !important;
+        background-size: cover !important;
+        float: left !important;
+        position: relative !important;
+        text-align: center !important;
+        width: 120px !important;
+        height:80px !important;
+    }
+
+    .modal-body div.images-list div.image-viewer  span.image-name{
+        position: relative !important;
+        direction: ltr !important;
+        top: 60px !important;
+        text-overflow: ellipsis !important;
+        float: left !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        padding: 0px 5px !important;
+        margin: 0px !important;
+        /*background-color: rgba(0, 0, 0, 0.3) !important;*/
+        color: white !important;
+    }
+
+    .modal-body div.images-list div.image-viewer div.send-process{
+        float: left !important;
+        left: 0px !important;
+        z-index: 100 !important;
+        position: absolute !important;
+        opacity: 0.8 !important;
+        -webkit-filter: blur(6px) !important;
+        -moz-filter: blur(6px) !important;
+        -o-filter: blur(6px) !important;
+        -ms-filter: blur(6px) !important;
+        filter: blur(6px) !important;
+        background-color: rgba(0, 0, 0, 0.3) !important;
+        height: 80px !important;
+    }
+
+    .modal-body div.images-list div.image-viewer div.send-viewer{
+        height: 80px !important;
+        width: 100% !important;
+        float: left !important;
+        left: 0px !important;
+        z-index: 101 !important;
+        position: absolute !important;
+        background-color: transparent !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+        padding-top: 3px !important;
+    }
+    .modal-body div.images-list div.image-viewer div.send-nav{
+        height: 80px !important;
+        float: left !important;
+        left: 0px !important;
+        z-index: 103 !important;
+        position: absolute !important;
+        text-align: center !important;
+        background-color: rgba(0, 0, 0, 0.3) !important;
+        width: 20px !important;
+        background: linear-gradient(to right, rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.1)) !important;
+    }
+
+    .modal-body div.images-list div.image-viewer div.send-digitalsign{
+        height: 80px !important;
+        float: right !important;
+        z-index: 103 !important;
+        position: absolute !important;
+        background-color: transparent !important;
+        width: 25px !important;
+        text-align: center !important;
+    }
+
+
+
+
+
+</style>
+<div class="modal-header">
+    <div class="form-group">
+        <div class="col-sm-1 pull-left" style="padding-left: 0 !important;">
+            <i class="fa fa-close pull-left" style="cursor: pointer;" ng-click="func.back()">
+                <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                    بازگشت
+                </md-tooltip>
+            </i>
+        </div>
+        <div class="col-sm-11 pull-right"  style="text-align:center;">
+            <span >اضافه کردن سند به پوشه</span>
+        </div>
+    </div>
+</div>
+<div class="modal-body"  data-multiple="true" ng-file-change="func.addFiles($files)" ng-file-drop="func.addFiles($files)">
+    <div class="row form-group">
+        <div class="col-sm-6">
+            <span class="fontStyle" ng-bind="'modal.desktop.uploadDocument'|translate"></span>
+        </div>
+        <div class="col-sm-6">
+
+            <section  class="pull-left" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button style="min-width:25px !important;" id="addFileButon"  class="md-raised" data-multiple="true" ng-file-change="func.addFiles($files)" ng-file-select="func.addFiles($files)">
+                    <md-icon  md-font-icon="fa fa-plus"></md-icon>
+                    <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                        افزودن سند
+                    </md-tooltip>
+                </md-button>
+                <md-button style="min-width:25px !important;" id="uploadFilesButon"  class="md-raised" ng-click="func.startUpload()">
+                    <md-icon  md-font-icon="fa fa-upload"></md-icon>
+                    <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                        ارسال
+                    </md-tooltip>
+                </md-button>
+            </section>
+
+        </div>
+
+
+
+        <div class="col-sm-12  images-list">
+            <div  ng-repeat="(name,file) in data.filesList"   class="image-viewer"  style="background-image: url({{file.url}})">
+                    <span  ng-bind="name"  class="image-name">
+                        <md-tooltip  md-direction="top" style="z-index:100000;">{{name}}</md-tooltip>
+                    </span>
+                <div  ng-if="file.status == 'Sending' "  class="send-process" style="width:{{file.Upload.percent}}%;"></div>
+                <div  ng-if="file.status == 'Sending' "  class="send-viewer">
+                    <span  style="color: white;">{{file.Upload.percent|pNumber}}%</span>
+                    <i style="color:white;" class="fa fa-spinner fa-pulse fa-3x- fa-fw"  ></i>
+                </div>
+                <div  class="send-nav">
+                    <i class="fa fa-trash fa-fw"  style="color:white;cursor: pointer;"  ng-click="func.onDeleteItemClick(name);"  ng-if="file.status != 'Success' &&  file.status != 'Sending' ">
+                        <md-tooltip  md-direction="top" style="z-index:100000;">
+                            حذف
+                        </md-tooltip>
+                    </i>
+                    <i class="fa fa-refresh fa-fw"  style="color:white;cursor: pointer;"  ng-click="func.uploadAgain(name);"  ng-if="file.status == 'Error' ">
+                        <md-tooltip  md-direction="top" style="z-index:100000;">
+                            تلاش دوباره
+                        </md-tooltip>
+                    </i>
+                    <i class="fa fa-check  fa-fw"  style="color:white;cursor: pointer;"  ng-if="file.status == 'Success'">
+                        <md-tooltip  md-direction="top" style="z-index:100000;">
+                            ارسال شده
+                        </md-tooltip>
+                    </i>
+                    <i class="fa fa-remove fa-fw"  style="color:white;cursor: pointer;" ng-click="func.onCancelFileUpload(name);"  ng-if="file.status == 'Sending' ">
+                        <md-tooltip  md-direction="top" style="z-index:100000;">
+                            انصراف
+                        </md-tooltip>
+                    </i>
+                </div>
+                <div ng-if="data.isDigitalSignPermit"  class="send-digitalsign">
+                        <span>
+                            <md-checkbox class="pull-right" ng-disabled="file.startUpload || file.status == 'Success'" ng-model="upload.isSelect" style=" margin-right: 3px;left: 0; opacity: 1; position: relative;">
+                            </md-checkbox>
+                            <md-tooltip  md-direction="top" style="z-index:100000;">
+                                    امضا دیجیتال
+                            </md-tooltip>
+                        </span>
+                </div>
+            </div>
+        </div>
+
+        <!--todo********************************************************************************************************************************************************-->
+
+
+       <!--
+       <div class="col-sm-12"  style="margin-top: 10px; max-height: 200px; overflow-x: hidden; overflow-y: auto; padding-left: 0px; padding-right: 0px;"     >
+            <div class="col-sm-12 alert-mode-viewer-modal" ng-repeat="(name,upload) in data.filesList">
+
+
+                <div class="col-sm-12 row form-group "  style="padding:0px;">
+
+                     <span
+                             ng-bind="name"
+                             class="pull-right"
+                             ng-class="{'isSignPermit':data.isDigitalSignPermit,'notisSignPermit':!data.isDigitalSignPermit}"
+                             style="word-wrap: break-word; word-break: break-all;   border-left: 1px solid rgb(197, 197, 197); text-align: justify; margin:10px  auto ! important;padding-left:5px;"
+                             class="control-label">
+                        <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                            {{name}}
+                        </md-tooltip>
+                    </span>
+
+
+                    <div class="pull-left" style="width:20px;">
+
+                        <span
+                                style="margin-bottom: 4px;margin-left: 2px; cursor: pointer; color: rgb(229, 89, 0); top: 4px; font-size: 13px;"
+                                class="fa fa-refresh  pull-left"
+                                ng-click="func.uploadAgain(name);"
+                                ng-show="data.uploads[name].status == 'ERROR'" >
+                                                      <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                        تلاش دوباره
+                                                      </md-tooltip>
+                    </span>
+
+                        <span
+                                ng-show="data.startUpload != true && data.uploads[name].status != 'SUCCESS'"
+                                class="fa fa-remove pull-left"
+                                style="margin-bottom: 4px;margin-top: 5px; cursor: pointer;"
+                                ng-click="func.onRemoveFileClick(name);">
+                                                      <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                        حذف
+                                                      </md-tooltip>
+                       </span>
+
+                        <span
+                                ng-show="data.uploads[name].status == 'SUCCESS'"
+                                style="margin-bottom: 4px;color:rgba(12,167,34,1);"
+                                class="fa fa-check  pull-left">
+                                                      <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                        ارسال موفق فایل
+                                                      </md-tooltip>
+                        </span>
+
+                        <span
+                                ng-show="data.uploads[name].status == 'ERROR'"
+                                style="margin-bottom: 4px;color:rgba(167,17,34,1);"
+                                class="fa fa-warning  pull-left">
+                                                      <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                        عدم ارسال موفق فایل
+                                                      </md-tooltip>
+                        </span>
+
+                    </div>
+
+                    <md-switch
+                            ng-if="data.isDigitalSignPermit"
+                            class="md-primary pull-left"
+                            ng-disabled="data.uploads[name].status == 'SEND' || data.uploads[name].status == 'SUCCESS'"
+                            ng-model="upload.isSelect"
+                            aria-label="امضا دیجیتال"
+                            style="margin-left: 5px;margin-top: 10px;opacity: 1; position: relative;width:140px;">
+                        امضا دیجیتال
+                    </md-switch>
+                </div>
+
+                <div class="row col-sm-12"  style=position:relative;   ng-show="data.startUpload == true  &&  data.uploads[name].status == 'SEND'">
+                    <md-progress-linear md-mode="determinate" value="{{data.uploads[name].percent}}"></md-progress-linear>&lt;!&ndash;&ndash;&gt;
+                    <span style="position: absolute; margin-top: -5px; color: white; left: 47%;">{{data.uploads[name].percent}}%</span>
+                    <i class="fa fa-spinner fa-pulse fa-3x- fa-fw"  style="color: white; position: absolute; left: 42%; margin-top: -5px;"></i>
+                    <span
+                            style="position: absolute; color: white; float: left; left: 18px; top: 0px; font-size: 14px;"
+                            class="fa fa-remove pull-left"
+                            ng-click="func.onCancelFileClick(name);"
+                            ng-show="data.uploads[name].percent != 100  ||  data.uploads[name].percent!=null">
+                        <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                      لغو بارگزاری فایل
+                        </md-tooltip>
+                    </span>
+                </div>
+
+
+            </div>
+        </div>
+       -->
+
+
+    </div>
+</div>
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+
+        <form name="deleteFolderForm" novalidate role="form">
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="cancelButon"     class="md-raised" ng-click="func.back()">
+                    <md-icon  md-font-icon="fa fa-remove  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" >بستن</span>
+                </md-button>
+            </section>
+        </form>
+    </div>
+</div>

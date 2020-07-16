@@ -1,0 +1,112 @@
+
+@media screen and (min-width: 650px) {
+    .mapping{
+        width : 100vw !important;
+        height:  100% !important;
+        overflow : hidden !important;
+        padding:0px !important;
+        margin:  0px !important;
+    }
+
+    .mapping  .SR .map-color {
+        border-right : 2px solid #9560f4;
+        color: #9560f4 !important;
+    }
+
+    .mapping  .SR  .btn-icon:hover > *{
+        color: white !important;
+        background-color:  #9560f4 !important;
+    }
+
+    .mapping  .SR  .btn-icon:hover{
+        color: white !important;
+        background-color:  #9560f4 !important;
+        border-right : 2px solid white;
+    }
+
+
+    .mapping .ZRJ  .map-right-main-content{
+        height : 100% !important;
+        overflow: hidden !important;
+    }
+
+    .mapping .ZRJ  .map-right-main-content  div.header{
+        /*min-height : 50px !important;*/
+        height : 50px !important;
+        padding : 3px;
+        margin : 3px;
+        border-bottom: 1px solid;
+        max-width : calc(100% - 6px);
+        overflow-x:auto;
+    }
+
+    .mapping .ZRJ  .map-right-main-content  div.header  form{
+        text-align: center;
+        vertical-align: middle;
+        margin: -2px;
+    }
+
+
+    .mapping .ZRJ  .map-right-main-content  div.body{
+        height : calc(100vh - 125px) !important;
+        padding : 3px;
+        margin : 3px;
+        width : calc(100% - 6px);
+        overflow-x : hidden !important;
+        overflow-y : auto !important;
+        text-align: center !important;
+    }
+
+    .mapping .ZRJ  .map-right-main-content  div.body  .image-view{
+        padding:5px;
+    }
+
+    .mapping .ZRJ  .map-right-main-content  div.body  .image-view img{
+        height: 90px !important;
+        position: relative !important;
+        width: auto !important;
+        max-width : 120px
+    }
+
+    .mapping .ZRJ  .map-right-main-content  div.body  img:hover{
+        cursor: pointer;
+        box-shadow         :  0 0 5px rgba(35,173,255,1);
+    }
+
+    .mapping .ZRJ  .map-right-main-content  div.body  img.selected{
+        -webkit-filter: blur(2px);
+        -moz-filter: blur(2px);
+        -o-filter: blur(2px);
+        -ms-filter: blur(25px);
+        filter: blur(2px);
+
+
+        /*border-bottom : 4px solid white;*/
+    }
+
+
+
+
+
+
+    .mapping .ZRJ  .map-right-main-content  div.body  .image-view div.map-thumbnail{
+        right : 50%;
+        width : 0px;
+        border-bottom: 5px solid transparent;
+        position: absolute;
+        bottom: 0px;
+
+        transition-duration: 0.5s;
+        transition-property: border-bottom,right,width;
+        transition-timing-function: ease-in;
+    }
+
+    .mapping .ZRJ  .map-right-main-content  div.body  .image-view:hover div.map-thumbnail{
+        border-bottom: 5px solid #5d9ce9 !important;
+        width : 120px !important;
+        right : 0px !important;
+        /*margin-right:-5px !important;*/
+    }
+
+
+}

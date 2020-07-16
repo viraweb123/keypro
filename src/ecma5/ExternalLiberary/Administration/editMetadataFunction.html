@@ -1,0 +1,1076 @@
+<style>
+
+    .modal-header{
+        background-color: #E75753 !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+
+
+    .form-generator{
+        overflow-y : auto;
+        overflow-x : hidden;
+    }
+
+    .modal-body .metadata-form input[type="text"],input[type="number"],input[type="email"],input[type="url"]{
+        direction: ltr;
+        text-align: right;
+    }
+
+    .modal-body .metadata-form input[type="text"]:active,input[type="text"]:focus{
+        outline: none !important;
+    }
+
+    .modal-body .metadata-form input[type="text"],input[type="number"],input[type="email"],input[type="url"]:-moz-placeholder {
+        text-align: right;
+    }
+    .modal-body .metadata-form input[type="text"],input[type="number"],input[type="email"],input[type="url"]:-ms-input-placeholder {
+        text-align: right;
+    }
+    .modal-body .metadata-form input[type="text"],input[type="number"],input[type="email"],input[type="url"]::-webkit-input-placeholder {
+        text-align: right;
+    }
+
+
+
+
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+    .modal-footer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+    .modal-footer #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+    .modal-footer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+    .modal-footer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+    .modal-footer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+    .modal-footer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+    .modal-footer  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+    .modal-footer  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+
+    .sample-show-hide.ng-hide-add, .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 1.5s;
+        -moz-transition:all linear 1.5s;
+        -o-transition:all linear 1.5s;
+        transition:all linear 1.5s;
+        display:block !important;
+    }
+
+    .sample-show-hide.ng-hide-add.ng-hide-add-active,
+    .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 0.2s;
+        -moz-transition:all linear 0.2s;
+        -o-transition:all linear  0.2s;
+        transition:all linear  0.2s;
+        opacity:0;
+    }
+
+    .sample-show-hide.ng-hide-add,
+    .sample-show-hide.ng-hide-remove.ng-hide-remove-active {
+        -webkit-transition:all linear 3s;
+        -moz-transition:all linear 3s;
+        -o-transition:all linear  3s;
+        transition:all linear  3s;
+        opacity:1;
+    }
+
+    .animate-if {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+    .animate-if.ng-leave, .animate-if.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+
+    .modal-body  form.metadata-form div.property{
+
+    }
+
+    .modal-body  form.metadata-form div.property  .property-header{
+        border-radius: 0px ! important;
+        border : 1px solid rgba(35,173,255,1);
+        height: 50px;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-body  form.metadata-form div.property .property-header:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-body  form.metadata-form div.property .property-header  span{
+        margin-top: 10px;
+        padding: 2px;
+    }
+
+    .modal-body  form.metadata-form div.property .activated{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+    .modal-body  form.metadata-form div.property .property-body{
+        border-bottom: 1px solid rgba(35,173,255,1);
+        border-left: 1px solid rgba(35,173,255,1);
+        border-right: 1px solid rgba(35,173,255,1);
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        margin-top: 0px ! important;
+        padding: 15px;
+    }
+
+    .modal-body  .modal-background {
+        background-color : rgba(35,173,255,1) !important;
+    }
+
+    .modal-body table tbody td.position-center img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+    }
+
+    .modal-body table  th{
+        color : white;
+    }
+
+    .modal-body  table  th.position{
+        color: white;
+        font-size: 12px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .modal-body table  th.position  a span {
+        color: white;
+    }
+
+    .modal-body  table td.position{
+        font-size: 14px;
+        text-align: center !important;
+        vertical-align: middle;
+    }
+
+    .modal-body  table tbody td.position-center  span{
+        overflow-wrap: break-word;
+        word-break: break-all;
+        text-align: justify;
+    }
+
+    .modal-body  table tbody  tr:nth-child(even){
+        background-color:   rgba(240, 197, 71, 0.8) !important;
+        color:white !important;
+    }
+
+    .modal-body   table img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+    }
+
+    .modal-body  form.metadata-form div.property .property-body-error {}
+
+    .modal-body  form.metadata-form div.property-body-error .property-header{
+        border : 1px solid rgba(255, 45, 120, 1) !important;
+    }
+    .modal-body  form.metadata-form div.property-body-error .property-header:hover{
+        box-shadow  :  0 0 10px rgba(255, 45, 120, 1) !important;
+        background-color : rgba(255, 45, 120, 1) !important;
+    }
+
+    .modal-body  form.metadata-form div.property-body-error .property-body{
+        border-bottom: 1px solid rgba(255, 45, 120, 1) !important;
+        border-left: 1px solid rgba(255, 45, 120, 1) !important;
+        border-right: 1px solid rgba(255, 45, 120, 1) !important;
+        box-shadow  :  0 0 10px rgba(255, 45, 120, 1) !important;
+    }
+
+    .modal-body  form.metadata-form div.property-body-error  .activated {
+        box-shadow: 0 0 10px rgba(255, 45, 120, 1) !important;
+        background-color: rgba(255, 45, 120, 1) !important;
+    }
+
+    .modal-body textarea{
+        resize: vertical !important;
+        width: 100%!important;
+        font-size: 15px !important;
+        padding: 5px !important;
+        margin:5px 0px !important;
+        border-radius: 0px !important;
+    }
+
+
+    .modal-body textarea.error-ocure{
+        border: 1px solid rgba(255, 45, 120, 1);
+        box-shadow  :  0 0 10px rgba(255, 45, 120, 1);
+    }
+
+
+    .modal-body #nav-icons{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-body #nav-icons:hover{
+        box-shadow  :  0 0 10px rgba(38, 166, 154,1);
+        background-color : rgba(38, 166, 154,1);
+        color : white;
+    }
+    .modal-body #nav-icons:hover md-icon{
+        color : white;
+    }
+
+    .modal-body .multiDemo ul[dnd-list] {
+        min-height: 42px;
+        padding-left: 0px;
+    }
+
+    .modal-body .multiDemo ul[dnd-list] .dndPlaceholder {
+        background-color: #ddd;
+        display: block;
+        min-height: 42px;
+    }
+
+    .modal-body .multiDemo ul[dnd-list] li {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        /*border-top-right-radius: 4px;
+        border-top-left-radius: 4px;*/
+        border-radius: 0px;
+        margin:2px;
+        display: block;
+        /*margin-bottom: -1px;*/
+        padding: 10px 15px;
+    }
+
+    .modal-body .multiDemo ul[dnd-list] li:hover{
+        cursor: pointer;
+    }
+
+    .modal-body .multiDemo ul[dnd-list] li.selected {
+        background-color: #dff0d8;
+        color: #3c763d;
+    }
+
+    .modal-body .selected-properties{
+        background-color: rgba(255, 45, 120, 1) !important;
+        color: white !important;
+    }
+
+    .modal-body .isErrorInProperties{
+        border: 1px solid rgba(255, 45, 120, 1) !important;
+        box-shadow  :  0 0 10px rgba(255, 45, 120, 1) !important;
+    }
+
+
+    .modal-body .regexp-class{
+        /*
+            text-align: left !important;
+            direction: ltr !important;
+        */
+    }
+
+    .modal-body .select-defined-regexp{
+        position: absolute;
+        margin-top: 26px;
+        margin-right: -15px;
+    }
+
+    .modal-body .hidden-result {
+        margin-right: -8px;
+        margin-top: -8px;
+        color: white;
+        overflow-y: auto;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        display: none;
+        z-index: 1000000000001;
+        background-color: rgba(0,0,0,0.5);
+        width:250px;
+        min-height:120px;
+        padding : 0px !important;
+    }
+
+    .modal-body .hidden-result span.header-select{
+        height: 35px;
+        background-color: transparent;
+        color: white;
+        border-bottom:1px solid white;
+    }
+
+    .modal-body .select-defined-regexp:hover .hidden-result{
+        display: block !important;
+    }
+
+    .modal-body .hidden-result div.regexp-option{
+        color:white;
+        background-color: transparent;
+        cursor: pointer;
+
+        padding: 0px !important;
+
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-body .hidden-result div.regexp-option:hover{
+        background-color : white !important;
+        /*box-shadow  :  0 0 10px white;*/
+        color : black !important;
+    }
+
+
+
+
+
+</style>
+
+<div class="modal-header fontStyle">
+    <span class="fontStyle  pull-right" > {{data.editOrCreate?'ایجاد':'ویرایش'}} فراداده </span>
+</div>
+
+<div class="modal-body row form-group"  style="max-height: 350px; overflow-y: auto; margin-bottom: 0px ! important; padding-bottom: 0px ! important;">
+
+    <form role="form" novalidate name="FORM.formGeneratorName" class="metadata-form row form-group col-sm-12"  style="height: 60px; margin: 0px ! important;">
+        <div layout="row"   class="col-sm-5  col-xs-5 pull-right"  style="margin-right:10px;">
+            <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                <label>{{'administration.zm.metadata.groupName'|translate}}</label>
+                <input
+                        style="direction: ltr ! important; text-align: left;"
+                        type="text"
+                        required
+                        ng-disabled = "!data.editOrCreate"
+                        name="groupName"
+                        ng-model="data.metadata.name"
+                        minlength="1"
+                        ui-keypress="{13:'func.editGroupName()'}"
+                        ng-pattern = "/^[a-zA-Z_]([0-9a-zA-Z_.]){1,}$/"
+                />
+                <div ng-messages="FORM.formGeneratorName[groupName].$error" role="alert" >
+                    <div ng-message="required">
+                        لطفا برای فراداده یک نام وارد کنید
+                    </div>
+                    <div ng-message="pattern">
+                        فقط عدد و حروف لاتین
+                    </div>
+                    <div ng-message="minlength">
+                        حداقل یک کاراکتر وارد کنید
+                    </div>
+                </div>
+            </md-input-container>
+        </div>
+        <div layout="row"   class="pull-right"></div>
+        <div layout="row"   class="col-sm-5 col-xs-5 pull-right" style="margin-right:10px;">
+            <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                <label>{{'administration.zm.metadata.groupLabel'|translate}}</label>
+                <input
+                        type="text"
+                        required
+                        name="groupLabel"
+                        ng-model="data.metadata.label"
+                        minlength="1"
+                        ui-keypress="{13:'func.editGroupLabel()'}"
+                />
+                <div ng-messages="FORM.formGeneratorName[groupLabel].$error" role="alert" >
+                    <div ng-message="required">
+                        لطفا برای فراداده یک برچسب وارد کنید
+                    </div>
+                    <div ng-message="minlength">
+                        حداقل یک کاراکتر وارد کنید
+                    </div>
+                </div>
+            </md-input-container>
+        </div>
+        <div  class="pull-left col-sm-1 col-xs-1 ">
+
+            <section   class="pull-right" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+
+                <md-button id="nav-icons"  style="min-width:40px !important;"   class="md-raised pull-left" ng-click="func.create()">
+                    <md-icon  md-font-icon="fa fa-plus"></md-icon>
+                    <md-tooltip style="z-index:100000 !important;" md-direction="top"  >
+                        افزودن ویژگی
+                    </md-tooltip>
+                </md-button>
+
+            </section>
+        </div>
+    </form>
+
+    <hr class="row form-group  col-sm-11  col-xs-11"  style="margin-right: 3%;padding-right: 7%;"  />
+
+    <div
+            class="row form-group col-sm-12 col-xs-12"
+            style="overflow: hidden; padding: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; margin-top: -10px !important; height: 240px !important;"
+    >
+
+        <!--<div class="col-sm-5 col-xs-5 pull-right properties-list" style="overflow: hidden; height: 240px; padding-left: 2px; padding-right: 2px;">-->
+        <div ng-if="data.selectedProperty == null"   class="col-sm-12 col-xs-12 properties-list" style="overflow: hidden; height: 240px; padding-left: 2px; padding-right: 2px;">
+
+            <div class="col-md-12 multiDemo "  style="height: 100%; overflow-y: auto;padding:0px;">
+                <div class="row"  style="height: 240px; margin: 0px ! important;">
+                    <div  class="col-md-12"  style="padding: 0px; height: 240px;">
+                        <div ng-repeat="list in data.models" class="col-md-12"  style="height: 240px;padding:0px;">
+                            <div class="panel panel-info" style="border: 1px solid rgb(231, 87, 83); border-radius: 0px; height: 240px; margin: 0px ! important;">
+                                <div class="panel-heading"  style="background-color: rgb(231, 87, 83); color: white;border-radius: 0px;">
+                                    <h3 class="panel-title"> {{list.listName}}</h3>
+                                </div>
+                                <div class="panel-body"  style="overflow-y: auto; padding: 2px; max-height: 195px;">
+                                    <ul dnd-list dnd-drop="func.onDrop(list, item, index)"  style="margin: 0px;">
+                                        <!--ng-class="{}"-->
+                                        <li
+
+                                            id="{{item.id}}"
+                                            ng-repeat="item in list.items"
+                                            dnd-draggable="func.getSelectedItemsIncluding(list, item)"
+                                            dnd-dragstart="func.onDragstart(list, event)"
+                                            dnd-moved="func.onMoved(list)"
+                                            dnd-dragend="list.dragging = false"
+                                            dnd-selected="item.selected = !item.selected"
+                                            ng-class="{'selected': item.selected,'selected-properties':item.id == data.selectedProperty.id}"
+                                            ng-hide="list.dragging && item.selected"
+                                        >
+                                            <div class="row">
+                                                <span class="pull-right" ng-bind="item.label" style="padding:2px"></span>
+
+                                                <span class="pull-left" style="padding:2px;margin-right:6px;">
+                                                    <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                           حذف ویژگی
+                                                    </md-tooltip>
+                                                    <i class="fa fa-trash" ng-click="func.removeProperty(item)"></i>
+                                                </span>
+                                                <span class="pull-left" style="padding:2px">
+                                                    <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                           ویرایش ویژگی
+                                                    </md-tooltip>
+                                                    <i class="fa fa-edit" ng-click="func.editProperty(item,$index)"></i>
+                                                </span>
+
+
+
+                                            </div>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div view-source="multi"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--<div class="col-sm-7 col-xs-7 pull-left" style="height: 100%; overflow: hidden;padding:0px;">-->
+        <div ng-if="data.selectedProperty != null" class="col-sm-12 col-xs-12" style="height: 100%; overflow: hidden;padding:0px;">
+
+            <div class="col-md-12"  style="height: 100%; overflow: hidden;padding:0px;">
+                <div class="row"  style="margin-top: 0px !important; margin-bottom: 0px !important; height: 100%;">
+                    <div  class="col-md-12"  style="overflow-y: auto; overflow-x: hidden; padding: 0px; border: 1px solid rgb(231, 87, 83); height: 100%;">
+
+                        <div class="col-sm-12 row "  style="padding: 8px 10px 0px; background-color: rgb(231, 87, 83); margin: 0px ! important; height: 40px;">
+                            <span class="pull-right" style="color: white;" >ویژگی</span>
+
+                            <span class="pull-left" style="padding-left: 5px;padding-right:5px;color:white;"  ng-if="data.selectedProperty != null">
+                                <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                       ویرایش ویژگی
+                                </md-tooltip>
+                                <i class="fa fa-floppy-o" ng-click="func.saveProperty()"></i>
+                            </span>
+
+
+                            <span class="pull-left" style="padding-left: 5px;padding-right:5px;color:white;" ng-if="data.selectedProperty != null">
+                                <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                      انصراف
+                                </md-tooltip>
+                                <i class="fa fa-times" ng-click="func.cancelEditProperty()"></i>
+                            </span>
+
+                        </div>
+
+                        <div class="col-sm-12 row sample-show-hide"
+                             ng-show="data.selectedProperty != null"
+                             style="overflow-x: hidden; overflow-y: auto; margin: 0px ! important; height: 195px;">
+
+
+                            <form role="form" novalidate name="FORM.formGeneratorProperty">
+
+                                    <div layout="row"   class="col-sm-12">
+                                        <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                                            <label>نام</label>
+                                            <input
+                                                    style="direction: ltr ! important; text-align: left;"
+                                                    type="text"
+                                                    required
+                                                    ng-disabled="!data.selectedProperty.isNew"
+                                                    name="{{data.selectedProperty.id}}-name"
+                                                    ng-model="data.selectedProperty.name"
+                                                    minlength="1"
+                                                    ui-keypress="{13:'func.editPropertyName(FORM.formGeneratorProperty)'}"
+                                                    ng-pattern = "/^[a-zA-Z_]([0-9a-zA-Z_.]){1,}$/"
+                                            />
+                                            <div ng-messages="FORM.formGeneratorProperty[data.selectedProperty.id+'-name'].$error" role="alert" >
+                                                <div ng-message="required">
+                                                    لطفا برای ویژگی یک نام وارد کنید
+                                                </div>
+                                                <div ng-message="pattern">
+                                                    فقط عدد و حروف لاتین
+                                                </div>
+                                                <div ng-message="minlength">
+                                                    حداقل یک کاراکتر وارد کنید
+                                                </div>
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+                                    <div layout="row"   class="col-sm-12">
+                                        <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                                            <label>برچسب</label>
+                                            <input
+                                                    type="text"
+                                                    required
+                                                    name="{{data.selectedProperty.id}}-label"
+                                                    ng-model="data.selectedProperty.label"
+                                                    minlength="1"
+                                                    ui-keypress="{13:'func.editPropertyLabel(FORM.formGeneratorProperty)'}"
+                                            />
+                                            <div ng-messages="FORM.formGeneratorProperty[data.selectedProperty.id+'-label'].$error" role="alert" >
+                                                <div ng-message="required">
+                                                    لطفا برای ویژگس یک برچسب وارد کنید
+                                                </div>
+                                                <div ng-message="minlength">
+                                                    حداقل یک کاراکتر وارد کنید
+                                                </div>
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+                                    <div layout="row"   class="col-sm-12" style="padding: 5px 0px 10px;">
+                                            <md-input-container class="md-block  col-sm-12 col-xs-12"  style=" padding: 0;" >
+                                                <label>نوع فیلد</label>
+                                                <md-select
+                                                        class="md-block  col-sm-12 pull-right"
+                                                        placeholder="نوع فیلد"
+                                                        ng-model="data.selectedProperty.fieldType"
+                                                        ng-change="func.changeFileldType(data.selectedProperty)"
+                                                        style="min-width: 100%;">
+                                                    <md-option ng-value="fileType" ng-repeat="fileType in data.fileTypes">{{fileType}}</md-option>
+                                                </md-select>
+                                            </md-input-container>
+                                    </div>
+
+                                    <div layout="row"   class="col-sm-12"  ng-if="data.selectedProperty.fieldType == 'input'" style="padding: 5px 0px 10px;">
+                                        <md-input-container class="md-block  col-sm-12 col-xs-12"  style=" padding: 0;">
+                                            <label>انتخاب ورودی</label>
+                                            <md-select
+                                                    class="md-block  col-sm-12 pull-right"
+                                                    placeholder="انتخاب نوع"
+                                                    ng-model="data.selectedProperty.InputContains"
+                                                    ng-change="func.changeFileldInputContains(data.selectedProperty)"
+                                                    style="min-width: 100%;">
+                                                <md-option ng-value="inputContain" ng-repeat="inputContain in data.inputContains">{{inputContain}}</md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+                                    <div layout="row"   class="col-sm-12"  ng-if="data.selectedProperty.fieldType == 'select'" style="padding: 5px 0px 10px;">
+                                        <md-input-container class="md-block  col-sm-12 col-xs-12"  style=" padding: 0;">
+                                            <label>انتخاب نوع</label>
+                                            <md-select
+                                                    class="md-block  col-sm-12 pull-right"
+                                                    placeholder="انتخاب نوع"
+                                                    ng-model="data.selectedProperty.SelectType"
+                                                    ng-change="func.changeFileldSelectType(data.selectedProperty)"
+                                                    style="min-width: 100%;">
+                                                <md-option ng-value="selectType" ng-repeat="selectType in data.selectType">{{selectType}}</md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+                                    <div layout="row"   class="col-sm-12"  ng-if="data.selectedProperty.fieldType == 'select'" style="padding: 5px 0px 10px;">
+                                        <md-input-container class="md-block  col-sm-12 col-xs-12"  style=" padding: 0;">
+                                            <label>انتخاب گزینه</label>
+                                            <md-select
+                                                    class="md-block  col-sm-12 pull-right"
+                                                    placeholder="انتخاب گزینه"
+                                                    ng-model="data.selectedProperty.SelectOptionsType"
+                                                    ng-change="func.changeFileldSelectOptionsType(data.selectedProperty)"
+                                                    style="min-width: 100%;">
+                                                <md-option ng-value="selectOptionType" ng-repeat="selectOptionType in data.selectOptionsType">{{selectOptionType}}</md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+                                    <div style="margin: 10px 0px;"    layout="row" class="col-sm-12"><!--ng-true-value = "true" ng-false-value = "false" -->
+                                        <md-switch  class="md-primary" ng-model="data.selectedProperty.readonly" aria-label="خواندنی - نوشتنی" style="margin-left: 5px;margin-top: 30px; width: 150px;">
+                                            {{data.selectedProperty.readonly ? 'فقط خواندنی' : 'خواندنی - نوشتنی'}}
+                                        </md-switch>
+                                    </div>
+                                    <hr class="row form-group  col-sm-12"  />
+                                    <div
+                                            style="overflow-x:auto;padding: 0px;"
+                                            class="row form-group col-sm-12"
+                                            ng-if="data.selectedProperty.SelectOptionsType=='static' && data.selectedProperty.fieldType == 'select'">
+                                        <table
+                                                style="background-color: #3e993b !important;"
+                                                class="modal-background table table-responsive table-striped table-hover- table-condensed table-bordered ">
+                                            <caption>
+                                                <span  ng-bind="'administration.zm.metadata.tabels.select.option'|translate"></span>
+                                            </caption>
+                                            <thead>
+                                                <tr style="height: 35px;">
+                                                    <th  class="position">
+                                                        <span >ردیف</span>
+                                                    </th>
+                                                    <th  class="position">
+                                                        <span >انتقال</span>
+                                                    </th>
+                                                    <th  class="position">
+                                                        <span >مقدار</span>
+                                                    </th>
+                                                    <th  class="position">
+                                                        <span >برچسب</span>
+                                                    </th>
+                                                    <th  class="position">
+                                                        <span >انتخاب شده</span>
+                                                    </th>
+                                                    <th  class="position">
+                                                        <span ng-click="func.addOption(data.selectedProperty)">
+                                                           <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                            افزودن مقدار
+                                                           </md-tooltip>
+                                                           <i class="fa fa-fw fa-plus"></i>
+                                                        </span>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="cursor-tr select-table-tr" ng-repeat="s in data.selectedProperty.SelectOption.static track by $index">
+                                                    <td class="position">
+                                                        <span style="margin-right: 5px; margin-top: -2px;"  ng-bind="($index+1)|pNumber"></span>
+                                                    </td>
+                                                    <td  class="position">
+                                                        <i
+                                                                    ng-click="func.goTopSelect($index)"
+                                                                    class="fa fa-angle-double-up  col-sm-3"
+                                                                    style="cursor: pointer; padding: 0px; font-size: 20px;"><!--fa-rotate-90 fa-angle-double-up -->
+                                                               <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                           ابتدا
+                                                                </md-tooltip>
+                                                        </i>
+                                                        <i
+                                                                    ng-click="func.goUpSelect($index)"
+                                                                    class="fa fa-angle-up  col-sm-3"
+                                                                    style="cursor: pointer; padding: 0px; font-size: 20px;"><!--fa-angle-up-->
+                                                               <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                           بالا
+                                                                </md-tooltip>
+                                                        </i>
+                                                        <i
+                                                                    ng-click="func.goDownSelect($index)"
+                                                                    class="fa fa-angle-down  col-sm-3"
+                                                                    style="cursor: pointer; padding-top: 0px; padding-right: 0px; padding-left: 0px; font-size: 20px; "><!--fa-angle-down-->
+                                                                <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                            پایین
+                                                                </md-tooltip>
+                                                        </i>
+                                                        <i
+                                                                    ng-click="func.goLastSelect($index)"
+                                                                    class="fa  fa-angle-double-down  col-sm-3"
+                                                                    style="cursor: pointer; padding: 0px;font-size: 20px;"><!--fa-angle-double-down-->
+                                                                <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                            انتها
+                                                                </md-tooltip>
+                                                        </i>
+                                                    </td>
+                                                    <td class="position">
+                                                        <div layout="row"   class="col-sm-12">
+                                                            <md-input-container  style="text-align: right !important;margin-top: 15px !important;" class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                                                                <label>مقدار</label>
+                                                                <input
+                                                                        style="direction: ltr ! important; text-align: left;"
+                                                                        name = "{{data.selectedProperty.id}}-option-value-{{$index}}"
+                                                                        type="text"
+                                                                        required
+                                                                        ng-model="s.value"
+                                                                        ng-pattern = "/^[a-zA-Z_0-9\.]{1,}$/"
+                                                                        minlength="1"
+                                                                />
+                                                            </md-input-container>
+                                                        </div>
+                                                    </td>
+                                                    <td class="position">
+                                                        <div layout="row"   class="col-sm-12">
+                                                            <md-input-container  style="text-align: right !important;margin-top: 15px !important;" class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                                                                <label>برچسب</label>
+                                                                <input
+                                                                        name = "{{data.selectedProperty.id}}-option-label-{{$index}}"
+                                                                        type="text"
+                                                                        required
+                                                                        ng-model="s.label"
+                                                                        minlength="1"
+                                                                />
+                                                            </md-input-container>
+                                                        </div>
+                                                    </td>
+                                                    <td class="position">
+                                                        <div style="margin: 10px 0px;" layout="row" class="col-sm-12">
+                                                            <md-checkbox
+                                                                    class="pull-right"
+                                                                    ng-model="s.selected"
+                                                                    style=" margin-right: 3px;left: 0; opacity: 1; position: relative;">
+                                                            </md-checkbox>
+                                                        </div>
+                                                    </td>
+                                                    <td  style="text-align: center; vertical-align: middle;">
+                                                        <span ng-click="func.removeOption(data.selectedProperty.SelectOption.static,$index)">
+                                                           <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                          حذف
+                                                           </md-tooltip>
+                                                           <i class="fa fa-fw fa-trash"></i>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <hr class="row form-group  col-sm-12"   />
+                                    <div class="form-group col-sm-12" style="overflow-x:auto;padding: 0px;" >
+
+                                        <table   class="modal-background table table-responsive table-striped table-hover- table-condensed table-bordered ">
+                                            <caption>
+                                                <span  ng-bind="'administration.zm.metadata.tabels.validator'|translate"></span>
+                                            </caption>
+                                            <thead>
+                                                <tr style="height: 35px;">
+                                                    <th  class="position">
+                                                        <span >ردیف</span>
+                                                    </th>
+                                                    <th  class="position">
+                                                        <span >نوع</span>
+                                                    </th>
+                                                    <th  class="position">
+                                                        <span >پارامتر</span>
+                                                    </th>
+                                                    <th  class="position">
+                                                        <span ng-click="func.addValidation(data.selectedProperty)">
+                                                           <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                            افزودن اعتبار
+                                                           </md-tooltip>
+                                                           <i class="fa fa-fw fa-plus"></i>
+                                                        </span>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="cursor-tr select-table-tr" ng-repeat="opt in data.selectedProperty.validator track by $index">
+                                                    <td class="position">
+                                                        <span      ng-bind="($index+1)|pNumber"></span>
+                                                    </td>
+                                                    <td class="position">
+
+                                                        <md-input-container class="md-block  col-sm-12 "  style="text-align: right !important; padding: 0;">
+                                                            <label>نوع</label>
+                                                            <md-select
+                                                                    class="md-block  col-sm-12 pull-right"
+                                                                    placeholder="نوع"
+                                                                    ng-model="opt.type"
+                                                                    style="min-width: 200px;">
+                                                                <md-option
+                                                                        ng-value="v"
+                                                                        ng-repeat="v in data.types[(data.selectedProperty.SelectType || data.selectedProperty.InputContains)]">{{v}}</md-option>
+                                                            </md-select>
+                                                        </md-input-container>
+                                                    </td>
+                                                    <td class="position">
+                                                        <div layout="row"   class="col-sm-12">
+                                                            <md-input-container  style="text-align: right !important;margin-top: 15px !important;" class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                                                                <label>مقدار</label>
+                                                                <!---->
+                                                                <input
+                                                                        ng-class="{'regexp-class':opt.type=='regexp'}"
+                                                                        name = "{{data.selectedProperty.id}}-validation-{{$index}}"
+                                                                        type="text"
+                                                                        style="direction: ltr !important;float:left;"
+                                                                        ng-model="opt.parameter"
+                                                                        minlength="1"
+                                                                        ng-required="data.requires[opt.type]"
+                                                                        ng-pattern="data.patterns[opt.type]"
+                                                                />
+
+
+
+                                                                <div class="select-defined-regexp">
+
+                                                                    <span  ng-if="opt.type =='regexp'"  >
+                                                                        <i      class="fa fa-caret-down"></i>
+                                                                        <md-tooltip  md-direction="top"  style="z-index: 10000000000000;">
+     انتخاب اعتبار                                                                      پیش نمایش
+                                                                        </md-tooltip>
+                                                                    </span>
+                                                                    <div class="hidden-result">
+
+                                                                            <span class="row col-sm-12 header-select">انتخاب اعتبار دلخواه</span>
+
+                                                                            <div class="col-sm-12 regexp-option" ng-repeat="reg in data.regexpsList">
+                                                                                <span class="row col-sm-12 "  ng-click="func.changeRegexp(opt,reg.value)">
+                                                                                 {{reg.label}}
+                                                                                </span>
+                                                                            </div>
+
+                                                                    </div>
+                                                                </div>
+
+
+
+
+                                                                <div ng-messages="FORM.formGeneratorProperty[data.selectedProperty.id+'-validation-'+$index].$error" role="alert" >
+                                                                    <div ng-message="required">
+                                                                        لطفا برای اعتبار یک مقدار درج کنید وارد کنید
+                                                                    </div>
+                                                                    <div ng-message="pattern">
+                                                                        لطفا الگوی درست وارد کنید
+                                                                    </div>
+                                                                </div>
+                                                            </md-input-container>
+                                                        </div>
+                                                    </td>
+                                                    <td  style="text-align: center; vertical-align: middle;">
+                                                        <span ng-click="func.removeValidator(data.selectedProperty.validator,$index)">
+                                                           <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                          حذف ویژگی
+                                                           </md-tooltip>
+                                                           <i class="fa fa-fw fa-trash"></i>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <hr class="row form-group  col-sm-12"  />
+
+                            </form>
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--<form role="form" novalidate name="formGeneratorName" class="metadata-form row form-group "  style="height:100%;">
+
+
+
+
+        <hr class="row form-group  col-sm-11"  style="margin-right: 3%;padding-right: 7%;"  />
+
+        <div
+              id="{{property.id}}"
+              class="row form-group col-sm-12  property"
+              ng-repeat="property in data.metadata.property track by $index"
+        >
+
+            <div class="property-header"  ng-class="{'activated': property.id == data.selectedProperty}">
+
+                <span class="pull-right" style="padding: 4px;">
+                    <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                           ابتدا
+                    </md-tooltip>
+                    <i  style="font-weight: bold;" class="fa fa-angle-double-up" ng-click="func.direction.first(property,$index)"></i>
+                </span>
+
+
+                <span class="pull-right" style="padding: 4px;">
+                    <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                          بالا
+                    </md-tooltip>
+                    <i style="font-weight: bold;" class="fa fa-angle-up" ng-click="func.direction.prev(property,$index)"></i>
+                </span>
+
+                <span class="pull-right" style="padding: 4px;">
+                    <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                           پایین
+                    </md-tooltip>
+                    <i style="font-weight: bold;" class="fa fa-angle-down" ng-click="func.direction.next(property,$index)"></i>
+                </span>
+
+
+
+                <span class="pull-right" style="padding: 4px 4px 4px 10px;">
+                    <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                          انتها
+                    </md-tooltip>
+                    <i style="font-weight: bold;" class="fa fa-angle-double-down" ng-click="func.direction.last(property,$index)"></i>
+                </span>
+
+
+
+
+                <span  ng-bind="property.label" style="padding-right: 10px; border-right: 1px solid;"  class="pull-right"></span>
+
+
+
+
+
+
+
+            </div>
+
+            <div class="row form-group property-body sample-show-hide"  ng-show="property.id == data.selectedProperty">
+
+
+                &lt;!&ndash; TODO property fieldType and readonly &ndash;&gt;
+                <div class="row form-group col-sm-12">
+
+                </div>
+
+                <div class="row form-group col-sm-12"  ng-if="property.SelectOptionsType=='dynamic' && property.fieldType == 'select'">
+                    <div layout="row"   class="col-sm-6">
+                        <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                            <label>نام جدول</label>
+                            <input
+                                    type="text"
+                                    required
+                                    name="{{property.id}}-SelectOption-Dynamic-tableName"
+                                    ng-model="property.SelectOption.dynamic.tableName"
+                                    minlength="1"
+                                    ng-pattern = "/^([0-9a-zA-Z_.-]){1,}$/"
+                            />
+                            <div ng-messages="formGeneratorName[property.id+'-SelectOption-Dynamic-tableName'].$error" role="alert" >
+                                <div ng-message="required">
+                                    لطفا برای ویژگس یک نام وارد کنید
+                                </div>
+                                <div ng-message="pattern">
+                                    فقط عدد و حروف لاتین
+                                </div>
+                                <div ng-message="minlength">
+                                    حداقل یک کاراکتر وارد کنید
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div layout="row"   class="col-sm-12">
+                        <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                            گزینه پرس و جو
+                        </md-tooltip>
+                         <textarea
+                                     ng-class="{'error-ocure':formGeneratorName[property.id+'-SelectOption-Dynamic-QueryOption'].$error.required}"
+                                     placeholder="گزینه پرس و جو"
+                                     required
+                                     name="{{property.id}}-SelectOption-Dynamic-QueryOption"
+                                     class="form-control col-sm-12"
+                                     ng-model="property.SelectOption.dynamic.QueryOption"
+                         >
+                        </textarea>
+                    </div>
+                    <div layout="row"   class="col-sm-12">
+                        <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                            پیشنهاد
+                        </md-tooltip>
+                         <textarea
+                                 ng-class="{'error-ocure':formGeneratorName[property.id+'-SelectOption-Dynamic-suggestion'].$error.required}"
+                                 placeholder="پیشنهاد"
+                                 required
+                                 name="{{property.id}}-SelectOption-Dynamic-suggestion"
+                                 class="form-control col-sm-12"
+                                 ng-model="property.SelectOption.dynamic.suggestion"
+                         >
+                        </textarea>
+                    </div>
+
+
+
+                </div>
+
+
+                <hr class="row form-group  col-sm-11"  style="margin-right: 6% ! important;"  />
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </form>-->
+
+</div>
+
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+
+        <form name="deleteFolderForm" novalidate role="form">
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="okButon"   class="md-raised" ng-click="func.ok()">
+                    <md-icon  md-font-icon="fa fa-{{data.editOrCreate?'plus-circle':'edit'}}  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;"  >{{data.editOrCreate?'ایجاد':'ویرایش'}}</span>
+                </md-button>
+                <md-button id="cancelButon"     class="md-raised" ng-click="func.cancel()">
+                    <md-icon  md-font-icon="fa fa-remove  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" ng-bind="'desktop.zl.cancel'|translate"></span>
+                </md-button>
+            </section>
+        </form>
+    </div>
+</div>

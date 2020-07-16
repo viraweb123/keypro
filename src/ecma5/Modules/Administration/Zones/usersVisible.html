@@ -1,0 +1,81 @@
+
+<div   style="padding:  0px; float: right; width: 100%; ">
+
+    <div class="zonesHeader">
+        <span ng-bind="'desktop.zl.security' | translate"></span>
+    </div>
+    <ul>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='users'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('users')">
+            <span class="icon-show fa fa-user"></span>
+            <span
+                    class="label-show not-view"
+                    >
+کاربران
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.users'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='roles'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('roles')">
+            <span class="icon-show fa fa-users"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.roles'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.roles'|translate}}
+            </md-tooltip>
+        </i>
+        <i
+                ng-if="data.showLogins['/Profile']"
+                ng-class="{'selected-nav' : data.acriveNav =='Profile'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('Profile')">
+            <span class="icon-show fa fa-user-secret"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.Profile'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.Profile'|translate}}
+            </md-tooltip>
+        </i>
+
+        <i
+                ng-class="{'selected-nav' : data.acriveNav =='access'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('access')">
+            <span class="icon-show fa fa-shield"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.access_metdata'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.access_metdata'|translate}}
+            </md-tooltip>
+        </i>
+
+        <i
+                ng-if="data.showLogins['/ActivityLog']"
+                ng-class="{'selected-nav' : data.acriveNav =='ActivityLog'}"
+                class="navbar-show row  col-sm-12"
+                ng-click="func.selectNav('ActivityLog')">
+            <span class="icon-show fa fa-calendar-check-o"></span>
+            <span
+                    class="label-show not-view"
+                    ng-bind="'administration.zr.ActivityLog'|translate">
+            </span>
+            <md-tooltip  md-direction="left" >
+                {{'administration.zr.ActivityLog'|translate}}
+            </md-tooltip>
+        </i>
+
+    </ul>
+
+</div>

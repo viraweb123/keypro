@@ -1,0 +1,126 @@
+<style>
+
+    .modal-header{
+        background-color: rgba(35,173,255,1) !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+
+    #sidebarContainer{
+        transition-duration: 0ms !important;
+    }
+    html[dir="rtl"] #sidebarContainer {
+        right:0px !important;
+    }
+    .modal-body .files{
+        width  : 100%;
+        height : 100%;
+    }
+    .modal-body .files  .media{
+        width : 100%;
+        height : 100%;
+        display : none;
+    }
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+    .modal-body .files  .multimedia{
+        display : inline-block !important;
+    }
+    .modal-body .files  .pdfViewer{
+        display : inline-block !important;
+    }
+    .modal-body .files  .swfViewer{
+        display : inline-block !important;
+    }
+    .modal-body .files  .htmlViewer{
+        display : inline-block !important;
+    }
+</style>
+<div  class="modal-header fontStyle" >
+    <div class="form-group">
+        <div class="col-sm-1 pull-left" >
+            <i  class="pull-left fa fa-remove"
+                style="cursor: pointer;margin-right: 15px;"
+                ng-click="func.cancel()">
+
+            </i>
+            <md-tooltip style="z-index:100000 !important;"  md-direction="top">
+                بستن
+            </md-tooltip>
+        </div>
+        <h4 class="modal-title col-sm-10 pull-right fontStyle"><span ng-bind="'modal.viewfile' | translate"></span></h4>
+    </div>
+</div>
+<div class="modal-body row" style="height:470px;max-height:470px;">
+
+    <div  class="files">
+
+        <!-- --------------------------------  MultiMedia  --------------------------------- -->
+        <div  id="modal-multimedia-viewer-parent" class="media {{data.viewer.type == 'media' ? 'multimedia' : ''}}">
+            <div class="videogular-container" style="width: 100% ! important;direction: ltr;position: relative;height: 100%;"
+                 id="modal-multimedia-viewer-child">
+                <keydoc-player
+                        runing ="data.viewer.player.func"
+                        id="key-doc-pro-media-shower-id">
+                </keydoc-player>
+            </div>
+        </div>
+
+        <!-- --------------------------------  PDF  --------------------------------- -->
+        <div
+                class="media {{data.viewer.type == 'pdf' ? 'pdfViewer' : ''}}"
+                id="modal-pdf-viewer-parent"  style="height:100%;max-height:100%;min-height:100%;">
+            <div id="modal-pdf-viewer-child" style="width:100%;height:100%;position: relative;">
+
+                <key-doc-pro-pdf-shower
+                        id="key-doc-pro-pdf-shower-id"
+                        change-url="data.viewer.pdf.changeURL"
+                        first-search = "data.viewer.pdf.firstSearch"
+                        path-url="data.viewer.pdf.url"
+                        show-file="data.viewer.pdf.isOpenfileShower"
+                        show-icons="data.viewer.pdf.showIcons"
+                >
+                </key-doc-pro-pdf-shower>
+
+            </div>
+        </div>
+
+        <!-- -------------------------------- SWF -------------------------------- -->
+        <div class="media {{data.viewer.type == 'swf' ? 'swfViewer' : ''}}">
+            <div id="viewercontainer"
+                 ng-class="{'open-file':data.isOpenfileShower,'close-file':!data.isOpenfileShower}">
+            </div>
+        </div>
+
+        <!-- -------------------------------- HTML -------------------------------- -->
+        <div class="media {{data.viewer.type == 'html' ? 'htmlViewer' : ''}}">
+            <div id="viewercontainer"  style="overflow-y: auto; height: 100%;direction: initial;"   ng-bind-html="data.viewer.html.content"></div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+</div>
+<!--<div class="modal-footer">
+  <div class="row">
+    <div class="col-sm-9 pull-left">
+        <div class="col-sm-5 pull-left">
+            <a
+                class="btn btn-warning btn-social pull-left modal-butons"
+                ng-click="cancel()">
+                {{'common.menu.file_exit'|translate}}
+                <i style="background-color:  #ec971f;font-size: 13px;top: -5px;width: 17px;" class="glyphicon glyphicon-remove-circle butonsIcon"></i>
+            </a>
+        </div>
+    </div>
+  </div>
+ </div>-->

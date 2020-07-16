@@ -1,0 +1,199 @@
+<style>
+    .imageViewerShowResult:-moz-full-screen {
+        height: 100%;
+    }
+    .imageViewerShowResult:-webkit-full-screen {
+        height: 100%;
+    }
+    .imageViewerShowResult:-ms-fullscreen {
+        height: 100%;
+    }
+    .imageViewerShowResult:fullscreen {
+        height: 100%;
+    }
+    .ol-rotate {
+        top: 3em;
+    }
+    .image-nav-bar {
+        height: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        courser : pointer;
+        width: 400px;
+        z-index: 100;
+        background-color: rgba(201, 210, 204, 0.7)  !important;
+        /*margin-top: -40px;*/
+        margin-top: 5px !important;
+    }
+    .nav-bar-icons{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 25px;
+        margin: 5px !important;
+        text-align: center;
+        text-decoration: none !important;
+
+        transition-duration: 0.5s;
+        transition-property: color;
+        transition-timing-function: linear;
+    }
+    .nav-bar-icons:hover{
+        color : #5d9ce9 !important;
+    }
+    .image-nav-bar-sub {
+        height: 35px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        courser : pointer;
+        width: 600px;
+        z-index: 10;
+        background-color: red;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+
+    }
+    .image-nav-bar-parent{
+        position: fixed;
+        z-index: 11;
+        margin-left:10%;
+    }
+    .image-nav-bar-icons{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 25px;
+        margin: 5px !important;
+        text-align: center;
+        text-decoration: none !important;
+
+        transition-duration: 0.5s;
+        transition-property: color;
+        transition-timing-function: linear;
+    }
+    .image-nav-bar-icons:hover{
+        color : #5d9ce9 !important;
+    }
+    .image-nav-bar-direction{
+        position: relative;
+        margin: 0 3px;
+    }
+    .image-nav-bar-icons-top{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        margin-top: 2px !important;
+        text-align: center;
+        text-decoration: none !important;
+    }
+    .image-nav-bar-icons-down{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        margin: 5px !important;
+        text-align: center;
+        text-decoration: none !important;
+    }
+    .image-nav-bar-icons-left{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        left: -3px;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: -25px !important;
+        position: absolute;
+        text-align: center;
+        text-decoration: none !important;
+    }
+    .image-nav-bar-icons-right{
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        margin-top: -26px;
+        position: absolute;
+        right: -3px;
+        text-align: center;
+        text-decoration: none !important;
+    }
+    .image-nav-bar  .spliter-icons{
+        float: left;
+        border-right: 1px solid white;
+        text-align: center;
+        vertical-align: middle;
+        margin: 4px 2px 2px;
+        height: 30px;
+    }
+    .image-nav-bar  .spliter-icons .show-icon-map{
+        display: block !important;
+    }
+    .image-nav-bar  .spliter-icons .hide-icon-map{
+        display: none !important;
+    }
+    .image-nav-bar  .spliter-icons .activeButton{
+        color : #9cc0ff !important;
+    }
+    .image-nav-bar  .spliter-icons .activeButtonBox{
+        color : #9cc0ff !important;
+        border-color :  #9cc0ff !important;
+    }
+</style>
+
+<div style="z-index:100;position: absolute;text-align: center"  class="col-sm-12  map-viewer-class">
+    <div class="image-nav-bar row" id="navigationCanvasID" >
+
+
+        <div class="spliter-icons">
+            <i
+                    ng-class="{ 'show-icon-map' :  ! data.flages.isFull , 'hide-icon-map' : data.flages.isFull }"
+                    class="pull-left fa fa-expand  nav-bar-icons"
+                    ng-click="func.navBar.screen.goFull($event)"
+                    id="navFULL">
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.screen.full'|translate}}
+                </md-tooltip>
+            </i>
+            <i
+                    ng-class="{ 'show-icon-map' :  data.flages.isFull , 'hide-icon-map' : !data.flages.isFull }"
+                    class="pull-left fa fa-compress nav-bar-icons"
+                    ng-click="func.navBar.screen.backFull($event)"
+                    id="navBACKFULL">
+                <md-tooltip  md-direction="top">
+                    {{'directive.map.tooltip.screen.normal'|translate}}
+                </md-tooltip>
+            </i>
+        </div>
+
+        <div class="spliter-icons">
+            <i
+                    class="show-icon-map pull-left fa fa-undo  nav-bar-icons"
+                    ng-click="func.rotateLeftMap()"
+                    id="navRotate">
+                <md-tooltip  md-direction="top">
+                    چرخش به چپ
+                </md-tooltip>
+            </i>
+            <i
+                    class="show-icon-map pull-left fa fa-repeat  nav-bar-icons"
+                    ng-click="func.rotateRightMap()"
+                    id="navRotate">
+                <md-tooltip  md-direction="top">
+                    چرخش به راست
+                </md-tooltip>
+            </i>
+        </div>
+
+    </div>
+
+</div>
+<div id="imageViewerShowResult" style="height:100%;width: 100%;" class="imageViewerShowResult"></div>

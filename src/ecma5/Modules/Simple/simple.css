@@ -1,0 +1,1067 @@
+@media screen and (min-width    :   650px) {
+
+    .simple{
+        width : 100vw !important;
+        height:  100% !important;
+        overflow : hidden !important;
+        padding:0px !important;
+        margin:  0px !important;
+    }
+
+    .simple .simple-background {
+        background-color : #5d9ce9 !important;
+    }
+
+    .simple div.search-image{
+        width : 100px;
+        border-left : 1px solid rgba(197,197,197,1);
+        text-align: center;
+        height : 100%;
+        margin-right: -10px;
+    }
+
+    .simple div.search-image img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        max-width: 80px !important;
+        cursor: pointer;
+        /*margin-left: -35px;*/
+    }
+
+    .simple div.search-image img:hover{
+        box-shadow: 0 0 6px rgba(251,187,61,1) !important;
+        cursor: pointer !important;
+    }
+
+    .simple div.search-image  div.image-nav{
+        width:  60px !important;
+        float: right !important;
+        margin-top: -56px !important;
+        position: absolute !important;
+        padding-left: 20px;
+    }
+
+    .simple div.search-image  div.image-nav  span.nav-content{
+        margin: 0px !important;
+        font-size: 12px !important;
+        width: 47% !important;
+    }
+
+
+    .simple span.search-content{
+        max-width: calc(100% - 120px);
+        padding: 20px 10px;
+    }
+
+    .simple span.half-span-viewer{
+        overflow-y:auto;
+        max-height: 60px;
+    }
+
+    .simple .color {
+        color : #135afe !important;
+    }
+
+    .simple  .SR .simple-color {
+        border-right : 2px solid #135afe;
+        color: #135afe !important;
+    }
+
+    .simple  .SR  .btn-icon{
+        background-color : transparent;
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: linear;
+    }
+
+    .simple  .SR  .btn-icon:hover > *{
+        color: white !important;
+        background-color:  #135afe !important;
+    }
+
+    .simple  .SR  .btn-icon:hover{
+        color: white !important;
+        background-color:  #135afe !important;
+        border-right : 2px solid white !important;
+        border-left : 2px solid white !important;
+    }
+
+    .simple  .D div.hidden-item{
+        height : 100%;
+        width  : 100%;
+        display: none;
+        opacity: 0;
+        position: relative;
+        /*transition: opacity 3s ease-out;
+        -webkit-transition:  opacity 3s ease-out;
+        -moz-transition: opacity 3s ease-out;
+        -o-transition:  opacity 3s ease-out;
+        -ms-transition: opacity 3s ease-out;*/
+    }
+
+    .simple  .D  div.show{
+        display: inline !important;
+        opacity: 1 !important;
+    }
+
+    /** TODO Navbar From All Styles **/
+    .simple .D  ul{
+        width : 100%;
+    }
+
+    .simple .D ul i.navbar-show{
+        padding:5px !important;
+        margin:5px  0px !important;
+        width : 100% !important;
+        word-break: break-all !important;
+        word-wrap: break-word !important;
+        min-height: 30px;
+        float:right;
+
+        background-color : transparent;
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: ease-out;
+    }
+
+    .simple .D ul i.selected-nav{
+        color : #135afe;
+        border-right : 2px solid #135afe;
+    }
+
+    .simple  .D  ul i.navbar-show:hover > *{
+        color: white !important;
+        background-color:  #135afe !important;
+        cursor: pointer;
+    }
+
+    .simple  .D  ul i.navbar-show:hover{
+        color: white !important;
+        background-color:  #135afe !important;
+        border-right : 2px solid white;
+        border-left : 2px solid white;
+        cursor: pointer;
+    }
+
+    .simple .D ul i.navbar-show .icon-show{
+        cursor: pointer;
+        font-size: 10px;
+        margin: 5px 0px;
+        width : 25px;
+        text-align: center;
+        float: right;
+    }
+
+    .simple .D ul i.navbar-show  span.label-show{
+        max-width: calc(100% - 40px);
+        float: right;
+        font-size: 10px  !important;
+        margin-top: 5px;
+        text-align: justify;
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+
+    .simple .CR div.tabel-body{
+        background-color: #ede223;
+        height: 100%;
+        overflow: hidden;
+        padding: 4px;
+        width: 100%;
+    }
+
+    .simple .CR div.tabel-body  div.body-view{
+        background-color: #23dde1;
+        width: 100%;
+        height: calc(100% - 10px);
+        overflow: hidden;
+        padding-top: 10px;
+        background-color: white;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .simple .CR div.list-view table{
+        max-height: calc(100vh - 70px);
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto ! important;
+    }
+
+    .simple .CR div.list-view table  thead  {
+        /*background-color : #7ab7fe !important;
+        color: white !important;*/
+        background-color : #c3d9ff !important;
+    }
+
+    .simple .CR div.list-view table  thead  a{
+        color: black !important;
+    }
+
+    .simple .CR div.list-view table  thead  a  span{
+        font-size:12px !important;
+        color: black;
+    }
+
+    .simple .CR div.list-view table  thead  span{
+        font-size:12px !important;
+        color: black;
+    }
+
+    .simple .CR div.list-view table tbody tr:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+        background-color :  rgba(35,173,255,1) !important;
+        color : white !important;
+    }
+
+    .simple .CR div.list-view table tbody tr:nth-child(even){
+        /*background-color:   rgba(240, 197, 71, 0.8) !important;
+        color:white !important;*/
+        background-color: rgba(224, 236, 255, 1);
+    }
+
+    .simple .CR div.list-view table  th{
+        white-space: nowrap !important;
+        padding  : 0px 10px !important;
+    }
+    .simple .CR div.list-view table  td{
+        white-space: nowrap !important;
+        padding  : 0px 10px !important;
+    }
+
+   /* .simple .CR div.list-view table  tr:nth-child(even)  td label{
+        color:black !important;
+    }*/
+
+    .simple .CR div.list-view table.display{
+        display : inline-block;
+    }
+
+    .simple .CR div.list-view table tbody td.position-center img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+    }
+
+    .simple .CR div.list-view table tbody td.position-center  span{
+        overflow-wrap: break-word;
+        word-break: break-all;
+        text-align: justify;
+    }
+
+
+    .simple  .CR  .header-nav{
+        width: 100%;
+        background-color: white;
+        border-bottom: 8px solid #5d9ce9;
+        height: 8px;
+        vertical-align: middle;
+    }
+
+
+
+    .simple  .CR  .header-nav ~ .body-search{
+        width: 100%;
+        height: calc(100vh - 58px);
+        background-color: white;
+        padding-top: 1px;
+        margin-top: 0;
+    }
+
+    .simple  .CR   .body-search .just-header{
+        height : 70px;
+        width:  calc(100% - 20px);
+        background-color: transparent;
+
+
+        border: 1px solid rgb(197, 197, 197);
+        margin:10px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .simple  .CR   .body-search .just-header .view-slider-per-result span.slider-label{
+        padding-left:5px;
+    }
+
+    .simple  .CR   .body-search .show-body{
+        height : 70px  !important;
+        width: calc(100% - 20px);
+    }
+
+    .simple  .CR   .body-search  .result-view {
+        height : 0px;
+        width: 100%;
+        background-color: transparent;
+        display: none;
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view {
+        height : calc(100% - 130px) !important;
+        display: inline-block !important;
+        width: 100%;
+        background-color: transparent;
+        display: inline-block  !important;
+
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view  .list-view{
+        max-height : calc(100% - 20px) !important;
+        display: inline-block;
+        width: calc(100% - 16px);
+        background-color: transparent;
+        overflow-y:auto;
+        border: 1px solid #5d9ce9;
+        margin : 0px 8px;
+
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view  .list-view .search-complate{
+        width:calc(100% - 35px);
+    }
+    .simple  .CR   .body-search .show-body ~ .result-view  .list-view .search-half{
+        width:calc(50% - 20px);
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view  .list-view  .alert-mode-viewer{
+        padding: 10px !important;
+        border: 1px solid rgb(197, 197, 197);
+        background-color: white;
+        margin : 10px !important;
+        position: relative;
+        transition-delay: 0s;
+        -moz-transition-delay: 0s;
+        -webkit-transition-delay: 0s;
+        transition-duration: 200ms;
+        -moz-transition-duration: 200ms;
+        -webkit-transition-duration: 200ms;
+        transition-property: all;
+        -moz-transition-property: all;
+        -webkit-transition-property: all;
+        transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        -webkit-transition-timing-function: ease-out;
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view  .list-view  .alert-mode-viewer:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view  .list-view  .alert-mode-viewer div.simple-footer{
+        right : 50%;
+        width : 0px;
+        border-bottom: 5px solid transparent;
+        position: absolute;
+        bottom: 0px;
+
+        transition-duration: 0.5s;
+        transition-property: border-bottom,right,width;
+        transition-timing-function: ease-in;
+    }
+    .simple  .CR   .body-search .show-body ~ .result-view  .list-view  .alert-mode-viewer:hover div.simple-footer{
+        border-bottom: 5px solid #5d9ce9 !important;
+        width : 100% !important;
+        right : 0px !important;
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view .paginated-view{
+        height : 40px !important;
+        display: inline-block !important;
+        width: 100%;
+        background-color: transparent;
+    }
+
+
+
+
+    .simple  .CR   .body-search .show-body ~ .result-view  .list-view .mdContent{
+        height: 40px !important;
+        overflow: hidden !important;
+        /*border-bottom: 1px solid;*/
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view  .list-view .search-navigation{}
+
+    .simple  .CR   .body-search .show-body ~ .result-view  .list-view .search-navigation  span.spanNavIcon{
+        height : 35px;
+        padding-bottom: 1px !important;
+        padding-left: 1px !important;
+        padding-right: 1px !important;
+        padding-top: 8px !important;
+        margin: 0px !important;
+        width : 25px;
+        font-size: 16px;
+        text-align: center;
+        position: relative !important;
+
+        background-color: transparent;
+        color: black;
+
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view  .list-view .search-navigation  span.spanNavIcon:hover{
+        background-color: #5d9ce9 !important;
+        color: white !important;
+    }
+
+
+
+
+    .simple  .CR   .body-search .show-body ~ .result-view .paginated-view  .centered-pager{
+        /*margin-right: calc(50% - 250px) !important;*/
+        position: relative;
+        /*width: 500px;*/
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view .paginated-view  .centered-pager .total-view{
+        color: white ! important;
+        margin-right: 2px;
+        margin-bottom: 2px;
+        margin-left: 2px;
+        padding: 5px ! important;
+        border-radius: 0px ! important;
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view span.showDocument{
+        display : inline-block;
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view span.notShowDocument{
+        display : none;
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view span.showViewerResult{
+        font-size: 15px;
+        padding: 1px 3px;
+        margin: 2px 3px;
+        cursor: pointer;
+        float : right;
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view .hidden-result-sub {
+        width: 450px;
+
+        height: 120px;
+        position: absolute;
+        margin-top: 6px;
+        margin-right: 10px;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+        opacity:0.5;
+        background-color: rgba(0, 0, 0, 0.90);
+        display: none;
+        z-index:100;
+    }
+    .simple  .CR   .body-search .show-body ~ .result-view .hidden-result {
+        background-color: rgba(0,0,0,0.4);
+        color: white;
+        display: none;
+        min-height: 135px;
+        left: 1px;
+        margin-top: 30px;
+        position: absolute;
+        top: 1px;
+        width: 380px;
+        z-index: 2147483647 !important;
+        padding: 5px;
+
+
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view .hidden-result  .arrow-right-view{
+        border-bottom : 15px solid transparent !important;
+        border-left : 15px solid rgba(197, 197, 197, 0.85) !important;
+        height: 0 !important;
+        margin-right: -15px !important;
+        width: 0 !important;
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view .show-result-list:hover .hidden-result-sub{
+        display: block !important;
+    }
+    .simple  .CR   .body-search .show-body ~ .result-view .view-descriptions:hover  .hidden-result{
+        display: block !important;
+    }
+
+    .simple  .CR   .body-search .show-body ~ .result-view .show-result-list:hover .hidden-result  span.content-label{
+        direction: ltr;
+        max-width: 75%;
+        text-align: justify;
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+
+
+
+    .simple  .CR   .body-search .show-body ~ .result-view span.showViewerResultStart{
+        font-size: 15px;
+        padding: 3px;
+        margin: 0px !important;
+        cursor: pointer;
+        float : left;
+        color : rgba(35,173,255,1);
+    }
+
+
+    .simple  .CR   .body-search  form.search-form{
+        height: 80px !important;
+        position: relative !important;
+        width : calc(100% - 200px) !important;
+        float:left;
+    }
+
+    .simple  .CR   .body-search  img.header-logo{
+        height: 60px !important;
+        position: relative !important;
+        width: 60px !important;
+        cursor: pointer;
+        /*margin-right: calc(50% - 40px);*/
+        border-radius: 30px;
+        float:right;
+        margin-right: 15px;
+    }
+
+    .simple  .CR   .body-search  img.header-logo:hover{
+        box-shadow         :  0 0 5px rgba(35,173,255,1);
+    }
+
+    .simple  .CR   .body-search  .view-slider-per-result{
+        width : 30% !important
+    }
+
+    .simple  .sideRight{
+        height: calc(100% - 50px) !important;
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+    }
+
+
+
+    .simple .CR  th.position{
+        color: white;
+        font-size: 12px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .simple .CR  th.position  a span {
+        color: white;
+    }
+
+    .simple .CR  td.position{
+        font-size: 14px;
+        text-align: center !important;
+        vertical-align: middle;
+    }
+
+
+
+
+    .simple    .body-search  .not-result{
+        display : none;
+        height: 150px;
+        overflow: hidden;
+        margin-top : 20px;
+
+        margin-right: calc(50% - 125px);
+        width: auto ! important;
+        padding:50px 20px 20px 20px;
+        border: 1px solid rgba(197,197,197,1);
+    }
+
+    .simple    .body-search  .not-result.display{
+        display : inline-block;
+    }
+
+
+
+    .simple    .body-search .not-result  .dashboard-refresh{
+        font-size: 22px;
+        color: red;
+    }
+
+    .simple    .body-search .not-result  .dashboard-refresh:hover{
+        text-shadow: 2px 2px 4px rgba(255,0,0,1);
+    }
+
+    .simple    .body-search .not-result  .dashboard-ban{
+        font-size: 22px;
+        color: red;
+        margin-left:5px;
+    }
+
+    .simple    .body-search .not-result  .dashboard-ban:hover{
+        text-shadow: 2px 2px 4px rgba(255,0,0,1);
+    }
+
+    .simple .CR div.list-view .keyword-viewer{
+        float: right;
+        margin: 3px;
+        text-align: center;
+        border: 1px solid rgb(197, 197, 197);
+        padding: 10px;
+        max-width : 300px;
+        min-width: 150px;
+
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: ease-in;
+    }
+
+    .simple .CR div.list-view .keyword-viewer:hover{
+        box-shadow    :  0 0 5px rgba(35,173,255,1);
+        background-color :  rgba(35,173,255,1) !important;
+        color:white !important;
+        border: 1px solid rgba(35,173,255,1) !important;
+    }
+
+    .simple .CR div.list-view .keyword-viewer  span{
+        text-align: justify !important;
+        text-overflow: ellipsis !important;
+        overflow: hidden !important;
+        font-size: 14px !important;
+        width: calc(100% - 20px) !important;
+        white-space: nowrap !important;
+    }
+
+    .simple  .D  .zonesHeader{
+        background-color: #5d9ce9;
+        color: white;
+        height: 28px;
+        margin : 0px -15px 0px  0px;
+        padding : 3px;
+        border-bottom:2px solid white;
+    }
+
+    .simple  .D   .zonesHeader  span{
+        margin-right: 10px !important;
+    }
+
+
+
+
+
+    .simple  #relationsViewer{
+        position: absolute !important;
+        z-index: 1000 !important;
+        background-color: #f0f0f0 !important;
+        width: 35% !important;
+        height: calc(100vh - 50px) !important;
+        border:1px solid #5d9ce9 !important;
+    }
+
+
+    .simple  #relationsViewer  .sideLeft{
+        height: 28px;
+        position: relative;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .simple  #relationsViewer  .sideLeft .zonesHeader{
+        background-color: #5d9ce9;
+        color: white;
+        height: 28px;
+        margin : -10px;
+        padding : 3px;
+        border-bottom:2px solid white;
+    }
+
+    .simple  #relationsViewer .sideLeft .zonesHeader  span{
+        margin-right: 10px !important;
+    }
+
+    .simple  #relationsViewer .sideLeft .refresh{
+        margin: auto;
+        position: relative;
+        min-height: 20px;
+        min-width: 20px;
+        border-radius: 20px;
+        float: left;
+        text-align: center;
+        vertical-align: middle;
+        color:white;
+    }
+
+    .simple  #relationsViewer .sideLeft .refresh  a.getAgain{
+        min-width: 20px;
+        min-height: 20px;
+        text-align: center;
+        position: relative;
+    }
+
+    .simple  #relationsViewer .sideLeft .refresh span.pinToState{
+        cursor: pointer;
+        color: white;
+        font-size: 15px;
+        padding: 2px;
+        transition-duration: 0.2s;
+        transition-property: transform,-webkit-transform,-moz-transform, -ms-transform;
+        transition-timing-function: ease-in;
+    }
+
+    .simple  #relationsViewer .sideLeft .refresh span.rotate-20{
+        -ms-transform: rotate(35deg); /* IE 9 */
+        -webkit-transform: rotate(35deg); /* Chrome, Safari, Opera */
+        transform: rotate(35deg);
+        -moz-transform: rotate(35deg);
+    }
+
+    .simple  #relationsViewer .sideLeft .refresh  span.rotate-0{
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+        transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+    }
+
+    .simple #relationsViewer .sideLeft .refresh  a.getAgain i{
+        font-size: 20px;
+        position: relative;
+        cursor: pointer;
+        color:white;
+    }
+
+    .simple #relationsViewer .sideLeft .dragable-side{
+        max-height: calc(100vh - 100px) !important;
+        overflow: hidden !important;
+        margin: 2px;
+        padding : 2px;
+    }
+
+
+    .simple #relationsViewer .showRelations-side{
+        /*border: 1px solid rgb(197, 197, 197);*/
+        padding: 4px;
+        margin: 2px;
+        height: calc(100% - 30px);
+        /* max-height: calc(100vh - 230px) !important;
+         min-height: calc(100vh - 280px) !important;*/
+        overflow :   hidden !important;
+    }
+
+    .simple #relationsViewer .showRelations-side .alert-relationViewer{
+        height: 60px;
+        padding: 5px !important;
+
+        background-color : white;
+        border: 1px solid rgba(35,173,255,1) !important;
+
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: ease-in;
+    }
+
+    .simple #relationsViewer .showRelations-side .alert-relationViewer:hover{
+        box-shadow    :  0 0 5px rgba(35,173,255,1);
+        background-color :  rgba(35,173,255,1) !important;
+        color:white !important;
+    }
+
+    .simple #relationsViewer .showRelations-side .alert-relationViewer span.name{
+        direction: ltr ! important;
+        word-wrap: break-word;
+        word-break: break-all;
+        text-align: justify;
+    }
+
+
+
+
+    /*TODO  **************************************  selectedResultViewer *******************************************************/
+    .simple  #selectedResultViewer{
+        position: absolute !important;
+        z-index: 1000 !important;
+        background-color: #f0f0f0 !important;
+        width: 35% !important;
+        height: calc(100vh - 50px) !important;
+        border:1px solid #5d9ce9 !important;
+    }
+    .simple  #selectedResultViewer .sideLeft{
+        height: 28px;
+        position: relative;
+        width: 100%;
+        padding: 10px;
+    }
+    .simple  #selectedResultViewer .sideLeft .zonesHeader{
+        background-color: #5d9ce9;
+        color: white;
+        height: 28px;
+        margin : -10px;
+        padding : 3px;
+        border-bottom:2px solid white;
+    }
+    .simple  #selectedResultViewer .sideLeft .zonesHeader  span{
+        margin-right: 10px !important;
+    }
+    .simple  #selectedResultViewer .sideLeft .refresh{
+        margin: auto;
+        position: relative;
+        min-height: 20px;
+        min-width: 20px;
+        border-radius: 20px;
+        float: left;
+        text-align: center;
+        vertical-align: middle;
+        color:white;
+    }
+    .simple  #selectedResultViewer .sideLeft .refresh  a.getAgain{
+        min-width: 20px;
+        min-height: 20px;
+        text-align: center;
+        position: relative;
+    }
+    .simple  #selectedResultViewer .sideLeft .refresh span.pinToState{
+        cursor: pointer;
+        color: white;
+        font-size: 15px;
+        padding: 2px;
+        transition-duration: 0.2s;
+        transition-property: transform,-webkit-transform,-moz-transform, -ms-transform;
+        transition-timing-function: ease-in;
+    }
+    .simple  #selectedResultViewer .sideLeft .refresh span.rotate-20{
+        -ms-transform: rotate(35deg); /* IE 9 */
+        -webkit-transform: rotate(35deg); /* Chrome, Safari, Opera */
+        transform: rotate(35deg);
+        -moz-transform: rotate(35deg);
+    }
+    .simple  #selectedResultViewer .sideLeft .refresh  span.rotate-0{
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+        transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+    }
+    .simple  #selectedResultViewer .sideLeft .refresh  a.getAgain i{
+        font-size: 20px;
+        position: relative;
+        cursor: pointer;
+        color:white;
+    }
+    .simple  #selectedResultViewer .sideLeft .dragable-side{
+        max-height: calc(100vh - 100px) !important;
+        overflow: hidden !important;
+        margin: 2px;
+        padding : 2px;
+    }
+    .simple  #selectedResultViewer .showRelations-side{
+        /*border: 1px solid rgb(197, 197, 197);*/
+        padding: 4px;
+        margin: 2px;
+        height: calc(100% - 30px);
+        /* max-height: calc(100vh - 230px) !important;
+         min-height: calc(100vh - 280px) !important;*/
+        overflow :   hidden !important;
+    }
+    .simple  #selectedResultViewer .showRelations-side .alert-relationViewer{
+        height: 60px;
+        padding: 5px !important;
+
+        background-color : white;
+        border: 1px solid rgba(35,173,255,1) !important;
+
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: ease-in;
+    }
+    .simple  #selectedResultViewer .showRelations-side .alert-relationViewer:hover{
+        box-shadow    :  0 0 5px rgba(35,173,255,1);
+        background-color :  rgba(35,173,255,1) !important;
+        color:white !important;
+    }
+    .simple  #selectedResultViewer .showRelations-side .alert-relationViewer span.name{
+        direction: ltr ! important;
+        word-wrap: break-word;
+        word-break: break-all;
+        text-align: justify;
+    }
+    /*TODO  **************************************  clipboardResultViewer *******************************************************/
+    .simple  #clipboardResultViewer{
+        position: absolute !important;
+        z-index: 1000 !important;
+        background-color: #f0f0f0 !important;
+        width: 32% !important;
+        height: calc(100vh - 50px) !important;
+        border:1px solid #5d9ce9 !important;
+    }
+    .simple  #clipboardResultViewer .sideLeft{
+        height: 28px;
+        position: relative;
+        width: 100%;
+        padding: 10px;
+    }
+    .simple  #clipboardResultViewer .sideLeft .zonesHeader{
+        background-color: #5d9ce9;
+        color: white;
+        height: 28px;
+        margin : -10px;
+        padding : 3px;
+        border-bottom:2px solid white;
+    }
+    .simple  #clipboardResultViewer .sideLeft .zonesHeader  span{
+        margin-right: 10px !important;
+    }
+    .simple  #clipboardResultViewer .sideLeft .refresh{
+        margin: auto;
+        position: relative;
+        min-height: 20px;
+        min-width: 20px;
+        border-radius: 20px;
+        float: left;
+        text-align: center;
+        vertical-align: middle;
+        color:white;
+    }
+    .simple  #clipboardResultViewer .sideLeft .refresh  a.getAgain{
+        min-width: 20px;
+        min-height: 20px;
+        text-align: center;
+        position: relative;
+    }
+    .simple  #clipboardResultViewer .sideLeft .refresh span.pinToState{
+        cursor: pointer;
+        color: white;
+        font-size: 15px;
+        padding: 2px;
+        transition-duration: 0.2s;
+        transition-property: transform,-webkit-transform,-moz-transform, -ms-transform;
+        transition-timing-function: ease-in;
+    }
+    .simple  #clipboardResultViewer .sideLeft .refresh span.rotate-20{
+        -ms-transform: rotate(35deg); /* IE 9 */
+        -webkit-transform: rotate(35deg); /* Chrome, Safari, Opera */
+        transform: rotate(35deg);
+        -moz-transform: rotate(35deg);
+    }
+    .simple  #clipboardResultViewer .sideLeft .refresh  span.rotate-0{
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+        transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+    }
+    .simple  #clipboardResultViewer .sideLeft .refresh  a.getAgain i{
+        font-size: 20px;
+        position: relative;
+        cursor: pointer;
+        color:white;
+    }
+    .simple  #clipboardResultViewer .sideLeft .dragable-side{
+        max-height: calc(100vh - 100px) !important;
+        overflow: hidden !important;
+        margin: 2px;
+        padding : 2px;
+    }
+    .simple  #clipboardResultViewer .showClipboard-side{
+        /*border: 1px solid rgb(197, 197, 197);*/
+        padding: 4px;
+        margin: 2px;
+        height: calc(100% - 30px);
+        /* max-height: calc(100vh - 230px) !important;
+         min-height: calc(100vh - 280px) !important;*/
+        overflow :   hidden !important;
+    }
+    .simple  #clipboardResultViewer .showClipboard-side .alert-relationViewer{
+        float: left;
+        height: 110px;
+        padding: 5px !important;
+        text-align: center;
+        width: 100px;
+        background-color : white;
+        border: 1px solid rgba(35,173,255,1) !important;
+        /*
+            transition-duration: 0.5s;
+            transition-property: background-color;
+            transition-timing-function: ease-in;
+        */
+    }
+    .simple  #clipboardResultViewer .showClipboard-side .alert-relationViewer span.name{
+        direction: ltr ! important;
+        word-wrap: break-word;
+        word-break: break-all;
+        text-align: justify;
+    }
+    .simple  span.spanSimpleIcon{
+        height : 50px  !important;
+        font-size: 10px;
+        padding: 18px 6px 1px 1px  !important;
+        margin: 10px 1px 1px 1px !important;
+        text-align: center;
+        position: relative !important;
+        background-color: transparent;
+        color: black;
+        margin-top:10px;
+        width: 30px;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .simple  span.spanSimpleIcon  span.fa{
+        font-size: 16px;
+    }
+    .simple  span.spanSimpleIcon:hover{
+        background-color: #5d9ce9;
+        color: white;
+    }
+    .simple  span.spanSimpleIconActivated{
+        background-color: white !important;
+        color: #5d9ce9 !important;
+    }
+    .simple  span.spanSimpleIcon div.simple-nav-footer{
+        right : 50%;
+        width : 0px;
+        border-bottom: 5px solid transparent;
+        position: absolute;
+        bottom: 0px;
+        transition-duration: 0.5s;
+        transition-property: border-bottom,right,width;
+        transition-timing-function: ease-in;
+    }
+    .simple  span.spanSimpleIcon:hover div.simple-nav-footer{
+        border-bottom: 3px solid #fbbb3d !important;
+        width : 100% !important;
+        right : 0px !important;
+    }
+    .simple  span.spanSimpleIconActivated div.simple-nav-footer{
+        border-bottom: 3px solid #5d9ce9 !important;
+        width : 100% !important;
+        right : 0px !important;
+    }
+
+    .simple  span.spanSimpleIcon  span.showTopTriangleSimple{
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid rgba(255, 255,255, 1);
+        display: none;
+        position: absolute;
+        text-align: center;
+        top: 0px;
+        right: calc(50% - 6px);
+    }
+
+    .simple  span.spanSimpleIcon:hover span.showTopTriangleSimple{
+        display: inline-block;
+    }
+
+
+}
+@media screen and (max-width: 700px) {
+    .simple  .D  ul i.navbar-show .not-view{
+        display: none;
+    }
+
+    .simple .D ul i.navbar-show .icon-show{
+        width:100% !important;
+    }
+}

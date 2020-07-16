@@ -1,0 +1,228 @@
+<style>
+    .modal-header{
+        background-color: rgb(38, 166, 154) !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius:0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+
+    .modal-footer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-footer #okButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .modal-footer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+
+    .modal-footer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+
+    .modal-footer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+
+    .modal-footer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+
+    .modal-footer  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+
+    .modal-footer  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+    .select-table{
+        max-height: 300px  !important;
+        overflow: auto  !important;
+    }
+
+    .select-table table th,td {
+        text-align : center;
+    }
+    .select-table table td .md-cjeckbox-class{
+        margin: 0px  !important;
+        padding : 0px  !important;
+        left: 0  !important;
+        opacity: 1  !important;
+        position: relative  !important;
+    }
+</style>
+<div class="modal-header fontStyle">
+    <span  ng-bind="'modal.desktop.security.user.header'|translate"></span>
+</div>
+<div class="modal-body row">
+    <div class="form-group row">
+        <div class="col-sm-12 select-table ">
+            <table class="table table-striped table-hover" style="text-align: center;">
+                <thead >
+                <tr>
+                    <th  class="position">
+                        <span ng-bind="'search.zm.meta_table_rowId'|translate"></span>
+                    </th>
+                    <th>
+                                                    <span  class="fa fa-user">
+                                                          <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                                {{'desktop.zl.security_user' | translate}}
+                                                          </md-tooltip>
+                                                    </span>
+                    </th>
+                    <th>
+                                                    <span  class="fa fa-eye">
+                                                          <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                                {{'desktop.zl.security_read' | translate}}
+                                                          </md-tooltip>
+                                                    </span>
+                    </th>
+                    <th>
+                                                    <span  class="fa fa-edit">
+                                                          <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                                {{'desktop.zl.security_write' | translate}}
+                                                          </md-tooltip>
+                                                    </span>
+                    </th>
+                    <th>
+                                                    <span  class="fa fa-trash">
+                                                          <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                                {{'desktop.zl.security_delete' | translate}}
+                                                          </md-tooltip>
+                                                    </span>
+                    </th>
+                    <th>
+                                                    <span  class="fa fa-lock">
+                                                          <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                                {{'desktop.zl.security_security' | translate}}
+                                                          </md-tooltip>
+                                                    </span>
+                    </th>
+                    <th>
+                                                    <span  class="fa fa-sitemap fa-rotate-90">
+                                                          <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                                {{'desktop.zl.all_sub_track' | translate}}
+                                                          </md-tooltip>
+                                                    </span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="(user,value) in data.Users" class="selectUser">
+
+
+                    <td class="position">
+                        <span      ng-bind="($index+1)|pNumber"></span>
+                    </td>
+
+                    <td class="position">
+                        <span ng-bind="user" ></span>
+                        &nbsp;&nbsp;
+                        <span ng-if="value.isEdit"  class="fa fa-edit"></span>
+                    </td>
+                    <td><!--ng-disabled="property.readonly" -->
+                        <md-checkbox
+                                ng-change = "func.changePermission(user)"
+                                ng-model="value.securityArray[3]"
+                                ng-true-value = "1"
+                                ng-false-value = "0"
+                                class="md-cjeckbox-class">
+                        </md-checkbox>
+                    </td>
+                    <td>
+                        <md-checkbox
+                                ng-change = "func.changePermission(user)"
+                                ng-model="value.securityArray[2]"
+                                ng-true-value = "1"
+                                ng-false-value = "0"
+                                class="md-cjeckbox-class">
+                        </md-checkbox>
+                    </td>
+                    <td>
+                        <md-checkbox
+                                class="md-cjeckbox-class"
+                                ng-change = "func.changePermission(user)"
+                                ng-model="value.securityArray[1]"
+                                ng-true-value = "1"
+                                ng-false-value = "0">
+                        </md-checkbox>
+                    </td>
+                    <td>
+                        <md-checkbox
+                                ng-change = "func.changePermission(user)"
+                                ng-model="value.securityArray[0]"
+                                ng-true-value = "1"
+                                ng-false-value = "0"
+                                class="md-cjeckbox-class">
+                        </md-checkbox>
+                    </td>
+                    <td>
+                        <md-checkbox
+                                ng-model="value.recursive"
+
+                                class="md-cjeckbox-class">
+                            <!--ng-true-value = "1"
+                            ng-false-value = "0"-->
+                        </md-checkbox>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+
+        <form name="deleteFolderForm" novalidate role="form">
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="okButon"     class="md-raised" ng-click="func.update()">
+                    <md-icon  md-font-icon="fa fa-refresh  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" ng-bind="'modal.desktop.saveUpdateUser'|translate"></span>
+                </md-button>
+                <md-button id="cancelButon"     class="md-raised" ng-click="func.cancel()">
+                    <md-icon  md-font-icon="fa fa-remove  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" ng-bind="'modal.desktop.cancelUpdate'|translate"></span>
+                </md-button>
+            </section>
+        </form>
+    </div>
+</div>

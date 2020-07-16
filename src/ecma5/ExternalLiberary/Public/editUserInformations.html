@@ -1,0 +1,290 @@
+<style>
+    .modal-header{
+        background-color: #E75753 !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+
+    .modal-footer{
+        padding: 0px!important;
+        height : 100% !important;
+        margin: 0px !important;
+    }
+
+    .modal-footer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-footer #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .modal-footer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+
+    .modal-footer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+
+    .modal-footer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+
+    .modal-footer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+
+    .modal-footer  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+
+    .modal-footer  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+
+    .sample-show-hide.ng-hide-add, .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 1.5s;
+        -moz-transition:all linear 1.5s;
+        -o-transition:all linear 1.5s;
+        transition:all linear 1.5s;
+        display:block !important;
+    }
+
+    .sample-show-hide.ng-hide-add.ng-hide-add-active,
+    .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 0.2s;
+        -moz-transition:all linear 0.2s;
+        -o-transition:all linear  0.2s;
+        transition:all linear  0.2s;
+        opacity:0;
+    }
+
+    .sample-show-hide.ng-hide-add,
+    .sample-show-hide.ng-hide-remove.ng-hide-remove-active {
+        -webkit-transition:all linear 3s;
+        -moz-transition:all linear 3s;
+        -o-transition:all linear  3s;
+        transition:all linear  3s;
+        opacity:1;
+    }
+
+    .animate-if {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+    .animate-if.ng-leave, .animate-if.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+    .modal-body .layout-row{
+        margin-top:5px !important;
+    }
+
+</style>
+<div class="modal-header fontStyle" >
+                           <span  class="pull-right">
+                           ویرایش اطلاعات {{data.name}}
+                           </span>
+                           <span class="pull-left"  ng-click="func.cancel()" style="cursor: pointer;">
+                               <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                   {{'desktop.zl.cancel' | translate}}
+                               </md-tooltip>
+                           </span>
+</div>
+<div class="modal-body row form-group  " >
+
+
+    <form role="form" novalidate name="formUserInfoEditName"  >
+
+
+        <div layout="row">
+            <input type="password"  style="display:none" />
+            <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12">
+                <label>کلمه عبور</label>
+                <md-icon md-font-icon="fa fa-key"></md-icon>
+                <input
+                        style="direction: ltr !important;"
+                        id="txtPassword"
+                        type="password"
+                        name="txtPassword"
+                        ng-model="data.txtPassword"
+                        minlength="8"
+                        maxlength="100"
+						pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                        ui-keypress="{13:'func.editPassword()'}"
+                />
+                <div ng-messages="data.txtRePassword != data.txtPassword" role="alert">
+                    <div ng-message="data.txtRePassword != data.txtPassword">
+                        کلمه عبور و تکراریکی نیستند
+                    </div>
+                </div>
+            </md-input-container>
+        </div>
+
+
+        <div layout="row">
+            <input type="password"  style="display:none" />
+            <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12">
+                <label>تکرار کلمه عبور</label>
+                <md-icon md-font-icon="fa fa-key"></md-icon>
+                <input
+                        style="direction: ltr !important;"
+                        id="txtRePassword"
+                        type="password"
+                        name="txtRePassword"
+                        ng-model="data.txtRePassword"
+                        minlength="2"
+                        maxlength="100"
+                        ui-keypress="{13:'func.editRePassword()'}"
+                />
+            </md-input-container>
+        </div>
+
+        <div layout="row">
+            <input type="text"  style="display:none" />
+            <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12">
+                <label>نام</label>
+                <md-icon md-font-icon="fa fa-user"></md-icon>
+                <input
+                        id="txtUsername"
+                        required
+                        focus-me="true"
+                        type="text"
+                        name="txtUsername"
+                        ng-model="data.txtUsername"
+                        minlength="2"
+                        maxlength="100"
+                        ui-keypress="{13:'func.editName()'}"
+                />
+                <div ng-messages="formUserInfoEditName.txtUsername.$error" role="alert">
+                    <div ng-message="required">
+                        لطفا یک نام کاربری وارد کنید
+                    </div>
+                    <div ng-message="minlength">
+                        نام کاربری حداقل باید ۲ کاراکتر داشته باشد
+                    </div>
+                    <div ng-message="minlength">
+                        نام کاربری نباید بیش از ۱۰۰ کاراکتر داشته باشد
+                    </div>
+                </div>
+            </md-input-container>
+        </div>
+
+        <div layout="row">
+            <input type="text"  style="display:none" />
+            <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12">
+                <label>ایمیل</label>
+                <md-icon md-font-icon="fa fa-envelope-o"></md-icon>
+                <input
+                        style="direction: ltr !important;"
+                        id="txtEmailrname"
+                        required
+                        type="email"
+                        name="txtEmailrname"
+                        ng-model="data.txtEmailname"
+                        ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/"
+                        ui-keypress="{13:'func.editEmail()'}"
+                />
+                <div ng-messages="formUserInfoEditName.txtEmailrname.$error" role="alert">
+                    <div ng-message="required">
+                        لطفا یک ایمیل وارد کنید
+                    </div>
+                    <div ng-message="pattern">
+                        لطفا یک ایمیل وارد کنید
+                    </div>
+                    <div ng-message="email">
+                        ایمیل ورودی معتبر نیست
+                    </div>
+                </div>
+            </md-input-container>
+        </div>
+
+        <div layout="row">
+
+            <div class="col-sm-6 pull-right">
+
+                <section
+                        layout="row"
+                        layout-sm="column"
+                        layout-align="center center"
+                        layout-wrap>
+                    <md-button style="min-width:25px !important;" id="addFileButon"  class="md-raised" ng-accept="'image/*'" data-multiple="false" ng-file-select=""  ng-file-change="func.uploadFiles($files)">
+                        <md-icon  md-font-icon="fa fa-folder-open"></md-icon>
+                        <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                            تغییر تصویر
+                        </md-tooltip>
+                    </md-button>
+                </section>
+
+            </div>
+
+            <div class="col-sm-6 pull-left">
+                <img class="pull-left" id="current-user-image" src="{{data.src}}"   style="border-radius: 50%;height:50px;width:50px;" />
+            </div>
+
+
+
+        </div>
+
+    </form>
+
+
+</div>
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+
+        <form name="deleteFolderForm" novalidate role="form">
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="okButon"     class="md-raised" ng-click="func.edit()">
+                    <md-icon  md-font-icon="fa fa-edit fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" >ویرایش</span>
+                </md-button>
+                <md-button id="cancelButon"     class="md-raised" ng-click="func.cancel()">
+                    <md-icon  md-font-icon="fa fa-remove  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" >انصراف</span>
+                </md-button>
+            </section>
+        </form>
+    </div>
+</div>

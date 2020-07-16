@@ -1,0 +1,957 @@
+@media screen and (min-width: 650px) {
+    .desktop{
+        width : 100vw !important;
+        height:  100% !important;
+        overflow : hidden !important;
+        padding:0px !important;
+        margin:  0px !important;
+    }
+
+    .desktop .desktop-background {
+        background-color : #00ACC1 !important;
+    }
+
+    .desktop .color {
+        color : #00ACC1 !important;
+    }
+
+    .desktop  .SR .desktop-color {
+        border-right : 2px solid #00ACC1;
+        color: #00ACC1 !important;
+    }
+
+    .desktop  .SR  .btn-icon{
+        background-color : transparent;
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: linear;
+    }
+
+    .desktop  .SR  .btn-icon:hover > *{
+        color: white !important;
+        background-color:  #00ACC1 !important;
+    }
+
+    .desktop  .SR  .btn-icon:hover{
+        color: white !important;
+        background-color:  #00ACC1 !important;
+        border-right : 2px solid white;
+        border-left : 2px solid white;
+    }
+
+    .desktop  .SL .desktop-color {
+        border-left : 2px solid #00ACC1;
+        color: #00ACC1 !important;
+    }
+
+    .desktop  .SL .btn-icon{
+        background-color : transparent;
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: linear;
+    }
+
+    .desktop  .SL  .btn-icon:hover > *{
+        color: white !important;
+        background-color:  #00ACC1 !important;
+    }
+
+    .desktop  .SL  .btn-icon:hover{
+        color: white !important;
+        background-color:  #00ACC1 !important;
+        border-left : 2px solid white;
+        border-right : 2px solid white;
+    }
+
+
+    .desktop  .D div.hidden-zone{
+        height : 100%;
+        width  : 100%;
+        display: none;
+        opacity: 0;
+        position: relative;
+        /*transition: opacity 3s ease-out;
+        -webkit-transition:  opacity 3s ease-out;
+        -moz-transition: opacity 3s ease-out;
+        -o-transition:  opacity 3s ease-out;
+        -ms-transition: opacity 3s ease-out;*/
+    }
+
+    .desktop  .D  div.show{
+        display: inline !important;
+        opacity: 1 !important;
+    }
+
+    .desktop  .D .sideRight{
+        height: 95%;
+        position: relative;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .desktop  .D .sideRight .header{
+        max-width: 90%;
+        word-break: break-all;
+        word-wrap: break-word;
+        text-justify: auto;
+    }
+
+    .desktop  .D .refresh{
+        margin: auto;
+        position: relative;
+        min-height: 20px;
+        min-width: 20px;
+        border-radius: 20px;
+        float: left;
+        text-align: center;
+        vertical-align: middle;
+        color:white;
+    }
+
+    .desktop  .D .refresh  a.getAgain{
+        min-width: 20px;
+        min-height: 20px;
+        text-align: center;
+        position: relative;
+    }
+
+    .desktop  .D .refresh  a.getAgain i{
+        font-size: 20px;
+        position: relative;
+        cursor: pointer;
+        color:white;
+    }
+
+    .desktop  .C  .fileViewer{
+        width: 100%;
+        height: 8px;
+    }
+
+    .desktop  .C  .fileViewer  .D{
+        width: 100%;
+        height: 0px;
+    }
+    .desktop  .C  .fileViewer  .N{
+        width: 100%;
+        height: 8px;
+    }
+    .desktop  .C  .fileViewerO{
+        width: 100%;
+        height: calc(45vh - 50px);
+    }
+
+    .desktop  .C  .fileViewerO  .D{
+        width: 100%;
+        height: calc(45vh - 58px);
+        background-color : #F0F0F0;
+    }
+    .desktop  .C  .fileViewerO  .N{
+        width: 100%;
+        height: 8px;
+    }
+    .desktop  .C  .fileViewerO .D .showItems{
+        width:100%;
+        height : 100%;
+        position:relative;
+        display: inline;
+    }
+    .desktop  .C  .fileViewerO .D .showItems  .mdContent{
+        height: 40px !important;
+        overflow: hidden !important;
+        border-bottom: 1px solid;
+    }
+
+
+    .desktop  .C  .fileViewerO .D .showItems  .desktop-icons{
+        min-width: 16px !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    .desktop  .C   .fileViewer .D .showItems{
+        display: none !important;
+    }
+
+    .desktop  .C  .fileViewerO .D .showItems .list{
+        height: calc(100% - 40px);
+        width : 100%;
+        padding : 10px;
+        margin :5px 0px;
+        overflow-y:auto;
+        overflow-x:hidden;
+    }
+
+    /*.desktop  .C  .fileViewerO .D .showItems .list .file img:hover   input[type=checkbox] + label {
+        color: #ccc;
+        font-style: italic;
+        display : inline-block !important;
+    }*/
+
+    .desktop  .C  .fileViewerO .D .showItems .list .file div.selectDoc{
+        width:20px;
+        height:20px;
+        position: absolute;
+        border: 1px solid #00ACC1;
+        top: 5px;
+        z-index: 2;
+        left: 110px;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+    .desktop  .C  .fileViewerO .D .showItems .list .file div.select{
+        display: inline-block !important;
+    }
+    .desktop  .C  .fileViewerO .D .showItems .list .file span.check{
+        display: none;
+    }
+    .desktop  .C  .fileViewerO .D .showItems .list .file div.select span.check{
+        display: inline-block !important;
+        color : #00ACC1;
+    }
+    .desktop  .C  .fileViewerO .D .showItems .list .file div.unselect{
+        display: none;
+    }
+    .desktop  .C  .fileViewerO .D .showItems .list .file:hover div.unselect{
+        display: inline-block; !important;
+    }
+    .desktop  .C  .fileViewerO .D .showItems .list .file div.unselect:hover{
+        background-color : #00ACC1 !important;
+    }
+    .desktop  .C  .fileViewerO .D .showItems .list .file div.unselect:hover  .check{
+        display: inline-block; !important;
+        color : white !important;
+    }
+
+
+    .desktop  .C  .fileViewerO .D .showItems .list .file{
+        float: right;
+        background-color: transparent;
+        max-height: 100px;
+        min-height: 100px;
+        min-width: 140px;
+        padding: 5px;
+        margin: 5px;
+        border : 1px solid rgba(35,173,255,1);
+        text-align: center;
+        vertical-align: middle;
+        position: relative;
+    }
+    .desktop  .C  .fileViewerO .D .showItems .list .file  img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        max-width: 90px  !important;
+        cursor: pointer;
+    }
+    .desktop  .C  .fileViewerO .D .showItems .list .file  .label{
+        color: black;
+        direction: rtl;
+        height: 40px !important;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 4px;
+        position: relative !important;
+        width: 100%;
+    }
+    .desktop  .C  .fileViewerO .D .showItems .list .file  .label  span.name{
+        display : inline-block;
+        height : 40px;
+        overflow : hidden;
+        padding : 5px;
+        text-align : center;
+        text-overflow : ellipsis;
+        white-space : nowrap;
+        width : 110px;
+        word-break : break-all;
+        word-wrap : break-word;
+        cursor: pointer;
+    }
+    .desktop  .C  .fileViewerO .D .showItems .list .file:hover{
+        box-shadow         :  0 0 5px rgba(35,173,255,1);
+    }
+
+
+
+    .desktop  .C  .fileViewerO .D .showItems .list .file  div.footer-thumbnail{
+        right : 50%;
+        width : 0px;
+        border-bottom: 5px solid transparent;
+        position: absolute;
+        bottom: 0px;
+
+        transition-duration: 0.5s;
+        transition-property: border-bottom,right,width;
+        transition-timing-function: ease-in;
+    }
+
+    .desktop  .C  .fileViewerO .D .showItems .list .file:hover div.footer-thumbnail{
+        border-bottom: 5px solid #5d9ce9 !important;
+        width : 100% !important;
+        right : 0px !important;
+        /*margin-right:-5px !important;*/
+    }
+
+
+
+    .desktop  .C  .fileViewer ~ .files{
+        width: 100%;
+        height: calc(100vh - 58px);
+    }
+    .desktop  .C  .fileViewerO ~ .files{
+        width: 100%;
+        height: 55vh;
+    }
+
+    .desktop  .C .files  .media{
+        width : 100%;
+        height : 100%;
+        display : none;
+    }
+
+    .desktop  .C .files  .multimedia{
+        display : inline-block !important;
+    }
+
+    .desktop  .C .files  .pdfViewer{
+        display : inline-block !important;
+    }
+
+    .desktop  .C .files  .swfViewer{
+        display : inline-block !important;
+    }
+
+    .desktop  .C .files .htmlViewer{
+        display : inline-block !important;
+    }
+
+    .desktop  .C .files .imageViewer{
+        display : inline-block !important;
+    }
+
+    .desktop  .D .sideLeft{
+        height: 95%;
+        position: relative;
+        width: 100%;
+        padding: 10px;
+    }
+
+
+    .desktop  th.position{
+        color: white;
+        font-size: 12px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .desktop  th.position  a span {
+        color: white;
+    }
+
+
+
+    .desktop .sideLeft table tr.even{
+        background-color :  white !important;
+    }
+    .desktop .sideLeft table tr.odd{
+        background-color :  #e0ecff !important;
+    }
+
+    .desktop .sideLeft table tr  td{
+        text-align: center;
+    }
+
+
+    .desktop .sideLeft table tr th  span{
+        cursor: pointer;
+    }
+
+    .desktop .CR  td.position{
+        font-size: 14px;
+        text-align: center !important;
+        vertical-align: middle;
+    }
+
+    .desktop  .properties-result{
+        max-height: calc(100vh - 105px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        margin-top: 15px;
+    }
+
+    .desktop  .identify-side{
+        max-height: calc(100vh - 100px) !important;
+        overflow: hidden !important;
+        margin: 2px;
+        padding : 2px;
+        width : 100% !important;
+    }
+
+    .desktop  .identify-side  md-input-container{
+        width : 100% !important;
+    }
+
+    .desktop  .identify-side  md-input-container  md-select{
+        width : 100% !important;
+    }
+
+    /*.desktop  .identify-side  ul{
+        margin-top: 7px;
+        border: 1px solid rgb(197, 197, 197);
+        max-height: 100px;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+
+    .desktop  .identify-side  li{
+        border: 1px solid rgb(197, 197, 197);
+        padding: 4px;
+        margin: 2px;
+        float:right;
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: ease-in;
+    }
+
+    .desktop  .identify-side  li:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+        cursor: pointer;
+    }
+
+    .desktop  .identify-side  li.active{
+        color : white;
+        background-color :  rgba(35,173,255,1);
+    }*/
+
+    .desktop  .identify-side .showPropertyGroup{
+        /*border: 1px solid rgb(197, 197, 197);*/
+        padding: 4px;
+        margin: 2px;
+
+        max-height: calc(100vh - 270px) !important;
+        min-height: calc(100vh - 280px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    .desktop  .history-side{
+        max-height: calc(100vh - 130px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        margin: 10px 2px;
+        padding : 2px;
+    }
+
+
+
+    .desktop .sideLeft .relation-side{
+        max-height: calc(100vh - 100px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        margin: 12px 2px 2px 2px;
+        padding : 2px;
+    }
+
+    .desktop .sideLeft .relation-side .relation-div{
+        padding: 1px !important;
+        border: 1px solid rgb(197, 197, 197);
+        background-color: white;
+    }
+
+    .desktop .sideLeft .relation-side .relation-div:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+    }
+
+    .desktop .sideLeft .relation-side .relation-icons-group{
+        margin-left: 5px;
+        margin-top: 20px;
+        padding : 6px;
+        text-align: center;
+        vertical-align: middle;
+        width:17% !important;/*calc(30% - 25px)*/
+    }
+
+    .desktop .sideLeft .relation-side .relation-icon{
+        cursor: pointer;
+    }
+
+
+    .desktop .sideLeft  form .noteTextArea{
+        /*float: right !important;*/
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100% !important;
+    }
+
+    .desktop .sideLeft  form .noteTextArea textarea{
+        /*min-height: 200px !important;*/
+        overflow-y: auto !important;
+        text-align: justify !important;
+        word-wrap: break-word !important;
+        resize: vertical !important;
+        /*max-height: 270px !important;*/
+    }
+
+
+    .desktop .sideLeft  form  .noteIcons{
+        height: 15px;
+        width:100% !important;
+        padding:0px !important;
+    }
+
+    .desktop .sideLeft  form  .noteIcons  span{
+        font-size: 20px;
+        padding: 2px;
+        margin: 2px;
+        color :rgba(35,173,255,1);
+    }
+
+    .desktop .sideLeft  form  .noteIcons  span:hover{
+        text-shadow: 2px 2px 4px rgba(35,173,255,1);
+    }
+
+    .desktop .sideLeft  .notesList{
+        border:1px solid rgba(197,197,197,1) !important;
+        padding-left: 10px;
+        /*max-height:calc(100vh - 400px) !important;
+        min-height:100px !important;
+        overflow-y: auto !important;
+        overflow-x : hidden !important;*/
+    }
+
+    .desktop .keywords-result .keyword-viewer{
+        float: right;
+        margin: 3px;
+        text-align: center;
+        border: 1px solid rgb(197, 197, 197);
+        padding: 10px;
+        max-width : 97%;
+        min-width: 47%;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .desktop .keywords-result .keyword-viewer:hover{
+        box-shadow    :  0 0 5px rgba(35,173,255,1);
+        background-color:rgba(35,173,255,1);
+        color:white;
+    }
+
+    .desktop .keywords-result .keyword-viewer  span{
+        text-align: justify !important;
+        text-overflow: ellipsis !important;
+        overflow: hidden !important;
+        font-size: 14px !important;
+        width: calc(100% - 20px) !important;
+        white-space: nowrap !important;
+    }
+
+
+
+    .desktop .keywords-result .keyword-viewer:hover span{
+        color:white;
+    }
+    .desktop .keywords-result .keyword-viewer:hover i{
+        color:white;
+    }
+
+
+    .desktop  .sideLeft .notesList  .alert-mode-viewer{
+        padding: 5px !important;
+        border: 1px solid rgba(35,173,255,1);
+        background-color: white;
+        margin : 5px  !important;
+
+
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-timing-function: ease-in;
+
+        border-radius: 0px !important;
+        width :100% !important;
+    }
+
+    .desktop  .sideLeft .notesList  .active-note{
+        color : white !important;
+        background-color :  rgba(35,173,255,1) !important;
+    }
+
+
+
+    .desktop  .sideLeft .notesList  .alert-mode-viewer:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+    }
+
+    .desktop .sideLeft .removeHeader{}
+    .desktop .sideLeft .removeHeader #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .desktop .sideLeft .removeHeader #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .desktop .sideLeft .removeHeader #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .desktop .sideLeft .removeHeader #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+
+    .desktop  .security-side{
+        max-height: calc(100vh - 100px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        margin: 10px 2px;
+        padding : 2px;
+    }
+
+    .desktop .security-side  .edit-icon{
+        margin-bottom: 5px !important;
+        margin-top: 5px !important;
+    }
+
+    .desktop .D .noteVisible  form{
+        margin-top: 10px;
+        max-height: calc(100vh - 85px);
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+
+    .desktop .D .noteVisible .textarea{
+
+    }
+
+    .desktop .D .noteVisible textarea.error-ocure{
+        border: 1px solid rgba(255, 45, 120, 1);
+        box-shadow  :  0 0 10px rgba(255, 45, 120, 1);
+    }
+
+
+    .desktop  .properties-result .properties-result-left{
+        text-align: justify !important;
+        word-wrap: break-word !important;
+        word-break: break-all !important;
+        float: left !important;
+        direction: ltr !important;
+    }
+
+    .desktop .properties-result .properties-result-even{
+        background-color :  white !important;
+        padding: 5px;
+        min-height: 30px;
+    }
+    .desktop .properties-result .properties-result-odd{
+        background-color :  #e0ecff !important;
+        padding: 5px;
+        min-height: 30px;
+    }
+
+    .desktop .properties-result  .alert-mode-viewer{
+        padding: 5px !important;
+        border: 1px solid rgb(197, 197, 197);
+        background-color: white;
+        margin : 5px 15px !important;
+        transition-delay: 0s;
+        -moz-transition-delay: 0s;
+        -webkit-transition-delay: 0s;
+        transition-duration: 200ms;
+        -moz-transition-duration: 200ms;
+        -webkit-transition-duration: 200ms;
+        transition-property: all;
+        -moz-transition-property: all;
+        -webkit-transition-property: all;
+        transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        -webkit-transition-timing-function: ease-out;
+        border-radius: 0px !important;
+    }
+
+
+
+
+    .desktop .properties-result  .alert-mode-viewer:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+    }
+
+
+    .desktop .keywords-result{
+        max-height: calc(100vh - 200px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+
+    .desktop .keywords-result  .alert-mode-viewer{
+        padding: 5px !important;
+        border: 1px solid rgb(197, 197, 197);
+        background-color: white;
+        margin : 5px 15px !important;
+        transition-delay: 0s;
+        -moz-transition-delay: 0s;
+        -webkit-transition-delay: 0s;
+        transition-duration: 200ms;
+        -moz-transition-duration: 200ms;
+        -webkit-transition-duration: 200ms;
+        transition-property: all;
+        -moz-transition-property: all;
+        -webkit-transition-property: all;
+        transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        -webkit-transition-timing-function: ease-out;
+        border-radius: 0px !important;
+    }
+
+    .desktop .keywords-result  .alert-mode-viewer:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+    }
+
+
+    .desktop  .D   .zonesHeader{
+        background-color: #00ACC1;
+        color: white;
+        height: 28px;
+        margin : -10px;
+        padding : 3px;
+        border-bottom:2px solid white;
+    }
+
+    .desktop  .D  .zonesHeader  span{
+        margin-right: 10px !important;
+    }
+
+    .desktop #clipBoardMetaDataSaved{
+        position: absolute !important;
+        z-index: 1000 !important;
+        background-color: #f0f0f0 !important;
+        width: 20% !important;
+        height: calc(100vh - 50px) !important;
+        border:1px solid #00ACC1 !important;
+    }
+
+
+    .desktop  #clipBoardMetaDataSaved  .sideLeft{
+        height: 28px;
+        position: relative;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .desktop  #clipBoardMetaDataSaved  .sideLeft .zonesHeader{
+        background-color: #00ACC1;
+        color: white;
+        height: 28px;
+        margin : -10px;
+        padding : 3px;
+        border-bottom:2px solid white;
+    }
+
+    .desktop  #clipBoardMetaDataSaved .sideLeft .zonesHeader  span{
+        margin-right: 10px !important;
+    }
+
+    .desktop  #clipBoardMetaDataSaved .sideLeft .refresh{
+        margin: auto;
+        position: relative;
+        min-height: 20px;
+        min-width: 20px;
+        border-radius: 20px;
+        float: left;
+        text-align: center;
+        vertical-align: middle;
+        color:white;
+    }
+
+    .desktop  #clipBoardMetaDataSaved .sideLeft .refresh  a.getAgain{
+        min-width: 20px;
+        min-height: 20px;
+        text-align: center;
+        position: relative;
+    }
+
+    .desktop  #clipBoardMetaDataSaved .sideLeft .refresh span.pinToState{
+        cursor: pointer;
+        color: white;
+        font-size: 15px;
+        padding: 2px;
+        transition-duration: 0.2s;
+        transition-property: transform,-webkit-transform,-moz-transform, -ms-transform;
+        transition-timing-function: ease-in;
+    }
+
+    .desktop  #clipBoardMetaDataSaved .sideLeft .refresh span.rotate-20{
+        -ms-transform: rotate(35deg); /* IE 9 */
+        -webkit-transform: rotate(35deg); /* Chrome, Safari, Opera */
+        transform: rotate(35deg);
+        -moz-transform: rotate(35deg);
+    }
+
+    .desktop  #clipBoardMetaDataSaved .sideLeft .refresh  span.rotate-0{
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+        transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+    }
+
+    .desktop #clipBoardMetaDataSaved .sideLeft .refresh  a.getAgain i{
+        font-size: 20px;
+        position: relative;
+        cursor: pointer;
+        color:white;
+    }
+
+    .desktop #clipBoardMetaDataSaved .sideLeft .dragable-side{
+        max-height: calc(100vh - 100px) !important;
+        overflow: hidden !important;
+        margin: 2px;
+        padding : 2px;
+    }
+
+
+    .desktop #clipBoardMetaDataSaved .showPropertyGroup-side{
+        /*border: 1px solid rgb(197, 197, 197);*/
+        padding: 4px;
+        margin: 2px;
+        height: calc(100% - 30px);
+       /* max-height: calc(100vh - 230px) !important;
+        min-height: calc(100vh - 280px) !important;*/
+        overflow :   hidden !important;
+    }
+
+
+   /* .desktop  .D .showItems button  span.fa{
+        font-size:17px;
+    }*/
+
+
+    .desktop .property-viewer-desktop{
+        float: right;
+        margin: 2px 0px 0px ! important;
+        padding: 2px 2px 2px 0px ! important;
+        text-align: center;
+        border: 1px solid rgb(197, 197, 197);
+        padding: 0px !important;
+        width : 97%;
+        /*min-width: 47%;*/
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+        min-height: 80px !important;
+    }
+
+    .desktop .property-viewer-desktop:hover{
+        box-shadow    :  0 0 5px rgba(35,173,255,1);
+        background-color:rgba(35,173,255,1);
+        color:white;
+    }
+
+    .desktop .property-viewer-desktop  div.iconProperty{
+        padding: 0px !important;
+        border-bottom: 1px solid rgb(197, 197, 197);
+        height: 30px;
+        margin-top: 5px;
+        background-color: rgba(35,173,255,1) !important;
+        color : white !important;
+
+    }
+
+    .desktop .property-viewer-desktop:hover div.iconProperty{
+        border-bottom: 1px solid white !important;
+    }
+
+    .desktop .property-viewer-desktop  div.iconProperty span{
+        overflow: hidden !important;
+        font-size: 14px !important;
+        cursor: pointer;
+        margin-top: 7px;
+    }
+
+    .desktop .property-viewer-desktop  div.contentProperty{
+        padding: 0px !important;
+        margin-top: 5px;
+    }
+
+    .desktop .property-viewer-desktop  div.contentProperty span{
+        direction: ltr;
+        float: left;
+        overflow: hidden !important;
+        padding: 5px;
+        text-align: justify;
+        word-break: break-all;
+        word-wrap: break-word;
+        cursor: pointer;
+    }
+
+
+
+
+
+
+
+    .desktop .desktop-navigation{
+
+    }
+
+    .desktop .desktop-navigation  span.spanNavIcon{
+        height : 35px  !important;
+        display : none;
+        padding-bottom: 1px !important;
+        padding-left: 1px !important;
+        padding-right: 1px !important;
+        padding-top: 8px !important;
+        margin: 0px !important;
+        width : 25px;
+        font-size: 16px;
+        text-align: center;
+        position: relative !important;
+        background-color: transparent;
+        color: black;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .desktop .desktop-navigation  span.showNavIcon{
+        /*display: block !important;*/
+        display: inline-block !important;
+    }
+
+    .desktop .desktop-navigation  span.spanNavIcon:hover{
+        background-color: #00ACC1 !important;
+        color: white !important;
+    }
+
+    .desktop .desktop-navigation  span.spliterVerticalDesktop{
+        border-left: 1px solid rgb(197, 197, 197)  !important;
+        width: 1px  !important;
+        height: 30px  !important;
+        margin-top: 2px  !important;
+        display : none;
+    }
+
+
+
+
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio: 0){
+    .parent{
+        position: relative !important;
+    }
+    .child{
+        position: absolute !important;
+    }
+}
+

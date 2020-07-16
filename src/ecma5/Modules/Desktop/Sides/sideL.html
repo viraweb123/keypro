@@ -1,0 +1,131 @@
+<div class="btn-group-vertical  vertical-buttons" role="group" >
+
+    <!-- TODO metadata button -->
+    <div class="group-vertical identifyVisible">
+        <div class="btn-icon"
+             ng-class="{'desktop-color': data.nav.left.selectedSide == 'identifyVisible'} ">
+            <md-tooltip  md-direction="right">
+                {{'desktop.zl.metadata'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-list-alt fa-fw"
+                    ng-click="data.nav.left.select('identifyVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider desktop-background"></div>
+    </div>
+
+    <!-- TODO keyword button -->
+    <div class="group-vertical keywordVisible">
+        <div class="btn-icon"
+             ng-class="{'desktop-color': data.nav.left.selectedSide == 'keywordVisible'} ">
+            <md-tooltip  md-direction="right">
+                {{'desktop.zl.tag'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-tags fa-fw"
+                    ng-click="data.nav.left.select('keywordVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider desktop-background"></div>
+    </div>
+
+    <!-- TODO note button -->
+    <div class="group-vertical noteVisible">
+        <div class="btn-icon"
+             ng-class="{'desktop-color': data.nav.left.selectedSide == 'noteVisible'} ">
+            <md-tooltip  md-direction="right">
+                {{'desktop.zl.note'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-sticky-note fa-fw"
+                    ng-click="data.nav.left.select('noteVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider  desktop-background"></div>
+    </div>
+
+    <!-- TODO security button -->
+    <div class="group-vertical securityVisible">
+        <div class="btn-icon"
+             ng-class="{'desktop-color': data.nav.left.selectedSide == 'securityVisible'} ">
+            <md-tooltip  md-direction="right">
+                {{'desktop.zl.security'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-lock fa-fw"
+                    ng-click="data.nav.left.select('securityVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider desktop-background"></div>
+    </div>
+
+    <!-- TODO relation button -->
+    <div class="group-vertical relationVisible">
+        <div class="btn-icon"
+             ng-class="{'desktop-color': data.nav.left.selectedSide == 'relationVisible'} ">
+            <md-tooltip  md-direction="right">
+                {{'desktop.zl.relation'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa fa-link fa-fw"
+                    ng-click="data.nav.left.select('relationVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider desktop-background"></div>
+    </div>
+
+    <!-- TODO graph button -->
+    <div class="group-vertical graphVisible">
+        <div class="btn-icon"
+             ng-class="{'desktop-color': data.nav.left.selectedSide == 'graphVisible'} ">
+            <md-tooltip  md-direction="right">
+                {{'desktop.zl.graph'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-area-chart fa-fw"
+                    ng-click="data.nav.left.select('graphVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider desktop-background"></div>
+    </div>
+
+    <!-- TODO history button -->
+    <div class="group-vertical historyVisible">
+        <div class="btn-icon"
+             ng-class="{'desktop-color': data.nav.left.selectedSide == 'historyVisible'} ">
+            <md-tooltip  md-direction="right">
+                {{'desktop.zl.history'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-history  fa-fw"
+                    ng-click="data.nav.left.select('historyVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider desktop-background"></div>
+    </div>
+
+    <!-- TODO property button -->
+    <div class="group-vertical propertyVisible">
+        <div class="btn-icon"
+             ng-class="{'desktop-color': data.nav.left.selectedSide == 'propertyVisible'} ">
+            <md-tooltip  md-direction="right">
+                {{'desktop.zl.property'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-list fa-fw"
+                    ng-click="data.nav.left.select('propertyVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider desktop-background"></div>
+    </div>
+
+</div>

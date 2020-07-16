@@ -1,0 +1,25 @@
+<div class="cloud">
+
+
+    <div   ui-view="zoneR"  class="ZRJ"></div>
+
+    <div   ui-view="sideZone"  class="CRZ"></div>
+
+    <div id="viewCloud"  ng-class="{'showCloud':data.showCloud}">
+
+        <span  ng-click="func.showCloud()"
+               class="fa fa-angle-{{data.showCloud?'left':'right'}}"
+               style="position: absolute; z-index: 1000000; font-weight: bold; font-size: 30px; background-color: rgba(250, 240, 230, 1); padding-right: 10px; top: -2px; border-top: 2px solid black; border-right: 2px solid black; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-bottom: 2px solid black; width: 30px; right: -30px;">
+            <md-tooltip  md-direction="top">
+               {{data.showCloud?'مخفی کردن ابر کلید واژه':'نمایش ابر کلید واژه'}}
+            </md-tooltip>
+        </span>
+        <div
+                id="clouds-Keyword"
+                style="width:94% !important;height:94% !important;overflow: auto;position: absolute; margin: 0px auto; left: 2%; right: 2%;"
+                steps="7"
+        ></div>
+    </div>
+
+
+</div>

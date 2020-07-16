@@ -1,0 +1,105 @@
+<div  class="tabel-body">
+
+
+    <div class="body-view" >
+
+        <table class="table table-bordered- table-responsive table-striped table-hover- table-condensed  show-hide-file" >
+            <caption>
+                <span  class="pull-right">لیست علامت ها</span>
+
+            </caption>
+            <thead>
+                <th class="position-center" >
+                    <span style="padding: 0px 15px ! important;"  ng-bind="'administration.zr.row'|translate"></span>
+                </th>
+                <th class="position-center"  >
+                    <a  href="javascript:void(0)" ng-click=" data.sort.type = 'name'; data.sort.ascDesc = !data.sort.ascDesc">
+                        <span ng-show="data.sort.type == 'name' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                        <span ng-show="data.sort.type == 'name' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                        <span  style="padding: 0px 15px ! important;"   >نام علامت</span>
+                    </a>
+                </th>
+                <th class="position-center" >
+                    <a  href="javascript:void(0)" ng-click=" data.sort.type = 'type'; data.sort.ascDesc = !data.sort.ascDesc">
+                        <span ng-show="data.sort.type == 'type' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                        <span ng-show="data.sort.type == 'type' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                        <span style="padding: 0px 15px ! important;"  >نوع</span>
+                    </a>
+                </th>
+                <th class="position-center" >
+                    <a  href="javascript:void(0)" ng-click=" data.sort.type = 'user'; data.sort.ascDesc = !data.sort.ascDesc">
+                        <span ng-show="data.sort.type == 'user' && !data.sort.ascDesc" class="fa fa-caret-down"></span>
+                        <span ng-show="data.sort.type == 'user' && data.sort.ascDesc" class="fa fa-caret-up"></span>
+                        <span style="padding: 0px 15px ! important;"  >کاربر</span>
+                    </a>
+                </th>
+                <th class="position-center" >
+                    <span style="padding: 0px 15px ! important;"  >تصویر</span>
+                </th>
+            </thead>
+            <tbody>
+                <tr
+                        ng-repeat="item in data.list | orderBy:data.sort.type:data.sort.ascDesc"
+                        class="dashboard-select-table-tr"
+                        ng-class="{'rowOdd':$even}"
+                        ng-click = "func.go2Desktop(item)"
+
+                >
+
+                    <td class="position-center">
+                        <span  ng-bind="$index+1|en2faNum"></span>
+                    </td>
+                   <!-- <td class="position-center" style="max-width:200px;">
+                        <span style="word-break: break-all; word-wrap: break-word;"
+                              ng-bind="item.name|en2faNum"></span>
+                    </td>-->
+                    <td class="position-center" style="max-width:200px;">
+                        <span
+                                style="word-break: break-all; word-wrap: break-word;"
+                                ng-bind="item.name | minifyText : 35 : 20 : 10 | en2faNum">
+                             <md-tooltip  md-direction="top">
+                            {{ item.name }}
+                        </md-tooltip>
+                        </span>
+                    </td>
+                    <td class="position-center">
+                        <span  style="word-break: break-all; word-wrap: break-word;" ng-bind="item.typeName|en2faNum"></span>
+                    </td>
+                    <td class="position-center">
+                        <span  style="word-break: break-all; word-wrap: break-word;" ng-bind="item.user|en2faNum"></span>
+                    </td>
+                    <td  class="position-center">
+                        <img
+                                style="cursor: pointer; border:1px solid;"
+                                src="{{item.src}}"
+                        />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="not-result">
+
+            <div class="col-sm-12"  style="padding-bottom: 10px;">
+                <span   ng-click="func.todo()">
+                    <i class="dashboard-refresh fa fa-refresh">
+                        <md-tooltip  md-direction="top">
+                            امتحان دوباره
+                        </md-tooltip>
+                    </i>
+                </span>
+            </div>
+            <div class="col-sm-12">
+                <span   style="cursor: pointer">
+                    <i class="dashboard-ban fa fa-ban">
+                    </i>
+                </span>
+                <span style="color: #893247; direction: ltr; font-size: 20px;"  ng-bind="'desktop.zm.create_doc_rel_modal_no_result_found'|translate"></span>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

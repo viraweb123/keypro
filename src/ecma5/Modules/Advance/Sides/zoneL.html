@@ -1,0 +1,14 @@
+<div class="N advance-background">
+        <span
+                class="opener-zone opener-zone-advance opener-zone-left fa fa-chevron-{{data.nav.left.isOpened == false ? 'right' : 'left'}}"
+                ng-click="data.nav.left.isOpened = !data.nav.left.isOpened;">
+        </span>
+</div>
+<div  class="D">
+        <!--<div class="systematicVisible hidden-zone"               ng-class="{'show' : data.nav.left.selectedSide == 'systematicVisible'}"                   ui-view="systematicVisible"            ></div>-->
+        <div
+                class="contentKeywordsNoteVisible hidden-zone"
+                ng-class="{'show' : data.nav.left.selectedSide == 'contentVisible' ||  data.nav.left.selectedSide == 'noteVisible' || data.nav.left.selectedSide == 'keyVisible' || data.nav.left.selectedSide == 'systematicVisible' || data.nav.left.selectedSide == 'categoryVisible'}"
+                ui-view="contentKeywordsNoteVisible">
+        </div>
+</div>

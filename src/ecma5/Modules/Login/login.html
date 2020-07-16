@@ -1,0 +1,214 @@
+<script src="../ecma5/Class/md5.js"></script>
+<script>
+    $( function(){ $('[data-toggle="tooltip"]').tooltip({
+        delay: { "show": 200, "hide": 100 }
+    })});
+    $( function(){ $('[data-toggle="popover"]').popover({
+        delay : 0,
+        trigger : 'hover'
+    })});
+</script>
+<style>
+    .loginPage  #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .loginPage  #okButon:hover{
+        box-shadow  :  0 0 10px #E75753;
+        background-color :#E75753;
+        color : white;
+    }
+
+    .loginPage  #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid #E75753;
+    }
+
+    .loginPage  #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+    .loginPage .captchSection .captchIsError{
+        border: 1px solid #E75753 !important;
+        box-shadow  :  0 0 5px #E75753 !important;
+    }
+
+    .loginPage .captchSection .captchIsTouched{
+        border: 1px solid rgba(35,173,255,1) !important;
+        box-shadow  :  0 0 5px rgba(35,173,255,1) !important;
+    }
+    .loginPage .captchSection .captchDefault{
+        border: 1px solid rgba(197,197,197,1);
+    }
+
+    .loginPage canvas{
+        /*box-shadow : 0 0 5px rgba(35,173,255,1) !important;
+        border: 1px solid rgba(35,173,255,1) !important;*/
+        direction: ltr !important;
+        text-align: left !important;
+
+    }
+
+    .loginPage  form.form-login{
+        height: 210px;
+        background-color: white;
+        transition-duration: 0.5s;
+        transition-property: height;
+        transition-timing-function: ease-in;
+    }
+
+    .loginPage  form.show-captch{
+        height: 280px !important;
+    }
+
+
+</style>
+<div  class="loginMain">
+    <div class="loginPageSub"  >
+
+    </div>
+    <div class="loginPage">
+        <div class="loginForm" >
+            <div class="row form-group loginFormMainDiv">
+                <md-content layout-padding  id="loginFormContent" >
+                    <div class="rom form-group  userLogo">
+                        <img src="/static/logo/mainlogo.png" style="height: 56px; width: auto; max-width: 213px;" />
+                    </div>
+                    <!--<hr style="margin: 0px; padding: 0px; border: 2px solid rgba(197,197,197,0.8); "/>-->
+                    <form
+                            name="loginForm"
+                            novalidate
+                            role="form"
+                            class="form-login"
+                            ng-class="{'show-captch':data.showCaptch}"
+                    >
+
+                        <div layout="row"  style="height: 80px;margin-bottom: 5px ! important;margin-top: 5px ! important; padding-left: 10px; padding-right: 20px;">
+                            <input type="text"  style="display:none" />
+                            <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12">
+                                <label>نام کاربری</label>
+                                <md-icon md-font-icon="fa fa-user" style="font-size: 20px !important;top: 15px !important;"></md-icon>
+                                <input
+                                        tabindex="1"
+                                        style="text-align: left; padding-left: 10px;direction: ltr;"
+                                        id="txtUsername"
+                                        required
+                                        type="text"
+                                        name="txtUsername"
+                                        ng-model="data.txtUsername"
+                                        minlength="2"
+                                        maxlength="100"
+                                        ui-keypress="{13:'func.checkTrue($event)'}"
+                                />
+                                <div ng-messages="loginForm.txtUsername.$error" role="alert">
+                                    <div ng-message="required">
+                                        لطفا یک نام کاربری وارد کنید
+                                    </div>
+                                    <div ng-message="minlength">
+                                        نام کاربری حداقل باید ۲ کاراکتر داشته باشد
+                                    </div>
+                                    <div ng-message="minlength">
+                                        نام کاربری نباید بیش از ۱۰۰ کاراکتر داشته باشد
+                                    </div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout="row"  style=" height: 80px;margin-bottom: 5px ! important; padding-left: 10px; padding-right: 20px;">
+                            <input type="password"  style="display:none" />
+                            <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12">
+                                <label>کلمه عبور</label>
+                                <md-icon md-font-icon="fa fa-key"  style="font-size: 20px !important;top: 15px !important;"></md-icon>
+                                <input
+                                        tabindex="2"
+                                        style="text-align: left; padding-left: 10px;direction: ltr;"
+                                        id="txtPassword"
+                                        required
+                                        type="password"
+                                        name="txtPassword"
+                                        ng-model="data.txtPassword"
+                                        minlength="2"
+                                        maxlength="100"
+                                        ui-keypress="{13:'func.checkTrue($event)'}"
+                                />
+                                <div ng-messages="loginForm.txtPassword.$error" role="alert">
+                                   <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                    لطفا یک کلمه عبور وارد کنید
+                                </div>
+                                    <div ng-message="required">
+                                        لطفا یک کلمه عبور وارد کنید
+                                    </div>
+                                    <div ng-message="minlength">
+                                        کلمه عبور حداقل باید ۲ کاراکتر داشته باشد
+                                    </div>
+                                    <div ng-message="minlength">
+                                        کلمه عبور نباید بیش از ۱۰۰ کاراکتر داشته باشد
+                                    </div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout="row"  style="height: 60px;margin-bottom: 5px ! important;margin-top: 5px ! important; padding-left: 10px; padding-right: 20px;"  ng-if="data.showCaptch">
+                            <div class="col-sm-6 pull-left"  class="padding-right: 0 !important;">
+                                <canvas
+                                        width="120"
+                                        height="50"
+                                        id="captcha_canvas_keydocpro_login_state"
+                                >
+                                </canvas>
+                                <i
+                                        class="fa fa-refresh pull-left"
+                                        ng-click="func.captcha()"
+                                        style="cursor: pointer; position: relative; top: 20px;">
+                                    <md-tooltip  md-direction="bottom"  style="z-index:100000;">
+                                        بارگزاری مجدد تصویر
+                                    </md-tooltip>
+                                </i>
+                            </div>
+
+                            <div class="col-sm-6 pull-right captchSection">
+                                <input type="text"  style="display:none" />
+                                <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12">
+
+                                    <input
+                                                tabindex="3"
+                                                style="margin-top:-4px;text-align: left !important; padding-left: 10px;direction: ltr !important;height:50px;"
+                                                id="captcha"
+                                                required
+                                                class="captchDefault"
+                                                type="text"
+                                                name="txtCaptcha"
+                                                ng-model="data.txtCaptcha"
+                                                ui-keypress="{13:'func.checkTrue($event)'}"
+                                                ng-keyup="func.checkCaptch()"
+                                                ng-class="{'captchIsTouched':loginForm.txtCaptcha.$touched && loginForm.txtCaptcha.$valid , 'captchIsError' : loginForm.txtCaptcha.$touched &&  loginForm.txtCaptcha.$invalid}"
+                                        />
+                                    </md-input-container>
+                            </div>
+                        </div>
+                    </form>
+                    <!--<hr style="margin: 0px; padding: 0px; border: 2px solid rgba(197,197,197,0.8); "/>-->
+                    <div clas="row form-group"  style="margin: 0px ! important; padding: 0px ! important;  background-color: rgba(230, 230, 230, 0.7);/*rgba(145, 145, 145, 0.4)*/">
+                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap  style="padding-top: 5px; padding-bottom: 5px;">
+                            <md-button id="okButon"  tabindex="4"   class="md-raised" ng-click="func.checkTrue()">
+                                <md-icon  md-font-icon="fa fa-user  fa-fw"></md-icon>
+                                <span style="margin-right: 3px;"  >ورود</span>
+                                <md-tooltip  md-direction="top"  style="z-index:100000;">
+                                    ورود به سیستم
+                                </md-tooltip>
+                            </md-button>
+
+                        </section>
+                    </div>
+
+                </md-content>
+            </div>
+        </div>
+        <div class="row col-sm-12"  style="position: fixed; bottom: 0px; background-color: rgba(197, 197, 197, 0.85); margin: 0px ! important; height: 50px; width: 100vw;">
+            <span  style="color: white; position: fixed; margin-top: 12px ! important; right: 33%;" > کلیه حقوق این سامانه متعلق به شرکت  <a style="cursor: pointer"  ng-click = "func.goToDaneshHamaraSite()" >دانش هم آرا </a>  می باشد</span>
+        </div>
+    </div>
+</div>
+

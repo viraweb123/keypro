@@ -1,0 +1,129 @@
+<div class="desktop" ng-if="data.isShowDesktop">
+
+    <div   ui-view="sideR"  class="SR"></div>
+
+    <div   ui-view="zoneR"  class="ZR{{data.nav.right.isOpened == true ? 'O' : ''}}"></div>
+
+    <div   ui-view="sideL"  class="SL"></div>
+
+    <div   ui-view="zoneL"  class="ZL{{data.nav.left.isOpened == true ? 'O' : ''}}"></div>
+
+    <div   ui-view="sideZone"  class="C"></div>
+
+    <div
+            ng-show="data.showClipboardFolder"
+            id="clipBoardMetaDataSaved"
+            style="margin-right:4%;"
+    >
+
+        <div class="sideLeft">
+
+            <div class="zonesHeader">
+                <span ng-bind="data.clipboardFolder.label"></span>
+
+                <div class=" pull-left  refresh">
+                    <a  ng-click="func.hiddenSaved2Clipboard()" class="getAgain"   >
+                        <i  class="fa fa-remove">
+                            <md-tooltip  md-direction="bottom"  style="z-index:1000 !important">
+                               بستن
+                            </md-tooltip>
+                        </i>
+                    </a>
+                </div>
+
+                <div class=" pull-left  refresh">
+                    <span
+                            class="fa fa-thumb-tack  pinToState"
+                            ng-click="func.pinToLocation();"
+                            ng-class="{'rotate-20' : !data.clipboardFolderPushed , 'rotate-0':data.clipboardFolderPushed}"
+                    >
+                        <md-tooltip  md-direction="top">
+                        الصاق به صفحه
+                    </md-tooltip>
+                    </span>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 showPropertyGroup-side">
+
+            <div class="row form-group" style="height: calc(100% - 80px); overflow: hidden;">
+
+                <!--<form-generator
+                        style="position: relative; padding: 0px 0px 0px 5px;"
+                        initiallize="data.formMetadataParent"
+                        funcs = "func.formMetadataParent"
+                        buttons = "data.metadataButtonsParent"
+                ></form-generator>-->
+
+                <generator
+                        style="position: relative; padding: 0px 0px 0px 5px;"
+                        external-scope = "externalScopeParent">
+                </generator>
+
+            </div>
+
+            <div class="col-sm-12 row form-group desktop-metadata"  ng-if="data.PropertyGroupParent!=null">
+                <style>
+                    .desktop-metadata{}
+
+                    .desktop-metadata #success-occure{
+                        border-radius: 0px ! important;
+                        transition-duration: 0.5s;
+                        transition-property: background-color,color;
+                        transition-timing-function: ease-in;
+                    }
+                    .desktop-metadata #success-occure:hover{
+                        box-shadow  :  0 0 10px rgba(35,173,255,1);
+                        background-color : rgba(35,173,255,1);
+                        color : white;
+                    }
+                    .desktop-metadata #success-occure md-icon{
+                        padding-left: 5px !important;
+                        border-left: 1px solid rgba(35,173,255,1);
+                    }
+                    .desktop-metadata #success-occure:hover md-icon{
+                        color : white;
+                        border-left: 1px solid white !important;
+                    }
+
+                    .desktop-metadata  #error-occure{
+                        border-radius: 0px ! important;
+                        transition-duration: 0.5s;
+                        transition-property: background-color,color;
+                        transition-timing-function: ease-in;
+                    }
+                    .desktop-metadata  #error-occure:hover{
+                        box-shadow  :  0 0 10px rgba(255,134,29,1);
+                        background-color : rgba(255,134,29,1);
+                        color : white;
+                    }
+                    .desktop-metadata  #error-occure md-icon{
+                        padding-left: 5px !important;
+                        border-left: 1px solid rgba(255,134,29,1);
+                    }
+                    .desktop-metadata  #error-occure:hover md-icon{
+                        color : white;
+                        border-left: 1px solid white !important;
+                    }
+                </style>
+                <section layout="row" layout-sm="column" layout-align="center center" >
+
+                    <md-button id="success-occure"     class="md-raised" ng-click="externalScopeParent.externalFuncs.editMetadataFrom()" >
+                        <md-icon md-font-icon="fa fa-pencil-square-o"></md-icon>
+                        <span ng-bind="'modal.desktop.confirmation'|translate"> </span>
+                    </md-button>
+                </section>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</div>

@@ -1,0 +1,489 @@
+<div class="CNK  advance-nicescroll"  style="padding-top:0px !important;height: calc(100vh - 50px) !important; overflow-x : hidden; overflow-y: auto !important;">
+
+
+    <div class="form-group row notvisibilityElement"  ng-class="{'visibilityElement' : data.advanceOBJ.contentPushed  || data.nav.left.selectedSide == 'contentVisible'}">
+
+        <div class="zonesLHeader"  style="margin : 0px -10px -10px -10px;">
+                <span >محتوا</span>
+                <div layout="row" class="pull-left">
+                    <span
+
+                                            class="fa fa-thumb-tack  pinToState"
+                                            ng-click="data.advanceOBJ.contentPushed = !data.advanceOBJ.contentPushed;"
+                                            ng-class="{'rotate-20' : !data.advanceOBJ.contentPushed , 'rotate-0':data.advanceOBJ.contentPushed}"
+                                    >
+                    <md-tooltip  md-direction="top">
+                    الصاق به صفحه
+                </md-tooltip>
+                </span>
+                    <!--<md-checkbox  ng-model="data.advanceOBJ.contentPushed" style="left: 0; opacity: 1; position: relative;">
+                        &lt;!&ndash;<span class="fa fa-map-pin"></span>&ndash;&gt;
+                    </md-checkbox>
+                    <md-tooltip  md-direction="top">
+                        الصاق به صفحه
+                    </md-tooltip>-->
+                </div>
+            </div>
+
+        <div class="advanceLeftBody"  style="margin-top: -9px;">
+            <form name="contentAdvanceForm"    novalidate   style="max-height: 70px; !important; margin-top: 15px;">
+                <div layout="row"><!--style="margin-top: -10px;"-->
+                    <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12">
+                        <label>محتوا</label>
+                        <input
+                                id="contentSearch"
+
+                                type="text"
+                                name="contentSearch"
+                                ng-model="data.advanceOBJ.content"
+                                minlength="1"
+                                ui-keypress="{13:'func.content(contentAdvanceForm)'}"
+                        />
+                        <!--<div ng-messages="contentAdvanceForm.contentSearch.$error" role="alert">
+                            <div ng-message="required">
+                                لطفا برای محتوا عبارتی را وارد کنید
+                            </div>
+                            <div ng-message="minlength">
+                              حداقل یک کاراکتر وارد کنید
+                            </div>
+                        </div>-->
+                    </md-input-container>
+                </div>
+
+                <!--<div class="row form-group col-sm-12">
+                    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                        <md-button id="addAdvanceItem" class="md-raised" ng-click="func.content(contentAdvanceForm)">افزودن محتوا</md-button>
+                    </section>
+                </div>-->
+
+            </form>
+        </div>
+
+    </div>
+
+    <div class="form-group row notvisibilityElement" ng-class="{'visibilityElement' : data.advanceOBJ.keywordPushed  || data.nav.left.selectedSide == 'keyVisible'}">
+
+        <div class="zonesLHeader" style="margin : 0px -10px -10px -10px;">
+            <span >کلید واژه</span>
+            <div layout="row" class="pull-left">
+                     <span
+
+                             class="fa fa-thumb-tack  pinToState"
+                             ng-click="data.advanceOBJ.keywordPushed = !data.advanceOBJ.keywordPushed;"
+                             ng-class="{'rotate-20' : !data.advanceOBJ.keywordPushed , 'rotate-0':data.advanceOBJ.keywordPushed}"
+                     >
+                    <md-tooltip  md-direction="top">
+                    الصاق به صفحه
+                </md-tooltip>
+                </span>
+                <!--<md-checkbox  ng-model="data.advanceOBJ.keywordPushed" style="left: 0; opacity: 1; position: relative;">
+
+                </md-checkbox>
+                <md-tooltip  md-direction="top">
+                    الصاق به صفحه
+                </md-tooltip>-->
+            </div>
+        </div>
+
+        <div class="advanceLeftBody" style="margin-top: -9px;">
+            <form name="keywordAdvanceForm"    novalidate   style="max-height: 70px; !important; margin-top: 15px;">
+                <div layout="row" >
+                    <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12">
+                        <label>کلید واژه</label>
+
+                        <input
+                                id="keywordSearch"
+
+                                type="text"
+                                name="keywordSearch"
+                                ng-model="data.advanceOBJ.keyword"
+                                minlength="1"
+                                ui-keypress="{13:'func.keyword(keywordAdvanceForm)'}"
+                        />
+                        <!--<div ng-messages="keywordAdvanceForm.keywordSearch.$error" role="alert">
+                            <div ng-message="required">
+                                لطفا برای محتوا عبارتی را وارد کنید
+                            </div>
+                            <div ng-message="minlength">
+                                حداقل یک کاراکتر وارد کنید
+                            </div>
+                        </div>-->
+                    </md-input-container>
+                </div>
+
+                <!--<div class="row form-group  col-sm-12">
+                    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                        <md-button id="addAdvanceItem" class="md-raised" ng-click="func.keyword(keywordAdvanceForm)">افزودن کلیدواژه</md-button>
+                    </section>
+                </div>-->
+
+
+            </form>
+        </div>
+
+    </div>
+
+    <div class="form-group row notvisibilityElement"  ng-class="{'visibilityElement' : data.advanceOBJ.notePushed  || data.nav.left.selectedSide == 'noteVisible'}">
+
+       <div class="zonesLHeader" style="margin : 0px -10px -10px -10px;">
+                <span >یادداشت</span>
+                <div layout="row" class="pull-left">
+                    <!--<md-checkbox  ng-model="data.advanceOBJ.notePushed" style="left: 0; opacity: 1; position: relative;">
+
+                    </md-checkbox>
+                    <md-tooltip  md-direction="top">
+                        الصاق به صفحه
+                    </md-tooltip>-->
+                    <span
+
+                                                class="fa fa-thumb-tack  pinToState"
+                                                ng-click="data.advanceOBJ.notePushed = !data.advanceOBJ.notePushed;"
+                                                ng-class="{'rotate-20' : !data.advanceOBJ.notePushed , 'rotate-0':data.advanceOBJ.notePushed}"
+                                        >
+                    <md-tooltip  md-direction="top">
+                    الصاق به صفحه
+                </md-tooltip>
+                </span>
+                </div>
+            </div>
+
+       <div class="advanceLeftBody" style="margin-top: -9px;">
+            <form name="noteAdvanceForm"    novalidate   style="max-height: 70px; !important; margin-top: 15px;">
+                <div layout="row"  >
+                    <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12">
+                        <label>یادداشت</label>
+
+                        <input
+                                id="noteSearch"
+
+                                type="text"
+                                name="noteSearch"
+                                ng-model="data.advanceOBJ.note"
+                                minlength="1"
+                                ui-keypress="{13:'func.note(noteAdvanceForm)'}"
+                        />
+                       <!-- <div ng-messages="noteAdvanceForm.noteSearch.$error" role="alert">
+                            <div ng-message="required">
+                                لطفا برای محتوا عبارتی را وارد کنید
+                            </div>
+                            <div ng-message="minlength">
+                                حداقل یک کاراکتر وارد کنید
+                            </div>
+                        </div>-->
+                    </md-input-container>
+                </div>
+                <!--<div class="row form-group col-sm-12">
+                    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                        <md-button id="addAdvanceItem" class="md-raised" ng-click="func.note(noteAdvanceForm)">افزودن یادداشت</md-button>
+                    </section>
+                </div>-->
+
+
+            </form>
+        </div>
+
+    </div>
+
+    <div class="form-group row notvisibilityElement"  ng-class="{'visibilityElement' : data.advanceOBJ.systematicPushed  || data.nav.left.selectedSide == 'systematicVisible'}">
+
+        <div class="zonesLHeader"  style="margin :0px -10px -10px;">
+            <span  >ذخیره شده</span>
+            <div layout="row" class="pull-left">
+
+                <span
+
+                        class="fa fa-thumb-tack  pinToState"
+                        ng-click="data.advanceOBJ.systematicPushed = !data.advanceOBJ.systematicPushed;"
+                        ng-class="{'rotate-20' : !data.advanceOBJ.systematicPushed , 'rotate-0': data.advanceOBJ.systematicPushed}"
+                >
+                    <md-tooltip  md-direction="top">
+                    الصاق به صفحه
+                </md-tooltip>
+                </span>
+                <!--<md-checkbox  ng-model="data.advanceOBJ.systematicPushed" style="left: 0; opacity: 1; position: relative;">
+                    &lt;!&ndash;<span class="fa fa-map-pin"></span>&ndash;&gt;
+                </md-checkbox>
+                <md-tooltip  md-direction="top">
+                    الصاق به صفحه
+                </md-tooltip>-->
+            </div>
+        </div>
+
+        <div class="advanceLeftBody"  style="margin-top: -9px;">
+
+            <form   style="margin-top: 10px;"
+                    name="systematicAdvanceForm"
+                    novalidate>
+
+                <div layout="row" class="row form-group col-sm-12"  style="margin-bottom: 0px;padding: 0px;">
+                    <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12">
+                        <label>نام سند / پوشه</label>
+                        <input
+                                id="docName"
+
+                                type="text"
+                                name="docName"
+                                ng-model="data.advanceOBJ.docName"
+                                minlength="1"
+                                ui-keypress="{13:'func.docName(systematicAdvanceForm)'}"
+                        /><!--required-->
+                        <!--<div ng-messages="systematicAdvanceForm.docName.$error" role="alert">
+                            <div ng-message="required">
+                                لطفا برای نام سند / پوشه عبارتی را وارد کنید
+                            </div>
+                            <div ng-message="minlength">
+                                حداقل یک کاراکتر وارد کنید
+                            </div>
+                        </div>-->
+                    </md-input-container>
+                </div>
+
+                <div class="row form-group col-sm-12">
+                    <span class="pull-right"  style="margin-right: -10px;"> مسیر : </span>
+                    <md-button class="md-fab md-primary  pull-left"  ng-click="func.selectPath()"  style="margin-top: -10px; width: 35px; height: 35px; margin-left: -12px;">
+                        <md-icon class="fa fa-folder-open-o"  style="margin-top: 10px;"></md-icon>
+                    </md-button>
+                </div>
+                <div class="row form-group col-sm-12">
+                    <span class="path-viewer" >
+                        {{data.advanceOBJ.path}}
+                    </span>
+                </div>
+                <div layout="row" class="row form-group col-sm-12"  style="margin-bottom: 0px;padding: 0px;">
+                    <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12">
+                        <label>نام نویسنده</label>
+                        <input
+                                id="author"
+                                type="text"
+                                name="author"
+                                ng-model="data.advanceOBJ.author"
+                                minlength="1"
+                                ui-keypress="{13:'func.author(systematicAdvanceForm)'}"
+                        />
+                        <!--<div ng-messages="systematicAdvanceForm.author.$error" role="alert">
+                            <div ng-message="required">
+                                لطفا برای نویسنده عبارتی را وارد کنید
+                            </div>
+                            <div ng-message="minlength">
+                                حداقل یک کاراکتر وارد کنید
+                            </div>
+                        </div>-->
+                    </md-input-container>
+                </div>
+                <div class="input-group" style="direction: ltr; margin: 10px 0px;">
+                    <span
+                            id="startDate"
+                            class="input-group-addon"
+                            style="border-radius:0px !important;cursor: pointer; background-color: transparent; border-left: none;border-right: none;border-top: none;  border-bottom : 1px solid rgb(197, 197, 197);"
+                            ng-click="data.open($event,'from')">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                    <input
+                            name="from"
+                            ng-change="func.changeDate('from')"
+                            type="text"
+                            style="border-radius:0px !important;background-color: transparent; border-left: none;border-right: none;border-top: none;  border-bottom : 1px solid rgb(197, 197, 197);box-shadow: none;"
+                            readonly="readonly"
+                            placeholder="تاریخ شروع"
+                            class="form-control"
+                            datepicker-popup-persian="yyyy/MM/dd"
+                            ng-model="data.advanceOBJ.date.from"
+                            is-open="data.isOpen['from']"
+                            aria-describedby="startDate"
+                            current-text="امروز"
+                            clear-text="پاک کردن"
+                            close-text="لغو"
+                            starting-day="6"
+                    />
+                </div>
+                <div class="input-group" style="direction: ltr; margin: 10px 0px;">
+                    <span
+                            id="endDate"
+                            class="input-group-addon"
+                            style="border-radius:0px !important;cursor: pointer; background-color: transparent; border-left: none;border-right: none;border-top: none;  border-bottom : 1px solid rgb(197, 197, 197);"
+                            ng-click="data.open($event,'to')">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                    <input
+                            name="from"
+                            ng-change="func.changeDate('to')"
+                            type="text"
+                            style="border-radius:0px !important;background-color: transparent; border-left: none;border-right: none;border-top: none;  border-bottom : 1px solid rgb(197, 197, 197);box-shadow: none;"
+                            placeholder="تاریخ پایان"
+                            readonly="readonly"
+                            class="form-control"
+                            datepicker-popup-persian="yyyy/MM/dd"
+                            ng-model="data.advanceOBJ.date.to"
+                            is-open="data.isOpen['to']"
+                            aria-describedby="endDate"
+                            current-text="امروز"
+                            clear-text="پاک کردن"
+                            close-text="لغو"
+                            starting-day="6"
+                    />
+                </div>
+
+                <div layout="row"  class="row form-group col-sm-12"  style="padding:0px;margin:10px 0px 0px 5px;">
+                    <md-input-container class="md-block  col-sm-12 "  style=" width:100%; padding: 0;">
+                        <label>مسیر سیستمی</label>
+                        <md-select
+                                md-on-open="func.getSystematicPaths()"
+                                class="md-block  col-sm-12 pull-right"
+                                placeholder="{{property.label}}"
+                                ng-model="data.advanceOBJ.systematicPath"
+                                ng-change="func.selectSystematicPath()"
+                                style="padding-left: 0px; padding-right: 0px; min-width: 100%; max-width: 100%;">
+                            <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                            <md-option ng-value="systematicPath" ng-repeat="systematicPath in data.systematicPaths">{{systematicPath.label}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+                <div layout="row"  class="row form-group col-sm-12"  style="padding:0px;margin:10px 0px 0px 5px;">
+                    <md-input-container class="md-block  col-sm-12 "  style="width:100%; padding: 0;">
+                        <label>نوع سند</label>
+                        <md-select
+                                md-on-open="func.getDocumentTypes()"
+                                class="md-block  col-sm-12 pull-right"
+                                placeholder="{{property.label}}"
+                                ng-model="data.advanceOBJ.documentType"
+                                ng-change="func.selectDocumentType()"
+                                style="padding-left: 0px; padding-right: 0px; min-width: 100%; max-width: 100%;">
+                            <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                            <md-option ng-value="documentType" ng-repeat="documentType in data.documentTypes">{{documentType.label}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+                <div layout="row"  class="row form-group col-sm-12"  style="padding:0px;margin:0px;overflow-x:auto;">
+
+                    <div layout="row" class="pull-right checkbox-system">
+                        <md-checkbox
+                                ng-change = "func.domainChange('file')"
+                                ng-true-value = "1" ng-false-value = "0"
+                                ng-model="data.advanceOBJ.file"
+                                style="left: 0; opacity: 1; position: relative;">
+                            <span class="fa fa-file-o"></span>
+                        </md-checkbox>
+                        <md-tooltip  md-direction="top">
+                            سند
+                        </md-tooltip>
+                    </div>
+
+                    <div layout="row"   class="pull-right checkbox-system">
+                        <md-checkbox
+                                ng-change = "func.domainChange('folder')"
+                                ng-true-value = "2"
+                                ng-false-value = "0"
+                                ng-model="data.advanceOBJ.folder"
+                                style="left: 0; opacity: 1; position: relative;">
+                            <span class="fa fa-folder-o"></span>
+                        </md-checkbox>
+                        <md-tooltip  md-direction="top">
+                            پوشه
+                        </md-tooltip>
+                    </div>
+
+                    <div layout="row" class="pull-right  checkbox-system">
+                        <md-checkbox
+                                ng-change = "func.domainChange('email')"
+                                ng-true-value = "4"
+                                ng-false-value = "0"
+                                ng-model="data.advanceOBJ.email"
+                                style="left: 0; opacity: 1; position: relative;">
+                            <span class="fa fa-envelope-o"></span>
+                        </md-checkbox>
+                        <md-tooltip  md-direction="top">
+                            پست الکترونیکی
+                        </md-tooltip>
+                    </div>
+
+
+                </div>
+
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+    <div class="form-group row notvisibilityElement"  ng-class="{'visibilityElement' : data.advanceOBJ.categoryPushed  || data.nav.left.selectedSide == 'categoryVisible' }">
+
+        <div class="zonesLHeader"  style="margin : 0px -10px -10px -10px;">
+            <span >دسته بندی</span>
+            <div layout="row" class="pull-left">
+                    <span
+
+                            class="fa fa-thumb-tack  pinToState"
+                            ng-click="data.advanceOBJ.categoryPushed = !data.advanceOBJ.categoryPushed;"
+                            ng-class="{'rotate-20' : !data.advanceOBJ.categoryPushed , 'rotate-0':data.advanceOBJ.categoryPushed}"
+                    >
+                    <md-tooltip  md-direction="top">
+                    الصاق به صفحه
+                </md-tooltip>
+                </span>
+            </div>
+        </div>
+
+        <div ng-show="data.profile.prfStack.categoriesVisible" class="advanceLeftBody"  style="margin-top: -9px;">
+            <form name="categoryAdvanceForm"    novalidate   style="max-height: 70px; !important; margin-top: 15px;">
+                <div layout="row">
+
+                    <div class="row form-group col-sm-12">
+                        <span class="pull-right">انتخاب دسته بندی : </span>
+                        <md-button class="md-fab md-primary  pull-left"  ng-click="func.selectCategory()"  style="margin-top: -10px;width: 35px; height: 35px;">
+                            <md-icon class="fa fa-folder-open-o"  style="margin-top: 10px;"></md-icon>
+                        </md-button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="sideLeft" ng-show="!data.profile.prfStack.categoriesVisible">
+            <style>
+
+                .not-support-javascript{
+                    width: 100%;
+
+                    margin-top: 20px;
+                    text-align: center;
+                    border: 1px solid rgba(35,173,255,1);
+                    padding : 10px;
+                    transition-duration: 0.5s;
+                    transition-property: background-color;
+                    transition-timing-function: ease-in;
+                    border-radius: 0px !important;
+                }
+
+                .not-support-javascript:hover {
+                    box-shadow: 0 0 6px rgba(35, 173, 255, 1);
+                    background-color: rgba(35, 173, 255, 1) !important;
+                    color: white !important;
+                }
+
+                .not-support-javascript  img{
+                    width:65px;
+                    height: auto;
+                }
+
+                .not-support-javascript  h2{
+                    font-family: IRANSans-web-bold;
+                }
+
+
+            </style>
+            <div  class="not-support-javascript">
+                <img src="static/img/Warning.png" />
+                <h6>امکان نمایش دسته بندی برای شما وجود ندارد.</h6>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+

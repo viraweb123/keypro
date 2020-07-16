@@ -1,0 +1,971 @@
+<style>
+    .modal-body .form-generator-modal{}
+    .modal-body .form-generator-modal  form{
+        height : 400px !important;
+    }
+    .modal-body  .form-uploaded .md-mode-determinate{
+        height : 20px !important;
+    }
+    .modal-body  .form-uploaded .md-mode-determinate .md-bar{
+        height : 20px !important;
+    }
+    .modal-header{
+        background-color: rgb(38, 166, 154) !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+
+    .modal-footer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-footer #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .modal-footer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+
+    .modal-footer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+
+    .modal-footer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+
+    .modal-footer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+
+    .modal-footer  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+
+    .modal-footer  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+
+    .sample-show-hide.ng-hide-add, .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 1.5s;
+        -moz-transition:all linear 1.5s;
+        -o-transition:all linear 1.5s;
+        transition:all linear 1.5s;
+        display:block !important;
+    }
+
+    .sample-show-hide.ng-hide-add.ng-hide-add-active,
+    .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 0.2s;
+        -moz-transition:all linear 0.2s;
+        -o-transition:all linear  0.2s;
+        transition:all linear  0.2s;
+        opacity:0;
+    }
+
+    .sample-show-hide.ng-hide-add,
+    .sample-show-hide.ng-hide-remove.ng-hide-remove-active {
+        -webkit-transition:all linear 3s;
+        -moz-transition:all linear 3s;
+        -o-transition:all linear  3s;
+        transition:all linear  3s;
+        opacity:1;
+    }
+
+    .animate-if {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+    .animate-if.ng-leave, .animate-if.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+    .modal-body .fillState{
+        margin-top: 0px ! important;
+        padding: 0px ! important;
+        overflow: hidden ! important;
+    }
+
+    .modal-body .fillState .metadatas{
+        height : 300px !important;
+        overflow-y: hidden !important;
+        overflow-x: hidden !important;
+        width : 180px;
+        /*text-align: center !important;
+        float : right !important;
+        direction: ltr;*/
+
+        border-right : 1px solid rgb(197,197,197);
+
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+
+
+    }
+
+    .modal-body .fillState .metadatasMin{
+        width : 20px !important;
+    }
+
+    .modal-body .fillState .viewer{
+        height : 300px !important;
+        overflow-y: hidden !important;
+        overflow-x: hidden !important;
+        width: calc(100% - 325px);
+        text-align: center !important;
+        float : left !important;
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        border-right: 1px solid rgba(197,197,197,1)!important;
+
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+
+    }
+
+    .modal-body .fillState .viewerLR{
+        width: calc(100% - 50px) !important;
+    }
+
+    .modal-body .fillState .viewerL{
+        width: calc(100% - 170px) !important;
+    }
+
+    .modal-body .fillState .viewerR{
+        width: calc(100% - 205px) !important;
+    }
+
+    .modal-body .fillState .viewer .files{
+        width: 100%;
+        height: 400px;
+    }
+
+    .modal-body .fillState .viewer .files  .media{
+        width : 100%;
+        height : 97%;
+        display : none;
+    }
+    .modal-body .fillState .viewer .files  .multimedia{
+        display : inline-block !important;
+    }
+
+    .modal-body .fillState .viewer .files  .pdfViewer{
+        display : inline-block !important;
+    }
+
+    .modal-body .fillState .viewer.files  .swfViewer{
+        display : inline-block !important;
+    }
+
+    .modal-body .fillState .thumbnails{
+        height : 300px !important;
+        overflow-y: hidden !important;
+        overflow-x: hidden !important;
+        width : 140px;
+        text-align: center !important;
+        float : right !important;
+        direction: ltr;
+
+        transition-duration: 0.5s;
+        transition-property: width;
+        transition-timing-function: ease-in;
+    }
+
+    .thumbnailsMin{
+        width : 20px !important;
+    }
+
+    .modal-body .fillState .thumbnails img{
+        height: 95px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+        max-width: 95px;
+        padding: 3px;
+    }
+
+    .modal-body .fillState .thumbnails img.filter{
+        -webkit-filter: blur(2px);
+        -moz-filter: blur(2px);
+        -o-filter: blur(2px);
+        -ms-filter: blur(25px);
+        filter: blur(2px);
+    }
+
+
+    .modal-body #addFile{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-body #addFile:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+    .modal-body #addFile:hover md-icon{
+        color : white;
+    }
+
+    .modal-body #nextStep{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-body #nextStep:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+    .modal-body #nextStep:hover md-icon{
+        color : white;
+    }
+
+    .modal-body #uploadFile{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-body #uploadFile:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+    .modal-body #uploadFile:hover md-icon{
+        color : white;
+    }
+
+
+    .modal-header #nav-icons{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-header #nav-icons:hover{
+        box-shadow  :  0 0 10px rgba(38, 166, 154,1);
+        background-color : rgba(38, 166, 154,1);
+        color : white;
+    }
+    .modal-header #nav-icons:hover md-icon{
+        color : white;
+    }
+
+
+    .modal-body div.images-list{
+        margin-top: 10px !important;
+        overflow-y: auto !important;
+        max-height: 240px !important;
+        border: 1px solid rgb(197,197,197) !important;
+    }
+
+    .modal-body div.images-list div.image-viewer{
+        margin:2px !important;
+        background-size: cover !important;
+        float: left !important;
+        position: relative !important;
+        text-align: center !important;
+        width: 120px !important;
+        height:80px !important;
+    }
+
+    .modal-body div.images-list div.image-viewer  span.image-name{
+        position: relative !important;
+        direction: ltr !important;
+        top: 60px !important;
+        text-overflow: ellipsis !important;
+        float: left !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        padding: 0px 5px !important;
+        margin: 0px !important;
+        /*background-color: rgba(0, 0, 0, 0.3) !important;*/
+        color: white !important;
+    }
+
+    .modal-body div.images-list div.image-viewer div.send-process{
+        float: left !important;
+        left: 0px !important;
+        z-index: 100 !important;
+        position: absolute !important;
+        opacity: 0.8 !important;
+        -webkit-filter: blur(6px) !important;
+        -moz-filter: blur(6px) !important;
+        -o-filter: blur(6px) !important;
+        -ms-filter: blur(6px) !important;
+        filter: blur(6px) !important;
+        background-color: rgba(0, 0, 0, 0.3) !important;
+        height: 80px !important;
+    }
+
+    .modal-body div.images-list div.image-viewer div.send-viewer{
+        height: 80px !important;
+        width: 100% !important;
+        float: left !important;
+        left: 0px !important;
+        z-index: 101 !important;
+        position: absolute !important;
+        background-color: transparent !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+        padding-top: 3px !important;
+    }
+    .modal-body div.images-list div.image-viewer div.send-nav{
+        height: 80px !important;
+        float: left !important;
+        left: 0px !important;
+        z-index: 103 !important;
+        position: absolute !important;
+        text-align: center !important;
+        background-color: rgba(0, 0, 0, 0.3) !important;
+        width: 20px !important;
+        background: linear-gradient(to right, rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.1)) !important;
+    }
+
+    .modal-body div.images-list div.image-viewer div.send-digitalsign{
+        height: 80px !important;
+        float: right !important;
+        z-index: 103 !important;
+        position: absolute !important;
+        background-color: transparent !important;
+        width: 25px !important;
+        text-align: center !important;
+    }
+
+
+
+    .modal-body .zonesHeader{
+        background-color: rgb(38, 166, 154);
+        color: white;
+        height: 28px;
+        margin-top: 0;
+        padding : 3px;
+        border-bottom:2px solid white;
+    }
+
+
+
+    .modal-body  .zonesHeader  span{
+        margin-right: 10px !important;
+    }
+
+
+    .modal-body .sample-show-hide.ng-hide-add, .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 1.6s;
+        -moz-transition:all linear 1.6s;
+        -o-transition:all linear 1.6s;
+        transition:all linear 1.6s;
+        display:block !important;
+    }
+
+    .modal-body .sample-show-hide.ng-hide-add.ng-hide-add-active,
+    .modal-body.sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 0.2s;
+        -moz-transition:all linear 0.2s;
+        -o-transition:all linear  0.2s;
+        transition:all linear  0.2s;
+        opacity:0;
+    }
+
+    .modal-body .sample-show-hide.ng-hide-add,
+    .modal-body  .sample-show-hide.ng-hide-remove.ng-hide-remove-active {
+        -webkit-transition:all linear 1.6s;
+        -moz-transition:all linear 1.6s;
+        -o-transition:all linear  1.6s;
+        transition:all linear  1.6s;
+        opacity:1;
+    }
+
+    .modal-body .animate-if {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.6s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.6s;
+    }
+
+    .modal-body .animate-if.ng-enter, .animate-if.ng-leave {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.6s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.6s;
+    }
+
+    .modal-body .animate-if.ng-enter, .animate-if.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+    .modal-body .animate-if.ng-leave, .animate-if.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+
+
+    @media screen and (-webkit-min-device-pixel-ratio: 0){
+        .modal-body .parent{
+            position: relative !important;
+        }
+        .modal-body .child{
+            position: absolute !important;
+        }
+    }
+    .child{
+        direction: rtl  !important;
+    }
+
+
+    .modal-body .thumbnail-viewer{
+        float : right;
+        text-align: center;
+    }
+    .modal-body .thumbnail-viewer div.selectDoc{
+        width:20px;
+        height:20px;
+        position: absolute;
+        border: 1px solid #00ACC1;
+        top: 5px;
+        z-index: 2;
+        left: 60px;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+    .modal-body  .thumbnail-viewer div.select{
+        display: inline-block !important;
+    }
+    .modal-body   .thumbnail-viewer div.select span.check{
+        display: inline-block !important;
+        color : #00ACC1;
+    }
+    .modal-body .thumbnail-viewer:hover div.unselect{
+        display: inline-block; !important;
+    }
+    .modal-body .thumbnail-viewer div.unselect:hover{
+        background-color : #00ACC1 !important;
+    }
+    .modal-body  .thumbnail-viewer  img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+        margin-top: 10px;
+        padding-top: 5px;
+    }
+    .modal-body  .thumbnail-viewer  .label{
+        color: black;
+        direction: rtl;
+        height: 40px !important;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 4px;
+        position: relative !important;
+        width: 100%;
+    }
+    .modal-body  .thumbnail-viewer  span.name{
+        display : inline-block;
+        height : 40px;
+        overflow : hidden;
+        padding : 5px;
+        text-align : center;
+        text-overflow : ellipsis;
+        white-space : nowrap;
+        width : 110px;
+        word-break : break-all;
+        word-wrap : break-word;
+        cursor: pointer;
+    }
+    .modal-body  .thumbnail-viewer:hover{
+        box-shadow         :  0 0 5px rgba(35,173,255,1);
+    }
+    .modal-body  .header-map{
+        padding: 0px !important;
+        margin: 2px 0px  !important;
+        text-align: center !important;
+    }
+    .modal-body  .header-map  .direction-icon{
+        cursor: pointer !important;
+        font-size: 20px !important;
+        font-weight: bold !important;
+    }
+
+    .modal-body .checkbox-system{
+        padding : 10px !important;
+    }
+
+
+</style>
+
+<div class="modal-header fontStyle">
+
+    <section   class="pull-right" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+
+        <md-button id="nav-icons"   ng-show="data.state == 'fillMetaData'" style="min-width:25px !important;"   class="md-raised pull-left" ng-click="func.goState('uploadFiles')">
+            <md-icon  md-font-icon="fa fa-arrow-right"></md-icon>
+            <md-tooltip style="z-index:100000 !important;" md-direction="top"  >
+                افزودن سند
+            </md-tooltip>
+        </md-button>
+
+
+
+        <md-button
+                id="nav-icons"
+                ng-show="data.state == 'uploadFiles' && data.profile.prfStack.templatesVisible"
+                style="min-width:25px !important;"
+                class="md-raised pull-left"
+                ng-click="func.goState('selectTemplate')">
+            <md-icon  md-font-icon="fa fa-arrow-right"></md-icon>
+            <md-tooltip style="z-index:100000 !important;" md-direction="top"  >
+                انتخاب قالب
+            </md-tooltip>
+        </md-button>
+    </section>
+
+    <span class="fontStyle  pull-right"  style="font-size: 18px; float: right; margin-top: 14px; text-align: center; width: calc(100% - 130px);"  ng-bind="data.stateLookup[data.state]"></span>
+
+    <section   class="pull-left" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+
+
+        <md-button
+                id="nav-icons"
+
+                style="min-width:25px !important;display:{{data.state == 'selectMetadata'?'inline':'none'}}"
+                class="md-raised pull-left"
+                ng-click="func.goState(data.profile.prfStack.templatesVisible ? 'selectTemplate' : 'uploadFiles')">
+            <md-icon  md-font-icon="fa fa-arrow-left"></md-icon>
+            <md-tooltip style="z-index:100000 !important;" md-direction="top"  >
+                {{data.profile.prfStack.templatesVisible ? 'انتخاب قالب':'افزودن سند'}}
+            </md-tooltip>
+        </md-button>
+
+       <!--ng-show="data.state == 'selectMetadata'" -->
+        <md-button
+                   id="nav-icons"
+
+                   style="min-width:25px !important;display:{{data.state == 'selectTemplate'?'inline':'none'}}"
+                   class="md-raised pull-left"
+                   ng-click="func.goState('uploadFiles')">
+            <md-icon  md-font-icon="fa fa-arrow-left"></md-icon>
+            <md-tooltip style="z-index:100000 !important;" md-direction="top"  >
+                افزودن سند
+            </md-tooltip>
+        </md-button>
+
+        <!--ng-show="data.state == 'uploadFiles'" -->
+        <md-button id="nav-icons"
+
+                   style="min-width:25px !important;display:{{data.state == 'uploadFiles'?'inline':'none'}}"
+                   class="md-raised pull-left"
+                   ng-click="func.goState('fillMetaData')">
+            <md-icon  md-font-icon="fa fa-arrow-left"></md-icon>
+            <md-tooltip style="z-index:100000 !important;" md-direction="top"  >
+               تغیرات فراداده
+            </md-tooltip>
+        </md-button>
+
+    </section>
+
+</div>
+
+<div class="modal-body row form-group" style="padding: 3px; margin: 0px ! important;">
+
+    <!--todo ------------------------------- select metadata state ------------------------------- -->
+    <div  class="col-sm-12 row form-group" ng-show="data.state == 'selectMetadata'">
+        <div layout="row"  class="row form-group col-sm-12">
+            <md-input-container class="md-block  col-sm-6 "  style="margin-right :25% !important; padding: 0;">
+                <label>انتخاب نوع فراداده</label>
+                <md-select
+                        class="md-block  col-sm-12 pull-right"
+                        placeholder="انتخاب فراداده"
+                        ng-model="data.selectMetadata"
+                        ng-change="func.changeMetaData()"
+                        md-on-open="func.getMetadataList()"
+                        style="min-width: 200px;">
+                    <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                    <md-option ng-value="metadata" ng-disabled="!metadata.active" ng-repeat="metadata in data.metadatas">{{metadata.label}}</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+
+    <!--todo ------------------------------- select template state ------------------------------- -->
+    <div
+            class="col-sm-12 row form-group"
+            ng-show="data.state == 'selectTemplate' && data.profile.prfStack.templatesVisible"
+    >
+
+
+
+
+        <div class="row form-group  col-sm-12">
+
+            <div class="pull-right" style="width: 33%;">
+                <div class="zonesHeader"  style="margin-left: 2px;">
+                    <span class="pull-right">درخت الگو</span>
+                </div>
+                <div  class="parent" style="display: -webkit-box;display:-moz-box;width:100%;min-height: 400px; max-height: 400px;overflow: auto;position: relative;">
+                    <div
+                            tree-model
+                            tree-func="func.treeView"
+                            root-folder="data.root"
+                            current-node="data.tree"
+                            class="treeview child"
+                            style="padding-left: 10px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pull-right" style="border-left:1px solid black;width:33%;min-height: 400px; max-height: 400px; border-right: 1px solid; overflow-y:auto;overflow-x:hidden;">
+                <div class="zonesHeader"  style="margin-left: 2px; margin-right: 2px;">
+                    <span class="pull-right">نمایش الگو</span>
+                </div>
+                <div  ng-repeat="doc in data.themplateList"  class="thumbnail-viewer">
+
+                    <img  ng-class="{'brithness-filter' : data.selectedFileOrFolder.uuid == doc.uuid}"  ng-click="func.templateClickImage($event,doc)"  src="{{doc.thumbnailSrc}}" />
+                    <div class="label row" >
+                        <span ng-bind="doc.name"  class="name"  style="color:black"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                    class="pull-right form-group "
+                    style="width:33%;padding: 0px !important; overflow-y: hidden;">
+                <div class="zonesHeader"  style="margin-right: 2px;">
+                    <span class="pull-right">فراداده</span>
+                </div>
+                <div class="row col-sm-12 form-group"   style="overflow-y: auto;max-height: 400px !important; ">
+                    <generator
+                            style="position: relative; padding: 0px 0px 0px 5px;"
+                            external-scope = "templateExternalScope">
+                    </generator>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div layout="row"  class="col-sm-6 pull-right"  style="padding:0px;margin:0px;">
+                <div layout="row" class="pull-right checkbox-system">
+                    <md-checkbox
+                            ng-model="data.byCategories"
+                            style="left: 0; opacity: 1; position: relative;">
+                        <span class="fa fa-file"></span>
+                    </md-checkbox>
+                    <md-tooltip  style="z-index:100000 !important;" md-direction="top">
+                        دسته بندی
+                    </md-tooltip>
+                </div>
+                <div layout="row"   class="pull-right checkbox-system">
+                    <md-checkbox
+                            ng-model="data.byKeywords"
+                            style="left: 0; opacity: 1; position: relative;">
+                        <span class="fa fa-tags"></span>
+                    </md-checkbox>
+                    <md-tooltip style="z-index:100000 !important;"  md-direction="top">
+                        کلیدواژه
+                    </md-tooltip>
+                </div>
+                <div layout="row" class="pull-right  checkbox-system">
+                    <md-checkbox
+                            ng-model="data.byNotes"
+                            style="left: 0; opacity: 1; position: relative;">
+                        <span class="fa fa-sticky-note"></span>
+                    </md-checkbox>
+                    <md-tooltip style="z-index:100000 !important;"  md-direction="top">
+                        نکته
+                    </md-tooltip>
+                </div>
+                <div layout="row" class="pull-right  checkbox-system">
+                    <md-checkbox
+                            ng-model="data.byPropertyGroups"
+                            style="left: 0; opacity: 1; position: relative;">
+                        <span class="fa fa-list-alt"></span>
+                    </md-checkbox>
+                    <md-tooltip  style="z-index:100000 !important;" md-direction="top">
+                        فراداده
+                    </md-tooltip>
+                </div>
+        </div>
+
+
+    </div>
+
+    <!--todo ------------------------------- upload files state ------------------------------- -->
+    <div class="col-sm-12 row form-group" ng-show="data.state == 'uploadFiles'"  data-multiple="true" ng-file-drop="func.addFiles($files)">
+
+
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <section    layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                    <md-button style="min-width:25px !important;" id="addFile"  class="md-raised pull-left" data-multiple="true"  ng-file-select="func.addFiles($files)">
+                        <md-icon  md-font-icon="fa fa-plus"></md-icon>
+                        <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                            افزودن سند
+                        </md-tooltip>
+                    </md-button>
+                    <md-button style="min-width:25px !important;" id="uploadFile"  class="md-raised  pull-right" ng-click="func.uploadFiles()" ng-disabled="data.startUpload">
+                        <md-icon  md-font-icon="fa  fa-upload"></md-icon>
+                        <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                            {{'modal.desktop.upload'|translate}}
+                        </md-tooltip>
+                    </md-button>
+                </section>
+                <hr />
+            </div>
+
+
+            <div class="col-sm-12  images-list">
+                <div  ng-repeat="(name,file) in data.filesList"   class="image-viewer"  style="background-image: url({{file.url}})">
+                    <span  ng-bind="name"  class="image-name">
+                        <md-tooltip  md-direction="top" style="z-index:100000;">{{name}}</md-tooltip>
+                    </span>
+                    <div  ng-if="file.status == 'Sending'"  class="send-process" style="width:{{file.Upload.percent}}%;"></div>
+                    <div  ng-if="file.status == 'Sending'"  class="send-viewer">
+                        <span  style="color: white;">{{file.Upload.percent|pNumber}}%</span>
+                        <i style="color:white;" class="fa fa-spinner fa-pulse fa-3x- fa-fw"  ></i>
+                    </div>
+                    <div  class="send-nav">
+                        <i class="fa fa-trash fa-fw"  style="color:white;cursor: pointer;"  ng-click="func.onDeleteItemClick(name);"  ng-if="file.status != 'Success' &&  file.status != 'Sending' ">
+                            <md-tooltip  md-direction="top" style="z-index:100000;">
+                                    حذف
+                            </md-tooltip>
+                        </i>
+                        <i class="fa fa-refresh fa-fw"  style="color:white;cursor: pointer;"  ng-click="func.uploadAgain(name);"  ng-if="file.status == 'Error' ">
+                            <md-tooltip  md-direction="top" style="z-index:100000;">
+                                    تلاش دوباره
+                            </md-tooltip>
+                        </i>
+                        <i class="fa fa-check  fa-fw"  style="color:white;cursor: pointer;"  ng-if="file.status == 'Success'">
+                            <md-tooltip  md-direction="top" style="z-index:100000;">
+ارسال شده
+                            </md-tooltip>
+                        </i>
+                        <i class="fa fa-remove fa-fw"  style="color:white;cursor: pointer;" ng-click="func.onCancelFileUpload(name);"  ng-if="file.status == 'Sending' ">
+                            <md-tooltip  md-direction="top" style="z-index:100000;">
+                                    انصراف
+                            </md-tooltip>
+                        </i>
+                    </div>
+                    <div ng-if="data.prfDigitalSignPermit"  class="send-digitalsign">
+                        <span>
+                            <md-checkbox class="pull-right" ng-disabled="file.startUpload || file.status == 'Success'" ng-model="upload.isSelect" style=" margin-right: 3px;left: 0; opacity: 1; position: relative;">
+                            </md-checkbox>
+                            <md-tooltip  md-direction="top" style="z-index:100000;">
+                                    امضا دیجیتال
+                            </md-tooltip>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .checkbox-view{
+                    width : 160px !important;
+                    padding : 2px !important;
+                    margin : 0px !important;
+                    float : right;
+                }
+
+                span.refresh-view{
+                    width : 20px !important;
+                    padding : 2px;
+                    float : left;
+                }
+
+                span.remove-view{
+                    width : 20px !important;
+                    padding : 2px;
+                    float : left;
+                }
+
+                span.name-viewer{
+                    padding : 2px;
+                    float : right;
+                }
+
+                span.name-viewer-isSignPermit{
+                    width :calc(100% - 200px) !important;
+                }
+                span.name-viewer-notSignPermit{
+                    width :calc(100% - 100px) !important;
+                }
+            </style>
+
+        </div>
+    </div>
+
+    <!--todo ------------------------------- metadata fill state ------------------------------- -->
+    <div class="col-sm-12 row form-group  fillState" ng-show="data.state == 'fillMetaData'">
+
+        <div class="metadatas  pull-left" ng-class="{'metadatasMin' : data.minimize.left == true}">
+
+            <div class="zonesHeader" >
+                <span ng-if="data.minimize.left==false" class="pull-right">{{data.selectMetadata.label}}</span>
+                <span
+                        style="margin-top: 4px;"
+                        ng-click="data.minimize.left = !data.minimize.left"
+                        class="pull-left fa fa-chevron-{{data.minimize.left == false ? 'left' : 'right'}}" >
+                </span>
+            </div>
+
+            <div
+                    ng-show="data.minimize.left == false"
+                    class="row form-group col-sm-12 sample-show-hide"
+                    style="padding: 0px !important; margin: 0px 0px 0px 5px !important; overflow-y: auto; overflow-x: hidden; height: 270px;">
+                <div layout="row"  class="row form-group col-sm-12"  style="padding: 0px !important; margin: 0px !important; overflow: hidden;">
+
+                    <generator
+                            ng-show="data.minimize.left == false"
+                            style="position: relative; padding-left: 8px; padding-right: 4px;"
+                            external-scope = "externalScopeFill">
+                    </generator>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="viewer"
+             ng-class="{
+                    'viewerLR' : data.minimize.left == true && data.minimize.right == true,
+                    'viewerL'  : data.minimize.left == true && data.minimize.right == false,
+                    'viewerR'  : data.minimize.left == false && data.minimize.right == true
+                 }"
+
+        >
+
+            <div class="zonesHeader">
+                <span class="pull-right">پیش نمایش</span>
+            </div>
+
+            <div  class="files">
+
+                <!-- --------------------------------  MultiMedia  --------------------------------- -->
+                <div  id="desktop-multimedia-viewer-parent" class="media {{data.viewer.type == 'media' ? 'multimedia' : ''}}">
+                    <div class="videogular-container" style="width: 100% ! important;direction: ltr;position: relative;height: 100%;"
+                         id="desktop-multimedia-viewer-child">
+                        <keydoc-player
+                                runing ="data.viewer.player.func"
+                                id="key-doc-pro-media-shower-id">
+                        </keydoc-player>
+                    </div>
+                </div>
+                <!-- --------------------------------  PDF  --------------------------------- -->
+                <div   class="media {{data.viewer.type == 'pdf' ? 'pdfViewer' : ''}}"
+                       id="modal-pdf-viewer-parent"  style="height:100%;max-height:100%;min-height:100%;">
+                    <div id="modal-pdf-viewer-child" style="width:100%;height:100%;position: relative;">
+                    </div>
+                </div>
+
+                <!-- -------------------------------- SWF -------------------------------- -->
+                <div class="media {{data.viewer.type == 'swf' ? 'swfViewer' : ''}}">
+                    <div id="viewercontainer"
+                         ng-class="{'open-file':data.isOpenfileShower,'close-file':!data.isOpenfileShower}">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="thumbnails" ng-class="{'thumbnailsMin' : data.minimize.right == true}">
+
+            <div class="zonesHeader">
+                <span ng-if="data.minimize.right==false" class="pull-right">لیست</span>
+                <span
+                        style="margin-top: 4px;"
+                        ng-click="data.minimize.right = !data.minimize.right"
+                        class="pull-left fa fa-chevron-{{data.minimize.right == false ? 'right' : 'left'}}" >
+                </span>
+            </div>
+
+            <div
+                    ng-show="data.minimize.right == false"
+                    class="row form-group col-sm-12 sample-show-hide" style="height:330px; overflow-x: hidden !important;overflow-y: auto !important;margin: 0px !important;padding: 0px !important;">
+
+
+                <div ng-repeat="doc in data.list"  class="file">
+                    <img  ng-class="{'filter' : data.selectedImage.uuid == doc.uuid}"  ng-click="func.clickImage(doc)"  src="{{doc.thumbnailSrc}}" />
+                    <span
+                            style="width:100%;"
+                            class="row"
+                            ng-bind="doc.name | minifyText : 15 : 10 : 5" >
+                                <md-tooltip  md-direct.viewerion="bottom" style="z-index: 10000 !important;">
+                         {{doc.name}}
+                                </md-tooltip>
+                     </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+
+        <form name="deleteFolderForm" novalidate role="form">
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="okButon"  ng-disabled="data.state != 'fillMetaData'"   class="md-raised" ng-click="func.ok()">
+                    <md-icon  md-font-icon="fa fa-check  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" ng-bind="'modal.desktop.insert'|translate"></span>
+                </md-button>
+                <md-button id="cancelButon"     class="md-raised" ng-click="func.cancel()">
+                    <md-icon  md-font-icon="fa fa-remove  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" ng-bind="'desktop.zl.cancel'|translate"></span>
+                </md-button>
+            </section>
+        </form>
+    </div>
+</div>

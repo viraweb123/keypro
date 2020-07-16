@@ -1,0 +1,127 @@
+<style>
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+    }
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+    }
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+    .modal-body .alert-mode-viewer-modal{
+        border: 1px solid rgb(197, 197, 197) !important;
+        padding: 5px !important;
+    }
+
+    .modal-body .alert-mode-viewer-modal:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+    }
+    .modal-body  md-progress-linear .md-container{
+        height : 15px !important;
+    }
+    .modal-body  md-progress-linear .md-container .md-bar{
+        height : 15px !important;
+    }
+</style>
+<div class="modal-header">
+    <div class="form-group">
+        <div class="col-sm-1 pull-left">
+            <i class="fa fa-close pull-left"
+               style="cursor: pointer; color: red" ng-click="func.close()"> </i>
+        </div><label class="col-sm-11 pull-right">اضافه کردن اسناد</label>
+    </div>
+</div>
+<div class="modal-body row " style="margin-bottom: 0;">
+    <div class="row form-group  col-sm-12">
+        <div class="col-sm-12 alert-mode-viewer-modal">
+            <div
+                    class="col-sm-12 "
+                    ng-file-drop="func.addFiles($files)"
+                    ng-file-change="func.addFiles($files)"
+                    data-multiple="false">
+                <section
+                        class="pull-left"
+                        layout="row"
+                        layout-sm="column"
+                        layout-align="center center"
+                        layout-wrap>
+                    <md-button style="min-width:25px !important;" id="addFileButon"  class="md-raised" ng-file-change="func.addFiles($files)"  data-multiple="false" ng-file-select="func.addFiles($files)">
+                        <md-icon  md-font-icon="fa fa-folder-open"></md-icon>
+                        <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                            افزودن سند
+                        </md-tooltip>
+                    </md-button>
+                </section>
+                                      <span
+                                              style="margin-top: 15px;margin-left: 2px;margin-left: 2px; cursor: pointer; color: rgb(229, 89, 0); top: 4px; font-size: 13px;"
+                                              class="fa fa-refresh  pull-left"
+                                              ng-click="func.uploadAgain();"
+                                              ng-show="data.upload.status == 'ERROR'" >
+                                          <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                        تلاش دوباره
+                                         </md-tooltip>
+                                      </span>
+                                      <span
+                                              ng-show="data.startUpload != true && data.upload.status != 'SUCCESS'"
+                                              class="fa fa-remove pull-left"
+                                              style="margin-top: 15px;cursor: pointer;"
+                                              ng-click="func.onRemoveFileClick();">
+                                          <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                        حذف
+                                          </md-tooltip>
+                                      </span>
+                                      <span
+                                              ng-bind="data.upload.filename"
+                                              style="margin-top: 15px;word-wrap: break-word; word-break: break-all; text-align: justify;"
+                                              class="control-label">
+                                          <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                {{data.upload.filename}}
+                                          </md-tooltip>
+                                      </span>
+                                      <span
+                                              ng-show="data.upload.status == 'SUCCESS'"
+                                              style="margin-top: 15px;color:rgba(12,167,34,1);"
+                                              class="fa fa-check  pull-left">
+                                          <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                        ارسال موفق سند
+                                          </md-tooltip>
+                                      </span>
+                                      <span
+                                              ng-show="data.upload.status == 'ERROR'"
+                                              style="margin-top: 15px;color:rgba(167,17,34,1);"
+                                              class="fa fa-warning  pull-left">
+                                          <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                        عدم ارسال موفق سند
+                                          </md-tooltip>
+                                      </span>
+
+            </div>
+
+            <div class="row col-sm-12"  style=position:relative;   ng-show="data.startUpload == true  &&  data.upload.status == 'SEND'">
+                <md-progress-linear md-mode="determinate" value="{{data.upload.percent}}"></md-progress-linear>
+                <span style="position: absolute; margin-top: -5px; color: white; left: 47%;">{{data.upload.percent}}%</span>
+                                            <span
+                                                    style="position: absolute; color: white; float: left; left: 18px; top: 0px; font-size: 14px;"
+                                                    class="fa fa-remove pull-left"
+                                                    ng-click="func.onCancelFileClick();"
+                                                    ng-show="data.upload.percent != 100  ||  data.upload.percent!=null">
+                                                  <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                      لغو بارگزاری سند
+                                                   </md-tooltip>
+                                            </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <md-button  style="width:50px;" id="cancelButon"     class="md-raised col-sm-4" ng-click="func.close()">
+                <md-icon style="border-left:1px solid rgba(197,197,197,1);padding-left: 5px;" md-font-icon="fa fa-remove"></md-icon>
+                <span >بازگشت</span>
+            </md-button>
+        </section>
+    </div>
+</div>

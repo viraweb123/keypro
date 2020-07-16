@@ -1,0 +1,668 @@
+<style>
+    .modal-header{
+        background-color: #9560F4 !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+
+    .modal-footer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-footer #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .modal-footer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+    .modal-body #addFileButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-body #addFileButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+
+
+    .modal-body #addFileButon:hover md-icon{
+        color : white;
+    }
+
+
+
+    .modal-footer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+
+    .modal-footer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+
+    .modal-footer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+
+    .modal-footer  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+
+    .modal-footer  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+    @media screen and (-webkit-min-device-pixel-ratio: 0){
+        .modal-body .parent{
+            position: relative !important;
+        }
+        .modal-body .child{
+            position: absolute !important;
+        }
+    }
+    .child{
+        direction: rtl  !important;
+    }
+    .modal-body .thumbnail-viewer{
+        float : right;
+        text-align: center;
+    }
+    .modal-body .thumbnail-viewer div.selectDoc{
+        width:20px;
+        height:20px;
+        position: absolute;
+        border: 1px solid #00ACC1;
+        top: 5px;
+        z-index: 2;
+        left: 60px;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+    .modal-body  .thumbnail-viewer div.select{
+        display: inline-block !important;
+    }
+    .modal-body   .file span.check{
+        display: none;
+    }
+    .modal-body   .thumbnail-viewer div.select span.check{
+        display: inline-block !important;
+        color : #00ACC1;
+    }
+    .modal-body   .file div.unselect{
+        display: none;
+    }
+    .modal-body .thumbnail-viewer:hover div.unselect{
+        display: inline-block; !important;
+    }
+    .modal-body .thumbnail-viewer div.unselect:hover{
+        background-color : #00ACC1 !important;
+    }
+    .modal-body .file div.unselect:hover  .check{
+        display: inline-block; !important;
+        color : white !important;
+    }
+
+
+    .modal-body  .thumbnail-viewer  img{
+        height: 60px !important;
+        position: relative !important;
+        width: auto !important;
+        cursor: pointer;
+        margin-top: 10px;
+        padding-top: 5px;
+    }
+    .modal-body  .thumbnail-viewer  .label{
+        color: black;
+        direction: rtl;
+        height: 40px !important;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 4px;
+        position: relative !important;
+        width: 100%;
+    }
+    .modal-body  .thumbnail-viewer  span.name{
+        display : inline-block;
+        height : 40px;
+        overflow : hidden;
+        padding : 5px;
+        text-align : center;
+        text-overflow : ellipsis;
+        white-space : nowrap;
+        width : 110px;
+        word-break : break-all;
+        word-wrap : break-word;
+        cursor: pointer;
+    }
+    .modal-body  .thumbnail-viewer:hover{
+        box-shadow         :  0 0 5px rgba(35,173,255,1);
+    }
+
+    .modal-body  .header-map{
+        padding: 0px !important;
+        margin: 2px 0px  !important;
+        text-align: center !important;
+    }
+
+    .modal-body  .header-map  .direction-icon{
+        cursor: pointer !important;
+        font-size: 20px !important;
+        font-weight: bold !important;
+    }
+
+
+    .sample-show-hide.ng-hide-add, .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 1.5s;
+        -moz-transition:all linear 1.5s;
+        -o-transition:all linear 1.5s;
+        transition:all linear 1.5s;
+        display:block !important;
+    }
+
+    .sample-show-hide.ng-hide-add.ng-hide-add-active,
+    .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 0.2s;
+        -moz-transition:all linear 0.2s;
+        -o-transition:all linear  0.2s;
+        transition:all linear  0.2s;
+        opacity:0;
+    }
+
+    .sample-show-hide.ng-hide-add,
+    .sample-show-hide.ng-hide-remove.ng-hide-remove-active {
+        -webkit-transition:all linear 3s;
+        -moz-transition:all linear 3s;
+        -o-transition:all linear  3s;
+        transition:all linear  3s;
+        opacity:1;
+    }
+
+    .animate-if {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+    .animate-if.ng-leave, .animate-if.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+    .modal-body .alert-mode-viewer-modal{
+        padding: 15px !important;
+        border: 1px solid rgb(197, 197, 197);
+        background-color: white;
+        margin : 10px !important;
+        transition-delay: 0s;
+        -moz-transition-delay: 0s;
+        -webkit-transition-delay: 0s;
+        transition-duration: 200ms;
+        -moz-transition-duration: 200ms;
+        -webkit-transition-duration: 200ms;
+        transition-property: all;
+        -moz-transition-property: all;
+        -webkit-transition-property: all;
+        transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        -webkit-transition-timing-function: ease-out;
+        width:calc(100% - 35px);
+    }
+
+
+
+    .modal-body .alert-mode-viewer-modal:hover{
+        box-shadow: 0 0 6px rgba(35,173,255,1);
+    }
+    .modal-body  md-progress-linear .md-container{
+        height : 15px !important;
+    }
+    .modal-body  md-progress-linear .md-container .md-bar{
+        height : 15px !important;
+    }
+
+    .modal-header  #hideItem{
+        display: none;
+    }
+    .modal-header  span.showTitle{
+        display: inline !important;
+    }
+
+
+
+    .modal-header #nav-icons{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+    .modal-header #nav-icons:hover{
+        box-shadow  :  0 0 10px rgba(149, 96, 244,1);
+        background-color : rgba(149, 96, 244,1);
+        color : white;
+    }
+    .modal-header #nav-icons:hover md-icon{
+        color : white;
+    }
+
+
+</style>
+<div class="modal-header fontStyle" >
+
+    <section   class="col-sm-1 pull-right" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+
+        <md-button
+                id="nav-icons"
+                style="margin:0px;min-width:25px !important;display:{{data.state == 'image'?'inline':'none'}}"
+                class="md-raised pull-left"
+                ng-click = "func.selectState('title')">
+            <md-icon  md-font-icon="fa fa-arrow-right"></md-icon>
+            <md-tooltip style="z-index:100000 !important;" md-direction="top"  >
+                انتخاب عنوان
+            </md-tooltip>
+        </md-button>
+        <md-button
+                id="nav-icons"
+                style="margin:0px;min-width:25px !important;display:{{data.state == 'metadata'?'inline':'none'}}"
+                class="md-raised pull-left"
+                ng-click = "func.selectState('image')">
+            <md-icon  md-font-icon="fa fa-arrow-right"></md-icon>
+            <md-tooltip style="z-index:100000 !important;" md-direction="top"  >
+                انتخاب تصویر
+            </md-tooltip>
+        </md-button>
+        <md-button
+                id="nav-icons"
+                style="margin:0px;min-width:25px !important;display:{{data.state == 'finish'?'inline':'none'}}"
+                class="md-raised pull-left"
+                ng-click = "func.selectState('image')">
+            <md-icon  md-font-icon="fa fa-arrow-right"></md-icon>
+            <md-tooltip style="z-index:100000 !important;" md-direction="top"  >
+                انتخاب فراداده
+            </md-tooltip>
+        </md-button>
+
+
+    </section>
+
+    <div  class="pull-right col-sm-3" style="font-size: 17px; margin-top: 6px;">
+        <span>
+                               انتخاب سند
+        </span>
+    </div>
+
+    <div  class="pull-right col-sm-7"  style="font-size: 17px; margin-top: 6px;">
+        <span  id="hideItem" ng-class="{'showTitle':data.state == 'title'}">
+           ۱- افزودن نام برای پرسجو
+        </span>
+        <span  id="hideItem" ng-class="{'showTitle':data.state == 'image'}">
+          ۲- انتخاب تصویر
+        </span>
+        <span  id="hideItem" ng-class="{'showTitle':data.state == 'metadata'}">
+           ۳- انتخاب فراداده
+        </span>
+        <span  id="hideItem" ng-class="{'showTitle':data.state == 'finish'}">
+          ۴- تایید نهایی
+        </span>
+    </div>
+
+    <section   class="col-sm-1 pull-left" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+
+        <md-button
+                id="nav-icons"
+                style="margin:0px;min-width:25px !important;display:{{data.state == 'title'?'inline':'none'}}"
+                class="md-raised pull-left"
+                ng-click = "func.selectState('image')">
+            <md-icon  md-font-icon="fa fa-arrow-left"></md-icon>
+            <md-tooltip style="z-index:100000 !important;" md-direction="top"  >
+                انتخاب تصویر
+            </md-tooltip>
+        </md-button>
+        <md-button
+                id="nav-icons"
+                style="margin:0px;min-width:25px !important;display:{{data.state == 'image'?'inline':'none'}}"
+                class="md-raised pull-left"
+                ng-click = "func.selectState('metadata')">
+            <md-icon  md-font-icon="fa fa-arrow-left"></md-icon>
+            <md-tooltip style="z-index:100000 !important;" md-direction="top"  >
+                انتخاب پرسجو
+            </md-tooltip>
+        </md-button>
+        <md-button
+                id="nav-icons"
+                style="margin:0px;min-width:25px !important;display:{{data.state == 'metadata'?'inline':'none'}}"
+                class="md-raised pull-left"
+                ng-click = "func.selectState('finish')">
+            <md-icon  md-font-icon="fa fa-arrow-left"></md-icon>
+            <md-tooltip style="z-index:100000 !important;" md-direction="top"  >
+                تایید نهایی
+            </md-tooltip>
+        </md-button>
+
+    </section>
+
+</div>
+
+<div class="modal-body row form-group  " style="margin-bottom: -15px ! important;">
+
+    <!-----------------------------------------  TITLE --------------------------------------->
+    <div class="row form-group col-sm-12 sample-show-hide"  ng-show="data.state == 'title'">
+
+       <!-- <div class="col-sm-12 header-map"  style="margin-top: -15px !important;">
+            <span class="col-sm-1 pull-right "></span>
+            <span class="pull-rigth">لطفا نام پرسجو را تعیین کنید</span>
+                                  <span
+                                          class="col-sm-1 pull-left  fa fa-angle-left direction-icon"
+                                          ng-click = "func.selectState('image')"
+                                          style="cursor:pointer;"
+                                  ><md-tooltip  style="z-index:100000 !important;" md-direction="top">انتخاب تصویر</md-tooltip>
+                                  </span>
+        </div>
+        <hr style="margin-top: 12px; margin-bottom: 10px;" />-->
+        <div class="col-sm-12">
+            <form role="form" novalidate name="selectMapName" class="form-generator"  style="height:100%;">
+                <div class="col-sm-6  col-xs-6  pull-right row form-group"  >
+                    <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                        <label>عنوان</label>
+                        <input
+                                id="#title"
+                                focus-me="true"
+                                type="text"
+                                required
+                                name="title"
+                                ng-model="data.Object.title"
+                                minlength="1"
+                        />
+                        <div ng-messages="selectMapName.title.$error" role="alert">
+                            <div ng-message="required">
+                                لطفا برای محتوا عبارتی را وارد کنید
+                            </div>
+                            <div ng-message="minlength">
+                                حداقل یک کاراکتر وارد کنید
+                            </div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div class="col-sm-6 col-xs-6 pull-left row form-group"  >
+                    <span class="col-sm-12 pull-right" ng-bind="property.label"></span>
+                    <textarea placeholder="توضیحات"  class="form-control col-sm-12" cols="7" rows="4" style="border-radius:0px;resize: vertical;width: 100%!important;font-size: 15px;padding: 5px;"  ng-model="data.Object.description"  required></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-----------------------------------------  IMAGE --------------------------------------->
+    <div class="row form-group col-sm-12- sample-show-hide"  style="margin-top:-20px !important"  ng-show="data.state == 'image'">
+        <!--<div class="col-sm-12 header-map">
+                                  <span class="col-sm-1 pull-right  fa fa-angle-right direction-icon"
+                                        ng-click = "func.selectState('title')"
+                                        style="cursor:pointer;"
+                                  ><md-tooltip  style="z-index:100000 !important;" md-direction="top">انتخاب عنوان</md-tooltip>
+                                  </span>
+            <span class="col-sm-10- pull-rigth">لطفا تصویر مورد نظر را انتخاب کنید</span>
+                                  <span
+                                          class="col-sm-1 pull-left  fa fa-angle-left direction-icon"
+                                          ng-click = "func.selectState('metadata')"
+                                          style="cursor:pointer;"
+                                  ><md-tooltip  style="z-index:100000 !important;" md-direction="top">انتخاب پرسجو</md-tooltip>
+                                  </span>
+        </div>
+        <hr  style="margin-top: 32px; margin-bottom: -2px;" />-->
+        <div class="row form-group  col-sm-12">
+            <div class="col-sm-6- pull-right"
+                 style="width: 50%;"
+            >
+                <div ng-hide="!data.isCreate" class="parent" style="display: -webkit-box;display:-moz-box;width:100%;min-height: 200px; max-height: 200px;overflow: auto;position: relative;">
+                    <div
+                            tree-model
+                            tree-func="func.treeView"
+                            root-folder="data.root"
+                            current-node="data.tree"
+                            class="treeview child"
+                            style="padding-left: 10px;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6- pull-left " style="width:50%;min-height: 200px; max-height: 200px; border-right: 1px solid; padding: 5px;overflow-y:auto;overflow-x:hidden;">
+                <div  ng-repeat="doc in data.list"  class="thumbnail-viewer">
+
+                    <img  ng-class="{'brithness-filter' : data.selectedFileOrFolder.uuid == doc.uuid}"  ng-click="func.clickImage($event,doc)"  src="{{doc.thumbnailSrc}}" />
+                    <div class="label row" >
+                                                    <span ng-bind="doc.name"  class="name"  style="color:black">
+                                                    </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+         <div class="row form-group  col-sm-12-">
+            <div ng-hide="!data.isCreate" class="col-sm-12  col-xs-12 alert-mode-viewer-modal" style="margin: 5px 9px ! important;">
+                <div class="col-sm-12- "  ng-accept="'image/*'" ng-file-drop="func.addFiles($files)" ng-file-change="func.addFiles($files)" data-multiple="false">
+                    <section  class="pull-left" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                        <!--<md-button style="min-width:25px !important;" id="addFileButon"  class="md-raised" ng-file-change="func.addFiles($files)" ng-accept="'image/*'" data-multiple="false" ng-file-select="func.addFiles($files)">
+                            <md-icon  md-font-icon="fa fa-folder-open"></md-icon>
+                            <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                افزودن سند
+                            </md-tooltip>
+                        </md-button>-->
+                        <md-button style="min-width:25px !important;" id="addFileButon"  class="md-raised" data-multiple="true" ng-file-change="func.addFiles($files)" ng-accept="'image/*'" data-multiple="false" ng-file-select="func.addFiles($files)" >
+                            <md-icon  md-font-icon="fa fa-folder-open"></md-icon>
+                            <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                افزودن سند
+                            </md-tooltip>
+                        </md-button>
+                    </section>
+                    <span class="pull-left" style="width:30px;">
+                        <span
+                                style="margin-left: 2px; cursor: pointer; color: rgb(229, 89, 0); top: 4px; font-size: 13px;"
+                                class="fa fa-refresh  pull-left"
+                                ng-click="func.uploadAgain();"
+                                ng-show="data.upload.status == 'ERROR'" >
+                            <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                            تلاش دوباره
+                            </md-tooltip>
+                        </span>
+                        <span
+                                ng-show="data.startUpload != true && data.upload.status != 'SUCCESS'"
+                                class="fa fa-remove pull-left"
+                                style="margin-top: 5px; cursor: pointer;"
+                                ng-click="func.onRemoveFileClick();">
+                            <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                            حذف
+                            </md-tooltip>
+                        </span>
+                        <span
+                                ng-show="data.upload.status == 'SUCCESS'"
+                                style="color:rgba(12,167,34,1);"
+                                class="fa fa-check  pull-left">
+                            <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                            ارسال موفق سند
+                            </md-tooltip>
+                        </span>
+                        <span
+                                ng-show="data.upload.status == 'ERROR'"
+                                style="color:rgba(167,17,34,1);"
+                                class="fa fa-warning  pull-left">
+                            <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                            عدم ارسال موفق سند
+                            </md-tooltip>
+                        </span>
+                    </span>
+
+
+                    <span
+                            ng-bind="data.upload.filename"
+                            style="word-wrap: break-word; word-break: break-all; text-align: justify;"
+                            class="control-label">
+                        <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                        {{data.upload.filename}}
+                        </md-tooltip>
+                    </span>
+
+
+                </div>
+
+                <div class="row col-sm-12"  style=position:relative;   ng-show="data.startUpload == true  &&  data.upload.status == 'SEND'">
+                    <md-progress-linear md-mode="determinate" value="{{data.upload.percent}}"></md-progress-linear>
+                    <span style="position: absolute; margin-top: -5px; color: white; left: 47%;">{{data.upload.percent}}%</span>
+                    <span
+                            style="position: absolute; color: white; float: left; left: 18px; top: 0px; font-size: 14px;"
+                            class="fa fa-remove pull-left"
+                            ng-click="func.onCancelFileClick();"
+                            ng-show="data.upload.percent != 100  ||  data.upload.percent!=null">
+                        <md-tooltip style="z-index:100000 !important;" md-direction="top">
+                                                      لغو بارگزاری سند
+                        </md-tooltip>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-----------------------------------------  METADATA --------------------------------------->
+    <div class="row form-group col-sm-12- sample-show-hide" style="margin-top:-20px !important"  ng-show="data.state == 'metadata'">
+
+       <!-- <div class="col-sm-12 header-map">
+                                  <span class="col-sm-1 pull-right  fa fa-angle-right direction-icon"
+                                        ng-click = "func.selectState('image')"
+                                        style="cursor:pointer;"
+                                  ><md-tooltip  style="z-index:100000 !important;" md-direction="top">انتخاب تصویر</md-tooltip>
+                                  </span>
+            <span class="col-sm-10- pull-rigth">لطفا پرسجو را تعیین کنید</span>
+            <span
+                    class="col-sm-1 pull-left  fa fa-angle-left direction-icon"
+                    ng-click = "func.selectState('finish')"
+                    style="cursor:pointer;"
+            >
+                <md-tooltip  style="z-index:100000 !important;" md-direction="top">تایید نهایی</md-tooltip>
+            </span>
+        </div>
+        <hr  style="margin-top: 32px; margin-bottom: -2px;" />-->
+        <div class="col-sm-12">
+
+            <div layout="row"  class="row form-group col-sm-12">
+
+                <div class="col-sm-3  col-xs-3"></div>
+
+                <md-input-container class="md-block  col-sm-6 col-xs-6"  style=" padding: 0;">
+                    <label>انتخاب نوع فراداده</label>
+                    <md-select
+                            class="md-block  col-sm-12 pull-right"
+                            placeholder="انتخاب فراداده"
+                            ng-model="data.selectMetadata"
+                            ng-change="func.changeMetaData()"
+                            md-on-open="func.getMetadataList()"
+                            style="min-width: 200px;">
+                        <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                        <md-option ng-value="metadata" ng-repeat="metadata in data.metadatas">{{metadata.label}}</md-option>
+                    </md-select>
+                </md-input-container>
+
+                <div class="col-sm-3 col-xs-3"></div>
+
+            </div>
+
+            <div layout="row"  class="row form-group col-sm-12">
+
+                <div class="col-sm-3 col-xs-3"></div>
+
+                <div class="tab-pane- fade- in-  col-sm-6 col-xs-6 form-group " style="padding: 0px ! important; max-height: 300px ! important; overflow-y: auto;" ng-show="data.metadata != null">
+
+                    <generator
+                          style="position: relative; padding: 0px 0px 0px 5px;"
+                          external-scope = "externalScope">
+                    </generator>
+
+                </div>
+
+                <div class="col-sm-3 col-xs-3"></div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <!-----------------------------------------  FINISH --------------------------------------->
+    <div class="row form-group col-sm-12 sample-show-hide"  ng-show="data.state == 'finish'">
+
+        <!--<div class="col-sm-12 header-map">
+                                  <span class="col-sm-1 pull-right  fa fa-angle-right direction-icon"
+                                        ng-click = "func.selectState('metadata')"
+                                        style="cursor:pointer;"
+                                  ><md-tooltip  style="z-index:100000 !important;" md-direction="top">انتخاب پرسجو</md-tooltip>
+                                  </span>
+            <span class="col-sm-10- pull-rigth">تایید نهایی</span>
+                                  <span
+                                          class="col-sm-1 pull-left"
+                                  >
+                                  </span>
+        </div>-->
+
+    </div>
+
+</div>
+
+
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+
+        <form name="deleteFolderForm" novalidate role="form">
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button id="okButon"     class="md-raised" ng-click="func.translate()">
+                    <md-icon  md-font-icon="fa fa-save fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" >ثبت</span>
+                </md-button>
+                <md-button id="cancelButon"     class="md-raised" ng-click="func.cancel()">
+                    <md-icon  md-font-icon="fa fa-remove  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" ng-bind="'desktop.zl.cancel'|translate"></span>
+                </md-button>
+            </section>
+        </form>
+    </div>
+</div>

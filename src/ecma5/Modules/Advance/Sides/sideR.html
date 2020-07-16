@@ -1,0 +1,69 @@
+<div class="btn-group-vertical  vertical-buttons" role="group" >
+
+
+
+    <!-- TODO smetadata button -->
+    <div class="group-vertical smetadataVisible">
+        <div class="btn-icon"
+             ng-class="{'advance-color': data.nav.right.selectedSide == 'smetadataVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'search.zl.metadata'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-list-alt fa-fw"
+                    ng-click="data.nav.right.select('smetadataVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider advance-background"></div>
+    </div>
+
+    <!-- TODO keyWordsCloud button -->
+    <!--<div class="group-vertical keyWordsCloudVisible">
+        <div class="btn-icon"
+             ng-class="{'search-color': data.nav.right.selectedSide == 'keyWordsCloudVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'search.zr.search_keyWordsCloud'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-tags fa-fw"
+                    ng-click="data.nav.right.select('keyWordsCloudVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider search-background"></div>
+    </div>-->
+
+    <!-- TODO store button -->
+    <div class="group-vertical storeVisible">
+        <div class="btn-icon"
+             ng-class="{'advance-color': data.nav.right.selectedSide == 'storeVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'modal.desktop.save'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-save fa-fw"
+                    ng-click="data.nav.right.select('storeVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider advance-background"></div>
+    </div>
+
+    <!-- TODO news button -->
+    <div class="group-vertical newsVisible">
+        <div class="btn-icon"
+             ng-class="{'advance-color': data.nav.right.selectedSide == 'newsVisible'} ">
+            <md-tooltip  md-direction="left">
+                {{'search.zr.stored_news'|translate }}
+            </md-tooltip>
+            <span
+                    class="font-slide fa fa-newspaper-o fa-fw"
+                    ng-click="data.nav.right.select('newsVisible')"
+            >
+            </span>
+        </div>
+        <div class="darkdivider advance-background"></div>
+    </div>
+
+</div>

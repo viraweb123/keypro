@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>تاریخچه نسخه های  سامانه</title>
+        <link rel="SHORTCUT ICON"       href="static/image/icons/version.png" />
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <link type="text/css"  href="static/css/version.css"               rel="stylesheet"    />
+        <style>
+            @font-face {
+                 font-family: IRANSans-web-bold;
+                 src: url(./fonts/iransans/IRANSans-Bold-web.eot);
+                 src: url(./fonts/iransans/IRANSans-Bold-web.eot?#iefix) format("eot"),url(./fonts/iransans/IRANSans-Bold-web.woff2) format("woff2"),url(./fonts/iransans/IRANSans-Bold-web.woff) format("woff"),url(./fonts/iransans/IRANSans-Bold-web.ttf) format("ttf");
+                 font-weight: 700
+            }
+            @font-face {
+                 font-family: IRANSans-web-medium;
+                 src: url(./fonts/iransans/IRANSans-Medium-web.eot);
+                 src: url(./fonts/iransans/IRANSans-Medium-web.eot?#iefix) format("eot"),url(./fonts/iransans/IRANSans-Medium-web.woff2) format("woff2"),url(./fonts/iransans/IRANSans-Medium-web.woff) format("woff"),url(./fonts/iransans/IRANSans-Medium-web.ttf) format("ttf");
+                 font-weight: 500
+            }
+            @font-face {
+                 font-family: IRANSans-web-ultraLight;
+                 src: url(./fonts/iransans/IRANSans-UltraLight-web.eot);
+                 src: url(./fonts/iransans/IRANSans-UltraLight-web.eot?#iefix) format("eot"),url(./fonts/iransans/IRANSans-UltraLight-web.woff2) format("woff2"),url(./fonts/iransans/IRANSans-UltraLight-web.woff) format("woff"),url(./fonts/iransans/IRANSans-UltraLight-web.ttf) format("ttf");
+                 font-weight: 200
+            }
+            @font-face {
+                 font-family: IRANSans-web-light;
+                 src: url(./fonts/iransans/IRANSans-Light-web.eot);
+                 src: url(./fonts/iransans/IRANSans-Light-web.eot?#iefix) format("eot"),url(./fonts/iransans/IRANSans-Light-web.woff2) format("woff2"),url(./fonts/iransans/IRANSans-Light-web.woff) format("woff"),url(./fonts/iransans/IRANSans-Light-web.ttf) format("ttf");
+                 font-weight: 300;
+                 font-size : 20px;
+            }
+            @font-face {
+                 font-family: IRANSans-web;
+                 src: url(./fonts/iransans/IRANSans-web.eot);
+                 src: url(./fonts/iransans/IRANSans-web.eot?#iefix) format("eot"),url(./fonts/iransans/IRANSans-web.woff2) format("woff2"),url(./fonts/iransans/IRANSans-web.woff) format("woff"),url(./fonts/iransans/IRANSans-web.ttf) format("ttf");
+                 font-weight: 400
+            }
+            body{
+
+                 background-repeat: no-repeat;
+                 background-size: cover;
+                 margin:0px !important;
+                 padding: 0px !important;
+                 font-family: IRANSans-web-light !important;
+                 transition: background-image 1s ease-in-out;
+            }
+            @-webkit-keyframes versionAnimate {
+                 0% { background-image: url("static/backgrounds/1.jpg")}
+                 6.6% { background-image: url("static/backgrounds/2.jpg")}
+                 13.2% { background-image: url("static/backgrounds/3.jpg")}
+                 19.8% { background-image: url("static/backgrounds/4.jpg")}
+                 26.4% { background-image: url("static/backgrounds/5.jpg")}
+                 33% { background-image: url("static/backgrounds/6.jpg")}
+                 39.6% { background-image: url("static/backgrounds/7.jpg")}
+                 46.2% { background-image: url("static/backgrounds/8.jpg")}
+                 52.8% { background-image: url("static/backgrounds/9.jpg")}
+                 59.4% { background-image: url("static/backgrounds/10.jpg")}
+                 66% { background-image: url("static/backgrounds/11.jpg")}
+                 72.6% { background-image: url("static/backgrounds/12.jpg")}
+                 72.19% { background-image: url("static/backgrounds/13.jpg")}
+                 85.8% { background-image: url("static/backgrounds/14.jpg")}
+                 92.4% { background-image: url("static/backgrounds/15.jpg")}
+                 100% { background-image: url("static/backgrounds/16.jpg")}
+            }
+            @keyframes versionAnimate {
+                 0% { background-image: url("static/backgrounds/1.jpg")}
+                 6.6% { background-image: url("static/backgrounds/2.jpg")}
+                 13.2% { background-image: url("static/backgrounds/3.jpg")}
+                 19.8% { background-image: url("static/backgrounds/4.jpg")}
+                 26.4% { background-image: url("static/backgrounds/5.jpg")}
+                 33% { background-image: url("static/backgrounds/6.jpg")}
+                 39.6% { background-image: url("static/backgrounds/7.jpg")}
+                 46.2% { background-image: url("static/backgrounds/8.jpg")}
+                 52.8% { background-image: url("static/backgrounds/9.jpg")}
+                 59.4% { background-image: url("static/backgrounds/10.jpg")}
+                 66% { background-image: url("static/backgrounds/11.jpg")}
+                 72.6% { background-image: url("static/backgrounds/12.jpg")}
+                 72.19% { background-image: url("static/backgrounds/13.jpg")}
+                 85.8% { background-image: url("static/backgrounds/14.jpg")}
+                 92.4% { background-image: url("static/backgrounds/15.jpg")}
+                 100% { background-image: url("static/backgrounds/16.jpg")}
+            }
+            h1{
+                margin : 5px;
+            }
+            h2{
+                margin : 5px;
+                text-shadow: 2px 2px 4px #fff;
+            }
+            h3{
+                margin : 5px;
+            }
+            h4{
+                margin : 5px;
+            }
+            .version-header{
+                width: 100vw !important;
+                height : 50px !important;
+                background-color: #d44413 !important;
+                color: white !important;
+                position: absolute;
+                top:0px;
+
+            }
+            .version-viewer{
+                width: calc(100vw - 50px) !important;
+                margin: 10px !important;
+                padding : 5px 25px !important;
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                background-color: rgba(0,0,0,0.4) !important;
+                color: white;
+                border-radius: 0px !important;
+                height: calc(100vh - 90px);
+                left : 18px;
+            }
+            body .background-viewer{
+                  width: 100vw;
+                  height: 100vh;
+                  z-index:100;
+                  position: absolute;
+            }
+            body .background-viewer  div.background-1{
+                 width: 100vw;
+                 height: 100vh;
+                 background-image: url("static/backgrounds/1.jpg");
+                 opacity: 0;
+                 -moz-animation     :  opacityAnimate1 80s infinite linear;
+                 -o-animation       :  opacityAnimate1 80s infinite linear;
+                 -webkit-animation  :  opacityAnimate1 80s infinite linear;
+                 animation          :  opacityAnimate1 80s infinite linear;
+            }
+            @-webkit-keyframes opacityAnimate1 {
+                 0% , 0.01%{opacity : 1}
+                 0.01% , 6.24% {opacity : 1}
+                 6.241% , 6.25% { opacity : 0}
+            }
+            @keyframes opacityAnimate1 {
+                 0% , 0.01%{opacity : 1}
+                 0.01% , 6.24% {opacity : 1}
+                 6.241% , 6.25% { opacity : 0}
+            }
+            body .background-viewer  div.background-2{
+                 width: 100vw;
+                 height: 100vh;
+                 background-image: url("static/backgrounds/2.jpg");
+                 opacity: 0;
+                 -moz-animation     :  opacityAnimate2 80s infinite linear;
+                 -o-animation       :  opacityAnimate2 80s infinite linear;
+                 -webkit-animation  :  opacityAnimate2 80s infinite linear;
+                 animation          :  opacityAnimate2 80s infinite linear;
+            }
+            @-webkit-keyframes opacityAnimate2 {
+                 0% , 6.24%{opacity : 0}
+                 6.241% , 6.25% { opacity : 1}
+                 6.251% , 12.49% { opacity : 1}
+                 12.491% , 12.5% { opacity : 0}
+            }
+            @keyframes opacityAnimate2 {
+                 0% , 6.24%{opacity : 0}
+                 6.241% , 6.25% { opacity : 1}
+                 6.251% , 12.49% { opacity : 1}
+                 12.491% , 12.5% { opacity : 0}
+            }
+            ::-webkit-scrollbar-track-piece{
+                background-color:#fff;
+                -webkit-border-radius:0;
+            }
+            ::-webkit-scrollbar{
+                width:8px;
+                height:8px;
+            }
+            ::-webkit-scrollbar-thumb{
+                height:50px;
+                background-color:#999;
+                -webkit-border-radius:4px;
+                outline:2px solid #fff;
+                outline-offset:-2px;
+                border: 2px solid #fff;
+            }
+            ::-webkit-scrollbar-thumb:hover{
+                height:50px;
+                background-color:#9f9f9f;
+                -webkit-border-radius:4px;
+            }
+            /* todo change selected text in webpage */
+            * ::-moz-selection {
+                color: white !important;
+                background:  #5d9ce9 !important;
+            }
+            * ::selection {
+                color: white !important;
+                background:  #5d9ce9 !important;
+            }
+            * ::-webkit-selection {
+                color: white !important;
+                background:  #5d9ce9 !important;
+            }
+            * ::-ms-selection {
+                color: white !important;
+                background:  #5d9ce9 !important;
+            }
+            * ::-o-selection {
+                color: white !important;
+                background:  #5d9ce9 !important;
+            }
+        </style>
+        <script type="text/javascript" src="resource/javaScript/jquery.min.js"></script>
+        <script type="text/javascript"  src="static/showdown/showdown.min.js" ></script>
+
+        <script type="text/javascript"  defer="defer">
+              window.onload = function(){
+
+
+                   var converter = new showdown.Converter();
+                   window.document.querySelector('div.version-viewer').innerHTML = converter.makeHtml(
+                           '<h1  style="color:white;text-shadow: 2px 2px 6px #fff;">Versions : </h1>\n'+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.5.0</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۱۰/۶</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;reload page speed</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;fixed form generator problems</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;removed all not used directive in project</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;increase loading and running speed in project directives</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;optimization all filters in project</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;after return to desktop can modify tree nodes</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.4.7</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۸/۲۱</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Relation in Desktop State</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.4.6</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۸/۱۴</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.4.5</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۸/۳</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Image Viewer Template in Site</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Full Cashe Controller</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;file size</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.4.4</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۸/۱</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;speed loading state resources and remove cookie  after exit .</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;modals with "lg (large)" type width increase .</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;clock viewer</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.4.3</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۷/۲۹</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;full screen in PDF Viewer</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;search in news stored (state filter)</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;openers in left and right nav</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;increase large modals width</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;increase speed load tables in dashboard state</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.4.2</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۷/۲۲</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Clock viewer in site info</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;toastr UI</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;opener Zoom Left and Right in states</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;search make result</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.4.1</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۷/۱۶</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;CSV download in Searches State</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Responsive in Chrome</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;players mimetype</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.4.0</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۷/۱۱</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;fix UI responsive to W = 650px and H = 515px (min fablet)</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.3.9</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۷/۱</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Map state</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.3.8</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۶/۲۹</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;cloud in keyword</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;UI</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.3.7</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۶/۲۷</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;limit player in tag time</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;config help media with json</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;video player UI</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;UI and new effects animation in Site</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.3.6</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۶/۲۶</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;cloud modify show file type</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;cut and remove in tree</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.3.5</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۶/۲۵</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Categories Management in Admin</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;background hidden in desktop Navigation</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.3.4</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۶/۲۰</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bookmark add-edit-remove in desktop toolbar</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bookmark list in dashboard/user state</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;folder/file viewer in searchs state</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.3.3</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۶/۴</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;add Default Value type in metadata</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;search folder and file viewer</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;add new permission list</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.3.2</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۵/۳۰</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.3.1</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۵/۲۳</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;add new app config in website</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;management session from parent domain</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;optimization desktop and searches state</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;login page is not exist inside new version</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.3.0</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۵/۱۶</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;solved cashing problem</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;change ui in all states</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;toaster message show</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.2.6</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۵/۱۱</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;notification messages</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;thumbnail view</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.2.5</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۵/۷</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;date Regxp in metadata input elements</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;multimedia help in navigation menu</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.2.4</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۵/۴</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;lazy scroll in folder viewer</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;pdf viewer</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;folder viewer</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.2.3</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۵/۲</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;change options selected filed location in metadata</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;view , cut , copy and paste in serach table</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;show file size in desktop state property show</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.2.2</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۵/۱</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;change persian-datepicker template </h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;change progressbar template </h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.2.1</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۴/۳۱</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;template in metadata wizard</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;version shower</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;change search results navigation order</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.2.0</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۴/۲۹</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;management upload errors</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;wizard metadata UI</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.1.9</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۴/۲۷</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.1.8</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۴/۲۶</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;folder viewer in searches state</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.1.7</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۴/۲۱</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;navigation icons in search result</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;folder viewer</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;copy and cut folder in search</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.1.6</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۴/۱۵</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;search and filter</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;login state bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.1.5</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۴/۱۰</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;improve map state bugs and improve loading</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;login state bugs</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.1.4</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۴/۷</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;add new file in taxonomy tree (desktop state)</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;improve wizard navigation</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.1.3</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۴/۴</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;improve captch</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;view date in metadata result (desktop state)</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.1.2</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۳/۳۱</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;file upload in property group wizard (state desktop)</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;property view (state desktop)</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;loading left navigation in management state after input</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.1.1</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۳/۳۰</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;access metadata table and logic error</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;view waiting in file upload progress bar</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;improve page loading</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.1.0</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۳/۲۹</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;workflow</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;search filetr change</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;save single select</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.0.9</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۳/۲۸</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;workflow</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;metadata Date Format sending to Server</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.0.8</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۳/۲۲</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;cloud state ui</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;roles management ui</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;all Tables ui</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;user management</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.0.7</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۳/۲۰</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;new reference to desktop (just simple state can used)</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;loading WebStates</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.0.6</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۳/۱۷</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;wizard metadata ui</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;create meta data ui</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;metadata tree location in desktop state ui</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.0.5</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۳/۱۵</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;newspaper viewer in desktop viewer</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.0.4</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۳/۱۱</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui viewer in navigation</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;can not save and print from keywords inside webpage</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;nothing in print preview (from browser navigation)</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;can not get preview from "printscreen" key</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.0.3</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۳/۶</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;validation in query generator</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;loading WebStates</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;validation and element in metadata ui</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.0.2</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۲/۲۹</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;index in TOC Demo to desktop state</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;version history in menu bar</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;loading WebStates</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;modals ui</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;login page ui</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.0.1</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۲/۲۵</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;TOC Demo to desktop state</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;loading WebStates</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.3.0.0</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۲/۲۰</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;JS  location inside index.html</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;CSS location inside index.html</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Feature Managements location inside index.html</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;loading WebStates</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp; 1.2.9.0</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۲/۱۴</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;version page to show UI version site</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;loading WebStates</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;pagination template ui</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;date template ui</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.2.8.9</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۲/۵</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;filter in metadata access state</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;desktop state location from nav bar to right side ui</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.2.8.8</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۱/۲۷</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;login state theme ui</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.2.8.7</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۱/۱۹</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;digital sign in desktop and management states</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;login state from <strong>local storage</strong> to cookie and add expired time to login  after 20 Minute</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.2.8.6</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۱/۱۵</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;template in site</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;all form generators inside one directive</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.2.8.5</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۱/۹</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+
+
+                           '<hr />\n'+
+                           '<div>\n'+
+                           '<h2>&nbsp;*&nbsp;1.2.8.4</h2>\n'+
+                           '<div style="width:100%">\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : ۹۶/۱/۸</h3>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;use externalLib js files to increase speed</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;use <strong>ECMA 6</strong> and GULP (new generation script type)</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;pdf directive icons and some problems</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;video directive section type and increase speed loading</h4>\n'+
+                           '</div>\n'+
+                           '<div>\n'+
+                           '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                           '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                           '</div>\n'+
+                           '</div>\n'+
+                           '</div>\n'
+
+
+
+
+                   );
+
+
+              }
+         </script>
+    </head>
+    <body  style="overflow: hidden;">
+
+         <section class="sect-banner">
+              <ul class="kf-slider">
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+              </ul>
+         </section>
+
+         <div class="version-header"  style="z-index: 2147483647 ! important; top: 0px; position: absolute;">
+             <span style="margin-top: 10px ! important; position: absolute; margin-left: 25px;">تاریخچه نسخه های سامانه</span>
+         </div>
+         <div class="version-viewer" style="z-index: 2147483647 ! important; position: absolute; top: 60px;"></div>
+
+    </body>
+</html>
+
+
+<!--
+                     '<hr />\n'+
+                     '<div>\n'+
+                     '<h2>&nbsp;*&nbsp;{{version}}</h2>\n'+
+                     '<div style="width:100%">\n'+
+                     '<div>\n'+
+                     '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Release Date : {{date}}</h3>\n'+
+                     '</div>\n'+
+                     '<div>\n'+
+                     '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Added : </h3>\n'+
+                     '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;{{added}}</h4>\n'+
+                     '</div>\n'+
+                     '<div>\n'+
+                     '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Modify : </h3>\n'+
+                     '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;{{modify}}</h4>\n'+
+                     '</div>\n'+
+                     '<div>\n'+
+                     '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Optimizations : </h3>\n'+
+                     '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;{{optimization}}</h4>\n'+
+                     '</div>\n'+
+                     '<div>\n'+
+                     '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Changes : </h3>\n'+
+                     '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;{{change}}</h4>\n'+
+                     '</div>\n'+
+                     '<div>\n'+
+                     '<h3>&nbsp;&nbsp;&nbsp;&nbsp;Fixed : </h3>\n'+
+                     '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bugs</h4>\n'+
+                     '<h4 style="width:100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ui glitches</h4>\n'+
+                     '</div>\n'+
+                     '</div>\n'+
+                     '</div>\n'+
+-->

@@ -1,0 +1,426 @@
+<style>
+    .modal-header{
+        background-color: rgb(38, 166, 154) !important;
+        color: white !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        margin: -15px 0px 0px 0px !important;
+    }
+
+    .modal-footer{
+        padding: 0px!important;
+        margin: 0px !important;
+        height : 100% !important;
+    }
+
+    .modal-footer #okButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #okButon:hover{
+        box-shadow  :  0 0 10px rgba(35,173,255,1);
+        background-color : rgba(35,173,255,1);
+        color : white;
+    }
+
+    .modal-footer #okButon md-icon{
+        padding-left: 11px !important;
+        border-left: 1px solid rgba(35,173,255,1);
+    }
+
+    .modal-footer #okButon:hover md-icon{
+        color : white;
+        border-left: 1px solid white !important;
+    }
+
+
+    .modal-footer #cancelButon{
+        border-radius: 0px ! important;
+        transition-duration: 0.5s;
+        transition-property: background-color,color;
+        transition-timing-function: ease-in;
+    }
+
+    .modal-footer #cancelButon:hover{
+        box-shadow  :  0 0 10px rgba(255,134,29,1);
+        background-color : rgba(255,134,29,1);
+        color : white;
+    }
+
+    .modal-footer #cancelButon md-icon{
+        padding-left: 5px !important;
+        border-left: 1px solid rgba(255,134,29,1);
+    }
+
+    .modal-footer #cancelButon:hover md-icon{
+        color : white;
+
+        border-left: 1px solid white !important;
+    }
+
+    .modal-footer  section md-button{
+        padding-left  : 0px !important;
+        padding-right : 0px !important;
+    }
+
+    .modal-footer  section md-button md-icon{
+        border-left: 1px solid rgb(197, 197, 197);
+        padding-right: 0px  !important;
+        padding-left: 6px  !important;
+    }
+
+    .sample-show-hide.ng-hide-add, .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 1.5s;
+        -moz-transition:all linear 1.5s;
+        -o-transition:all linear 1.5s;
+        transition:all linear 1.5s;
+        display:block !important;
+    }
+
+    .sample-show-hide.ng-hide-add.ng-hide-add-active,
+    .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 0.2s;
+        -moz-transition:all linear 0.2s;
+        -o-transition:all linear  0.2s;
+        transition:all linear  0.2s;
+        opacity:0;
+    }
+
+    .sample-show-hide.ng-hide-add,
+    .sample-show-hide.ng-hide-remove.ng-hide-remove-active {
+        -webkit-transition:all linear 3s;
+        -moz-transition:all linear 3s;
+        -o-transition:all linear  3s;
+        transition:all linear  3s;
+        opacity:1;
+    }
+
+    .animate-if {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    }
+
+    .animate-if.ng-enter, .animate-if.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+    .animate-if.ng-leave, .animate-if.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+    .modal-body  .header-map{
+        padding: 0px !important;
+        margin: -10px 0px 2px 0px  !important;
+        text-align: center !important;
+    }
+
+    .modal-body  .header-map  .direction-icon{
+        cursor: pointer !important;
+        font-size: 20px !important;
+        font-weight: bold !important;
+    }
+
+    .modal-body .form .increase-datepicker{
+        margin-bottom : 250px !important;
+    }
+
+</style>
+<div class="modal-header">
+    <span >افزودن گردش کار</span>
+</div>
+<div class="modal-body row " style="margin-bottom: 0;">
+
+    <div class="row form-group col-sm-12 sample-show-hide"  ng-show="data.state == 'selectWorkFlow'">
+
+        <div class="col-sm-12 header-map">
+            <span class="col-sm-1 pull-right "></span>
+            <span class="pull-rigth">لطفا گردش کار را انتخاب کنید</span>
+                                  <span
+                                          class="col-sm-1 pull-left  fa fa-angle-left direction-icon"
+                                          ng-click = "func.selectState('fillQuery')"
+                                          style="cursor: pointer; padding-left: 0px ! important; margin-left: -10px;"
+                                  ><md-tooltip  style="z-index:100000 !important;" md-direction="top">افزودن گردش کار</md-tooltip>
+                                  </span>
+        </div>
+        <hr />
+        <div class="col-sm-12" style="margin-top: -10px;">
+            <form
+                    role="form"
+                    novalidate
+                    name="selectWorkFlow"
+                    class="form-generator"
+                    style="height:100%;">
+
+                <div layout="row"  class="row form-group col-sm-12" ng-show="data.state == 'selectWorkFlow'">
+                    <md-input-container class="md-block  col-sm-12 "  style="width:100%; padding: 0;">
+                        <label>گردش کار</label>
+                        <md-select
+                                class="md-block  col-sm-12 pull-right"
+                                placeholder="گردش کار"
+                                ng-model="data.workflow"
+                                ng-change="func.selectWorkFlow()"
+                                md-on-open="func.getWorkFlowsList()"
+                                style="min-width: 100%;">
+                            <md-option ng-value="null"><em>عدم انتخاب</em></md-option>
+                            <md-option ng-value="workflow" ng-repeat="workflow in data.workflows">{{workflow.name}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="row form-group col-sm-12 sample-show-hide"  ng-show="data.state == 'fillQuery'">
+
+
+
+        <div class="col-sm-12 header-map" >
+            <span class="col-sm-1 pull-left"></span>
+            <span class="pull-rigth">افزودن اطلاعات گردش کار</span>
+                                  <span
+                                          class="col-sm-1 pull-right  fa fa-angle-right direction-icon"
+                                          ng-click = "func.selectState('selectWorkFlow')"
+                                          style="cursor: pointer; padding-right: 0px ! important; margin-right: -10px ! important;"
+                                  ><md-tooltip  style="z-index:100000 !important;" md-direction="top">انتخاب گردش کار</md-tooltip>
+                                  </span>
+        </div>
+        <hr />
+        <div class="col-sm-12 header-map" ng-if="data.form == null">
+                              <span   style="cursor: pointer">
+                                <i class="fa fa-ban">
+                                </i>
+                              </span>
+            <span> لطفا یک گردش کار انتخاب گنید</span>
+        </div>
+        <div class="col-sm-12"  ng-if="data.form != null">
+
+
+
+            <form
+                    role="form"
+                    novalidate
+                    name="FORM.formWorkflow"
+                    class="form-generator"
+                    style="height:230px;">
+
+                <div
+                        style="margin: 0px !important;"
+                        class="row"
+                        ng-repeat="(propertyName,property) in data.form"
+                >
+
+                    <!--  TODO -------------------------------------Text -------------------------------------------->
+                    <div
+                            style="padding-left:2px ;padding-right:2px;" layout="row"
+                            ng-if="property.type == 'text'  &&  property.objClass=='com.openkm.bean.form.Input' "
+                            class="row form-group col-sm-12 col-xs-12">
+                        <md-input-container class="md-block md-icon-float col-sm-12 col-xs-12" style="padding : 0px !important">
+                            <label>{{property.label}}</label>
+                            <input
+                                    style="font-size: 14px !important;"
+                                    id="#{{propertyName}}"
+                                    ng-disabled="property.readonly"
+                                    ng-required="{{property.require}}"
+                                    type="text"
+                                    name="{{propertyName}}"
+                                    ng-pattern="property.patterns"
+                                    ng-model="property.value"
+                                    ui-keypress="{13:'func.changeElement(propertyName,FORM.formWorkflow)'}"
+                                    ng-class="{'ltrDirection':property.isLTR}"
+                            />
+                            <div ng-messages="FORM.formWorkflow[propertyName].$error" role="alert"  ng-if="FORM.formWorkflow[propertyName].$error">
+                                <div ng-message="pattern" >
+                                    الگوی ورودی صحیح نمی باشد.
+                                </div>
+                                <div ng-message="required">
+                                    لطفا برای محتوا عبارتی را وارد کنید
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <!--  TODO -------------------------------------Date -------------------------------------------->
+                    <div
+                            style="margin: 0 !important;padding:25px 0 !important;"
+                            ng-if="property.objClass=='com.openkm.bean.form.Input' && property.type=='date'"
+                            class="row form-group col-sm-12 col-xs-12 ">
+                        <span>
+                            <div class="col-sm-12"  style="margin-left: 0px ! important; padding-left: 0px ! important; margin-right: 0px ! important; padding-right: 0px ! important;">
+                                <div class="input-group" ng-class="{'increase-datepicker':data.isOpen[propertyName]}" style="direction: ltr;">
+                                            <span
+                                                    id="dateId-{{propertyName}}"
+                                                    class="input-group-addon"
+                                                    style="background-color: transparent; cursor: pointer; border-radius: 0px; border-right: 0px;border-top:0px; border-bottom:1px solid rgba(197,197,197,1) !important;"
+                                                    ng-click="data.open($event,propertyName)">
+                                                <i class=" fa fa-calendar"></i>
+                                            </span>
+                                    <input name="from"
+                                           type="text"
+                                           disabled
+                                           ng-required="{{property.require}}"
+                                           style="
+                                                background-color: transparent;
+                                                padding-left: 0px;
+                                                padding-right: 10px;
+                                                font-size: 12px;
+                                                box-shadow: none !important;
+                                                border-width: 0px 0px 1px 0px !important;
+                                                border-style: none none solid  none !important;
+                                                border-color: transparent  transparent rgba(197, 197, 197 , 1) transparent !important;"
+                                           placeholder="{{property.label}}"
+                                           readonly="readonly"
+                                           class="form-control fontStyle"
+                                           datepicker-popup-persian="yyyy/MM/dd"
+                                           ng-model="property.value"
+                                           is-open="data.isOpen[propertyName]"
+                                           aria-describedby="dateId-{{propertyName}}"
+                                           ng-change = "changeDate(property)"
+                                           current-text="امروز" clear-text="پاک کردن" close-text="لغو"
+                                           starting-day="6" />
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                    <!--  TODO -------------------------------------Single Select ----------------------------------->
+                    <div
+                            style="padding-left:2px ;padding-right:2px;"
+                            layout="row"
+                            class="row form-group col-sm-12"
+                            ng-if="property.objClass=='com.openkm.bean.form.Select' && property.type=='simple' ">
+                        <md-input-container class="md-block  col-sm-12 "  style=" padding: 0;">
+                            <label>{{property.label}}</label>
+                            <md-select
+                                    id="#{{propertyName}}"
+                                    ng-required="{{property.require}}"
+                                    class="md-block  col-sm-12 pull-right"
+                                    ng-disabled="property.readonly"
+                                    placeholder="{{property.label}}"
+                                    ng-model="property.selected"
+                                    ng-change="func.selectSingle(property)"
+                                    style="min-width: 200px;padding-left: 0;padding-right: 0;">
+                                <md-option ng-value="null"  ng-if="!property.require"><em>عدم انتخاب</em></md-option>
+                                <md-option ng-value="p" ng-repeat="p in property.options">{{p.label}}</md-option>
+                            </md-select>
+                        </md-input-container>
+                        <div ng-messages="FORM.formWorkflow[propertyName].$error" role="alert"  ng-if="FORM.formWorkflow[propertyName].$error">
+                            <div ng-message="required">
+                                لطفا برای محتوا عبارتی را انتخاب کنید
+                            </div>
+                        </div>
+                    </div>
+                    <!--  TODO -------------------------------------Multi Select ------------------------------------>
+                    <div
+                            style="padding-left:2px ;padding-right:2px;"
+                            layout="row"
+                            class="row form-group col-sm-12"
+                            ng-if="property.objClass=='com.openkm.bean.form.Select' && property.type=='multiple' ">
+                        <md-input-container class="md-block  col-sm-12 "  style=" padding: 0;">
+                            <label>{{property.label}}</label>
+                            <md-select
+                                    ng-required="{{property.require}}"
+                                    class="md-block  col-sm-12 pull-right"
+                                    ng-disabled="property.readonly || property.notActive"
+                                    placeholder="{{property.label}}"
+                                    ng-model="property.selected"
+                                    ng-change="func.selectMultiSelected(property)"
+                                    multiple="true"
+                                    style="min-width: 200px;padding-left: 0;padding-right: 0;">
+                                <md-option ng-value="p" ng-repeat="p in property.options">{{p.label}}</md-option>
+                            </md-select>
+                        </md-input-container>
+                        <div ng-messages="FORM.formWorkflow[propertyName].$error" role="alert"  ng-if="FORM.formWorkflow[propertyName].$error">
+                            <div ng-message="required">
+                                لطفا برای محتوا عبارتی را انتخاب کنید
+                            </div>
+                        </div>
+                    </div>
+                    <!--  TODO -------------------------------------Text Area --------------------------------------->
+                    <div
+                            style="padding-left:2px ;padding-right:2px;"
+                            ng-if="property.objClass == 'com.openkm.bean.form.TextArea' "
+                            class="row form-group col-sm-12">
+                        <span class="col-sm-12 pull-right" ng-bind="property.label"></span>
+                        <textarea class="form-control col-sm-12" cols="7" rows="4" style="resize: vertical;width: 100%!important;font-size: 15px;padding: 5px;"
+                                  ng-model="property.value"
+                                  ng-required="{{property.require}}"
+                                  name="{{propertyName}}"
+                                  ng-disabled="property.readonly"
+                                  ui-keypress="{13:'func.changeElement(propertyName,FORM.formWorkflow)'}"
+                        >
+                        </textarea>
+                    </div>
+                    <!--  TODO -------------------------------------CheckBox ---------------------------------------->
+                    <div
+                            style="margin: 10px 0px;padding-left:2px ;padding-right:2px;"
+                            layout="row"
+                            class="row form-group col-sm-12"
+                            ng-if="property.objClass == 'com.openkm.bean.form.CheckBox'">
+                        <span class="pull-right" ng-bind="property.label"></span>
+                        <md-checkbox
+                                ng-disabled="property.readonly"
+                                class="pull-right"
+                                ng-model="property.value"
+                                style=" margin-right: 3px;left: 0; opacity: 1; position: relative;">
+                        </md-checkbox>
+                    </div>
+
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+
+</div>
+<!--<div class="modal-footer row">
+    <div class="col-sm-12 row" style="margin-top: 5px ! important;">
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                        <md-button ng-show="data.confirmation != null && data.state == 'fillQuery'" style="width:125px;" id="okButon"     class="md-raised col-sm-4" ng-click="func.addWorkFlow()">
+                            <md-icon style="border-left:1px solid rgba(197,197,197,1);padding-left: 5px;" md-font-icon="fa fa-save"></md-icon>
+                            <span ng-bind="data.confirmation.label"></span>
+                        </md-button>
+                        <md-button  style="width:50px;" id="cancelButon"     class="md-raised col-sm-4" ng-click="func.close()">
+                            <md-icon style="border-left:1px solid rgba(197,197,197,1);padding-left: 5px;" md-font-icon="fa fa-remove"></md-icon>
+                            <span >انصراف</span>
+                        </md-button>
+                </section>
+    </div>
+</div>-->
+<div class="modal-footer row">
+    <div class="row" style="margin-top: 5px ! important;">
+
+        <form name="deleteFolderForm" novalidate role="form">
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+
+
+                <md-button
+                        ng-repeat="confirmation in data.confirmations track by $index "
+                        ng-show="data.state == 'fillQuery'"
+                        id="okButon"
+                        class="md-raised"
+                        ng-click="func.addWorkFlow()">
+                    <md-icon  md-font-icon="fa fa-save  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;"
+                          ng-bind="confirmation.label"></span>
+                </md-button>
+
+
+                <md-button id="cancelButon"     class="md-raised" ng-click="func.close()">
+                    <md-icon  md-font-icon="fa fa-remove  fa-fw"></md-icon>
+                    <span style="margin-right: 3px;" ng-bind="'desktop.zl.cancel'|translate"></span>
+                </md-button>
+            </section>
+        </form>
+    </div>
+</div>

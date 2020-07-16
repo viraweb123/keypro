@@ -1,0 +1,459 @@
+<style>
+    .arrow-up {
+        border-bottom: 10px solid white;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        height: 0;
+        margin-right: 3px;
+        margin-top: -12px;
+        width: 0;
+    }
+    .user-drop-down-menu:hover > *{
+        background-color: #00aaaa;
+        cursor: pointer;
+        color:white;
+
+    }
+
+
+
+    .easy-access-buttons .sample-show-hide.ng-hide-add, .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 1.6s;
+        -moz-transition:all linear 1.6s;
+        -o-transition:all linear 1.6s;
+        transition:all linear 1.6s;
+        display:block !important;
+    }
+
+    .easy-access-buttons .sample-show-hide.ng-hide-add.ng-hide-add-active,
+    .easy-access-buttons .sample-show-hide.ng-hide-remove {
+        -webkit-transition:all linear 0.2s;
+        -moz-transition:all linear 0.2s;
+        -o-transition:all linear  0.2s;
+        transition:all linear  0.2s;
+        opacity:0;
+    }
+
+    .easy-access-buttons .sample-show-hide.ng-hide-add,
+    .easy-access-buttons .sample-show-hide.ng-hide-remove.ng-hide-remove-active {
+        -webkit-transition:all linear 1.6s;
+        -moz-transition:all linear 1.6s;
+        -o-transition:all linear  1.6s;
+        transition:all linear  1.6s;
+        opacity:1;
+    }
+
+    .easy-access-buttons .animate-if {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.6s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.6s;
+    }
+
+    .easy-access-buttons .animate-if.ng-enter, .animate-if.ng-leave {
+        -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.6s;
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.6s;
+    }
+
+    .easy-access-buttons .animate-if.ng-enter, .animate-if.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+    .easy-access-buttons .animate-if.ng-leave, .animate-if.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+
+    .clockView{}
+    .clockView .change-color-clock{}
+    .clockView .change-color-clock input.select-color {
+        padding: 0px !important;
+        margin: 0px !important;
+        border-radius: 0px !important;
+        box-shadow: none !important;
+        border: none !important;
+        width: 30px !important;
+        height: 20px !important;
+        cursor: pointer !important;
+    }
+
+
+
+</style>
+<div class="easy-access-buttons"  >
+
+    <div class="col-sm-12 sample-show-hide" style="height: 115px ! important; margin-top: 30px; width: 80%; margin-right: 10%;" ng-show="data.isShowEasyAccess">
+
+        <div class="pull-right" style="text-align: center; height: 100px;width:9%;">
+            <span
+                    class="fa fa-arrow-right"
+                    style="color: white; cursor: pointer; padding: 20px; font-size: 35px;"
+                    ng-mouseover="func.wizardRunDirection(1)"
+                    ng-mouseleave="func.wizardRunStop()"
+            >
+                <md-tooltip  md-direction="bottom">
+                جلو
+                </md-tooltip>
+            </span>
+        </div>
+
+        <div class="pull-right view-list-items" >
+
+            <div class="view-list-item"   ng-if="data.features.prfMenu.prfEdit.addPropertyGroupVisible">
+                 <span  class="fa fa-magic"  ng-click="func.goToWizardSelect('createMetaData')"></span>
+                 <div class="content-view"><span>ایجاد فراداده</span> </div>
+            </div>
+
+            <div class="view-list-item"   ng-if="data.features.prfTab.administrationVisible">
+                <span  class="fa fa-wrench"  ng-click="func.goToWizardSelect('generalSetting')"></span>
+                <div class="content-view"><span>تنظیمات کلی</span> </div>
+            </div>
+
+            <div class="view-list-item"   ng-if="data.features.prfTab.administrationVisible">
+                <span  class="fa fa-user"   ng-click="func.goToWizardSelect('usersSetting')"></span>
+                <div class="content-view"><span>مدیریت کاربران</span> </div>
+            </div>
+
+            <div class="view-list-item"   ng-if="data.features.prfTab.administrationVisible">
+                <span  class="fa fa-users "  ng-click="func.goToWizardSelect('rolesSetting')"></span>
+                <div class="content-view"><span>مدیریت نقش ها</span> </div>
+            </div>
+
+            <div class="view-list-item"   ng-if="data.features.prfTab.administrationVisible">
+                <span  class="fa fa-shield"  ng-click="func.goToWizardSelect('accessSetting')"></span>
+                <div class="content-view"><span>دسترسی فراداده</span> </div>
+            </div>
+
+            <div class="view-list-item"   ng-if="data.features.prfTab.administrationVisible">
+                <span  class="fa fa-check-square-o"  ng-click="func.goToWizardSelect('assignDigitalSign')"></span>
+                <div class="content-view"><span>امضای دیجیتال</span> </div>
+            </div>
+
+            <div class="view-list-item"   ng-if="data.features.prfDashboard.userVisible">
+                <span  class="fa fa-lock"  ng-click="func.goToWizardSelect('userlockedDocuments')"></span>
+                <div class="content-view"><span>اسناد قفل شده</span> </div>
+            </div>
+
+            <div class="view-list-item"   ng-if="data.features.prfDashboard.userVisible">
+                <span  class="fa fa-pencil-square-o"  ng-click="func.goToWizardSelect('usereditedDocuments')"></span>
+                <div class="content-view"><span>اسناد ویرایش شده</span> </div>
+            </div>
+
+            <div class="view-list-item"   ng-if="data.features.prfDashboard.workflowVisible">
+                <span  class="fa fa-gear"  ng-click="func.goToWizardSelect('pendingTasks')"></span>
+                <div class="content-view"><span>وظایف در انتظار</span> </div>
+            </div>
+
+        </div>
+
+        <div class="pull-left" style="text-align: center; height: 100px;width:9%;">
+            <span  class="fa fa-arrow-left"  style="color: white; cursor: pointer; padding: 20px; font-size: 35px;"
+                   ng-mouseover="func.wizardRunDirection(-1)"
+                   ng-mouseleave="func.wizardRunStop()">
+                <md-tooltip  md-direction="bottom">
+                عقب
+                </md-tooltip>
+            </span>
+        </div>
+
+    </div>
+    <div class="col-sm-12 easy-access-buttons-close" ng-show="data.isShowEasyAccess">
+
+        <span  class="fa fa-remove"  style="color: white;cursor: pointer;"  ng-click="func.cancelWizzard()">
+            <md-tooltip  md-direction="bottom">
+            بستن
+            </md-tooltip>
+        </span>
+
+    </div>
+</div>
+<div class="Header" >
+    <div class="Info" >
+
+       <span class="fa fa-bars infoIcon  "><!--ng-click = "data.showInfo = !data.showInfo;"-->
+       </span>
+
+      <div class="hiddenInfo"  ng-show="data.showInfo">
+            <div class="arrow-up" style="margin-top:-10px;margin-right:10px !important;"></div>
+            <div class="infoData  form-group row"  style="margin-top: 0 !important;">
+                <div class="row  col-sm-12 col-lg-12 col-xs-12"  style="margin:0px 5px !important;">
+                    <span class="fa fa-remove pull-left removeInfo" style="cursor: pointer; padding-left: 13px;"  ><!--ng-click=" data.showInfo = false;" -->
+                        <md-tooltip style="z-index: 10000;" md-direction="top">
+                            بستن
+                        </md-tooltip>
+                    </span>
+                </div>
+                <div class="row  col-sm-12 col-lg-12 col-xs-12" style="margin:2px 5px !important;">
+                    <hr  />
+                </div>
+                <div class="row  col-sm-12 col-lg-12 col-xs-12"  style="margin:0px 5px !important;">
+                    <div class="col-sm-6 pull-right">
+                        <img class="pull-left" width="90px" src="../../../static/image/HeaderLogo.png"  />
+                    </div>
+                    <div class="col-sm-6 pull-left">
+                        <span class="col-sm-12- pull-right control-label  bold" >KeydocPro Document Management System</span>
+                        <span class="col-sm-12- pull-right"  style="font-size:12px;">© 2015-2017 KeydocPro</span>
+                    </div>
+                </div>
+                <div class="row  col-sm-12 col-lg-12 col-xs-12" style="margin:2px 5px !important;">
+                    <hr  />
+                </div>
+                <div class="row  col-sm-12 col-lg-12 col-xs-12" style="margin:0px 5px !important;">
+                    <div class="col-sm-6 pull-left">
+                        <span class="pull-left- pull-right ">Support</span>
+                    </div>
+                    <div class="col-sm-6">
+                        <a class="pull-left" style="color:#5D9CEC" href="http://ticket.dhamara.com">ticket</a>
+                    </div>
+                </div>
+                <div class="row  col-sm-12 col-lg-12 col-xs-12" style="margin:2px 5px !important;">
+                    <hr  />
+                </div>
+                <div class="row  col-sm-12 col-lg-12 col-xs-12" style="margin:0px 5px !important;">
+                    <div class="col-sm-6 pull-left">
+                        <span class="pull-right ">Instance ID</span>
+                    </div>
+                    <div class="col-sm-6">
+                        <span class="pull-left "  style="text-align: left !important;color:#5D9CEC;">688fb7d4 - d414 - 441e - b719 - 96f68849997a</span>
+                    </div>
+                </div>
+                <div class="row  col-sm-12 col-lg-12 col-xs-12" style="margin:2px 5px !important;">
+                    <hr  />
+                </div>
+                <div class="row  col-sm-12 col-lg-12 col-xs-12" style="margin:0px 5px !important;">
+                    <div class="col-sm-6 pull-left">
+                        <span class="pull-right ">Version</span>
+                    </div>
+                    <div class="col-sm-6">
+                        <span class="pull-left " style="color:#5D9CEC">1.3.5.0</span>
+                    </div>
+                </div>
+                <div class="row  col-sm-12 col-lg-12 col-xs-12" style="margin:2px 5px !important;">
+                    <hr  />
+                </div>
+
+                <div class="row clockView  col-sm-12 col-lg-12 col-xs-12" style="margin:0px 5px !important;">
+
+                    <div class="change-color-clock" >
+                        <input class="select-color" type="color"  ng-model="data.color"  value="#{{data.color}}" >
+                        <md-tooltip  md-direction="top">
+                            انتخاب رنگ
+                        </md-tooltip>
+                    </div>
+
+                    <div  style="min-width: 200px;min-height: 200px;overflow: auto;">
+                        <canvas
+                                id="canvasClockViewer"
+                                width="180"
+                                height="180"
+                                style="background-color:transparent"
+                        >
+                        </canvas>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="User" >
+        <img  class="userimg"   />
+        <span ng-bind="data.userInfo.name"  class="userName"></span>
+        <md-menu-bar  class="menuBar col-sm-1">
+            <md-menu>
+                <button ng-click="$mdOpenMenu()">
+                    <span class="fa fa-chevron-down"></span>
+                </button>
+                <md-menu-content>
+					<md-menu-item>
+                        <md-button>
+                            <ul  class="pull-right headerUL">
+                                <i class="pull-right splitFromLeft"><span class="fa fa-sign-in headerUL"></span></i>
+                                <i><span  class="pull-right headerUL" >{{data.features.lastLogin}}</span></i>
+                            </ul>
+                        </md-button>
+                    </md-menu-item>
+					<md-menu-divider></md-menu-divider>
+                    <md-menu-item>
+                        <md-button ng-click="func.menu.edit($event)">
+                            <ul  class="pull-right headerUL">
+                                <i class="pull-right splitFromLeft"><span class="fa fa-gear headerUL"></span></i>
+                                <i><span  class="pull-right headerUL" ng-bind="'common.menu.show_administration_user_configuration'|translate"></span></i>
+                            </ul>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-divider></md-menu-divider>
+                    <md-menu-item>
+                        <md-button ng-click="func.menu.refresh($event)">
+                            <ul  class="pull-right headerUL">
+                                <i class="pull-right  splitFromLeft" ><span class="fa fa-refresh headerUL"></span></i>
+                                <i><span  class="pull-right headerUL"  ng-bind="'common.menu.refresh'|translate"></span></i>
+                            </ul>
+                        </md-button>
+                    </md-menu-item>
+                    <!--<md-menu-divider></md-menu-divider>
+                    <md-menu-item>
+                        <md-button ng-click="func.menu.showViewer($event)">
+                            <ul  class="pull-right headerUL">
+                                <i class="pull-right  splitFromLeft" ><span class="fa fa-eye headerUL"></span></i>
+                                <i><span  class="pull-right headerUL" >نمایشگر سند - نسخه پیش نمایش</span></i>
+                            </ul>
+                        </md-button>
+                    </md-menu-item>-->
+                    <md-menu-divider></md-menu-divider>
+                    <md-menu-item>
+                        <md-button ng-click="func.menu.showHelp($event)">
+                            <ul  class="pull-right headerUL">
+                                <i class="pull-right  splitFromLeft" ><span class="fa fa-question headerUL"></span></i>
+                                <i><span  class="pull-right headerUL" >آموزش سامانه مدیریت اسناد</span></i>
+                            </ul>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-divider></md-menu-divider>
+                    <md-menu-item>
+                        <md-button ng-click="func.menu.showVersion($event)">
+                            <ul  class="pull-right headerUL">
+                                <i class="pull-right  splitFromLeft" ><span class="fa fa-history headerUL"></span></i>
+                                <i><span  class="pull-right headerUL" >تاریخچه نسخه های  سامانه</span></i>
+                            </ul>
+                        </md-button>
+                    </md-menu-item>
+                    <!--<md-menu-divider></md-menu-divider>
+
+                    <md-menu-item>
+                        <md-button ng-click="func.menu.showClock($event)">
+                            <ul  class="pull-right headerUL">
+                                <i class="pull-right  splitFromLeft" ><span class="fa fa-clock-o headerUL"></span></i>
+                                <i><span  class="pull-right headerUL" >زمان سیستم</span></i>
+                            </ul>
+                        </md-button>
+                    </md-menu-item>-->
+                    <md-menu-divider></md-menu-divider>
+
+                    <md-menu-item>
+                        <md-button ng-click="func.menu.logout($event)">
+                            <ul  class="pull-right headerUL">
+                                <i class="pull-right  splitFromLeft" ><span class="fa fa-sign-out headerUL"></span></i>
+                                <i><span  class="pull-right headerUL"  ng-bind="'common.menu.file_exit'|translate"></span></i>
+                            </ul>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </md-menu-bar>
+    </div>
+
+
+    <div class="Navigation" >
+
+        <div class="navigationData">
+
+            <md-content style="height: 100%;">
+
+                <div style="display: table; margin: 0px auto;max-height:50px;">
+
+                     <md-button
+                            style="font-size: 12px;"
+                            ng-click="func.goRight()"
+                            class="navbar-button  ">
+                        <md-tooltip  md-direction="bottom">
+                            بعدی
+                        </md-tooltip>
+                        <span class="fa fa-arrow-circle-o-right" style="font-size:25px;"></span>
+                    </md-button>
+
+                     <span
+                             ng-repeat="(key,state) in data.states track by $index "
+                             ng-if="data.features.prfTab[state.view]"
+                             class="pull-right spanMainNavIcon   {{ key == data.currentState ? state.activeClass : ''}} "
+                             ng-click="func.gotoState(key)"
+                             id="{{key}}Active"
+                     >
+                            <md-tooltip  md-direction="bottom">
+                                {{state.tooltip}}
+                            </md-tooltip>
+                            <span class="showTopTriangle"></span>
+                            <span class="fa {{state.icon}}"></span>&nbsp;
+                            <span  class="showItem" ng-bind="state.name"></span>
+                            <div  ng-if="key != data.currentState" class="main-nav-footer"></div>
+                     </span>
+
+                     <md-button
+                            style="font-size: 12px;"
+                            ng-click="func.goLeft()"
+                            class="navbar-button  ">
+                        <md-tooltip  md-direction="bottom">
+                            قبلی
+                        </md-tooltip>
+                        <span class="fa fa-arrow-circle-o-left"  style="font-size:25px;"></span>
+                    </md-button>
+
+                </div>
+
+
+                <!--<section style="max-height:50px;" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+
+
+                    <md-button
+                            style="font-size: 12px;"
+                            ng-click="func.goRight()"
+                            class="navbar-button  ">
+                        <md-tooltip  md-direction="bottom">
+                            بعدی
+                        </md-tooltip>
+                        <span class="fa fa-arrow-circle-o-right" style="font-size:25px;"></span>
+                    </md-button>
+
+
+                    <md-button
+                            style="font-size: 12px;"
+                            ng-if="data.features.prfTab[state.view]"
+                            ng-repeat="(key,state) in data.states track by $index "
+                            ng-click="func.gotoState(key)"
+                            class="navbar-button  {{ key == data.currentState ? state.activeClass : ''}} ">
+                        <md-tooltip  md-direction="bottom">
+                            {{state.tooltip}}
+                        </md-tooltip>
+                        <span class="fa {{state.icon}}"></span>&nbsp;
+                        <span  class="showItem" ng-bind="state.name"></span>
+                    </md-button>
+
+
+                    <md-button
+                            style="font-size: 12px;"
+                            ng-click="func.goLeft()"
+                            class="navbar-button  ">
+                        <md-tooltip  md-direction="bottom">
+                            قبلی
+                        </md-tooltip>
+                        <span class="fa fa-arrow-circle-o-left"  style="font-size:25px;"></span>
+                    </md-button>
+
+
+                </section>-->
+
+
+            </md-content>
+        </div>
+
+    </div>
+
+
+    <div class="Icon" >
+        <md-tooltip  md-direction="bottom">
+            سایت دانش هم آرا
+        </md-tooltip>
+        <img ng-click = "func.goToDaneshHamaraSite()"  src="../../../static/img/login/logo.png"  />
+    </div>
+    <div class="wizard-icon" >
+        <md-tooltip  md-direction="bottom">
+           دسترسی سریع
+        </md-tooltip>
+        <span  class="fa fa-magic"  style="color: white;cursor: pointer;font-size:20px;margin-top:15px;"  ng-click="func.showWizzard()"></span>
+    </div>
+
+</div>
+<div class="Body"   ui-view="pageContent">
+
+
+
+</div>
